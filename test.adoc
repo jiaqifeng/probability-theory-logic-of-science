@@ -1,0 +1,87 @@
+= ch 1
+
+test
+. list
+. some
+
+****
+some text +
+going on
+****
+
+anchor:bookmark-a[]
+$$x^2+y_1+z_{12}^{34}$$
+some comments
+
+ I have said, remember
+ this!!!
+
+[[bookmark-b]]
+
+A statement.footnote:[Clarification about this statement.] Nice long paragh?
+sdom
+
+tesxt
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+after many spaces                       $$x^1+y_1$$                 (1.2)
+
+a
+
+a
+
+a
+
+
+a
+
+a
+
+a
+
+
+a
+
+a
+
+a
+
+
+a
+
+a
+
+a
+
+
+a
+
+a
+
+a
+
+
+
+
+<<bookmark-b, links>> Inline anchors make arbitrary content referenceable.#
+
+<<bookmark-a>> links?
+
+
+[source,java]
+----
+public class Person {
+}
+----
+
