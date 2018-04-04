@@ -1,0 +1,11 @@
+= 5 Queer uses for probability theory 概率论的古怪应用
+
+ I cannot conceal the fact here that in the specific application of these rules, I foresee many things happening which can cause one to be badly mistaken if he does not proceed cautiously.
+ -- James Bernoulli (1713, Part 4, Chapter III)
+
+ 我不能遮盖的一个事实是:我预见到,如果在应用这些规则的时候不够谨慎仔细,可以导致各种各样拙劣的错误.
+ -- 詹姆斯.伯努利(1713, 第四部分, 第三章)
+
+I.J.Good (1950) has shown how we can use probability theory backwards to measure our own strengths of belief about propositions. For example, how strongly do you believe in extrasensory perception?
+
+I.J.Good已经展示了如何用概率论来反向测量对命题的坚信度.举例来说,你有多相信存在超级第六感?

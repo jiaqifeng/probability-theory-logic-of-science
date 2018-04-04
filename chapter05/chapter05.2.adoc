@@ -1,0 +1,75 @@
+== 5.2 Mrs Stewart’s telepathic powers 斯图尔特太太的心灵感应
+
+Before venturing into this weird area, the writer must issue a disclaimer. I was not there, and am not in a position to affirm that the experiment to be discussed actually took place; or, if it did, that the data were actually obtained in a valid way. Indeed, that is just the problem that you and I always face when someone tries to persuade us of the reality of ESP or some other marvellous thing – such things never happen to us or in our presence. All we are able to affirm is that the experiment and data have been reported in a real, verifiable reference (Soal and Bateman, 1954). This is the circumstance that we want to analyze now by probability theory. Lindley (1957) and Bernardo (1980) have also taken note of it from the standpoint of probability theory, and Boring (1955) discusses it from the standpoint of psychology.
+
+在冒险进入这个奇怪的领域之前，作家必须发布免责声明。 我不在那里，也不能确定下面讨论的实验在实际上发生了; 或者即使真的发生了，也不保证数据是以合法方式获得的。 事实上，这就是我们实际面临的问题,当有人试图说服我们第六感或者其他奇妙的事情是确实存在的 -- 虽然这些事情我们从未亲眼所见。 我们唯一确定的是，实验和数据是被真实可验证的来源（Soal和Bateman，1954）所报道的。 这是我们现在想用概率论来分析的情况。 Lindley（1957）和Bernardo（1980）从概率论的角度也注意到了这一点，Boring（1955）从心理学的角度对它进行了讨论。
+
+In the reported experiment, from the experimental design the probability for guessing a card correctly should have been p = 0.2, independently in each trial. Let H p be the ‘null hypothesis’ which states this, and supposes that only ‘pure chance’ is operating (whatever that means). According to the binomial distribution (3.86), H p predicts that if a subject has no ESP, the number r of successful guesses in n trials should be about (mean ± standard deviation)
+
+在报道的实验中，从实验设计中，正确猜测一张卡的概率应该是p=0.2，并且在每次猜测中是独立的。 假设 $$H_p$$ 是陈述这一点的'零假设'，并假设只有'纯粹的机会'在运作（无论到底什么是纯粹的机会）。 根据二项分布（3.86）， $$ H_p $$ 预测了当受试者不具有第六感时在n次测验中猜测正确的次数r应该是（平均值±标准差）
+
+ $$ (r)_{est} = np \pm \sqrt {np(1-p)} $$  (5.1)
+
+For n=37100 trials, this is 7420±77.
+
+当n=37100次测试时,结果是7420±77.
+
+But, according to the report, Mrs Gloria Stewart guessed correctly r = 9410 times in 37100 trials, for a fractional success rate of f = 0.2536. These numbers constitute our data D. At first glance, they may not look very sensational; note, however, that her score was
+
+但根据报告，格洛丽.亚斯图尔特夫人在37100次试验中猜测正确为9410次，成功率f=0.2536。 这些数值组成了我们的数据D.乍一看，它们看起来可能不是很耸人听闻; 但请注意，她的考分是
+
+ $$ \frac{9410 − 7420}{77} = 25.8 $$    (5.2)
+
+standard deviations away from the chance expectation.
+
+标准差和预期之间的偏差。
+
+The probability for getting these data, on hypothesis $$H_p$$ , is then the binomial
+
+在假设$$ H_p $$下, 取得如上数据的概率是二项式分布
+
+ $$ P(D|H_p ) = \binom{n}{r} p^r (1 − p)^{n−r} $$    (5.3)
+ 
+But the numbers n, r are so large that we need the Stirling approximation to the binomial, derived in Chapter 9:
+
+但是数字n，r非常大，我们需要第9章中导出的二项式的斯特林近似：
+
+ $$ P(D|H_p ) = A exp \{nH(f,p)\} $$   (5.4)
+ 
+where
+
+有
+
+ $$ H(f,p) = f log( \frac{p}{f} ) + (1-f)log[ \frac{1-p}{1-f} ] = −0.008452 $$   (5.5)
+
+is the entropy of the observed distribution (f,1−f)=(0.2536, 0.7464) relative to the expected one, (p,1−p)=(0.2000, 0.8000), and
+
+是观察到的分布（f，1-f）=（0.2536,0.7464）相对于预期分布（p，1-p）=（0.2000,0.8000）的熵，且
+
+ $$ A \equiv \sqrt{[\frac{n}{2 \pi r(n-r)}]} = 0.00476. $$  (5.6)
+
+Then we may take as the likelihood $$L_p$$ of $$H_p$$ , the sampling probability
+
+然后我们可以将 $$ H_p $$的似然度$$ L_p $$, 作为采样概率
+
+ $$ L_p = P(D|H_p) = 0.00476 exp\{−313.6\} = 3.15 × 10^{−139} $$     (5.7)
+ 
+This looks fantastically small; however, before jumping to conclusions, the robot should ask: ‘Are the data also fantastically improbable on the hypothesis that Mrs Stewart has telepathic powers?’ If they are, then (5.7) may not be so significant after all.
+
+这看起来非常小， 然而，在得出结论之前，机器人应该问：'这些数据对于斯图尔特夫人是否有心灵感应能力这一假设来说也是极其不可思议的？'如果是这样，那么（5.7）不应如此显著。
+
+Consider the Bernoulli class of alternative hypotheses $$H_q$$ (0 ≤ q ≤ 1), which suppose that the trials are independent, but that assign different probabilities of success q to Mrs Stewart (q > 0.2 if the hypothesis considers her to be telepathic). Out of this class, the hypothesis $$H_f$$ that assigns q=f=0.2536 yields the greatest $$P(D|H_q)$$ that can be attained in the Bernoulli class, and for this the entropy (5.5) is zero, yielding a maximum likelihood of
+
+考虑伯努利类别的替代假设 $$H_q$$（0≤q≤1），即假设每次试验是独立的，但这使得Stewart夫人猜测正的概率为q（q>0.2当她具有心灵感应）。 在这个类别中，假设$$H_f$$即q=f=0.2536得出了在伯努利类别中可以达到的最大 $$P(D|H_q)$$，由此熵（5.5）为零，得出最大似然度为
+
+ $$ L_f = P(D|H_f) = A = 0.00476. $$    (5.8)
+
+So, if the robot knew for a fact that Mrs Stewart is telepathic to the extent of q = 0.2536, then the probability that she could generate the observed data would not be particularly small. Therefore, the smallness of (5.7) is indeed highly significant; for then the likelihood ratio for the two hypotheses must be fantastically small. The relative likelihood depends only on the entropy factor:
+
+因此，如果机器人知道斯图尔特夫人具有心灵感应以至于q=0.2536，那么从她的实验结果计算出的概率不会特别小。 因此，（5.7）确实显著的小于预期; 那么两个假设的似然比必须非常小。 相对似然度仅取决于熵因子：
+
+ $$ \frac{L_p}{L_f} = \frac{P(D|H_p)}{P(D|H_f)} = exp \{nH\} = exp \{−313.6\} = 6.61 × 10^{−137}$$  (5.9)
+ 
+and the robot would report: ‘The data do indeed support $$H_f$$ over $$H_p$$ by an enormous factor.’
+
+所以机器人会报告：'数据显示$$ H_p $$与$$ H_p $$之比值较大。“
