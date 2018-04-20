@@ -2,7 +2,7 @@
 
 Before venturing into this weird area, the writer must issue a disclaimer. I was not there, and am not in a position to affirm that the experiment to be discussed actually took place; or, if it did, that the data were actually obtained in a valid way. Indeed, that is just the problem that you and I always face when someone tries to persuade us of the reality of ESP or some other marvellous thing – such things never happen to us or in our presence. All we are able to affirm is that the experiment and data have been reported in a real, verifiable reference (Soal and Bateman, 1954). This is the circumstance that we want to analyze now by probability theory. Lindley (1957) and Bernardo (1980) have also taken note of it from the standpoint of probability theory, and Boring (1955) discusses it from the standpoint of psychology.
 
-在冒险进入这个奇怪的领域之前，作家必须发布免责声明。 我不在那里，也不能确定下面讨论的实验在实际上发生了; 或者即使真的发生了，也不保证数据是以合法方式获得的。 事实上，这就是我们实际面临的问题,当有人试图说服我们第六感或者其他奇妙的事情是确实存在的 -- 虽然这些事情我们从未亲眼所见。 我们唯一确定的是，实验和数据是被真实可验证的来源（Soal和Bateman，1954）所报道的。 这是我们现在想用概率论来分析的情况。 Lindley（1957）和Bernardo（1980）从概率论的角度也注意到了这一点，Boring（1955）从心理学的角度对它进行了讨论。
+在探索这个古怪的领域之前，作者必须发布一份免责声明。 我不在现场，无法证实接下来要讨论的事情是真的; 即使它是真，也无法保证得到的数据的方式是毫无瑕疵的。 实际上这就是我们常常面对的情况,有人试图说服我们第六感或者其他古怪的事情是真的--虽然我们从未亲眼所见。 我们唯一确定的是，报道了实验和数据的信息来源是真实存在而且可被验证（Soal和Bateman，1954）。 这正是我们现在想用概率论来分析的情景。 Lindley（1957）和Bernardo（1980）从概率论的角度也注意到了这一点，而Boring（1955）从心理学的角度对此进行了讨论。
 
 In the reported experiment, from the experimental design the probability for guessing a card correctly should have been p = 0.2, independently in each trial. Let H p be the ‘null hypothesis’ which states this, and supposes that only ‘pure chance’ is operating (whatever that means). According to the binomial distribution (3.86), H p predicts that if a subject has no ESP, the number r of successful guesses in n trials should be about (mean ± standard deviation)
 
@@ -73,3 +73,107 @@ So, if the robot knew for a fact that Mrs Stewart is telepathic to the extent of
 and the robot would report: ‘The data do indeed support $$H_f$$ over $$H_p$$ by an enormous factor.’
 
 所以机器人会报告：'数据显示$$ H_p $$与$$ H_p $$之比值较大。“
+
+=== 5.2.1 Digression on the normal approximation 正态逼近的偏差
+
+Note, in passing, that in this calculation large errors could be made by unthinking use of the normal approximation to the binomial, also derived in Chapter 9 (or compare with (4.72)):
+
+顺便说一下，注意在上面的计算中，不假思索地使用二项式的正态近似算法将会产生巨大的误差，在第9章中将推导得到相同的结论（或者与（4.72）比较）：
+
+ $$ P(D|H_p,X) (const.) * exp \{ { −n(f−p)^2 \over 2p(1-q) } \}. $$    (5.10)
+
+To use it here instead of the entropy approximation (5.4), amounts to replacing the entropy H ( f, p) by the first term of its power series expansion about the peak. Then we would have found instead a likelihood ratio exp{−333.1}. Thus, the normal approximation would have made Mrs Stewart appear even more marvellous than the data indicate, by an additional odds ratio factor of
+
+在这里使用二项式正态近似算法而不是熵近似算法（5.4），等价于在峰值处用幂级数展开的第一项来代替熵H（f，p）。 这样我们得到似然度比为exp {-333.1}。 所以，正态近似算法的结果,使得计算出的斯图尔特的结果比实际数据的结果有过分增大,增加的比例系数是
+
+ $$ exp \{ 333.1−313.6 \} = exp \{ 19.5 \} = 2.94 × 10^8. $$  (5.11)
+
+This should warn us that, quite generally, normal approximations cannot be trusted far out in the tails of a distribution. In this case, we are 25.8 standard deviations out, and the normal approximation is in error by over eight orders of magnitude.
+
+这警告我们，一般而言在分布的较远的尾部,正态近似值是不可信的。 在上面的情况中，应该是25.8个标准偏差，而正态近似值其误差超过了8个数量级。
+
+Unfortunately, this is just the approximation used by the chi-squared test discussed later, which can therefore lead us to wildly misleading conclusions when the ‘null hypothesis’ being tested fits the data very poorly. Those who use the chi-squared test to support their claims of marvels are usually helping themselves by factors such as (5.11). In practice, the entropy calculation (5.5) is just as easy and far more trustworthy (although the entropy and chi-squared test amount to the same thing within one or two standard deviations of the peak).
+
+不幸的是，这下面讨论的卡方检验所使用的近似算法，因此当被测试的'零假设'和实际数据不太匹配时，可能得出有显著误导性的结论。 那些使用卡方检验来支持他们的"奇迹"的人,实际上就像（5.11）一样得到了"助益"。 在实践中，熵计算（5.5）既简单且更可信（尽管熵算法和卡方检验在峰值处的结果是一致的,且在一个或两个标准偏差之内）。
+
+=== 5.2.2 Back to Mrs Stewart 再说斯图亚特太太
+
+In any event, our present numbers are indeed fantastic; on the basis of such a result, ESP researchers would proclaim a virtual certainty that ESP is real. If we compare $$ H_p $$ and $$ H_f $$ by probability theory, the posterior probability that Mrs Stewart has ESP to the extent of q = f = 0.2536 is
+
+无论如何，我们现在的数字确实是太棒了; 根据这样的结果，ESP研究人员会宣称ESP是事实上真实不虚的。 如果我们以概率论的角度来比较$$ H_p $$和$$ H_f $$，那么斯图亚特夫人有ESP的后验概率达到了q=f=0.2536的范围是
+
+ $$ P(H_f|DX) = P(H_f|X ) { P(D|H_fX) \over P(D|X) } = { P_fL_f \over P_fL_f+P_pL_p} $$   (5.12)
+
+where $$ P_p $$ , $$ P_f $$ are the prior probabilities of $$ H_p $$ , $$ H_f $$ . But, because of (5.9), it hardly matters what these prior probabilities are; in the view of an ESP researcher who does not consider the prior probability $$ P_f=P(H_f|X) $$ particularly small, $$ P(H_f|DX) $$ is so close to unity that its decimal expression starts with over 100 nines.
+
+He will then react with anger and dismay when, in spite of what he considers this overwhelming evidence, we persist in not believing in ESP. Why are we, as he sees it, so perversely illogical and unscientific?
+
+The trouble is that the above calculations, (5.9) and (5.12), represent a very naı̈ve application of probability theory, in that they consider only $$ H_p $$ and $$ H_f $$ , and no other hypotheses. If we really knew that $$ H_p $$ and $$ H_f $$ were the only possible ways the data (or, more precisely, the observable report of the experiment and data) could be generated, then the conclusions that follow from (5.9) and (5.12) would be perfectly all right. But, in the real world, our intuition is taking into account some additional possibilities that they ignore.
+
+其中$$ P_p $$，$$ P_f $$是$$ H_p $$，$$ H_f $$的先验概率。但是，由于（5.9），这些先验概率几乎没什么重要性;在ESP研究人员看来，他们并不认为先验概率$$ P_f = P（H_f | X）$$特别小，$$ P（H_f | DX）$$非常接近1，因此它的十进制表示的小数位超过100个9。
+
+结果他仍然会愤怒和沮丧，因为证据具有如此的压倒性但我们坚持不相信ESP。我们为什么如他所见，如此反常地不讲逻辑和反科学呢？
+
+问题在于上述的计算（5.9）和（5.12）代表了概率论最"幼稚"的用法，因为它们只考虑$$ H_p $$和$$ H_f $$，并且不考虑其他假设。如果我们确信$$ H_p $$和$$ H_f $$是从数据（或者更确切地说是可观察到的实验和数据报告）仅能得出的两个假设，那么从（5.9 ）和（5.12）得出的结论就完全没问题。但是，在现实世界中，我们的直觉告诉我们还要考虑其他的可能性,恰恰是被计算者忽略的那些。
+
+Probability theory gives us the results of consistent plausible reasoning from the information that was actually used in our calculation. It can lead us wildly astray, as Bernoulli noted in our opening quotation, if we fail to use all the information that our common sense tells us is relevant to the question we are asking. When we are dealing with some extremely implausible hypothesis, recognition of a seemingly trivial alternative possibility can make many orders of magnitude difference in the conclusions. Taking note of this, let us show how a more sophisticated application of probability theory explains and justifies our intuitive doubts.
+
+从给定的信息出发,概率论通过计算给出了一致的合理推理结果。正如伯努利在开篇引用中指出的那样，如果我们未能考虑到和问题相关的我们所知的所有信息的话，我们很可能会无脑的地走入歧途。当我们正在处理那些可信度非常小的假设时，如果认识到还有其他可信度在通常水平的假设存在的话,得出的结论会比没认识到时得出的结论有者数量级的差异。注意到这一点后，我们将通过对概率论的更加复杂的应用,来解释和证实为什么我们对存在第六感的直觉上的怀疑。
+
+Let $$H_p$$ , $$H_f$$ , and $$L_p$$ , $$L_f$$ , $$P_p$$ , $$P_f$$ be as above; but now we introduce some new hypotheses about how this report of the experiment and data might have come about, which will surely be entertained by the readers of the report even if they are discounted by its writers.
+
+让$$ H_p $$，$$ H_f $$和$$ L_p $$，$$ L_f $$，$$ P_p $$，$$ P_f $$意义如上;但现在我们引入一些新的假设,关于实验和数据的到底是如何得来的假设，这些假设对于读者来说很具娱乐性,甚至是报告的作者也未必全信。
+
+These new hypotheses $$(H_1,H_2,...,H_k)$$ range all the way from innocent possibilities, such as unintentional error in the record keeping, through frivolous ones (perhaps Mrs Stewart was having fun with those foolish people, with the aid of a little mirror that they did not notice), to less innocent possibilities such as selection of the data (not reporting the days when Mrs Stewart was not at her best), to deliberate falsification of the whole experiment for wholly reprehensible motives. Let us call them all, simply, ‘deception’. For our purposes, it does not matter whether it is we or the researchers who are being deceived, or whether the deception was accidental or deliberate. Let the deception hypotheses have likelihoods and prior probabilities $$L_i$$ , $$P_i$$ , i = (1, 2, . . . , k).
+
+这些新的假设$$（H_1，H_2，...，H_k）$$可能千奇百怪，例如记录的保存过程中出了"无意"的差错，乃至于无聊的把戏（也许斯图尔特夫人就是想戏弄这些愚蠢的人，偷偷使用了一个小镜子而且没被发现），也许没有如此恶劣而是出于恶劣的东西来故意选择的报告了部分数据（忽略了斯图尔特夫人状态不佳时的数据）来弄虚作假。让我们简单地将以上所有都称之为'欺骗'。就我们的目的而言，被欺骗的研究人员亦或是我们，是无意之失还是主观故意，都无关紧要。让我们用$$ L_i $$，$$ P_i $$，i =（1,2，...，k）来表示这些欺骗性的假设的似然性和先验概率。
+
+There are, perhaps, 100 different deception hypotheses that we could think of and are not too far-fetched to consider, although a single one would suffice to make our point. In this new logical environment, what is the posterior probability for the hypothesis $$H_f$$ that was supported so overwhelmingly before? Probability theory now tells us that
+
+我们可以想到100种不同的欺骗性假设，而且都不是太牵强，但只要一个假设就足以说明我们的观点。 在这个新的逻辑条件下，$$ H_f $$这个之前获得了压倒性支持的假设的的后验概率应该是多少？概率论现在告诉我们:
+
+ $$ P(H_f|DX) = {\frac {P_fL_f}{P_fL_f + P_pL_p + \sum P_iL_i}} $$    (5.13)
+
+Introduction of the deception hypotheses has changed the calculation greatly; in order for $$P(H_f|DX)$$ to come anywhere near unity it is now necessary that
+
+欺骗假设的引入极大地改变了我们的计算; 要让$$ P（H_f | DX）$$能够接近1，必须有:
+
+ $$ P_pL_p + \sum_i P_iL_i << P_fL_f $$   (5.14)
+
+Let us suppose that the deception hypotheses have likelihoods $$L_i$$ of the same order as $$L_f$$ in (5.8); i.e. a deception mechanism could produce the reported data about as easily as could a truly telepathic Mrs Stewart. From (5.7), $$P_pL_p$$ is completely negligible, so (5.14) is not greatly different from
+
+让我们假设欺骗假设的可能性为$$ L_i $$，与（5.8）中的$$ L_f $$的顺序相同; 即欺骗手法可以轻而易举的取得和斯图尔特夫人真有心灵感应时同样的数据。 从（5.7）中可以看出，$$P_pL_p$$是完全可以忽略不计的，所以（5.14）与
+
+ $$ \sum P_i << P_f $$  (5.15)
+
+But each of the deception hypotheses is, in my judgment, more likely than $$H_f$$ , so there is not the remotest possibility that the inequality (5.15) could ever be satisfied.
+
+差别不大.但根据我的判断，每个欺骗假设的可能性都比$$ H_f $$更大，所以不存在最不可能满足的不平等（5.15）的可能性。
+
+Therefore, this kind of experiment can never convince me of the reality of Mrs Stewart’s ESP; not because I assert $$P_f=0$$ dogmatically at the start, but because the verifiable facts can be accounted for by many alternative hypotheses, every one of which I consider inherently more plausible than $$H_f$$ , and none of which is ruled out by the information available to me.
+
+因此，这种实验永远无法使我相信斯图尔特夫人有ESP; 不是因为我在开始时主观地断言$$P_f=0$$，而是因为事实可以用许多其他的假设来解释，而且我觉得其中每一个假设都比$$H_f$$看上去更加合情理，我拥有的信息不能让我排除其中的任何一个假设。
+
+Indeed, the very evidence which the ESP’ers throw at us to convince us, has the opposite effect on our state of belief; issuing reports of sensational data defeats its own purpose. For if the prior probability for deception is greater than that of ESP, then the more improbable the alleged data are on the null hypothesis of no deception and no ESP, the more strongly we are led to believe, not in ESP, but in deception. For this reason, the advocates of ESP (or any other marvel) will never succeed in persuading scientists that their phenomenon is real, until they learn how to eliminate the possibility of deception in the mind of the reader. As (5.15) shows, the reader’s total prior probability for deception by all mechanisms must be pushed down below that of ESP.
+
+It is interesting that Laplace perceived this phenomenon long ago. His Essai Philosophique sur les Probabilités (1814, 1819) has a long chapter on the ‘Probabilities of testimonies’, in which he calls attention to ‘the immense weight of testimonies necessary to admit a suspension of natural laws’. He notes that those who make recitals of miracles, decrease rather than augment the belief which they wish to inspire; for then those recitals render very probable the error or the falsehood of their authors. But that which diminishes the belief of educated men often increases that of the uneducated, always avid for the marvellous.
+
+We observe the same phenomenon at work today, not only in the ESP enthusiast, but in the astrologer, reincarnationist, exorcist, fundamentalist preacher or cultist of any sort, who attracts a loyal following among the uneducated by claiming all kinds of miracles, but has zero success in converting educated people to his teachings. Educated people, taught to believe that a cause–effect relation requires a physical mechanism to bring it about, are scornful of arguments which invoke miracles; but the uneducated seem actually to prefer them.
+
+Note that we can recognize the clear truth of this psychological phenomenon without taking any stand about the truth of the miracle; it is possible that the educated people are wrong. For example, in Laplace’s youth educated persons did not believe in meteorites, but dismissed them as ignorant folklore because they are so rarely observed. For one familiar with the laws of mechanics the notion that ‘stones fall from the sky’ seemed preposterous, while those without any conception of mechanical law saw no difficulty in the idea. But the fall at Laigle in 1803, which left fragments studied by Biot and other French scientists, changed the opinions of the educated – including Laplace himself. In this case, the uneducated, avid for the marvellous, happened to be right: c’est la vie. Indeed, in the course of writing this chapter, the writer found himself a victim of this phenomenon. In the 1987 Ph.D. thesis of G. L. Bretthorst, and more fully in Bretthorst (1988), we applied Bayesian analysis to estimation of frequencies of nonstationary sinusoidal signals, such as exponential decay in nuclear magnetic resonance (NMR) data, or chirp in oceanographic waves. We found – as was expected on theoretical grounds – an improved resolution over the previously used Fourier transform methods.
+
+If we had claimed a 50% improvement, we would have been believed at once, and other researchers would have adopted this method eagerly. But, in fact, we found orders of magnitude improvement in resolution. It was, in retrospect, foolish of us to mention this at the outset, for in the minds of others the prior probability that we were irresponsible charlatans was greater than the prior probability that a new method could possibly be that good; and we were not at first believed.
+
+Fortunately, we were able, by presenting many numerical analyses of data and distributing free computer programs so that doubters could check our claims for themselves on whatever data they chose, to eliminate the possibility of deception in the minds of our audience, and the method did find acceptance after all. The Bayesian analyses of free decay NMR signals now permits experimentalists to extract much more information from their data than was possible by taking Fourier transforms.
+
+The reader should be warned, however, that our probability analysis (5.13) of Mrs Stewart’s performance is still rather naı̈ve in that it neglects correlations; having seen a persistent deviation from the chance expectation p = 0.2 in the first few hundred trials, common sense would lead us to form the hypothesis that some unknown systematic cause is at work, and we would come to expect the same deviation in the future. This would alter the numerical values given above, but not enough to change our general conclusions. More sophisticated probability models which are able to take such things into account are given in our discussions of advanced applications later; relevant topics are Dirichlet priors, exchangeable sequences, and autoregressive models.
+
+Now let us return to that original device of I. J. Good, which started this train of thought. After all this analysis, why do we still hold that naı̈ve first answer of −100 db for my prior probability for ESP, as recorded above, to be correct? Because Jack Good’s imaginary device can be applied to whatever state of knowledge we choose to imagine; it need not be the real one. If I knew that true ESP and pure chance were the only possibilities, then the device would apply and my assignment of −100 db would hold. But, knowing that there are other possibilities in the real world does not change my state of belief about ESP; so the figure of −100 db still holds.
+
+Therefore, in the present state of development of probability theory, the device of imaginary results is usable and useful in a very wide variety of situations, where we might not at first think it applicable. We shall find it helpful in many cases where our prior information seems at first too vague to lead to any definite prior probabilities; it stimulates our thinking and tells us how to assign them after all. Perhaps in the future we shall have more formal principles that make it unnecessary.
+
+Exercise 5.1. By applying the device of imaginary results, find your own strength of belief in any three of the following propositions: (1) Julius Caesar is a real historical person (i.e. not a myth invented by later writers); (2) Achilles is a real historical person; (3) the Earth is more than a million years old; (4) dinosaurs did not die out; they are still living in remote places; (5) owls can see in total darkness; (6) the configuration of the planets influences our destiny; (7) automobile seat belts do more harm than good; (8) high interest rates combat inflation; (9) high interest rates cause inflation. Hint: Try to imagine a situation in which the proposition $$H_0$$ being tested, and a single alternative $$H_1$$ , would be the only possibilities, and you receive new ‘data’ D consistent with $$H_0$$ : $$P(D|H_0) \approx 1$$. The imaginary alternative and data are to be such that you can calculate the probability $$P(D|H_1)$$. Always use an H 0 that you are inclined not to believe; if the proposition as stated seems highly plausible to you, then for H 0 choose its denial.
+
+Much more has been written about the Soal experiments in ESP. The deception hypothesis, already strongly indicated by our probability analysis, is supported by additional evidence (Hansel, 1980; Kurtz, 1985). Altogether, an appalling amount of effort has been expended on this incident, and it might appear that the only result was to provide a pedagogical example of the use of probability theory with very unlikely hypotheses. Can anything more useful be salvaged from it?
+
+We think that this incident has some lasting value both for psychology and for probability theory, because it has made us aware of an important general phenomenon, which has nothing to do with ESP; a person may tell the truth and not be believed, even though the disbelievers are reasoning in a rational, consistent way. To the best of our knowledge it has not been noted before that probability theory as logic automatically reproduces and explains this phenomenon. This leads us to conjecture that it may generalize to other more complex and puzzling psychological phenomena.
