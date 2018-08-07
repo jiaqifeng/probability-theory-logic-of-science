@@ -1,10 +1,10 @@
-== 1.6 一组恰当的操作
+== 1.6 一组恰当的运算
 
-我们注意在设计我们机器人时需要的演绎逻辑的一些特性。 我们定义了四个操作，即“连接词”，可以从命题A和B开始出发定义其他命题：逻辑积或交接AB，逻辑和或并接A+B，蕴涵A→B， 和取反.通过以各种可能的方式反复地组合这些操作，可以生成任意数量的新命题，例如
+我们注意在设计我们机器人时需要的演绎逻辑的一些特性。 我们定义了四种运算，即“连接词”，可以从命题A和B开始出发定义其他命题：逻辑积或交接AB，逻辑和或并接A+B，蕴涵$$A \Rightarrow B$$， 和取反$$\bar{A}$$.通过以各种可能的方式反复地组合这些操作，可以生成任意数量的新命题，例如
 
- C ≡ (A + !B)(!A + A !B) + !A B(A + B).     (1.15)
+ $$ C≡(A+\bar{B})(\bar{A}+A\bar{B})+\bar{A}B(A+B) $$.     (1.15)
 
-那么我们就会有很多问题了：这样产生的新命题有多少个？它是无限的，还是一个有限集合？从A和B所延伸出来命题都可以用这四个操作定义?还是需要更多的操作？甚或四个太多了,可以去掉一些？足以产生A和B的所有这些“逻辑函数”的最小的一组操作是什么？如果起始命题不止A和B而是任意个{A 1，...，A}，这些操作是否仍然可以生成{A 1，...，A}的所有可能的逻辑函数？
+那么我们就会有很多问题了：这样产生的新命题有多少个？它是无限的，还是一个有限集合？从A和B所延伸出来命题都可以用这四个操作定义?还是需要更多的操作？甚或四个太多了,可以去掉一些？足以产生A和B的所有这些“逻辑函数”的最小的一组操作是什么？如果起始命题不止A和B而是任意个$$\{A_1，...，A_n\}$$，这些操作是否仍然可以生成$$\{A_1，...，A_n\}$$的所有可能的逻辑函数？
 
 所有这些问题都很容易回答，而且其结果对于逻辑学，概率论和计算机设计都有用处。一般而言，我们正在问，从目前的高度来看，我们可以（1）增加函数的数量，（2）减少操作的数量。第一个问题可以被简化，因为注意到两个命题虽然在以（1.15）的方式写出时可能完全不同，但如果它们具有相同的真值，则从逻辑的角度来看并不是不同的命题。例如，读者可以确认（1.15）中的C在逻辑上与蕴含C =（B⇒!A）的语句相同。
 
@@ -14,162 +14,165 @@
 
 === 本节人译到此
 
-在C = f（A，B）形式的关系中，我们关注的是在离散的“空间”S上定义的逻辑函数，它由只有2 2 = 4个点组成;即A和B分别取“价值”{TT，TF，FT，FF}并且在每个点上，函数f（A，B）可以独立地取两个值{T，F}中的任一个。因此，正好有2 4 = 16个不同的逻辑函数f（A，B），而不再有。涉及n个命题的表达式B = f（A 1，...，A n）是M = 2 n个点的空间S上的逻辑函数;而且正好有2 M这样的功能。
+在C=f（A，B）形式的关系中，我们关注的是在离散的“空间”S上定义的逻辑函数，它由只有$$2^2$$ = 4个点组成;即A和B分别取值为{TT，TF，FT，FF},并且在每个点上，函数f(A,B)可以独立地取两个值{T，F}中的任一个。因此，正好有$$2^4=16$$个不同的逻辑函数f(A,B)。涉及n个命题的表达式$$B=f(A_1，...，A_n)$$是$$M=2^n$$个点的空间S上的逻辑函数,而且正好有$$2^M$$这样的函数。
 
-In the case n = 1, there are four logic functions { f 1 (A), . . . , f 4 (A)}, which we can define by enumeration, listing all their possible values in a truth table:
+对于n=1的情况,有四个逻辑函数$$\{f_1(A), . . . ,f_4(A)\}$$,可以全部枚举在下面的真值表中:
 
-A T F
-f 1 (A)
-f 2 (A)
-f 3 (A)
-f 4 (A) T
-T
-F
-F T
-F
-T
-F
+[%header,cols=4*] 
+|===
+|A|T|F
 
-But it is obvious by inspection that these are just
+|$$f_1$$(A)
+|T
+|T
 
-f 1 (A) =
-f 2 (A) =
-f 3 (A) =
-f 4 (A) =
-A + A
-A
-A
-A A,
-(1.16)
+|$$f_2$$(A)
+|T
+|F
 
-so we prove by enumeration that the three operations: conjunction, disjunction, and negation are adequate to generate all logic functions of a single proposition.
+|$$f_3$$(A)
+|F
+|T
 
-For the case of general n, consider first the special functions, each of which is true at one and only one point of S. For n = 2 there are 2 n = 4 such functions,
+|$$f_4$$(A)
+|F
+|F
 
-A, B TT TF FT FF
-f 1 (A, B)
-f 2 (A, B)
-f 3 (A, B)
-f 4 (A, B) T
-F
-F
-F F
-T
-F
-F F
-F
-T
-F F
-F
-F
-T
+|===
 
-It is clear by inspection that these are just the four basic conjunctions,
+仔细审视之后即
 
-f 1 (A, B) =
-f 2 (A, B) =
-f 3 (A, B) =
-f 4 (A, B) =
-A
-A
-A
-A
-B
-B
-B
-B.
-(1.17)
+ $$f_1(A)=A+\bar{A}$$
+ $$f_2(A)=A$$
+ $$f_3(A)=\bar{A}$$         (1.16)
+ $$f_4(A)=A\bar{A}$$
 
-Consider now any logic function which is true on certain specified points of S; for example, f 5 (A, B) and f 6 (A, B), defined by 
+因此通过枚举可以证明和,交,反三个运算可以产生单个命题的所有逻辑函数.
 
-A, B TT TF FT FF
-f 5 (A, B)
-f 6 (A, B) F
-T T
-F F
-T T
-T
+对于通用情况n来说, 考虑第一个特殊函数,每个命题都为真的情况,这个函数唯一占据了空间S的一个点.对n=2,共有$$2^n=4$$个函数,
 
-We assert that each of these functions is the logical sum of the conjunctions (1.17) that are true on the same points (this is not trivial; the reader should verify it in detail). Thus, 
+[%header,cols=5*] 
+|===
+|A,B
+|TT
+|TF
+|FT
+|FF
 
-f 5 (A, B) = f 2 (A, B) + f 4 (A, B)
-= A B + A B
-= (A + A) B
-= B,
-(1.18)
+|$$f_1(A,B)$$
+|T
+|F
+|F
+|F
 
-and, likewise,
+|$$f_2(A,B)$$
+|F
+|T
+|F
+|F
 
-f 6 (A, B) =
-=
-=
-=
-f 1 (A, B) + f 3 (A, B) + f 4 (A, B)
-AB + A B + A B
-B + A B
-A + B.
-(1.19)
+|$$f_3(A,B)$$
+|F
+|F
+|T
+|F
 
-That is, f 6 (A, B) is the implication f 6 (A, B) = (A ⇒ B), with the truth table discussed above. Any logic function f (A, B) that is true on at least one point of S can be constructed in this way as a logical sum of the basic conjunctions (1.17). There are 2 4 − 1 = 15 such functions. For the remaining function, which is always false, it suffices to take the contradiction, f 16 (A, B) ≡ A A. 
+|$$f_4(A,B)$$
+|F
+|F
+|F
+|T
+|===
 
-This method (called ‘reduction to disjunctive normal form’ in logic textbooks) will work for any n. For example, in the case n = 5 there are 2 5 = 32 basic conjunctions, 
+仔细审查后不难发现是4个交运算,
 
-{ABC D E, ABC D E, ABC D E, . . . , A B C D E},
-(1.20)
+ $$f_1(A,B)=AB$$
+ $$f_2(A,B)=A\bar{B}$$
+ $$f_3(A,B)=\bar{A}B$$         (1.17)
+ $$f_4(A,B)=\bar{A}\bar{B}$$
 
-and 2 32 = 4 294 967 296 different logic functions f i (A, B, C, D, E); of which 4 294 967 295 can be written as logical sums of the basic conjunctions, leaving only the contradiction 
+现在考虑任一逻辑函数,其在S的某个点上为真,例如$$f_5(A,B)$$和$$f_6(A,B)$$定义如下
 
-f 4294967296 (A, B, C, D, E) = A A.
-(1.21)
+[%header,cols=5*] 
+|===
+|A,B
+|TT
+|TF
+|FT
+|FF
 
-Thus one can verify by ‘construction in thought’ that the three operations
+|$$f_5(A,B)$$
+|F
+|T
+|F
+|T
 
-{conjunction, disjunction, negation},
-i.e.
-{AND, OR, NOT},
-(1.22)
+|$$f_6(A,B)$$
+|T
+|F
+|T
+|T
+|===
 
-suffice to generate all possible logic functions; or, more concisely, they form an adequate set. 
+我们可以验证这些函数都是对(1.17)在S中同一个点求和的结果(这并非显而易见,读者可自行验证).因此,
 
-The duality property (1.12) shows that a smaller set will suffice; for disjunction of A, B is the same as denying that they are both false: 
+ $$f_5(A,B)=f_2(A,B)+f_4(A,B)$$
+ $$ =A\bar{B}+\bar{A}\bar{B}$$
+ $$ =(A+\bar{A})\bar{B}$$              (1.18)
+ $$ =\bar{B}$$
 
-A + B = (A B).
-(1.23)
+同样有,
 
-Therefore, the two operations (AND, NOT) already constitute an adequate set for deductive logic. 4 This fact will be essential in determining when we have an adequate set of rules for plausible reasoning; see Chapter 2.
-注4 For you to ponder: Does it follow that these two commands are the only ones needed to write any computer program?
+ $$f_6(A,B)=f_1(A,B)+f_3(A,B)+f_4(A,B)$$
+ $$ =AB+\bar{A}B+\bar{A}\bar{B}$$
+ $$ =B+\bar{A}\bar{B}$$                  (1.19)
+ $$ =\bar{A}+B$$
 
-It is clear that we cannot now strike out either of these operations, leaving only the other; i.e. the operation ‘AND’ cannot be reduced to negations; and negation cannot be accomplished by any number of ‘AND’ operations. But this still leaves open the possibility that both conjunction and negation might be reducible to some third operation, not yet introduced, so that a single logic operation would constitute an adequate set. 
+即$$f_6(A,B)$$是蕴涵操作,$$f_6(A, B)=(A⇒B)$$, 真值表如上.在S中的任一点上为真的逻辑函数f(A,B)都可以用上面的方式对(1.17)求和来得到.共有$$2^4-1=15$$个这种函数.剩下的函数即全为假,只要取反就可以了,$$f_{16}(A,B) \equiv A\bar{A}$$.
 
-It comes as a pleasant surprise to find that there is not only one but two such operations. The operation ‘NAND’ is defined as the negation of ‘AND’: 
-因此，这两个操作（AND，NOT）已经构成了演绎逻辑的一个适当的集合。 4这一事实对于确定何时我们有合理的推理规则是必不可少的; 见第2章。
-注4为了您的思考：是否遵循这两个命令是唯一需要编写任何计算机程序？
+这种方法(在逻辑学中被称为"解析为正交范式")对任何n都有效.例如当n=5有$$2^5=32$$个基本的交的方式,
 
-很明显，我们现在不能罢工，只有另一个， 即操作'AND'不能被减少为否定; 否定不能通过任何数量的“与”操作来完成。 但是，这仍然使得联合和否定可能被还原为第三种操作的可能性还没有被引入，这样一个单一的逻辑操作就构成了一个适当的集合。
+ $$\{ABCDE, ABCD\bar{E}, ABC\bar{D}E, ... , \bar{A}\bar{B}\bar{C}\bar{D}\bar{E} \},$$   (1.20)
 
-惊喜地发现，不仅有一个，而且有两个这样的行动。 “NAND”操作被定义为“AND”的否定：
+有$$2^{32}=4 294 967 296$$个不同的逻辑函数$$f_i(A,B,C,D,E)$$,这4 294 967 295都可以写成基本的交表达式的求和,除了下面的一个
 
-A ↑ B ≡ AB = A + B
-(1.24)
+ $$f_{4294967296}(A,B,C,D,E)=A\bar{A}.$$  (1.21)
 
-which we can read as ‘A NAND B’. But then we have at once
+因此,通过上面的"构造",可以验证下面的三种运算
 
-A = A ↑ A
-AB = (A ↑ B) ↑ (A ↑ B)
-A + B = (A ↑ A) ↑ (B ↑ B).
-(1.25)
+ {conjunction, disjunction, negation},   i.e.   {AND, OR, NOT},   (1.22)
 
-Therefore, every logic function can be constructed with NAND alone. Likewise, the operation NOR defined by 
+足以生成所有可能的逻辑函数,或者更准确的说,这三种运算构成一个"有效集".
 
-A ↓ B ≡ A + B = A B
-(1.26)
+对偶律(1.12)意味着这个集合还可以更小,对命题A与B的析取操作等价于A且B都为假的否定:
 
-is also powerful enough to generate all logic functions:
+ $$A+B=\overline {(\bar{A}\bar{B})}$$.    (1.23)
 
-A = A ↓ A
-A + B = (A ↓ B) ↓ (A ↓ B)
-AB = (A ↓ A) ↓ (B ↓ B).
-(1.27)
+因此,两个运算(AND,NOT)就可以构成演绎推理的一个合理集.这个事实在判定合情推断的合理规则集时是必不可少的,可参见第二章.
+
+注4 请您思考:这是否意味着对于编写计算机程序而言,这两个运算是唯一的运算集合?
+
+显然我们不能去掉任何一个运算,而只保留另一个,AND运算不能被取反运算推导出来,而且取反也不能通过对任何个数的AND运算来得到.但是,还有一种可能性是存在某个尚未找到的单一运算,可以推导出取反和AND运算,然后仅此一个运算就足以构成一个有效集.
+
+令人惊讶的是这种运算仅存在而且有2个.运算NAND定义为对AND取反:
+
+ $$A↑B≡\overline {AB}=\bar{A}+\bar{B}$$    (1.24)
+
+可以读为‘A NAND B’. 则有
+
+ $$\bar{A}=A↑A$$
+ $$AB=(A↑B)↑(A↑B)$$         (1.25)
+ $$A+B=(A↑A)↑(B↑B).$$
+
+因而,每一个逻辑函数都可以仅仅用NAND构造出来. 相似的,运算NOR定义为
+
+ $$A↓B≡\overline {A+B}=\bar{A}\bar{B}$$       (1.26)
+
+同样可以构造出所有的逻辑函数:
+
+ $$\bar{A}=A↓A$$
+ $$A+B=(A↓B)↓(A↓B)$$        (1.27)
+ $$AB=(A↓A)↓(B↓B).$$
 
 One can take advantage of this in designing computer and logic circuits. A ‘logic gate’ is a circuit having, besides a common ground, two input terminals and one output. The voltage relative to ground at any of these terminals can take on only two values; say +3 volts, or ‘up’, representing ‘true’; and 0 volts or ‘down’, representing ‘false’. A NAND gate is thus one whose output is up if and only if at least one of the inputs is down; or, what is the same thing, down if and only if both inputs are up; while for a NOR gate the output is up if and only if both inputs are down. 
 
@@ -178,191 +181,12 @@ One of the standard components of logic circuits is the ‘quad NAND gate’, an
 This short excursion into deductive logic is as far as we need go for our purposes. Further developments are given in many textbooks; for example, a modern treatment of Aristotelian logic is given by Copi (1994). For non-Aristotelian forms with special emphasis on G ̈odel incompleteness, computability, decidability, Turing machines, etc., see Hamilton (1988). 
 
 We turn now to our extension of logic, which is to follow from the conditions discussed next. We call them ‘desiderata’ rather than ‘axioms’ because they do not assert that anything is ‘true’ but only state what appear to be desirable goals. Whether these goals are attainable without contradictions, and whether they determine any unique extension of logic, are matters of mathematical analysis, given in Chapter 2. 
-在设计计算机和逻辑电路方面可以利用这一点。 “逻辑门”是除了公共地之外还具有两个输入端子和一个输出的电路。任何这些端子的相对于地面的电压只能取两个值;说+3伏，或“上”，代表“真”;和0伏或“下”，代表“假”。因此，当且仅当输入端中的至少一个输入端处于关断状态时，与非门才是输出端;或者同样的事情，当且仅当这两个投入都到了;而对于一个或非门来说，当且仅当两个输入都关闭时，输出才有效。
 
-逻辑电路的标准组件之一是“四与非门”，一个在一个半导体芯片上包含四个独立“与非”门的集成电路。给定足够数量的这些电路元件，并且不需要其他电路元件，就可以通过各种方式将它们互连起来而产生任何所需的逻辑功能。
+在设计计算机和逻辑电路事,我们可以利用这一点。一个“逻辑门”是一个除了公共地之外还具有两个输入端子和一个输出端子的电路。相对于接地端的电压差只能取两个值,例如为+3伏或“开”，代表逻辑“真”,而0伏或“关”代表逻辑“假”。因此，当且仅当输入端中的至少一个输入端处于关状态时，与非门(NAND)才输出端为开,反之当且仅当这两个输入端都为开则输出为关.而对于一个或非门(NOR)来说，当且仅当两个输入都为关时输出为开。
 
-演绎逻辑的这种短暂的游览只要我们需要去为我们的目的。许多教科书都有进一步的发展。例如，Copi（1994）给出了亚里士多德逻辑的现代处理。对于非亚里士多德的形式，特别强调的是不完整性，可计算性，可判定性，图灵机等，见Hamilton（1988）。
+逻辑电路的标准组件之一是“四与非门”，即一个半导体芯片上集成了四个独立的与非门的集成电路。只要这种电路的数量足够多,那么不需要其他任何电路元件，就可以以不同的方式将它们连接起来而产生任何所需的逻辑功能。
 
-现在我们转向我们对逻辑的扩展，这是从下面讨论的条件开始的。我们把他们称为“需要”而不是“公理”，因为他们并不断言任何事情都是“真实的”，而只是说明似乎是理想的目标。这些目标是否可以无矛盾地获得，以及它们是否确定了逻辑的任何独特的延伸，都是第二章给出的数学分析的问题。
+目前为止,简短的对演绎逻辑的了解,就足以来达成我们的目标。许多教科书对此都有进一步的展开。例如，Copi（1994）给出了亚里士多德逻辑的现代观点下的处理。对于非亚里士多德的形式，那些强调哥德尔不完备性，可计算性，可判定性，图灵机等价的其他形式，可参见Hamilton（1988）。
 
-== 1.7 基本假定
-
-我们给机器人提供一组证据，我们的机器人就基于这些证据来推理命题,所以器人必须对这些命题来赋予一个可信程度.每当它收到新的证据时，都必须相应的修正这些赋予的可信程度。为了能够在机器人的脑电路中存储和修改这些可信程度，这些值必须对应于某种确定的物理量，例如电压大小或脉冲持续时间亦或二进制编码的数值等等,当然这些细节就看工程师想要如何设计了。对我们的目的而言，这意味着在可信程度和实数量之间必须存在某种关系：
-
-(I) 用实数来表示可信程度。 （1.28）
-
-由于机器人的大脑必须运作在确定的物理过程之上,这就从实践上要求基本假定（I）成立。然后从理论上说(I)也是必要的（附录A）.同时我们也看不到有任何可能,存在一个与（I）功能等价的自洽理论。
-
-我们接受如下自然但非本质的惯例：更大的可信度应该对应于更大的数字。我们还可以下方便的假定其具有连续性，虽然在现阶段很难精确地陈述这个性质,直觉地说即可信度的一个无限小的增加也应该对应一个无限小的数值增加。
-
-机器人赋给命题A的可信度,一般而言取决于我们是否告诉它另一个命题B为真。我们采用凯恩斯（1921）和考克斯（1961）的符号表示方法，如下表示为:
-#+BEGIN_SRC 
-A|B,     (1.29)
-#+END_SRC
-称为给定B为真时,A为真的条件概率,或给定B时A的条件概率,用实数表示. 因此例如:
-#+BEGIN_SRC 
-A|BC     (1.30)
-#+END_SRC
-(读成"A当给定BC")表示给定B和C都为真,A为真的概率.或者
-#+BEGIN_SRC 
-A + B|C D    (1.31)
-#+END_SRC
-表示给定C和D都为真时,命题A和B至少有一个为真的概率,如此等等.由于我们决定用大的数来表示可能性较大,所以有:
-#+BEGIN_SRC 
-(A|B) > (C|B)   (1.32)
-#+END_SRC
-即给定B时,A可信度比C大.此方式下,对A|B这样不带括号的表示方法,为了防止歧义,我们通常会加上括号增加清晰性.因此, (1.32) 和下面的是等价的:
-#+BEGIN_SRC 
-A|B > C|B,
-(1.33)
-#+END_SRC
-但看起来更明确.
-
-为了避免处理那些不可能为真的问题，我们不会要求我们的机器人承受从不可能的或相互矛盾的前提出发进行推理的痛苦,那不可能得出“正确的”答案。 因此，当B和C相互矛盾时，我们不试图定义A|BC。 只要出现这样的符号，我们假定B和C是相容的命题。
-
-另外，我们不希望这个机器人以一种与你我的思考方式相反的方式思考。 因此，我们将其设计成至少在定性的意义上和人类推理的方式是相似的，正如上述弱三段论和其他机关规则一样。
-
-所以,当旧信息C被更新为C'时,A的可信度增加:
-#+BEGIN_SRC 
-(A|C ) > (A|C);  (1.34)
-#+END_SRC
-但给定A时A的可信度没有变:
-#+BEGIN_SRC 
-(B|AC ) = (B|AC).  (1.35)
-#+END_SRC
-这导致,A和B同时为真的可信度只会增加,而不会减少:
-#+BEGIN_SRC 
-(AB|C ) ≥ (AB|C);  (1.36)
-#+END_SRC
-而且A为假的可信度必然减少:
-#+BEGIN_SRC 
-(A|C ) < (A|C).   (1.37)
-#+END_SRC
-这个定性的要求,简明的指出了机器人推理的前进"方向",没有指出可信度应该改变多少,但连续性假设(是为了在定性上和常识保持一致的条件)要求我们,当A|C仅仅有微小的变化时,也只导致AB|C和A|C的微小改变.如何应用定性要求的具体方法将在下一章给出,现在只是需要的时候才会提到它.到目前为止,总结如下:
-
-（II）与常识的定性对应。        （1.38）
-
-最后，我们想让我们的机器人拥有另外一个特质，而这一点是一个真诚的人想要保持住却难以保持的特质:即永远保证推理的一致性. 这里我们是指三种常见的口语意义上的"一致性"：
-
-（IIIa）如果一个结论可以以不止一种方式被推断出来，那么一切可能的方式必须导致相同的结果。（1.39A）
-
-（IIIb）机器人总是考虑到和问题有关的所有证据。 它不会随意忽略一些信息,而只是基于剩下信息来得出的结论。换句话说，机器人没有什么"意识形态"。（1.39b）
-
-（IIIc）机器人总是对相同的知识状态赋予相同的可信度。 也就是说，在推理两个问题时,机器人的知识状态的是相同的（排除仅仅是命题的表示方式不同），那么在两个问题中它必须分配相同的可信度。（1.39c）
-
-基础原则（I），（II）和（IIIa）是我们机器人大脑内部工作的基本“结构”要求，而（IIIb）和（IIIc）是机器人的"接口"条件即其行为如何与外界关联。
-
-大多数学生惊讶地发现，我们定义的基本原则已经到此为止了。 事实证明，上述条件唯一地决定了机器人推理必须遵守的规则,即只存在唯一一组满足上述条件的计算可信度的数学运算。 这些规则在第2章中推导出来。
-
-（在大多数章节的最后，我们插入一段非正式的评论，其中收集了各种各样的旁白，背景材料等等。读者可以跳过它们，而不会失去论证的主线。）
-
-== 1.8 Comments
-
-As politicians, advertisers, salesmen, and propagandists for various political, economic, moral, religious, psychic, environmental, dietary, and artistic doctrinaire positions know only too well, fallible human minds are easily tricked, by clever verbiage, into committing violations of the above desiderata. We shall try to ensure that they do not succeed with our robot. 
-
-We emphasize another contrast between the robot and a human brain. By Desideratum I, the robot’s mental state about any proposition is to be represented by a real number. Now, it is clear that our attitude toward any given proposition may have more than one ‘coordinate’. You and I form simultaneous judgments about a proposition not only as to whether it is plausible, but also whether it is desirable, whether it is important, whether it is useful, whether it is interesting, whether it is amusing, whether it is morally right, etc. If we assume that each of these judgments might be represented by a number, then a fully adequate description of a human state of mind would be represented by a vector in a space of a rather large number of dimensions. 
-
-Not all propositions require this. For example, the proposition ‘The refractive index of water is less than 1.3’ generates no emotions; consequently the state of mind which it produces has very few coordinates. On the other hand, the proposition, ‘Your mother-in-law just wrecked your new car’ generates a state of mind with many coordinates. Quite generally, the situations of everyday life are those involving many coordinates. It is just for this reason, we suggest, that the most familiar examples of mental activity are often the most difficult to reproduce by a model. Perhaps we have here the reason why science and mathematics are the most successful of human activities: they deal with propositions which produce the simplest of all mental states. Such states would be the ones least perturbed by a given amount of imperfection in the human mind. 
-
-Of course, for many purposes we would not want our robot to adopt any of these more ‘human’ features arising from the other coordinates. It is just the fact that computers do not get confused by emotional factors, do not get bored with a lengthy problem, do not pursue hidden motives opposed to ours, that makes them safer agents than men for carrying out certain tasks. 
-作为政治家，各种政治，经济，道德，宗教，心理，环境，饮食和艺术教条的立场的广告商，推销员和宣传家都知道得太好，易犯错的人的头脑很容易被巧妙的言辞所欺骗，以上。我们将尽力确保他们不会与我们的机器人成功。
-
-我们强调机器人和人脑之间的另一个对比。根据Desideratum I，机器人关于任何命题的心理状态都是用一个实数表示的。现在很明显，我们对任何一个命题的态度可能不止一个“协调”。你和我对一个命题做出同时的判断，不仅关于这个命题是否合理，而且关于这个命题是否合乎要求，是否重要，是否有用，是否有趣，是否有趣，是否合乎道德等等。如果我们假定这些判断中的每一个都可以用一个数字来表示，那么对一个人类精神状态的充分描述将会在一个相当大数量的空间中被一个向量所代表。
-
-并不是所有的命题都需要这个。例如，“水的折射率小于1.3”这个命题不会产生任何情绪，因此它所产生的精神状态具有很少的坐标。另一方面，“你婆婆刚破坏你的新车”这个主张产生了许多坐标的心态。一般来说，日常生活的情况是涉及很多坐标的情况。正是由于这个原因，我们建议，心理活动最熟悉的例子往往是一个模型最难以复制的。也许在这里，科学和数学是人类活动中最成功的原因：它们处理产生所有精神状态中最简单的命题。这种状态将会是人类头脑中一定数量的不完善所扰动的状态。
-
-当然，为了多种目的，我们不希望我们的机器人采用从其他坐标中产生的更多“人”特征。电脑不会因为情感因素而感到困惑，不会因为一个长长的问题而感到厌倦，也不会追求与我们相反的隐藏动机，这使得它们在执行某些任务时比男性更安全。
-
-These remarks are interjected to point out that there is a large unexplored area of possible generalizations and extensions of the theory to be developed here; perhaps this may inspire others to try their hand at developing ‘multidimensional theories’ of mental activity, which would more and more resemble the behavior of actual human brains – not all of which is undesirable. Such a theory, if successful, might have an importance beyond our present ability to imagine. 5 
-
-For the present, however, we shall have to be content with a much more modest undertaking. Is it possible to develop a consistent ‘one-dimensional’ model of plausible reasoning? Evidently, our problem will be simplest if we can manage to represent a degree of plausibility uniquely by a single real number, and ignore the other ‘coordinates’ just mentioned. We stress that we are in no way asserting that degrees of plausibility in actual human minds have a unique numerical measure. Our job is not to postulate – or indeed to conjecture about – any such thing; it is to investigate whether it is possible, in our robot, to set up such a correspondence without contradictions. 
-
-But to some it may appear that we have already assumed more than is necessary, thereby putting gratuitous restrictions on the generality of our theory. Why must we represent degrees of plausibility by real numbers? Would not a ‘comparative’ theory based on a system of qualitative ordering relations such as (A|C) > (B|C) suffice? This point is discussed further in Appendix A, where we describe other approaches to probability theory and note that some attempts have been made to develop comparative theories which it was thought would be logically simpler, or more general. But this turned out not to be the case; so, although it is quite possible to develop the foundations in other ways than ours, the final results will not be different.
-
-注5 Indeed, some psychologists think that as few as five dimensions might suffice to characterize a human personality; that is, that we all differ only in having different mixes of five basic personality traits which may be genetically determined. But it seems to us that this must be grossly oversimplified; identifiable chemical factors continuously varying in both space and time (such as the distribution of glucose metabolism in the brain) affect mental activity but cannot be represented faithfully in a space of only five dimensions. Yet it may be that five numbers can capture enough of the truth to be useful for many purposes.21
-这些言论是插话指出，有一个可能的概括和扩大的理论在这里发展的一个很大的未探讨的领域;也许这可能会激励他人尝试开发心理活动的“多维理论”，这种理论越来越类似于人类的实际行为 - 并非所有这些都是不可取的。这样一个理论，如果成功的话，可能会超出我们现在的想象能力。五
-
-但是，现在我们不得不满足于一个更为温和的承诺。是否有可能建立一个一致的“一维”的合理推理模型？显然，如果我们能够用一个单一的实数来唯一地表示一定程度的合理性，而忽略刚才提到的其他“坐标”，我们的问题就会变得最简单。我们强调，我们决不是断言在实际的人类头脑中的合理程度有一个独特的数值方法。我们的工作不是假设 - 或者甚至是猜测 - 任何这样的事情;在我们的机器人中调查是否有可能建立这样的通信而没有矛盾。
-
-但对某些人来说，似乎我们已经承担了超过必要的义务，从而对我们的理论的普遍性进行无限制的限制。为什么我们必须用真实数字来表示可信度？基于（A | C）>（B | C）这样的定性排序关系体系的“比较”理论是否足够？这一点在附录A中进一步讨论，在这里我们描述了其他的概率论方法，并且指出了一些尝试来发展比较理论，认为这些理论在逻辑上会更简单，或者更一般。但事实并非如此;所以，虽然我们可以用其他方式来发展基础，但最后的结果不会有什么不同。
-
-注5事实上，一些心理学家认为只要五个维度就足以描述人的个性;也就是说，我们所有人的差异只在于五种基本人格特质的不同组合，而这五种特质可能是基因决定的。但在我们看来，这必须严格过分简化。在空间和时间上不断变化的可识别的化学因素（例如脑中葡萄糖代谢的分布）影响心理活动，但不能仅仅在五维空间中忠实地表示。然而，也许有五个数字能够捕捉到足够的真理，以便用于多种目的
-
-== 1.8.1 Common language vs. formal logic
-
-We should note the distinction between the statements of formal logic and those of ordinary language. It might be thought that the latter is only a less precise form of expression; but on examination of details the relation appears different. It appears to us that ordinary language, carefully used, need not be less precise than formal logic; but ordinary language is more complicated in its rules and has consequently richer possibilities of expression than we allow ourselves in formal logic. 
-
-In particular, common language, being in constant use for other purposes than logic, has developed subtle nuances – means of implying something without actually stating it – that are lost on formal logic. Mr A, to affirm his objectivity, says, ‘I believe what I see.’ Mr B retorts: ‘He doesn’t see what he doesn’t believe.’ From the standpoint of formal logic, it appears that they have said the same thing; yet from the standpoint of common language, those statements had the intent and effect of conveying opposite meanings. 
-
-Here is a less trivial example, taken from a mathematics textbook. Let L be a straight line in a plane, and S an infinite set of points in that plane, each of which is projected onto L. Now consider the following statements: 
-我们应该注意形式逻辑和普通语言之间的区别。可以认为后者只是一种不那么确切的表达形式;但是在细节的考察中，关系显得不一样。在我们看来，认真使用的普通语言不一定比形式逻辑不那么精确;但是普通的语言在规则上更加复杂，因此表达的可能性比我们在形式逻辑上所允许的要多。
-
-特别是，除了逻辑以外，常用于其他目的的共同语言，已经形成了细微的细微差别 - 暗含某种东西而没有真正说明它的方式 - 在形式逻辑上丢失了。 A先生肯定他的客观性，说：“我相信我所看到的。”B先生反驳道：“他不明白他不相信什么。”从形式逻辑的角度来看，他们似乎已经说了一样;但从共同语言的角度来看，这些言论具有传达相反意思的意图和效果。
-
-这是一个不太重要的例子，取自数学教科书。设L是平面上的一条直线，S是该平面上的无限点集合，每个点都投影到L上。现在考虑以下语句：
-
-(I) The projection of the limit is the limit of the projections. 
-
-(II) The limit of the projections is the projection of the limit. 
-
-These have the grammatical structures ‘A is B’ and ‘B is A’, and so they might appear logically equivalent. Yet in that textbook, (I) was held to be true, and (II) not true in general, on the grounds that the limit of the projections may exist when the limit of the set does not. 
-
-As we see from this, in common language – even in mathematics textbooks – we have learned to read subtle nuances of meaning into the exact phrasing, probably without realizing it until an example like this is pointed out. We interpret ‘A is B’ as asserting first of all, as a kind of major premise, that A exists; and the rest of the statement is understood to be conditional on that premise. Put differently, in common grammar the verb ‘is’ implies a distinction between subject and object, which the symbol ‘=’ does not have in formal logic or in conventional mathematics. (However, in computer languages we encounter such statements as ‘J = J + 1’, which everybody seems to understand, but in which the ‘=’ sign has now acquired that implied distinction after all.) 
-
-Another amusing example is the old adage ‘knowledge is power’, which is a very cogent truth, both in human relations and in thermodynamics. An ad writer for a chemical trade journal 6 fouled this up into ‘power is knowledge’, an absurd – indeed, obscene – falsity. 
-
-These examples remind us that the verb ‘is’ has, like any other verb, a subject and a predicate; but it is seldom noted that this verb has two entirely different meanings. A person whose native language is English may require some effort to see the different meanings in the statements: ‘The room is noisy’ and ‘There is noise in the room’. But in Turkish these meanings are rendered by different words, which makes the distinction so clear that a visitor 
-正如我们所看到的，用通用的语言 - 甚至在数学教科书中 - 我们已经学会了把意思的细微差别读入到确切的语句中，直到这样的例子被指出为止。我们把“A是B”解释为首先是A存在的一个大前提，其余的声明被理解为以这个前提为条件。换句话说，在普通语法中，动词“是”意味着主体和客体之间的区分，符号“=”在形式逻辑或传统数学中不具有。 （然而，在计算机语言中，我们遇到类似'J = J + 1'这样的陈述，每个人似乎都明白这一点，但是'='符号现在已经获得了这种暗示的区分。
-
-另一个有趣的例子是古老的格言“知识就是力量”，这是一个非常有说服力的事实，无论是在人际关系还是热力学方面。一位化学商业杂志的广告作者6把这个问题搞得“权力就是知识”，这是一个荒谬的事情，确实是淫秽的。
-
-这些例子提醒我们，动词“是”和其他任何动词一样，有一个主语和一个谓语;但很少注意到这个动词有两个完全不同的含义。一个母语是英语的人可能需要付出一些努力才能看到​​陈述中的不同含义：“房间很吵”和“房间里有噪音”。但在土耳其语中，这些意思是用不同的词语表达的，这使得这种区分如此清晰以至于访客
-
-注6 LC-CG Magazine, March 1988, p. 211.
-
-who uses the wrong word will not be understood. The latter statement is ontological, assert- ing the physical existence of something, while the former is epistemological, expressing only the speaker’s personal perception. 
-
-Common language – or, at least, the English language – has an almost universal tendency to disguise epistemological statements by putting them into a grammatical form which suggests to the unwary an ontological statement. A major source of error in current probability theory arises from an unthinking failure to perceive this. To interpret the first kind of statement in the ontological sense is to assert that one’s own private thoughts and sensations are realities existing externally in Nature. We call this the ‘mind projection fallacy’, and note the trouble it causes many times in what follows. But this trouble is hardly confined to prob- ability theory; as soon as it is pointed out, it becomes evident that much of the discourse of philosophers and Gestalt psychologists, and the attempts of physicists to explain quantum theory, are reduced to nonsense by the author falling repeatedly into the mind projection fallacy. 
-
-These examples illustrate the care that is needed when we try to translate the complex statements of common language into the simpler statements of formal logic. Of course, common language is often less precise than we should want in formal logic. But everybody expects this and is on the lookout for it, so it is less dangerous.
-谁使用错误的词将不被理解。后一种说法是本体论的，主张某物的物理存在，而前者是认识论的，只表达说话者的个人认知。
-
-通用的语言 - 或者至少是英语 - 几乎具有普遍的倾向，通过将认识论的言语置于一种语言形式中来掩盖认识论的陈述，这种形式暗示了一种本意的陈述。当前概率论中的一个主要误差来源于不可思议的失败。解释本体论意义上的第一种说法就是断言自己的私人思想和感受是自然界存在的外在现实。我们称之为“思维预测谬误”，并注意其后面多次引起的麻烦。但是这个问题并不局限于概率论，一旦被指出，很明显，哲学家和格式塔心理学家的许多话语以及物理学家解释量子理论的尝试，都被作者一再堕入思维预测的谬误而沦为废话。
-
-这些例子说明了当我们试图将通用语言的复杂语句翻译成形式逻辑的简单陈述时所需要的谨慎。当然，在形式逻辑中，通用语言往往不如我们想要的那么精确。但是大家都期待这一点，并且正在寻找它，所以它不那么危险。
-
-It is too much to expect that our robot will grasp all the subtle nuances of common language, which a human spends perhaps 20 years acquiring. In this respect, our robot will remain like a small child – it interprets all statements literally and blurts out the truth without thought of whom this may offend. 
-
-It is unclear to the writer how difficult – and even less clear how desirable – it would be to design a newer model robot with the ability to recognize these finer shades of meaning. Of course, the question of principle is disposed of at once by the existence of the human brain, which does this. But, in practice, von Neumann’s principle applies; a robot designed by us cannot do it until someone develops a theory of ‘nuance recognition’, which reduces the process to a definitely prescribed set of operations. This we gladly leave to others. 
-
-In any event, our present model robot is quite literally real, because today it is almost universally true that any nontrivial probability evaluation is performed by a computer. The person who programmed that computer was necessarily, whether or not they thought of it that way, designing part of the brain of a robot according to some preconceived notion of how the robot should behave. But very few of the computer programs now in use satisfy all our desiderata; indeed, most are intuitive ad hoc procedures that were not chosen with any well-defined desiderata at all in mind. 
-
-Any such adhockery is presumably usable within some special area of application – that was the criterion for choosing it – but as the proofs of Chapter 2 will show, any adhockery which conflicts with the rules of probability theory must generate demonstrable inconsistencies when we try to apply it beyond some restricted area. Our aim is to avoid this by developing the general principles of inference once and for all, directly from the requirement of consistency, and in a form applicable to any problem of plausible inference that is formulated in a sufficiently unambiguous way.
-期望我们的机器人能够掌握所有人们花费20年时间获得的共同语言的细微差别，实在太多了。在这方面，我们的机器人将保持像一个小孩 - 它从字面上解释所有的陈述，脱口而出，而不会想到这可能会冒犯谁。
-
-作者不清楚有多么困难 - 甚至不太清楚多么合意 - 设计一个能够识别这些更精细的意义的新型模型机器人将是多么的不可思议。当然，原则问题是由人脑的存在立即处理的，这是这样做的。但是，在实践中，冯·诺依曼的原则是适用的;一个由我们设计的机器人，直到有人形成“细微差别识别”的理论才能做到，这个理论将过程简化为一个明确规定的操作。我们很乐意留给别人。
-
-无论如何，我们现在的模型机器人是完全真实的，因为今天几乎所有的计算机都会进行非平凡的概率评估。对这台计算机进行编程的人，无论他们是否这样想，都必须根据机器人应该如何表现的一些先入为主的概念来设计机器人的大脑的一部分。但现在正在使用的电脑程序中很少有满足我们所有的需求;事实上，大多数是直觉的特设程序，没有任何明确的要求被选中。
-
-任何这样的暗示都可以用在某个特定的应用领域 - 这是选择它的标准 - 但是正如第2章的证明所显示的那样，任何与概率论的规则相冲突的东西，当我们尝试应用时，必然会产生明显的不一致它超出了一些禁区。我们的目的是通过直接从一致性的要求和适用于以足够明确的方式制定的任何可信的推论问题的形式，一劳永逸地发展一般推理原则来避免这种情况。
-
-== 1.8.2 Nitpicking
-As is apparent from the above, in the present work we use the term ‘Boolean algebra’ in its long-established meaning as referring to two-valued logic in which symbols like ‘A’ stand for propositions. A compulsive nitpicker has complained to us that some mathematicians have used the term in a slightly different meaning, in which ‘A’ could refer to a class of propositions. But the two usages are not in conflict; we recognize the broader meaning, but just find no reason to avail ourselves of it. 
-
-The set of rules and symbols that we have called ‘Boolean algebra’ is sometimes called ‘the propositional calculus’. The term seems to be used only for the purpose of adding that we need also another set of rules and symbols called ‘the predicate calculus’. However, these new symbols prove to be only abbreviations for short and familiar phrases. The ‘universal quantifier’ is only an abbreviation for ‘for all’; the ‘existential quantifier’ is an abbreviation for ‘there is a’. If we merely write our statements in plain English, we are using automatically all of the predicate calculus that we need for our purposes, and doing it more intelligibly. 
-
-The validity of the second strong syllogism (in two-valued logic) is sometimes questioned. However, it appears that in current mathematics it is still considered valid reasoning to say that a supposed theorem is disproved by exhibiting a counterexample, that a set of statements is considered inconsistent if we can derive a contradiction from them, and that a proposition can be established by reductio ad absurdum, deriving a contradiction from its denial. This is enough for us; we are quite content to follow this long tradition. Our feeling of security in this stance comes from the conviction that, while logic may move forward in the future, it can hardly move backward. A new logic might lead to new results about which Aristotelian logic has nothing to say; indeed, that is just what we are trying to create here. But surely, if a new logic was found to conflict with Aristotelian logic in an area where Aristotelian logic is applicable, we would consider that a fatal objection to the new logic. 
-从上面可以明显看出，在目前的工作中，我们使用术语“布尔代数”作为指称“A”这样的符号代表命题的二值逻辑。强迫性的挑剔者向我们抱怨说，一些数学家用这个术语的含义略有不同，其中'A'可以指一类命题。但两种用法并不冲突，我们承认更广泛的含义，但没有理由利用它。
-
-我们称之为“布尔代数”的一套规则和符号有时被称为“命题演算”。这个词似乎只是为了补充说，我们还需要另一套叫做“谓词演算”的规则和符号。但是，这些新的符号被证明只是简短和熟悉的短语的缩写。 “通用量词”只是“所有”的缩写。 “存在量词”是“有一个”的缩写。如果我们仅仅用简单的英语来写我们的陈述，那么我们就会自动使用我们所需要的所有谓词演算，并且更加可理解地去做。
-
-第二个强三段论（二值逻辑）的有效性有时受到质疑。然而，在目前的数学中，似乎仍然认为通过展示一个反例证明了一个假定的定理是错误的，如果我们能够从它们中推导出一个矛盾，那么一组陈述被认为是不一致的，而且一个命题可以是通过简化荒诞而成立，从否定中产生矛盾。这对我们来说已经足够了。我们很满足于遵循这个悠久的传统。我们这种立场的安全感来源于这样的信念，即虽然逻辑可能在未来前进，但它不能倒退。一个新的逻辑可能会导致关于哪个亚里士多德逻辑无话可说的新结果;事实上，这正是我们正在努力创造的。但是，当然，如果在亚里士多德逻辑适用的领域发现新的逻辑与亚里士多德逻辑相冲突，那么我们就会认为这是对新逻辑的一个致命的反对。
-
-Therefore, to those who feel confined by two-valued deductive logic, we can say only: ‘By all means, investigate other possibilities if you wish to; and please let us know about it as soon as you have found a new result that was not contained in two-valued logic or our extension of it, and is useful in scientific inference.’ Actually, there are many different and mutually inconsistent multiple-valued logics already in the literature. But in Appendix A we adduce arguments which suggest that they can have no useful content that is not already in two-valued logic; that is, that an n-valued logic applied to one set of propositions is either equivalent to a two-valued logic applied to an enlarged set, or else it contains internal inconsistencies. 
-
-Our experience is consistent with this conjecture; in practice, multiple-valued logics seem to be used not to find new useful results, but rather in attempts to remove supposed difficulties with two-valued logic, particularly in quantum theory, fuzzy sets, and artificial intelligence. But on closer study, all such difficulties known to us have proved to be only examples of the mind projection fallacy, calling for direct revision of the concepts rather than a new logic. 
-因此，对那些被二值演绎逻辑限制的人来说，我们只能说：“如果你愿意的话，一定要调查其他的可能性;只要你找到一个没有包含在二值逻辑中的新结果或者我们的扩展，并且对科学推理有用，请告诉我们“实际上，存在着许多不同的，相互矛盾的多元逻辑，价值逻辑已经在文献中。但是在附录A中，我们提出了一些论点，认为它们没有有用的内容，而这些内容还不是双值逻辑;也就是说，应用于一组命题的n值逻辑要么等同于应用于扩大集的二值逻辑，要么包含内部不一致。
-
-我们的经验是符合这个猜想的;在实践中，多值逻辑似乎不是用来找到新的有用结果，而是试图用二值逻辑消除所谓的困难，特别是在量子理论，模糊集合和人工智能方面。但仔细研究一下，我们所知道的所有这些困难，已经被证明只是心灵预测谬误的一个例子，要求直接修改概念，而不是一个新的逻辑。
+现在转向我们如何对逻辑进行扩展，从接下来要讨论的因素开始。我们称其为“基础原理”而不是“公理”，因为它们并不断言任何事情为 “真”，而是对我们最终目标的声明。这些目标不应互相矛盾，而且定义了一种逻辑的扩展，这些都将在第二章中给出相应的数学分析。
 
