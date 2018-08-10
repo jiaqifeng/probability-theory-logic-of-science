@@ -1,0 +1,144 @@
+== 2.4 数值
+
+We have found so far the most general consistent rules by which our robot can manipulate plausibilities, granted that it must associate them with real numbers, so that its brain can operate by the carrying out of some definite physical process. While we are encouraged by the familiar formal appearance of these rules and their qualitative properties just noted, two evident circumstances show that our job of designing the robot’s brain is not yet finished.
+
+In the first place, while the rules (2.63), (2.64) place some limitations on how plausibilities of different propositions must be related to each other, it would appear that we have not yet found any unique rules, but rather an infinite number of possible rules by which our robot can do plausible reasoning. Corresponding to every different choice of a monotonic function p(x), there seems to be a different set of rules, with different content.
+
+Secondly, nothing given so far tells us what actual numerical values of plausibility should be assigned at the beginning of a problem, so that the robot can get started on its calculations. How is the robot to make its initial encoding of the background information into definite numerical values of plausibilities? For this we must invoke the ‘interface’ desiderata (IIIb), (IIIc) of (1.39), not yet used.
+
+The following analysis answers both of these questions, in a way both interesting and unexpected. Let us ask for the plausibility $$(A_1+A_2+A_3|B)$$ that at least one of three propositions $$\{A_1,A_2,A_3\}$$ is true.We can find this by two applications of the extended sum rule (2.66), as follows. The first application gives
+
+ $$p(A_1+A_2+A_3|B)=p(A_1+A_2|B)+p(A_3|B)−p(A_1A_3+A_2A_3|B)$$ (2.80)
+
+where we first considered $$(A_1+A_2)$$ as a single proposition, and used the logical relation
+
+ $$(A_1+A_2)A_3=A_1A_3+A_2A_3$$ (2.81)
+
+Applying (2.66) again, we obtain seven terms which can be grouped as follows:
+
+ $$p(A_1+A_2+A_3|B)=p(A_1|B)+p(A_2|B)+p(A_3|B)$$
+ $$ −p(A_1A_2|B)−p(A_2A_3|B)−p(A_3A_1|B)$$   (2.82)
+ $$ +p(A_1A_2A_3|B)$$
+
+Now suppose these propositions are mutually exclusive; i.e. the evidence B implies that no two of them can be true simultaneously:
+
+ $$p(A_iA_j|B)=p(A_i|B)δ_{ij}$$ (2.83)
+
+Then the last four terms of (2.82) vanish, and we have
+
+$$p(A_1+A_2+A_3|B)=p(A_1|B)+P(A_2|B)+P_(A_3|B)$$ (2.84)
+
+Adding more propositions $$A_4, A_5$$, etc., it is easy to show by induction that if we have n mutually exclusive propositions $$\{A_1, ... , A_n\}$$, (2.84) generalizes to
+
+ $$p(A_1+...+A_m|B)= \sum_{i=1}^m p(A_i|B)$$, 1 ≤ m ≤ n, (2.85)
+
+a rule which we will be using constantly from now on.
+
+In conventional expositions, Eq. (2.85) is usually introduced first as the basic but, as far as one can see, arbitrary axiom of the theory. The present approach shows that this rule is deducible from simple qualitative conditions of consistency. The viewpoint which sees (2.85) as the primitive, fundamental relation is one which we are particularly anxious to
+avoid (see Comments section at the end of this chapter).
+
+Now suppose that the propositions $$\{A_1, ... , A_n\}$$ are not only mutually exclusive but also exhaustive; i.e. the background information B stipulates that one and only one of them must be true. In that case, the sum (2.85) for m = n must be unity:
+
+ $$\sum_{i=1}^n p(A_i|B)=1$$  (2.86)
+
+This alone is not enough to determine the individual numerical values $$p(A_i|B)$$. Depending on further details of the information B, many different choices might be appropriate, and in general finding the $$p(A_i|B)$$ by logical analysis of B can be a difficult problem. It is, in fact, an open-ended problem, since there is no end to the variety of complicated information that might be contained in B; and therefore no end to the complicated mathematical problems of translating that information into numerical values of $$p(A_i|B)$$. As we shall see, this is one of the most important current research problems; every new principle we can discover for translating information B into numerical values of $$p(A_i|B)$$ will open up a new class of useful applications of this theory.
+
+There is, however, one case in which the answer is particularly simple, requiring only direct application of principles already given. But we are entering now into a very delicate area, a cause of confusion and controversy for over a century. In the early stages of this theory, as in elementary geometry, our intuition runs so far ahead of logical analysis that the point of the logical analysis is often missed. The trouble is that intuition leads us to the same final conclusions far more quickly, but without any correct appreciation of their range of validity. The result has been that the development of this theory has been retarded for some 150 years because various workers have insisted on debating these issues on the basis, not of demonstrative arguments, but of their conflicting intuitions.
+
+At this point, therefore, we must ask the reader to suppress all intuitive feelings you may have, and allow yourself to be guided solely by the following logical analysis. The point we are about to make cannot be developed too carefully; and, unless it is clearly understood, we will be faced with tremendous conceptual difficulties from here on. Consider two different problems. Problem I is the one just formulated: we have a given set of mutually exclusive and exhaustive propositions $$\{A_1, ... , A_n\}$$ and we seek to evaluate $$p(A_i|B)_I$$ . Problem II differs in that the labels $$A_1, A_2$$ of the first two propositions have been interchanged. These labels are, of course, entirely arbitrary; it makes no difference which proposition we choose to call $$A_1$$ and which $$A_2$$. In Problem II, therefore, we also have a set of mutually exclusive and exhaustive propositions $$\{A'_1, , A'_n\}$$, given by
+
+ $$A'_1 ≡ A_2,$$
+ $$A'_2 ≡ A_1,$$          (2.87)
+ $$A'_k ≡ A_k , 3 ≤ k ≤ n,$$
+
+and we seek to evaluate the quantities $$p(A'_i|B)_{II}$$ , i = 1, 2, ... , n.
+
+In interchanging the labels, we have generated a different but closely related problem. It is clear that, whatever state of knowledge the robot had about A1 in Problem I, it must have the same state of knowledge about $$A'_2$$ in Problem II, for they are the same proposition, the given information B is the same in both problems, and it is contemplating the same totality of propositions $$\{A_1, ... , A_n\}$$ in both problems. Therefore we must have
+
+ $$p(A_1|B)_I=p(A'_2|B)_{II}$$ , (2.88)
+
+and similarly
+
+ $$p(A_2|B)_I=p(A'_1|B)_{II}$$  (2.89)
+
+We will call these the transformation equations. They describe only how the two problems are related to each other, and therefore they must hold whatever the information B might be; in particular, however plausible or implausible the propositions $$A_1, A_2$$ might seem to the robot in Problem I.
+
+Now suppose that information B is indifferent between propositions $$A_1$$ and $$A_2$$; i.e. if it says something about one, it says the same thing about the other, and so it contains nothing that would give the robot any reason to prefer either one over the other. In this case, Problems I and II are not merely related, but entirely equivalent; i.e. the robot is in exactly the same state of knowledge about the set of propositions $$\{A'_1, ... , A'_n\}$$ in Problem II, including their labeling, as it is about the set $$\{A_1, ... , A'_n\}$$ in Problem I.
+
+Now we invoke our desideratum of consistency in the sense (IIIc) in (1.39). This stated that equivalent states of knowledge must be represented by equivalent plausibility assignments. In equations, this statement is
+
+ $$p(A_i|B)_I=p(A'_i|B)_{II}$$ , i = 1, 2, . . . , n, (2.90)
+
+which we shall call the symmetry equations. But now, combining (2.88), (2.89), and (2.90), we obtain
+
+ $$p(A_1|B)_I=p(A_2|B)_I$$ . (2.91)
+
+In other words, propositions A1 and A2 must be assigned equal plausibilities in Problem I (and, of course, also in Problem II).
+
+At this point, depending on your personality and background in this subject, you will be either greatly impressed or greatly disappointed by the result (2.91). The argument we have just given is the first ‘baby’ version of the group invariance principle for assigning plausibilities; it will be extended greatly in Chapter 6, when we consider the general problem of assigning ‘noninformative priors’.
+
+More generally, let $$\{A''_1, , A''_n\}$$ be any permutation of $${A_1, , A_n\}$$ and let Problem III be that of determining the $$p(A''_i|B)$$. If the permutation is such that $$A''_k≡A_i$$ , there will be n transformation equations of the form
+
+ $$p(A_i|B)_I=p(A''_k|B)_{III}$$ (2.92)
+
+which show how Problems I and III are related to each other; these relations will hold whatever the given information B.
+
+But if information B is now indifferent between all the propositions Ai , then the robot is in exactly the same state of knowledge about the set of propositions $$\{A''_1, ... , A''_n\}$$ in
+Problem III as it was about the set $${A_1, , A_n\}$$ in Problem I; and again our desideratum of consistency demands that it assign equivalent plausibilities in equivalent states of knowledge, leading to the n symmetry conditions
+
+ $$p(A_k|B)_I=p(A''_k|B)_{III}$$ , k = 1, 2, . . . , n. (2.93)
+
+From (2.92) and (2.93) we obtain n equations of the form
+
+ $$p(A_i|B)_I=p(A_k|B)_I$$ . (2.94)
+
+Now, these relations must hold whatever the particular permutation we used to define Problem III. There are n! such permutations, and so there are actually n! equivalent problems among which, for given i , the index k will range over all of the (n − 1) others in (2.94). Therefore, the only possibility is that all of the $$p(A_i|B)_I$$ be equal (indeed, this is required already by consideration of a single permutation if it is cyclic of order n). Since the $${A_1, , A_n\}$$ are exhaustive, (2.86) will hold, and the only possibility is therefore
+
+ $$p(A_i|B)_I= \frac 1 n$$, (1 ≤ i ≤ n), (2.95)
+
+and we have finally arrived at a set of definite numerical values! Following Keynes (1921), we shall call this result the principle of indifference.
+
+Perhaps, in spite of our admonitions, the reader’s intuition had already led to just this conclusion, without any need for the rather tortuous reasoning we have just been through. If so, then at least that intuition is consistent with our desiderata. But merely writing down (2.95) intuitively gives one no appreciation of the importance and uniqueness of this result. To see the uniqueness, note that if the robot were to assign any values different from (2.95), then by a mere permutation of labels we could exhibit a second problem in which the robot’s state of knowledge is the same, but in which it is assigning different plausibilities.
+
+To see the importance, note that (2.95) actually answers both of the questions posed at the beginning of this section. It shows – in one particular case which can be greatly generalized – how the information given the robot can lead to definite numerical values, so that a calculation can start. But it also shows something even more important because it is not at all obvious intuitively; the information given the robot determines the numerical values of the quantities $$p(x)=p(A_i|B)$$, and not the numerical values of the plausibilities $$x=A_i|B$$ from which we started. This, also, will be found to be true in general.
+
+Recognizing this gives us a beautiful answer to the first question posed at the beginning of this section; after having found the product and sum rules, it still appeared that we had not found any unique rules of reasoning, because every different choice of a monotonic function p(x) would lead to a different set of rules (i.e. a set with different content). But now we see that no matter what function p(x) we choose, we shall be led to the same result (2.95), and the same numerical value of p. Furthermore, the robot’s reasoning processes can be carried out entirely by manipulation of the quantities p, as the product and sum rules show; and the robot’s final conclusions can be stated equally well in terms of the p’s instead of the x’s.
+
+So, we now see that different choices of the function p(x) correspond only to different ways we could design the robot’s internal memory circuits. For each proposition $$A_i$$ about which it is to reason, it will need a memory address in which it stores some number representing the degree of plausibility of $$A_i$$ , on the basis of all the data it has been given. Of course, instead of storing the number $$p_i$$ it could equally well store any strict monotonic function of $$p_i$$ . But no matter what function it used internally, the externally observable behavior of the robot would be just the same.
+
+As soon as we recognize this, it is clear that, instead of saying that p(x) is an arbitrary monotonic function of x, it is much more to the point to turn this around and say that:
+
+ The plausibility x ≡ A|B is an arbitrary monotonic function of p, defined in (0 ≤ p ≤ 1).
+
+It is p that is rigidly fixed by the data, not x.
+
+The question of uniqueness is therefore disposed of automatically by the result (2.95); in spite of first appearances, there is actually only one consistent set of rules by which our robot can do plausible reasoning, and, for all practical purposes, the plausibilities x ≡ A|B from which we started have faded entirely out of the picture! We will just have no further use for them.
+
+Having seen that our theory of plausible reasoning can be carried out entirely in terms of the quantities p, we finally introduce their technical names; from now on, we will call these quantities probabilities. The word ‘probability’ has been studiously avoided up to this point, because, whereas the word does have a colloquial meaning to the proverbial ‘man on the street’, it is for us a technical term, which ought to have a precise meaning. But until it had been demonstrated that these quantities are uniquely determined by the data of a problem, we had no grounds for supposing that the quantities p were possessed of any precise meaning.
+
+We now see that the quantities p define a particular scale on which degrees of plausibility can be measured. Out of all possible monotonic functions which could, in principle, serve this purpose equally well, we choose this particular one, not because it is more ‘correct’, but because it is more convenient; i.e. it is the quantities p that obey the simplest rules of combination, the product and sum rules. Because of this, numerical values of p are directly determined by our information.
+
+This situation is analogous to that in thermodynamics, where out of all possible empirical temperature scales t, which are monotonic functions of each other, we finally decide to use the Kelvin scale T ; not because it is more ‘correct’ than others but because it is more convenient; i.e. the laws of thermodynamics take their simplest form [dU = T dS − PdV, dG = −SdT + VdP, etc.] in terms of this particular scale. Because of this, numerical values of temperatures on the kelvin scale are ‘rigidly fixed’ in the sense of being directly measurable in experiments, independently of the properties of any particular substance like water or mercury.
+
+Another rule, equally appealing to our intuition, follows at once from (2.95). Consider the traditional ‘Bernoulli urn’ of probability theory; ours is known to contain ten balls of identical size and weight, labeled {1, 2, . . . , 10}. Three balls (numbers 4, 6, 7) are black, the other seven are white. We are to shake the urn and draw one ball blindfolded. The background information B in (2.95) consists of the statements in the last two sentences. What is the probability that we draw a black one?
+
+Define the propositions: $$A_i≡$$‘the ith ball is drawn’, (1 ≤ i ≤ 10). Since the background information is indifferent to these ten possibilities, (2.95) applies, and the robot assigns
+
+ $$p(A_i|B)= \frac 1 10$$ , 1 ≤ i ≤ 10. (2.96)
+
+The statement that we draw a black ball is that we draw number 4, 6, or 7;
+
+ $$p(black|B)=p(A_4+A_6+A_7|B)$$. (2.97)
+
+But these are mutually exclusive propositions (i.e. they assert mutually exclusive events), so (2.85) applies, and the robot’s conclusion is
+
+ $$p(black|B) = \frac 3 10$$ , (2.98)
+
+as intuition had told us already. More generally, if there are N such balls, and the proposition A is defined to be true on any specified subset of M of them, (0 ≤ M ≤ N), false on the rest, we have
+
+$$p(A|B) = \frac M N$$. (2.99)
+
+This was the original mathematical definition of probability, as given by James Bernoulli (1713) and used by most writers for the next 150 years. For example, Laplace’s great Th´eorie Analytique des Probabilit´es (1812) opens with this sentence:
+
+The Probability for an event is the ratio of the number of cases favorable to it, to the number of all cases possible when nothing leads us to expect that any one of these cases should occur more than any other, which renders them, for us, equally possible.
+ Exercise 2.3. As soon as we have the numerical values a = P(A|C) and b = P(B|C), the product and sum rules place some limits on the possible numerical values for their conjunction and disjunction. Supposing that a ≤ b, show that the probability for the conjunction cannot exceed that of the least probable proposition: 0 ≤ P(AB|C) ≤ a, and the probability for the disjunction cannot be less than that of the most probable proposition: b ≤ P(A + B|C) ≤ 1. Then show that, if a + b > 1, there is a stronger inequality for the conjunction; and if a + b < 1 there is a stronger one for the disjunction. These necessary general inequalities are helpful in detecting errors in calculations.
