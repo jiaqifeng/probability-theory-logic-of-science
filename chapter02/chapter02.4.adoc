@@ -2,19 +2,31 @@
 
 We have found so far the most general consistent rules by which our robot can manipulate plausibilities, granted that it must associate them with real numbers, so that its brain can operate by the carrying out of some definite physical process. While we are encouraged by the familiar formal appearance of these rules and their qualitative properties just noted, two evident circumstances show that our job of designing the robot’s brain is not yet finished.
 
+到目前为止,我们已经找到了机器人处理似真度的最一般的一致规则,即必须将似真度关联到一个实数,然后机器人的大脑才能以某种明确的物理过程来完成运作。虽然这些规则的形式看起来很熟悉而且其定性属性让我们感到鼓舞,但两个明显的情况表明我们设计机器人大脑的工作还没有完成。
+
 In the first place, while the rules (2.63), (2.64) place some limitations on how plausibilities of different propositions must be related to each other, it would appear that we have not yet found any unique rules, but rather an infinite number of possible rules by which our robot can do plausible reasoning. Corresponding to every different choice of a monotonic function p(x), there seems to be a different set of rules, with different content.
+
+首先,虽然公式(2.63)和(2.64)给出了对不同命题的似真度之间的关系的一些限制,但似乎似真推断的规则的数目并不唯一而是无穷个。对应于选中的每个单调函数p(x),似乎存在不同的规则集,具有不同的内容。
 
 Secondly, nothing given so far tells us what actual numerical values of plausibility should be assigned at the beginning of a problem, so that the robot can get started on its calculations. How is the robot to make its initial encoding of the background information into definite numerical values of plausibilities? For this we must invoke the ‘interface’ desiderata (IIIb), (IIIc) of (1.39), not yet used.
 
+其次,到目前为止,我们并不知道在开始处理问题时,应该赋予似真度什么数值,以便机器人可以开始工作。机器人如何为背景信息确定初始似真度的数值？为此,我们必须引用尚未使用的'界面'基础原理,即(1.39)中的(IIIb)和(IIIc)。
+
 The following analysis answers both of these questions, in a way both interesting and unexpected. Let us ask for the plausibility $$(A_1+A_2+A_3|B)$$ that at least one of three propositions $$\{A_1,A_2,A_3\}$$ is true.We can find this by two applications of the extended sum rule (2.66), as follows. The first application gives
+
+以下分析以既有趣又意外的方式回答了这些问题。 考虑$$(A_1+A_2+A_3|B)$$的似真度,其中三个命题$$\{A_1,A_2,A_3\}$$中至少一个为真。我们可以如下应用两次扩展和规则(2.66)。 第一次应用给出
 
  $$p(A_1+A_2+A_3|B)=p(A_1+A_2|B)+p(A_3|B)−p(A_1A_3+A_2A_3|B)$$ (2.80)
 
 where we first considered $$(A_1+A_2)$$ as a single proposition, and used the logical relation
 
+首先将$$(A_1+A_2)$$看作单个命题,并使用逻辑关系
+
  $$(A_1+A_2)A_3=A_1A_3+A_2A_3$$ (2.81)
 
 Applying (2.66) again, we obtain seven terms which can be grouped as follows:
+
+再次应用(2.66),得到如下分组的7项
 
  $$p(A_1+A_2+A_3|B)=p(A_1|B)+p(A_2|B)+p(A_3|B)$$
  $$ −p(A_1A_2|B)−p(A_2A_3|B)−p(A_3A_1|B)$$   (2.82)
@@ -22,30 +34,45 @@ Applying (2.66) again, we obtain seven terms which can be grouped as follows:
 
 Now suppose these propositions are mutually exclusive; i.e. the evidence B implies that no two of them can be true simultaneously:
 
+现在假设这些命题彼此独立,例如证据B蕴含了这些命题没有任何两个可以同时为真
+
  $$p(A_iA_j|B)=p(A_i|B)δ_{ij}$$ (2.83)
 
 Then the last four terms of (2.82) vanish, and we have
+
+然后(2.82)的最后4项消除了,有
 
 $$p(A_1+A_2+A_3|B)=p(A_1|B)+P(A_2|B)+P_(A_3|B)$$ (2.84)
 
 Adding more propositions $$A_4, A_5$$, etc., it is easy to show by induction that if we have n mutually exclusive propositions $$\{A_1, ... , A_n\}$$, (2.84) generalizes to
 
+增加更多命题如$$A_4, A_5$$等等,容易归纳出,如果有n个彼此独立的命题$$\{A_1, ... , A_n\}$$,(2.84)可推广为
+
  $$p(A_1+...+A_m|B)= \sum_{i=1}^m p(A_i|B)$$, 1 ≤ m ≤ n, (2.85)
 
 a rule which we will be using constantly from now on.
 
-In conventional expositions, Eq. (2.85) is usually introduced first as the basic but, as far as one can see, arbitrary axiom of the theory. The present approach shows that this rule is deducible from simple qualitative conditions of consistency. The viewpoint which sees (2.85) as the primitive, fundamental relation is one which we are particularly anxious to
-avoid (see Comments section at the end of this chapter).
+In conventional expositions, Eq. (2.85) is usually introduced first as the basic but, as far as one can see, arbitrary axiom of the theory. The present approach shows that this rule is deducible from simple qualitative conditions of consistency. The viewpoint which sees (2.85) as the primitive, fundamental relation is one which we are particularly anxious to avoid (see Comments section at the end of this chapter).
+
+在传统的论述中,Eq。 (2.85)通常首先作为基本介绍,但据我所知,该理论的任意公理。 本方法表明,该规则可以从简单的一致性定性条件中推导出来。 将(2.85)视为原始的基本关系的观点是我们特别急于避免的观点(参见本章末尾的评论部分)。
 
 Now suppose that the propositions $$\{A_1, ... , A_n\}$$ are not only mutually exclusive but also exhaustive; i.e. the background information B stipulates that one and only one of them must be true. In that case, the sum (2.85) for m = n must be unity:
+
+现在假设命题$$ \ {A_1,...,A_n \} $$不仅互相排斥,而且是详尽无遗的; 即,背景信息B规定其中一个且仅一个必须为真。 在这种情况下,m = n的和(2.85)必须是1：
 
  $$\sum_{i=1}^n p(A_i|B)=1$$  (2.86)
 
 This alone is not enough to determine the individual numerical values $$p(A_i|B)$$. Depending on further details of the information B, many different choices might be appropriate, and in general finding the $$p(A_i|B)$$ by logical analysis of B can be a difficult problem. It is, in fact, an open-ended problem, since there is no end to the variety of complicated information that might be contained in B; and therefore no end to the complicated mathematical problems of translating that information into numerical values of $$p(A_i|B)$$. As we shall see, this is one of the most important current research problems; every new principle we can discover for translating information B into numerical values of $$p(A_i|B)$$ will open up a new class of useful applications of this theory.
 
+仅这一点不足以确定单个数值$$ p(A_i | B)$$。根据信息B的进一步细节,许多不同的选择可能是合适的,并且通常通过B的逻辑分析找到$$ p(A_i | B)$$可能是一个难题。事实上,它是一个开放式问题,因为B中可能包含的各种复杂信息无止境;因此,将这些信息转换为$$ p(A_i | B)$$的数值的复杂数学问题无止境。正如我们将要看到的,这是当前最重要的研究问题之一;我们可以发现将信息B转换为$$ p(A_i | B)$$的数值的每一个新原理将开辟这一理论的一类新的有用应用。
+
 There is, however, one case in which the answer is particularly simple, requiring only direct application of principles already given. But we are entering now into a very delicate area, a cause of confusion and controversy for over a century. In the early stages of this theory, as in elementary geometry, our intuition runs so far ahead of logical analysis that the point of the logical analysis is often missed. The trouble is that intuition leads us to the same final conclusions far more quickly, but without any correct appreciation of their range of validity. The result has been that the development of this theory has been retarded for some 150 years because various workers have insisted on debating these issues on the basis, not of demonstrative arguments, but of their conflicting intuitions.
 
+然而,有一种情况是答案特别简单,只需要直接应用已经给出的原则。但是,我们现在正进入一个非常微妙的领域,一个多世纪以来一直是混乱和争议的原因。在这个理论的早期阶段,就像在初等几何学中一样,我们的直觉在逻辑分析之前就已经存在,以至于经常错过逻辑分析的观点。麻烦的是,直觉使得我们得出相同的最终结论的速度要快得多,但却没有正确理解它们的有效范围。结果是这个理论的发展已经被推迟了大约150年,因为不同的工人坚持在这些问题的基础上辩论,而不是说明论证,而是他们相互矛盾的直觉。
+
 At this point, therefore, we must ask the reader to suppress all intuitive feelings you may have, and allow yourself to be guided solely by the following logical analysis. The point we are about to make cannot be developed too carefully; and, unless it is clearly understood, we will be faced with tremendous conceptual difficulties from here on. Consider two different problems. Problem I is the one just formulated: we have a given set of mutually exclusive and exhaustive propositions $$\{A_1, ... , A_n\}$$ and we seek to evaluate $$p(A_i|B)_I$$ . Problem II differs in that the labels $$A_1, A_2$$ of the first two propositions have been interchanged. These labels are, of course, entirely arbitrary; it makes no difference which proposition we choose to call $$A_1$$ and which $$A_2$$. In Problem II, therefore, we also have a set of mutually exclusive and exhaustive propositions $$\{A'_1, , A'_n\}$$, given by
+
+因此,在这一点上,我们必须要求读者压制你可能拥有的所有直觉,并让自己完全受以下逻辑分析的指导。我们即将制定的观点不能过于谨慎;而且,除非清楚地理解,否则我们将面临巨大的概念上的困难。考虑两个不同的问题。问题我是刚才提出的问题：我们有一套相互排斥和详尽的命题$$ \ {A_1,...,A_n \} $$我们试图评估$$ p(A_i | B)_I $$ 。问题II的不同之处在于前两个命题的标签$$ A_1,A_2 $$已经互换。当然,这些标签完全是任意的;我们选择将这个命题称为$$ A_1 $$以及哪个$$ A_2 $$没有区别。因此,在问题II中,我们还有一组相互排斥和详尽的命题$$ \ {A'_1,,A'_n \} $$,由
 
  $$A'_1 ≡ A_2,$$
  $$A'_2 ≡ A_1,$$          (2.87)
@@ -55,6 +82,8 @@ and we seek to evaluate the quantities $$p(A'_i|B)_{II}$$ , i = 1, 2, ... , n.
 
 In interchanging the labels, we have generated a different but closely related problem. It is clear that, whatever state of knowledge the robot had about A1 in Problem I, it must have the same state of knowledge about $$A'_2$$ in Problem II, for they are the same proposition, the given information B is the same in both problems, and it is contemplating the same totality of propositions $$\{A_1, ... , A_n\}$$ in both problems. Therefore we must have
 
+在交换标签时,我们产生了一个不同但密切相关的问题。 很明显,无论机器人在问题I中对A1有什么知识状态,它在问题II中必须具有相同的关于$$ A'_2 $$的知识状态,因为它们是相同的命题,给定的信息B是 两个问题都是一样的,并且在两个问题中都考虑了相同的命题总和$$ \ {A_1,...,A_n \} $$。 因此我们必须拥有
+
  $$p(A_1|B)_I=p(A'_2|B)_{II}$$ , (2.88)
 
 and similarly
@@ -63,9 +92,15 @@ and similarly
 
 We will call these the transformation equations. They describe only how the two problems are related to each other, and therefore they must hold whatever the information B might be; in particular, however plausible or implausible the propositions $$A_1, A_2$$ might seem to the robot in Problem I.
 
+我们将这些称为变换方程。它们只描述了这两个问题是如何相互关联的,因此它们必须掌握B可能存在的任何信息;特别是,在问题I中机器人看起来似乎是合理的或难以置信的.A_1,A_2 $$。
+
 Now suppose that information B is indifferent between propositions $$A_1$$ and $$A_2$$; i.e. if it says something about one, it says the same thing about the other, and so it contains nothing that would give the robot any reason to prefer either one over the other. In this case, Problems I and II are not merely related, but entirely equivalent; i.e. the robot is in exactly the same state of knowledge about the set of propositions $$\{A'_1, ... , A'_n\}$$ in Problem II, including their labeling, as it is about the set $$\{A_1, ... , A'_n\}$$ in Problem I.
 
+现在假设信息B在命题$$ A_1 $$和$$ A_2 $$之间无关紧要;也就是说,如果它说的是关于另一个的东西,它就说另一个相同的东西,因此它没有任何东西可以让机器人有任何理由偏爱任何一个而不是另一个。在这种情况下,问题I和II不仅仅是相关的,而是完全相同的;即机器人在问题II中的命题集合{\ A'_1,...,A'_n \} $$处于完全相同的状态,包括它们的标签,因为它与集合$有关问题I中$ \ {A_1,...,A'_n \} $$
+
 Now we invoke our desideratum of consistency in the sense (IIIc) in (1.39). This stated that equivalent states of knowledge must be represented by equivalent plausibility assignments. In equations, this statement is
+
+现在我们在(1.39)的意义上引用我们的一致性(IIIc)。这表明,等同的知识状态必须用等效的合理性分配来表示。在方程中,这个陈述是
 
  $$p(A_i|B)_I=p(A'_i|B)_{II}$$ , i = 1, 2, . . . , n, (2.90)
 
@@ -75,17 +110,25 @@ which we shall call the symmetry equations. But now, combining (2.88), (2.89), a
 
 In other words, propositions A1 and A2 must be assigned equal plausibilities in Problem I (and, of course, also in Problem II).
 
+换句话说,在问题I中,命题A1和A2必须被赋予相同的合理性(当然,也在问题II中)。
+
 At this point, depending on your personality and background in this subject, you will be either greatly impressed or greatly disappointed by the result (2.91). The argument we have just given is the first ‘baby’ version of the group invariance principle for assigning plausibilities; it will be extended greatly in Chapter 6, when we consider the general problem of assigning ‘noninformative priors’.
 
+在这一点上,根据你在这个主题中的个性和背景,你会对结果印象深刻或非常失望(2.91)。 我们刚才给出的论点是群体不变性原则的第一个“婴儿”版本,用于指定合理性; 当我们考虑分配“非信息先验”的一般问题时,它将在第6章中大大扩展。
+
 More generally, let $$\{A''_1, , A''_n\}$$ be any permutation of $${A_1, , A_n\}$$ and let Problem III be that of determining the $$p(A''_i|B)$$. If the permutation is such that $$A''_k≡A_i$$ , there will be n transformation equations of the form
+
+更一般地说,让$$ \ {A''_ 1,A''_ n \} $$为$$ {A_1,,A_n \} $$的任意排列,让问题III为确定$$ p的排列(A '' _ I | B)$$。 如果排列是$$ A''_k≡A_i$$,那么将有n个形式的变换方程
 
  $$p(A_i|B)_I=p(A''_k|B)_{III}$$ (2.92)
 
 which show how Problems I and III are related to each other; these relations will hold whatever the given information B.
 
-But if information B is now indifferent between all the propositions Ai , then the robot is in exactly the same state of knowledge about the set of propositions $$\{A''_1, ... , A''_n\}$$ in
-Problem III as it was about the set $${A_1, , A_n\}$$ in Problem I; and again our desideratum of consistency demands that it assign equivalent plausibilities in equivalent states of knowledge, leading to the n symmetry conditions
+这表明问题I和III是如何相互关联的; 这些关系将保留给定的信息B.
 
+But if information B is now indifferent between all the propositions Ai , then the robot is in exactly the same state of knowledge about the set of propositions $$\{A''_1, ... , A''_n\}$$ in Problem III as it was about the set $${A_1, , A_n\}$$ in Problem I; and again our desideratum of consistency demands that it assign equivalent plausibilities in equivalent states of knowledge, leading to the n symmetry conditions
+
+但是,如果信息B现在在所有命题Ai之间无关紧要,那么机器人对命题集合的知识状态完全相同$$ \ {A''_ 1,...,A''_ n \} $$ 在问题III中,因为它是关于问题I中的set $$ {A_1,,A_n \} $$; 再一次,我们对一致性的渴望要求它在等同的知识状态中赋予等价的合理性,从而导致n个对称条件
  $$p(A_k|B)_I=p(A''_k|B)_{III}$$ , k = 1, 2, . . . , n. (2.93)
 
 From (2.92) and (2.93) we obtain n equations of the form
@@ -94,19 +137,33 @@ From (2.92) and (2.93) we obtain n equations of the form
 
 Now, these relations must hold whatever the particular permutation we used to define Problem III. There are n! such permutations, and so there are actually n! equivalent problems among which, for given i , the index k will range over all of the (n − 1) others in (2.94). Therefore, the only possibility is that all of the $$p(A_i|B)_I$$ be equal (indeed, this is required already by consideration of a single permutation if it is cyclic of order n). Since the $${A_1, , A_n\}$$ are exhaustive, (2.86) will hold, and the only possibility is therefore
 
+现在,这些关系必须包含我们用于定义问题III的特定排列。 有n！ 这样的排列,所以实际上有n！ 等价问题,其中,对于给定的i,指数k将在(2.94)中的所有(n-1)个其他范围内。 因此,唯一的可能性是所有$$ p(A_i | B)_I $$都是相等的(实际上,如果它是n阶循环,则必须考虑单个置换)。 由于$$ {A_1,,A_n \} $$是详尽的,(2.86)将成立,因此唯一的可能性是
+
  $$p(A_i|B)_I= \frac 1 n$$, (1 ≤ i ≤ n), (2.95)
 
 and we have finally arrived at a set of definite numerical values! Following Keynes (1921), we shall call this result the principle of indifference.
 
+我们终于得出了一组确定的数值！ 在凯恩斯(1921)之后,我们将这个结果称为漠不关心的原则。
+
 Perhaps, in spite of our admonitions, the reader’s intuition had already led to just this conclusion, without any need for the rather tortuous reasoning we have just been through. If so, then at least that intuition is consistent with our desiderata. But merely writing down (2.95) intuitively gives one no appreciation of the importance and uniqueness of this result. To see the uniqueness, note that if the robot were to assign any values different from (2.95), then by a mere permutation of labels we could exhibit a second problem in which the robot’s state of knowledge is the same, but in which it is assigning different plausibilities.
+
+也许,尽管我们的劝告,读者的直觉已经导致了这个结论,而不需要我们刚刚经历过的相当曲折的推理。如果是这样,那么至少这种直觉与我们的渴望是一致的。但仅仅直截了当地写下(2.95)就不能理解这个结果的重要性和独特性。要看到唯一性,请注意,如果机器人要分配与(2.95)不同的任何值,那么仅通过标签的排列,我们就可以表现出第二个问题,其中机器人的知识状态是相同的,但它是分配不同的合理性。
 
 To see the importance, note that (2.95) actually answers both of the questions posed at the beginning of this section. It shows – in one particular case which can be greatly generalized – how the information given the robot can lead to definite numerical values, so that a calculation can start. But it also shows something even more important because it is not at all obvious intuitively; the information given the robot determines the numerical values of the quantities $$p(x)=p(A_i|B)$$, and not the numerical values of the plausibilities $$x=A_i|B$$ from which we started. This, also, will be found to be true in general.
 
+要了解重要性,请注意(2.95)实际上回答了本节开头提出的两个问题。它表明 - 在一个特殊情况下可以大大概括 - 给予机器人的信息如何能够产生确定的数值,从而可以开始计算。但它也显示出更为重要的东西,因为它根本不直观;给定机器人的信息确定数量$$ p(x)= p(A_i | B)$$的数值,而不是我们开始的合理性$$ x = A_i | B $$的数值。一般来说,这也是正确的。
+
 Recognizing this gives us a beautiful answer to the first question posed at the beginning of this section; after having found the product and sum rules, it still appeared that we had not found any unique rules of reasoning, because every different choice of a monotonic function p(x) would lead to a different set of rules (i.e. a set with different content). But now we see that no matter what function p(x) we choose, we shall be led to the same result (2.95), and the same numerical value of p. Furthermore, the robot’s reasoning processes can be carried out entirely by manipulation of the quantities p, as the product and sum rules show; and the robot’s final conclusions can be stated equally well in terms of the p’s instead of the x’s.
+
+认识到这一点为我们提供了对本节开头提出的第一个问题的美妙答案;在找到产品和总和规则之后,我们似乎还没有找到任何独特的推理规则,因为单调函数p(x)的每个不同选择都会导致一组不同的规则(即一组不同的内容) )。但是现在我们看到无论我们选择什么函数p(x),我们都会得到相同的结果(2.95)和p的相同数值。此外,机器人的推理过程可以完全通过操纵数量p来执行,如产品和总和规则所示;并且机器人的最终结论可以用p而不是x来表示。
 
 So, we now see that different choices of the function p(x) correspond only to different ways we could design the robot’s internal memory circuits. For each proposition $$A_i$$ about which it is to reason, it will need a memory address in which it stores some number representing the degree of plausibility of $$A_i$$ , on the basis of all the data it has been given. Of course, instead of storing the number $$p_i$$ it could equally well store any strict monotonic function of $$p_i$$ . But no matter what function it used internally, the externally observable behavior of the robot would be just the same.
 
+因此,我们现在看到函数p(x)的不同选择仅对应于我们设计机器人内部存储器电路的不同方式。 对于每个命题$$ A_i $$,它将需要一个存储器地址,在该存储器地址中存储一些代表$$ A_i $$的合理程度的数字,基于它给出的所有数据。 当然,不是存储数字$$ p_i $$,它可以同样存储$$ p_i $$的任何严格的单调函数。 但无论内部使用什么功能,机器人的外部可观察行为都是一样的。
+
 As soon as we recognize this, it is clear that, instead of saying that p(x) is an arbitrary monotonic function of x, it is much more to the point to turn this around and say that:
+
+一旦我们认识到这一点,很明显,不是说p(x)是x的任意单调函数,而是更多地转向这个并且说：
 
  The plausibility x ≡ A|B is an arbitrary monotonic function of p, defined in (0 ≤ p ≤ 1).
 
@@ -114,15 +171,27 @@ It is p that is rigidly fixed by the data, not x.
 
 The question of uniqueness is therefore disposed of automatically by the result (2.95); in spite of first appearances, there is actually only one consistent set of rules by which our robot can do plausible reasoning, and, for all practical purposes, the plausibilities x ≡ A|B from which we started have faded entirely out of the picture! We will just have no further use for them.
 
+因此,结果会自动处理唯一性问题(2.95);尽管第一次出现,实际上只有一套一致的规则,我们的机器人可以通过这些规则进行合理的推理,并且,出于所有实际目的,我们开始的合理性x≡A| B已经完全消失了！我们将不再使用它们。
+
 Having seen that our theory of plausible reasoning can be carried out entirely in terms of the quantities p, we finally introduce their technical names; from now on, we will call these quantities probabilities. The word ‘probability’ has been studiously avoided up to this point, because, whereas the word does have a colloquial meaning to the proverbial ‘man on the street’, it is for us a technical term, which ought to have a precise meaning. But until it had been demonstrated that these quantities are uniquely determined by the data of a problem, we had no grounds for supposing that the quantities p were possessed of any precise meaning.
+
+看到我们的合理推理理论可以完全按照数量p进行,我们最后介绍了它们的技术名称;从现在开始,我们将称这些数量为概率。到目前为止,“概率”这个词已被刻意地避免了,因为虽然这个词对于众所周知的“街头人”确实具有口语意义,但对我们来说这是一个技术术语,它应该具有精确的含义。但是,在证明这些数量是由问题数据唯一确定之前,我们没有理由假设数量p具有任何确切含义。
 
 We now see that the quantities p define a particular scale on which degrees of plausibility can be measured. Out of all possible monotonic functions which could, in principle, serve this purpose equally well, we choose this particular one, not because it is more ‘correct’, but because it is more convenient; i.e. it is the quantities p that obey the simplest rules of combination, the product and sum rules. Because of this, numerical values of p are directly determined by our information.
 
+我们现在看到数量p定义了可以测量合理程度的特定尺度。在所有可能的单调函数中,原则上可以同样很好地服务于此目的,我们选择这个特定的函数,不是因为它更“正确”,而是因为它更方便;即,遵循最简单的组合规则,产品和总和规则的数量p。因此,p的数值直接由我们的信息确定。
+
 This situation is analogous to that in thermodynamics, where out of all possible empirical temperature scales t, which are monotonic functions of each other, we finally decide to use the Kelvin scale T ; not because it is more ‘correct’ than others but because it is more convenient; i.e. the laws of thermodynamics take their simplest form [dU = T dS − PdV, dG = −SdT + VdP, etc.] in terms of this particular scale. Because of this, numerical values of temperatures on the kelvin scale are ‘rigidly fixed’ in the sense of being directly measurable in experiments, independently of the properties of any particular substance like water or mercury.
+
+这种情况类似于热力学中的情况,其中在所有可能的经验温度标度t中,它们是彼此的单调函数,我们最终决定使用开尔文标度T;不是因为它比其他人更“正确”,而是因为它更方便;即,热力学定律在这个特定的尺度方面采取最简单的形式[dU = T dS -PdV,dG = -SdT + VdP等]。因此,在实验中可直接测量的意义上,开尔文尺度上的温度数值是“刚性固定的”,与任何特定物质如水或汞的性质无关。
 
 Another rule, equally appealing to our intuition, follows at once from (2.95). Consider the traditional ‘Bernoulli urn’ of probability theory; ours is known to contain ten balls of identical size and weight, labeled {1, 2, . . . , 10}. Three balls (numbers 4, 6, 7) are black, the other seven are white. We are to shake the urn and draw one ball blindfolded. The background information B in (2.95) consists of the statements in the last two sentences. What is the probability that we draw a black one?
 
+另一条同样吸引我们直觉的规则是(2.95)。 考虑概率论的传统“伯努利瓮”; 我们知道我们的十个球具有相同的大小和重量,标记为{1,2,....。。 ,10}。 三个球(数字4,6,7)是黑色的,另外七个是白色的。 我们要摇动骨灰盒并蒙住一个球。 (2.95)中的背景信息B由最后两个句子中的陈述组成。 我们画一个黑色的概率是多少？
+
 Define the propositions: $$A_i≡$$‘the ith ball is drawn’, (1 ≤ i ≤ 10). Since the background information is indifferent to these ten possibilities, (2.95) applies, and the robot assigns
+
+定义命题：$$A_i≡$$'第i个球被绘制',(1≤i≤10)。 由于背景信息对这十种可能性无关紧要,(2.95)适用,机器人分配
 
  $$p(A_i|B)= \frac 1 10$$ , 1 ≤ i ≤ 10. (2.96)
 
@@ -140,5 +209,12 @@ $$p(A|B) = \frac M N$$. (2.99)
 
 This was the original mathematical definition of probability, as given by James Bernoulli (1713) and used by most writers for the next 150 years. For example, Laplace’s great Th´eorie Analytique des Probabilit´es (1812) opens with this sentence:
 
+这是詹姆斯伯努利(James Bernoulli,1713)给出的概率的原始数学定义,并被大多数作家用于未来150年。例如,拉普拉斯伟大的Th'eorie Analytique des Probabilit'es(1812)以这句话打开：
+
 The Probability for an event is the ratio of the number of cases favorable to it, to the number of all cases possible when nothing leads us to expect that any one of these cases should occur more than any other, which renders them, for us, equally possible.
+
+事件的可能性是有利于它的案件数量与所有案件的数量之比,当没有任何事情导致我们预期这些案件中的任何一个案件应该比任何其他案件发生时更多,这对我们来说,同样可能。
+
  Exercise 2.3. As soon as we have the numerical values a = P(A|C) and b = P(B|C), the product and sum rules place some limits on the possible numerical values for their conjunction and disjunction. Supposing that a ≤ b, show that the probability for the conjunction cannot exceed that of the least probable proposition: 0 ≤ P(AB|C) ≤ a, and the probability for the disjunction cannot be less than that of the most probable proposition: b ≤ P(A + B|C) ≤ 1. Then show that, if a + b > 1, there is a stronger inequality for the conjunction; and if a + b < 1 there is a stronger one for the disjunction. These necessary general inequalities are helpful in detecting errors in calculations.
+
+ 练习2.3。一旦我们得到数值a = P(A | C)和b = P(B | C),乘积和求和规则就它们的连接和分离的可能数值设置了一些限制。假设a≤b,表明连词的概率不能超过最小可能命题的概率：0≤P(AB | C)≤a,并且分离的概率不能小于最可能命题的概率： b≤P(A + B | C)≤1。然后表明,如果a + b> 1,则连词的不等式更强;如果a + b <1,则析出更强。这些必要的一般不等式有助于检测计算中的误差。
