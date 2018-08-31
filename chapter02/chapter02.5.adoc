@@ -1,41 +1,37 @@
-== 2.5 Notation and finite-sets policy 符号和有限集原则
+== 2.5 符号和有限集中的规则
 
 Now we can introduce the notation to be used in the remainder of this work (discussed more fully in Appendix B). Henceforth, our formal probability Symbols, will use the capital P: 
+
+现在我们可以引入在本书其余部分使用的符号（在附录B中有更详细地讨论）。接下来，正式的概率符号将使用大写的P：
 
  P(A|B),                       (2.100)
 
 which signifies that the arguments are propositions. Probabilities whose arguments are numerical values are generally denoted by other functional symbols, such as
 
+这表明自变量是一个命题。当自变量是数值时,概率通常由其他函数符号表示,如
+
  f(r|np),                      (2.101)
 
 which denote ordinary mathematical functions. The reason for making this distinction is to avoid ambiguity in the meaning of our symbols, which has been a recent problem in this field. However, in agreement with the customary loose notation in the existing literature, we sometimes relax our standards enough to allow the probability symbols with small p: p(x|y) or p(A|B) or p(x|B) to have arguments which can be either propositions or numerical values, in any mix. Thus the meaning of expressions with small p can be judged only from the surrounding context. 
 
+这里的f表示普通的数学函数。作出这种区分的原因是为了避免符号的二意性，这是在本领域中最近出现的问题。然而为了兼容现有文献中的对符号使用的随意性，有时候不得不放松标准，允许小写p表示的函数的自变量可以是命题或数值甚至混合：p(x|y)或p(A|B)或p(x|B)。因此需要根据上下文来判断p的意义。
+
 It is very important to note that our consistency theorems have been established only for probabilities assigned on finite sets of propositions. In principle, every problem must start with such finite-set probabilities; extension to infinite sets is permitted only when this is the result of a well-defined and well-behaved limiting process from a finite set. More generally, in any mathematical operations involving infinite sets, the safe procedure is the finite-sets policy: 
 
-Apply the ordinary processes of arithmetic and analysis only to expressions with a finite number of terms. Then, after the calculation is done, observe how the resulting finite expressions behave as the number of terms increases indefinitely. 
+非常重要的需要注意的一点，我们的一致性定理仅仅建立在有限个命题的集合之上。原则上，每个问题都应从处理有限集的概率开始;只有存在一个明确定义和明确过程的极限过程,才可以将有限集的结果拓展到无限集上。更一般地说，在涉及无限集合的任何数学运算中，安全的做法是遵守有限集原则：
+
+ Apply the ordinary processes of arithmetic and analysis only to expressions with a finite number of terms. Then, after the calculation is done, observe how the resulting finite expressions behave as the number of terms increases indefinitely. 
+
+ 只对有限项的表达式应用常规的算术和分析过程。在计算完成后，观察结果随着项数无限增加而表现出的行为。
 
 In laying down this rule of conduct, we are only following the policy that mathematicians from Archimedes to Gauss have considered clearly necessary for nonsense avoidance in all of mathematics. But, more recently, the popularity of infinite-set theory and measure theory have led some to disregard it and seek shortcuts which purport to use measure theory directly. Note, however, that this rule of conduct is consistent with the original Lebesgue definition of measure, and when a well-behaved limit exists it leads us automatically to correct ‘measure theoretic’ results. Indeed, this is how Lebesgue found his first results. 
 
+在制定这一行为规则时，我们只是遵循从阿基米德到高斯的数学家认为的,在所有数学中都应无条件遵守的原则。但是最近,无限集合理论和测度论的流行导致一些人抛弃了这个原则，而试图直接使用度量理论,因为这似乎是个捷径。但是请注意，最早的勒贝格测度的定义是符合这个指导原则的，当存在一个有良好行为的求极限过程时，就自然会得出和使用“测度论”一样的结果。实际上，这就是勒贝格如何发现他的第一个结果的。
+
 The danger is that the present measure theory notation presupposes the infinite limit already accomplished, but contains no symbol indicating which limiting process was used. Yet, as noted in our Preface, different limiting Processes – equally well-behaved – lead in general to different results. When there is no well-behaved limit, any attempt to go directly to the limit can result in nonsense, the cause of which cannot be seen as long as one looks only at the limit, and not at the limiting process. 
+
+危险在于，现在测度论的符号体系已经预先假设已经求得了极限，却无法表示具体的求极限过程。然而，正如我们的序言所指出的，不同的求极限过程-都是行为良好的-通常可能得出不同的结果。当没有良好的求极限过程时，任何直接使用极限的做法都可能导致无意义的结果，如果只看极限结果不看极限过程的话是不可能找出错误的原因的。
 
 This little ‘sermon’ is an introduction to Chapter 15 on infinite-set paradoxes, where we shall see some of the results that have been produced by those who ignored this rule of conduct, and tried to calculate probabilities directly on an infinite set without considering any limit from a finite set. The results are at best ambiguous, at worst nonsensical.
 
-现在我们可以引入在本书其余部分使用的符号（在附录B中有更详细地讨论）。今后，正式的概率符号将使用大写的P：
-
- P(A|B),                       (2.100)
-
-这表明自变量是一个命题。当自变量是数值时,概率通常由其他函数符号表示，例如
-
- f(r|np),                      (2.101)
-
-这里的f表示普通的数学函数。作出这种区分的原因是为了避免符号的二意性，这曾在本领域中导致了一个问题。然而为了兼容现有文献中的对符号使用的随意性，有时候不得不放松了我们的标准，允许p的用法如：p(x|y)或p(A|B)或p(x|B),这里的自变量既可以是命题,也可以是数值,或者混合使用。因此要根据上下文来判断p的意义。
-
-需要注意的是，我们的一致性定理只是为有限个命题的集合中各元素的概率而建立的。原则上，每个问题都必须以处理有限集的概率开始;只有存在一个定义良好且具有良好行为的极限过程,才允许将初始的有限集拓展为无限集。更一般地说，在涉及无限集合的任何数学运算中，正确的做法是遵守有限集原则：
-
-将常规的算术和分析过程仅应用于有限个项的表达式。然后，在完成计算之后，观察得出的有限项表达式随着项的数目无限增加而表现出的行为。
-
-在制定这一行为规则时，我们只是遵循从阿基米德到高斯的数学家认为的,在所有数学中都是无合适理由则必须遵守的原则。但是，最近无限集合理论和测度论的广泛应用导致一些人抛弃了这个原则，转而寻求直接使用度量理论的捷径。但是请注意，最早的勒贝格测度的定义是符合这个指导原则的，当存在一个有良好行为的求极限过程时，就自然会得出和使用“测度论”一样的结果。实际上，这就是勒贝格如何发现他的第一个结果的。
-
-危险在于，现在测度论的符号体系已经预先假设极限是存在的，却无法表示出使用了哪种求极限过程。然而，正如我们的序言所指出的，不同的求极限过程-都是良好的-通常可能导向不同的结果。当没有良好的求极限过程时，任何直接使用极限的做法都可能导向无意义的结果，谬误的原因就是只看极限不看过程。
-
-本节是第15章中关于无限集悖论的简介.在第15章中,我们将看到忽略这个原则的人所得出的结果，他们试图直接在无限集上计算概率，而不是对有限集求极限。其结果在最好的情况下会是含混不清的，最坏的时候就谬论。
+本节是第15章中关于无限集悖论的简介.在第15章中,可以看到当忽略这个原则，试图直接在无限集上计算概率，而不是对有限集求极限时,能得出什么结果。在最好的情况下是多歧义的，而最坏的情况就是谬论。

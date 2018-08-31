@@ -183,53 +183,59 @@ As soon as we recognize this, it is clear that, instead of saying that p(x) is a
 It is p that is rigidly fixed by the data, not x.
 
 数据严格决定了p,而不是x.
-donehere
+
 The question of uniqueness is therefore disposed of automatically by the result (2.95); in spite of first appearances, there is actually only one consistent set of rules by which our robot can do plausible reasoning, and, for all practical purposes, the plausibilities x ≡ A|B from which we started have faded entirely out of the picture! We will just have no further use for them.
 
-因此,结果会自动处理唯一性问题(2.95);尽管第一次出现,实际上只有一套一致的规则,我们的机器人可以通过这些规则进行合理的推理,并且,出于所有实际目的,我们开始的合理性x≡A| B已经完全消失了！我们将不再使用它们。
+因此,结果(2.95)自动保证了唯一性;尽管第一次出现,实际上只有一套一致的规则,我们的机器人可以通过这些规则进行似真推理,并且,出于所有实际目的,起始的x≡A|B的似真度已经完全消失在视野之外了！我们将再也不会用到它们。
 
 Having seen that our theory of plausible reasoning can be carried out entirely in terms of the quantities p, we finally introduce their technical names; from now on, we will call these quantities probabilities. The word ‘probability’ has been studiously avoided up to this point, because, whereas the word does have a colloquial meaning to the proverbial ‘man on the street’, it is for us a technical term, which ought to have a precise meaning. But until it had been demonstrated that these quantities are uniquely determined by the data of a problem, we had no grounds for supposing that the quantities p were possessed of any precise meaning.
 
-看到我们的合理推理理论可以完全按照数量p进行,我们最后介绍了它们的技术名称;从现在开始,我们将称这些数量为概率。到目前为止,“概率”这个词已被刻意地避免了,因为虽然这个词对于众所周知的“街头人”确实具有口语意义,但对我们来说这是一个技术术语,它应该具有精确的含义。但是,在证明这些数量是由问题数据唯一确定之前,我们没有理由假设数量p具有任何确切含义。
+看到我们的似真推理理论完全仅可以基于操作数量p进行,我们现在终于可以引入其技术性的名称;从现在开始,我们将称这些数量为概率。之前我们刻意避免使用“概率”这个词,因为这个词有非正式的“大部分人的看法”的意味,但对一个技术术语来说应该具有精确的含义。但是,在证明这些数量是由问题的信息唯一确定之前,我们无法证明数量p是具有某种确切含义的。
 
 We now see that the quantities p define a particular scale on which degrees of plausibility can be measured. Out of all possible monotonic functions which could, in principle, serve this purpose equally well, we choose this particular one, not because it is more ‘correct’, but because it is more convenient; i.e. it is the quantities p that obey the simplest rules of combination, the product and sum rules. Because of this, numerical values of p are directly determined by our information.
 
-我们现在看到数量p定义了可以测量合理程度的特定尺度。在所有可能的单调函数中,原则上可以同样很好地服务于此目的,我们选择这个特定的函数,不是因为它更“正确”,而是因为它更方便;即,遵循最简单的组合规则,产品和总和规则的数量p。因此,p的数值直接由我们的信息确定。
+我们现在看到数量p定义了一个似真度的度量方式。在所有可行的单调函数中,原则上是同样有效的,但我们选择一个个特定的函数,不是因为它更“正确”,而是因为它更方便;即,遵守最简单的组合规则,乘法规则和加法规则的度量p。因此,p的数值直接由我们的信息确定。
 
 This situation is analogous to that in thermodynamics, where out of all possible empirical temperature scales t, which are monotonic functions of each other, we finally decide to use the Kelvin scale T ; not because it is more ‘correct’ than others but because it is more convenient; i.e. the laws of thermodynamics take their simplest form [dU = T dS − PdV, dG = −SdT + VdP, etc.] in terms of this particular scale. Because of this, numerical values of temperatures on the kelvin scale are ‘rigidly fixed’ in the sense of being directly measurable in experiments, independently of the properties of any particular substance like water or mercury.
 
-这种情况类似于热力学中的情况,其中在所有可能的经验温度标度t中,它们是彼此的单调函数,我们最终决定使用开尔文标度T;不是因为它比其他人更“正确”,而是因为它更方便;即,热力学定律在这个特定的尺度方面采取最简单的形式[dU = T dS -PdV,dG = -SdT + VdP等]。因此,在实验中可直接测量的意义上,开尔文尺度上的温度数值是“刚性固定的”,与任何特定物质如水或汞的性质无关。
+这和热力学很像,在所有可能的经验性的温标t中,都是单调函数,但我们最终决定使用开尔文温标T;不是因为它比其他选择更“正确”,而是因为它用起来更方便.热力学定律在使用开式温标时,公式的形式最简单,例如[dU=TdS-PdV,dG=-SdT+VdP]等等。因此,在实验中可直接测量的意义上,开尔文尺度上的温度数值是“严格固定的”,与任何特定物质如水或汞的性质无关。
 
 Another rule, equally appealing to our intuition, follows at once from (2.95). Consider the traditional ‘Bernoulli urn’ of probability theory; ours is known to contain ten balls of identical size and weight, labeled {1, 2, . . . , 10}. Three balls (numbers 4, 6, 7) are black, the other seven are white. We are to shake the urn and draw one ball blindfolded. The background information B in (2.95) consists of the statements in the last two sentences. What is the probability that we draw a black one?
 
-另一条同样吸引我们直觉的规则是(2.95)。 考虑概率论的传统“伯努利瓮”; 我们知道我们的十个球具有相同的大小和重量,标记为{1,2,....。。 ,10}。 三个球(数字4,6,7)是黑色的,另外七个是白色的。 我们要摇动骨灰盒并蒙住一个球。 (2.95)中的背景信息B由最后两个句子中的陈述组成。 我们画一个黑色的概率是多少？
+另一条同样符合直觉的规则,可以立刻从(2.95)导出。考虑概率论中传统的“伯努利实验”,已知盒子里有十个大小重量完全相同的球,标记为{1,2,....,10}。三个球(标记数字4,6,7)是黑色的,另外七个是白色的。我们摇动盒子蒙上眼睛取出一个球。(2.95)中的背景信息B由上面最后两句的陈述组成。我们取出一个黑球的概率是多少？
 
-Define the propositions: $$A_i≡$$‘the ith ball is drawn’, (1 ≤ i ≤ 10). Since the background information is indifferent to these ten possibilities, (2.95) applies, and the robot assigns
+Define the propositions: $$A_i≡$$ ‘the ith ball is drawn’, (1 ≤ i ≤ 10). Since the background information is indifferent to these ten possibilities, (2.95) applies, and the robot assigns
 
-定义命题：$$A_i≡$$'第i个球被绘制',(1≤i≤10)。 由于背景信息对这十种可能性无关紧要,(2.95)适用,机器人分配
+定义命题：$$A_i≡$$取出的第i个球,(1≤i≤10)。由于背景信息对十种可能并无差别,那么可以应用(2.95),机器人应分配
 
  $$p(A_i|B)= \frac 1 10$$ , 1 ≤ i ≤ 10. (2.96)
 
 The statement that we draw a black ball is that we draw number 4, 6, or 7;
 
+取出一个黑球,即取出标号为4,6或7的球
+
  $$p(black|B)=p(A_4+A_6+A_7|B)$$. (2.97)
 
 But these are mutually exclusive propositions (i.e. they assert mutually exclusive events), so (2.85) applies, and the robot’s conclusion is
+
+但这些是彼此互斥的命题(即,是对等且不相容的事件),所以应用(2.85)机器人可以得出结论
 
  $$p(black|B) = \frac 3 10$$ , (2.98)
 
 as intuition had told us already. More generally, if there are N such balls, and the proposition A is defined to be true on any specified subset of M of them, (0 ≤ M ≤ N), false on the rest, we have
 
+和我们的直觉一样.更普遍的,如果有N个球,命题A为真表示取出的是子集M中的一个,(0 ≤ M ≤ N),否则为假,那么有
+
 $$p(A|B) = \frac M N$$. (2.99)
 
 This was the original mathematical definition of probability, as given by James Bernoulli (1713) and used by most writers for the next 150 years. For example, Laplace’s great Th´eorie Analytique des Probabilit´es (1812) opens with this sentence:
 
-这是詹姆斯伯努利(James Bernoulli,1713)给出的概率的原始数学定义,并被大多数作家用于未来150年。例如,拉普拉斯伟大的Th'eorie Analytique des Probabilit'es(1812)以这句话打开：
+这是詹姆斯伯努利(James Bernoulli,1713)给出的概率的原始数学定义,并被大多数作家接下来使用了150年。例如,拉普拉斯伟大的著作"Th'eorie Analytique des Probabilit'es"(1812)以下面这句话开始：
 
 The Probability for an event is the ratio of the number of cases favorable to it, to the number of all cases possible when nothing leads us to expect that any one of these cases should occur more than any other, which renders them, for us, equally possible.
 
-事件的可能性是有利于它的案件数量与所有案件的数量之比,当没有任何事情导致我们预期这些案件中的任何一个案件应该比任何其他案件发生时更多,这对我们来说,同样可能。
+一个事件的概率是有利于它的事件的数量与所有事件的数量之比,当没有任何理由使得我们预期某些事件应该比其他事件发生更多次时,对我们来说这意味着其概率是相等的。
 
  Exercise 2.3. As soon as we have the numerical values a = P(A|C) and b = P(B|C), the product and sum rules place some limits on the possible numerical values for their conjunction and disjunction. Supposing that a ≤ b, show that the probability for the conjunction cannot exceed that of the least probable proposition: 0 ≤ P(AB|C) ≤ a, and the probability for the disjunction cannot be less than that of the most probable proposition: b ≤ P(A + B|C) ≤ 1. Then show that, if a + b > 1, there is a stronger inequality for the conjunction; and if a + b < 1 there is a stronger one for the disjunction. These necessary general inequalities are helpful in detecting errors in calculations.
 
- 练习2.3。一旦我们得到数值a = P(A | C)和b = P(B | C),乘积和求和规则就它们的连接和分离的可能数值设置了一些限制。假设a≤b,表明连词的概率不能超过最小可能命题的概率：0≤P(AB | C)≤a,并且分离的概率不能小于最可能命题的概率： b≤P(A + B | C)≤1。然后表明,如果a + b> 1,则连词的不等式更强;如果a + b <1,则析出更强。这些必要的一般不等式有助于检测计算中的误差。
+ 练习2.3。对于数值a=P(A|C)和b=P(B|C),乘法和加法规则规定了与和或操作结果的可能范围。假设a≤b,表明逻辑与的概率有最大值:0≤P(AB|C)≤a,并且逻辑或的概率有最小值:b≤P(A+B|C)≤1。然后表明,如果a+b>1,则逻辑与的不等式两边差别变得更大;如果a+b<1,逻辑和得两边差别变大。这些必要的,通用的不等式可以用来检测计算中的误差。
