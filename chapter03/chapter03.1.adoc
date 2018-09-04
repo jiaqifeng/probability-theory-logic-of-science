@@ -1,0 +1,453 @@
+== 3.1 Sampling without replacement 不放回采样
+
+Let us make the Bernoulli urn scenario a little more specific by defining the following propositions.
+ B ≡ An urn contains N balls, identical in every respect except that they carry numbers (1, 2, . . . , N) and M of them are colored red, with the remaining (N − M) white, 0 ≤ M ≤ N. We draw a ball from the urn blindfolded, observe and record its color, lay it aside, and repeat the process until n balls have been drawn, 0 ≤ n ≤ N.
+ Ri ≡ Red ball on the ith draw.
+ Wi ≡ White ball on the ith draw.
+
+让我们使伯努利的从盒子中取球的问题更具体一些,故定义以下命题
+
+ B ≡ 一个装了N个球的盒子,球上标有数字(1,2,...,N)并且其中M个是红色的,剩下的(N-M)是白色,0≤M≤N,此外所有的球都一摸一样.我们蒙上眼睛从盒子中取出一个球,记录它的颜色后将它放在一边,然后重复这个过程,直到抽出n个球,0≤n≤N。
+ $$R_i$$ ≡ 第i次取出的是红球
+ $$W_i$$ ≡ 第i次取出的是白球
+
+Since, according to B, only red or white can be drawn, we have
+
+根据B,取出的球只能是红色或白色的,故
+
+ $$P(R_i|B)+P(W_i|B)=1, 1 ≤ i ≤ N,$$ (3.6)
+
+which amounts to saying that, in the ‘logical environment’ created by knowledge of B, the propositions are related by negation:
+
+相当于说,在根据知识B得到的"逻辑环境"中,否定命题存在如下关系:
+
+ $$\bar{R}_i=W_i, W_i=R_i,$$ (3.7)
+
+and, for the first draw, (3.5) becomes
+
+对于第一次取球的结果,(3.5)即
+
+ $$P(R_1|B) = \frac M N ,$$ (3.8)
+ $$P(W_1|B) = 1 − \frac M N .$$ (3.9)
+
+Let us understand clearly what this means. The probability assignments (3.8) and (3.9) are not assertions of any physical property of the urn or its contents; they are a description of the state of knowledge of the robot prior to the drawing. Indeed, were the robot’s state of knowledge different from B as just defined (for example, if it knew the actual positions of the red and white balls in the urn, or if it did not know the true values of N and M), then its probability assignments for $$R_1$$ and $$W_1$$ would be different; but the real properties of the urn would be just the same.
+
+让我们明确的说明这意味着什么。(3.8)和(3.9)中概率的取值,并不是对盒子或其内容的任何物理属性的判断,这些数值描述的是机器人在从盒子中取球之前拥有的知识状态。事实上,如果机器人拥有的知识状态与刚刚定义的B不同(例如,如果它知道盒子中红色和白色球的实际位置,或者如果它不知道N和M的到底是多少),那么它对R_1 $$和$$ W_1 $$赋予的概率数值会和上面不同,但是盒子的实际属性是一样的。
+
+It is therefore illogical to speak of ‘verifying’ (3.8) by performing experiments with the urn; that would be like trying to verify a boy’s love for his dog by performing experiments on the dog. At this stage, we are concerned with the logic of consistent reasoning from incomplete information; not with assertions of physical fact about what will be drawn from the urn (which are in any event impossible just because of the incompleteness of the information B).
+
+因此,通过对盒子进行上述实验来“验证”(3.8)是不合逻辑的。这就像试图通过对狗进行实验来验证男孩有多爱他的狗一样。在这个阶段,我们关注的是如何从不完整的信息进行符合一致性的推理的逻辑;而不是从物理事实上断言能从盒子取什么(由于信息B是不完整的,任何情况下这都是不可能办到的)。
+
+Eventually, our robot will be able to make some very confident physical predictions which can approach, but (except in degenerate cases) not actually reach, the certainty of logical deduction; but the theory needs to be developed further before we are in a position to say what quantities can be well predicted, and what kind of information is needed for this. Put differently, relations between probabilities assigned by the robot in various states of knowledge, and observable facts in experiments, may not be assumed arbitrarily; we are justified in using only those relations that can be deduced from the rules of probability theory, as we now seek to do.
+
+最终,我们的机器人将能够自信的做出一些物理上的预测,这些预测可以很接近但不能实际达到(除非在简化一些条件的情况下),逻辑演绎的确定性;但是,我们需要继续发展我们的理论,在我们知道哪些数量可以被准确预测,以及为此到底需要知道哪些信息之前。换句话说,机器人在不同的种知识状态下指定概率的具体值与实验中可观察到的事实之间的关系,不能被随意假设;我们有理由仅使用那些可以从概率论规则推导出的关系,正如我们现在所希望做到的那样。
+
+Changes in the robot’s state of knowledge appear when we ask for probabilities referring to the second draw. For example, what is the robot’s probability for red on the first two draws? From the product rule, this is
+
+当我们考虑在第二次抽取的概率时,机器人的知识状态就会发生变化。例如,机器人在前两次抽取时都为红色的概率是多少？从乘法规则来看,这是
+
+ $$P(R_1R_2|B) = P(R_1|B)P(R_2|R_1B)$$ . (3.10)
+
+In the last factor, the robot must take into account that one red ball has been removed at the first draw, so there remain (N − 1) balls of which (M − 1) are red. Therefore
+
+在最后一个因子中,机器人必须考虑到第一次已经取出了一个红球,因而在(M-1)个球中只剩下了(N-1)个红球.所以
+
+ $$P(R_1R_2|B)=\frac M N \frac {M−1} {N−1}$$ . (3.11)
+
+Continuing in this way, the probability for red on the first r consecutive draws is
+
+如此继续下去,第r次连续取出红球的概率是
+
+ $$P(R_1 R_2 ··· R_r|B)= \frac {M(M−1)···(M−r+1)} {N(N−1)···(N−r+1)}$$
+ $$=\frac {M!(N−r)!} {(M−r)!N!} $$, r ≤ M.  (3.12)
+
+The restriction r ≤ M is not necessary if we understand that we define factorials by the gamma function relation $$n!=\Gamma(n+1)$$, for then the factorial of a negative integer is infinite, and (3.12) is zero automatically when r > M.
+
+如果我们用伽马函数$$n!=\Gamma(n+1)$$来定义乘法因子的时候,那么限制r≤M就不用明确列出了,因为当是负整数是乘法因子变成了无穷,在r>M时(3.12)自动就变成了0.
+
+The probability for white on the first w draws is similar but for the interchange of M and (N − M):
+
+对于头w次都取出白球的概率来说,结果是一样的,除了交换M和(N-M)
+
+ $$P(W_1W_2···W_w|B)= \frac {(N−M)!(N−w)!} {(N−M−w)!N!}.$$ (3.13)
+
+Then, the probability for white on draws (r + 1, r + 2, . . . , r + w) given that we got red on the first r draws, is given by (3.13), taking into account that N and M have been reduced to (N − r ) and (M − r ), respectively:
+
+那么,当头r次都取出红球时,在第(r+1,r+2,...,r+w)抽取都是白球的概率由(3.13)给出,注意N和M已经分别减少为(N-r)和(M-r):
+
+ $$P(W_{r+1}···W_{r+w}|R_1···R_rB) = \frac {(N−M)!(N−r−w)!} {(N−M−w)!(N−r)!},$$ (3.14)
+
+and so, by the product rule, the probability for obtaining r red followed by w = n − r white in n draws is, from (3.12) and (3.14),
+
+然后,根据乘法规则,在n次抽取中取出w=n-r个白球之后,即(3.12)和(3.14),取出r个红球的概率是
+
+ $$P(R_1···R_rW_{r+1}···W_n|B) = \frac {M!(N−M)!(N−n)!} {(M−r)!(N−M−w)!N!}$$, (3.15)
+
+a term (N − r )! having cancelled out.
+
+(N-r)!这项被消掉了.
+
+Although this result was derived for a particular order of drawing red and white balls, the probability for drawing exactly r red balls in any specified order in n draws is the same. To see this, write out the expression (3.15) more fully, in the manner
+
+虽然上面的结果只针对了红球白球的特定的取出顺序,但在n次中取出r个红球的概率都是一样的.为了说明这点,将(3.15)完整的写出来如下
+
+ $$ \frac {M!} {(M−r)!} = M(M−1)···(M−r+1)$$ (3.16)
+
+and similarly for the other ratios of factorials in (3.15). The right-hand side becomes
+
+对(3.15)中其他的比例因子也是一样的.右边变为
+
+ $$\frac {M(M−1)···(M−r+1)(N−M)(N−M−1)···(N−M−w+1)} {N(N−1)···(N−n+1)}$$. (3.17)
+
+Nowsuppose that r red and (n − r ) = w white are drawn, in any other order. The probability for this is the product of n factors; every time red is drawn there is a factor (number of red balls in urn)/(total number of balls), and similarly for drawing a white one. The number of balls in the urn decreases by one at each draw; therefore for the kth draw a factor (N − k + 1) appears in the denominator, whatever the colors of the previous draws.
+
+考虑取出r个红球和(n-r)=w个白球,以任何顺序的问题.其概率是n个因子的乘积;每次取出红球时都对应一个因子(盒中的红球数量)/(盒中剩余球的总数),对于白球同样如此。每次取出一个球时,盒中球的总数就减少一个;因此对于第k次抽取,在分母中就会有因子(N-k+1),无论上一次取出的是什么颜色的球。
+
+Just before the kth red ball is drawn, whether this occurs at the kth draw or any later one, there are (M − k + 1) red balls in the urn; thus, drawing the kth one places a factor (M − k + 1) in the numerator. Just before the kth white ball is drawn, there are (N − M − k + 1) white balls in the urn, and so drawing the kth white one places a factor (N − M − k + 1) in the numerator, regardless of whether this occurs at the kth draw or any later one. Therefore, by the time all n balls have been drawn, of which r were red, we have accumulated exactly the same factors in numerator and denominator as in (3.17); different orders of drawing them only permute the order of the factors in the numerator. The probability for drawing exactly r balls in any specified order in n draws is therefore given by (3.15).
+
+就在第k个红球被取出之前,无论是在第k次还是其后的某次中取出这个红球,在盒子中总是有(M-k+1)个红球;因此,取出第k个红球总是在分子中包括一个(M-k+1)因子。就在取出第k个白球之前,在盒中有(N-M-k+1)个白球,因此取出第k个白球总是在分子中包括一个(N-M-k+1)因子,无论这是发生在第k次抽取中或任何其后的抽取中。因此,当取出了n个球时,其中有r个红球,我们在分子和分母中积累了与(3.17)中完全相同的因子;不同的抽取顺序只会影响分子中因子的顺序。因此,在(3.15)中给出了在n次抽取中以任何顺序取出r个同色球的概率。
+
+Note carefully that in this result the product rule was expanded in a particular way that showed us how to organize the calculation into a product of factors, each of which is a probability at one specified draw, given the results of all the previous draws. But the product rule could have been expanded in many other ways, which would give factors conditional on other information than the previous draws; the fact that all these calculations must lead to the same final result is a nontrivial consistency property, which the derivations of Chapter 2 sought to ensure.
+
+请注意,在此结果中,以特定的方式扩展了乘法规则,向我们展示了结果是如何表示多个因子相乘,其中每个因子对应一次抽取的概率,在给定所有在此之前的抽取结果的情况下。但是乘法规则可以以许多其他方式进行扩展,可能需要考虑本次之前的所有抽取结果之外的因素;所有情况下最终结果都相等的并未是一个满足一致性的必然情况,第2章的推导曾试图证实这一点。
+
+Next, we ask: What is the robot’s probability for drawing exactly r red balls in n draws, regardless of order? Different orders of appearance of red and white balls are mutually exclusive possibilities, so we must sum over all of them; but since each term is equal to (3.15), we merely multiply it by the binomial coefficient
+
+接下来,我们会问：不考虑取出的顺序,机器人在n次抽取中正好取出r个红球的概率是多少？红球和白球出现的顺序的概率是彼此互斥的,所以我们必须对其汇总求和;但由于每一项都等于(3.15),我们只将它乘以二项式系数
+
+$$\binom{n}{r} = \frac {n!}{r!(n−r)!}$$, (3.18)
+
+which represents the number of possible orders of drawing r red balls in n draws, or, as we shall call it, the multiplicity of the event r . For example, to get three red in three draws can happen in only
+
+这个表示了在n次中共取出r个红球的取法的总数,或者称之为事件r的权重系数.例如,3次中取出了3个红球可以有
+
+ $$\binom{3}{3}  = 1$$ (3.19)
+
+way, namely $$R_1R_2R_3$$; the event r = 3 has a multiplicity of 1. But to get two red in three draws can happen in
+
+种方式, 表示为$$R_1R_2R_3$$;事件r=3的系数为1.但在3次中取出2个红球可能有
+
+ $$/binom{3}{2} = 3$$ (3.20)
+
+ways, namely $$R_1R_2W_3, R_1W_2R_3, W_1R_2R_3$$, so the event r = 2 has a multiplicity of 3.
+
+种方式,表示为$$R_1R_2W_3, R_1W_2R_3, W_1R_2R_3$$, 所以事件r=2的系数是3.
+
+ Exercise 3.1. Why isn’t the multiplicity factor (3.18) just n!? After all, we started this discussion by stipulating that the balls, in addition to having colors, also carry labels (1, 2, . . . , N), so that different permutations of the red balls among themselves, which give the r ! in the denominator of (3.18), are distinguishable arrangements.
+ Hint: In (3.15) we are not specifying which red balls and which white ones are to be drawn.
+
+ 练习3.1 为什么乘法因子(3.18)不是n!?毕竟,我们开始讨论时,规定球除了有颜色外,还带有标签(1,2,...,N),以便处理红球之间的不同排列,这相当于在(3.18)的分母中给出了r!作为一个因子,对应了所有不同的排列。
+ 提示：在(3.15)中,我们没有指明要取出哪些白球和哪个红球。
+
+Taking the product of (3.15) and (3.18), the many factorials can be reorganized into three binomial coefficients. Defining A ≡ ‘Exactly r red balls in n draws, in any order’ and the function
+
+取(3.15)和(3.18)的乘积,可以将许多因子重组为三个二项式系数。 定义A≡"n次共取出r个红球,以任何顺序"和函数
+
+ h(r |N, M, n) ≡ P(A|B), (3.21)
+
+we have
+
+有
+
+ $$h(r|N,M,n) = \frac { \binom{M}{r} \binom{N−M}{n−r} } { \binom{N}{n} }$$ , (3.22)
+
+which we shall usually abbreviate to h(r ). By the convention $$x!=\Gamma(x+1)$$ it vanishes automatically when r > M, or r > n, or (n − r ) > (N − M), as it should.
+
+我们通常将其缩写为h(r)。按惯例$$x!=\Gamma(x+1)$$自动消失,当r>M,或r>n或(n-r)>(N-M)时.
+
+We are here doing a little notational acrobatics for reasons explained in Appendix B. The point is that in our formal probability symbols P(A|B) with the capital P, the arguments A, B always stand for propositions, which can be quite complicated verbal statements. If we wish to use ordinary numbers for arguments, then for consistency we should define new functional symbols such as h(r |N, M, n). Attempts to try to use a notation like P(r |NMn), thereby losing sight of the qualitative stipulations contained in A and B, have led to serious errors from misinterpretation of the equations (such as the marginalization paradox discussed later). However, as already indicated in Chapter 2, we follow the custom of most contemporary works by using probability symbols of the form p(A|B), or p(r |n) with small p, in which we permit the arguments to be either propositions or algebraic variables; in this case, the meaning must be judged from the context.
+
+我们在这里对于符号做了一点杂耍,原因参见附录B。重点是,正式概率符号P(A|B)中用了大写P,参数A和B总是代表某个可能相当复杂的口语陈述的命题。如果我们希望参数可以是数值,为了保持一致性,我们应该定义新的函数符号,例如h(r|N,M,n)。试图使用像P(r|NMn)这样的表示方法,从而忽略了A和B中包含的定性规定,将会导致错误的解释了方程的意义(例如后面讨论的边际悖论)这样的严重错误。然而,正如第2章已经指出的那样,我们遵循大多数当代著作的惯例,使用形式为p(A|B)的概率符号,或p(r|n)这样的小写p的符号,我们允许其参数是个命题或代数变量;在这种情况下,必须从上下文来判断其含义。
+
+The fundamental result (3.22) is called the hypergeometric distribution because it is related to the coefficients in the power series representation of the Gauss hypergeometric function
+
+基本性的结果(3.22)称为超几何分布,因为它与高斯超几何函数的幂级数表示中的系数有关。
+
+ $$F(a,b,c;t) = \sum_{r=0}^∞ \frac { \Gamma(a+r)\Gamma(b+r)\Gamma(c)} {\Gamma(a)\Gamma(b)\Gamma(c+r)} \frac {t^r}{r!} $$. (3.23)
+
+If either a or b is a negative integer, the series terminates and this is a polynomial. It is easily verified that the generating function
+
+如果a或b任一个为负整数,则级数会终止变成一个多项式.容易验证生成函数
+
+ $$G(t) ≡ \sum_{r=0}^n h(r|N,M,n)t^r$$ (3.24)
+
+is equal to
+
+等于
+
+ $$G(t) = \frac {F(−M,−n, c; t)} {F(−M,−n, c; 1)}$$, (3.25)
+
+with c = N − M − n + 1. The evident relation G(1) = 1 is, from (3.24), just the statement that the hypergeometric distribution is correctly normalized. In consequence of (3.25), G(t) satisfies the second-order hypergeometric differential equation and has many other properties useful in calculations.
+
+其中c=N-M-n+1.显然对于G(1)=1,从(3.24),只是超几何分布正确归一化的陈述。作为(3.25)的结果,G(t)满足二阶超几何微分方程,还有其他很多有用的计算性质。
+
+Although the hypergeometric distribution h(r ) appears complicated, it has some surprisingly simple properties. The most probable value of r is found to within one unit by setting h(r') = h(r' − 1) and solving for r'. We find
+
+尽管超几何分布h(r)看起来很复杂,但它具有一些令人惊讶的简单特性.当h(r')=h(r'-1)并求解r'时,可以发现r最可能的取值位于在单位1之内。我们发现
+
+ $$r' = \frac {(n + 1)(M + 1)} {N + 2}$$. (3.26)
+
+If r' is an integer, then r' and r' − 1 are jointly the most probable values. If r' is not an integer, then there is a unique most probable value
+
+如果r'是整数,那么r'和r'-1都是可能性最大的取值。 如果r'不是整数,则存在唯一最可能的值
+
+ $$\hat r = INT(r')$$, (3.27)
+
+that is, the next integer below r'. Thus, the most probable fraction f = r/n of red balls in the sample drawn is nearly equal to the fraction F = M/N originally in the urn, as one would expect intuitively. This is our first crude example of a physical prediction: a relation between a quantity F specified in our information and a quantity f measurable in a physical experiment derived from the theory.
+
+也就是说,在r'以下的下一个整数。因此,样本中红球的最可能的比例f=r/n几乎等于原始盒中的比例F=M/N,正如人们直觉预期的那样。这是我们粗略的物理预测的第一个例子：我们的信息中指定的数量F与从我们的理论导出的可在物理实验中测量的数量f之间的关系。
+
+The width of the distribution h(r ) gives an indication of the accuracy with which the robot can predict r . Many such questions are answered by calculating the cumulative probability distribution, which is the probability for finding R or fewer red balls. If R is an integer, this is
+
+分布h(r)的宽度指出了机器人预测r的精度范围。很多这类问题可以通过对概率分布求和来回答,即抽出R个或更少的红球的概率。 如果R是整数,则为
+
+ $$H(R) ≡ \sum_{r=0}^R h(r)$$, (3.28)
+
+but for later formal reasons we define H(x) to be a staircase function for all non-negative real x; thus H(x) ≡ H(R), where R = INT(x) is the greatest integer ≤x.
+
+但是由于接下来的形式上的原因,我们定义H(x)为定义域是所有非负实数x的阶梯函数;因此H(x​​)≡H(R),其中R=INT(x)是小于等于x的最大整数。
+
+The median of a probability distribution such as h(r ) is defined to be a numberm such that equal probabilities are assigned to the propositions (r < m) and (r > m). Strictly speaking, according to this definition a discrete distribution has in general no median. If there is an integer R for which H(R − 1) = 1 − H(R) and H(R) > H(R − 1), then R is the unique median. If there is an integer R for which H(R) = 1/2, then any r in (R ≤ r < R') is a median, where R' is the next higher jump point of H(x); otherwise there is none.
+
+概率分布h(r)的中位数定义为对于数值m,使得命题(r<m)和(r>m)的概率相等。严格地说,根据这个定义,离散分布一般没有中位数。如果存在整数R,使得H(R-1)=1-H(R)且H(R)>H(R-1),则R是唯一的中位数。如果存在整数R,使得H(R)=1/2,那么任何一个r(R≤r<R')都是中位数,其中R'是H(x)的下一个更高的跳跃点;否则没有中位数。
+
+But for most purposes we may take a more relaxed attitude and approximate the strict definition. If n is reasonably large, then it makes reasonably good sense to call that value of R for which H(R) is closest to 1/2, the ‘median’. In the same relaxed spirit, the values of R for which H(R) is closest to 1/4, 3/4, may be called the ‘lower quartile’ and ‘upper quartile’, respectively, and if n >> 10 we may call the value of R for which H(R) is closest to k/10 the ‘kth decile’, and so on. As n→∞, these loose definitions come into conformity with the strict one.
+
+但是对于大多数情况,我们采取略为宽松的定义。如果n足够大,那么使得H(R)最接近1/2的“R”值称为“中位数”,我们觉得是合理的。基于同样的考虑,使得H(R)最接近1/4,3/4的R值可分别称为“下四分位数”和“上四分位数”,如果n >> 10,可以将H(R)最接近k/10的R的值称为第分k位数,依此类推。当n→∞时,上面宽松的定义与严格的定义将会一致。
+
+Usually, the fine details of H(R) are unimportant, and for our purposes it is sufficient to know the median and the quartiles. Then the (median) ± (interquartile distance) will provide a good enough idea of the robot’s prediction and its probable accuracy. That is, on the information given to the robot, the true value of r is about as likely to lie in this interval as outside it. Likewise, the robot assigns a probability of (5/6) − (1/6) = 2/3 (in other words, odds of 2 : 1) that r lies between the first and fifth hexile, odds of 8 : 2 = 4 : 1 that it is bracketed by the first and ninth decile, and so on.
+
+通常,H(R)的精确细节并不重要,对于我们的目的,知道中位数和四分位数就足够了。然后(中位数)±(四分位距离)能够很好的说明机器人预测的准确度。也就是说,根据给予机器人的信息,r的真实值落在该区间之内和之外的可能性相等.类似的有,机器人指定的概率为(5/6)-(1/6)=2/3(换句话说,赔率为2：1)的r位于第一和第五个六分位数之间,赔率为8：2=4：1它位于第一和第九个十分位数之间,依此类推。
+
+Although one can develop rather messy approximate formulas for these distributions which were much used in the past, it is easier today to calculate the exact distribution by computer. For example W. H. Press et al. (1986) list two routines that will calculate the generalized complex hypergeometric distribution for any values of a, b and c. Tables 3.1 and 3.2 give the hypergeometric distribution for N = 100, M = 50, n = 10, and N = 100, M = 10, n = 50, respectively. In the latter case, it is not possible to draw more than ten red balls, so the entries for r > 10 are all h(r) = 0, H(r) = 1, and are not tabulated. One is struck immediately by the fact that the entries for positive h(r) are identical; the hypergeometric distribution has the symmetry property
+
+虽然过去人们为了便于使用,发展出这些分布的相当混乱的各种近似公式,但今天计算机已经使得精确计算分布变得非常容易。例如W.H.Press(1986)等人给出了两个过程,来计算任意a,b和c的广义复超几何分布。表3.1和3.2分别给出了当N=100,M=50,n=10和N=100,M=10,n=50的超几何分布。在后一种情况下,因为不可能取出超过十个以上的红球,所以对于r>10的情况都有h(r)=0和H(r)=1,没有列在表中。一个事实是,h(r)为正数的条目都是相同的;超几何分布在交换M和n的情况下是对称的
+
+ h(r|N, M, n) = h(r |N, n, M) (3.29)
+
+under interchange of M and n. Whether we draw ten balls from an urn containing 50 red ones, or 50 from an urn containing ten red ones, the probability for finding r red ones in the sample drawn is the same. This is readily verified by closer inspection of (3.22), and it is evident from the symmetry in a, b of the hypergeometric function (3.23).
+
+从有50个红色的盒中抽出10个球,或者从有10个红球的盒中抽出50个球,在抽出的球中有r个红球的概率是相同的。通过仔细检查(3.22)可以很容易地验证这一点,并且从超几何函数(3.23)的a,b中的对称性可以看出这一点。
+
+Another symmetry evident from Tables 3.1 and 3.2 is the symmetry of the distribution about its peak: h(r |100, 50, 10) = h(10 − r |100, 50, 10). However, this is not so in general; changing N to 99 results in a slightly unsymmetrical peak, as we see from Table 3.3. The symmetric peak in Table 3.1 arises as follows: if we interchange M and (N − M) and at the same time interchange r and (n − r ) we have in effect only interchanged the words ‘red’
+
+表3.1和3.2中能明显看出,关于其峰值的分布的对称性：h(r|100,50,10)=h(10-r|100,50,10)。但是,一般情况并非如此;如表3.3所示,将N变为99会导致略微不对称的峰值。表3.1中的对称峰出现如下：如果我们互换M和(N-M)并同时交换r和(n-r)我们相当于实际上只交换了“红色”和白色这两个词
+
+Table 3.1. Hypergeometric distribution;N, M, n = 100, 10, 50.
+[%header,cols=3*]
+|===
+|r |h(r )| H(r )
+|0
+|0.000593
+|0.000593
+
+|1
+|0.007237
+|0.007830
+
+|2
+|0.037993
+|0.045824
+
+|3
+|0.113096
+|0.158920
+
+|4
+|0.211413
+|0.370333
+
+|5
+|0.259334
+|0.629667
+
+|6
+|0.211413
+|0.841080
+
+|7
+|0.113096
+|0.954177
+
+|8
+|0.037993
+|0.992170
+
+|9
+|0.007237
+|0.999407
+
+|10
+|0.000593
+|1.000000
+
+|===
+
+Table 3.2. Hypergeometric distribution;N, M, n = 100, 50, 10.
+[%header,cols=3*]
+|===
+|r |h(r ) |H(r )
+
+|0
+|0.000593
+|0.000593
+
+|1
+|0.007237
+|0.007830
+
+|2
+|0.037993
+|0.045824
+
+|3
+|0.113096
+|0.158920
+
+|4
+|0.211413
+|0.370333
+
+|5
+|0.259334
+|0.629667
+
+|6
+|0.211413
+|0.841080
+
+|7
+|0.113096
+|0.954177
+
+|8
+|0.037993
+|0.992170
+
+|9
+|0.007237
+|0.999407
+
+|10
+|0.000593
+|1.000000
+
+|===
+
+and ‘white’, so the distribution is unchanged:
+
+所以,分布并未改变:
+
+ h(n − r |N, N − M, n) = h(r |N, M, n). (3.30)
+
+But when M = N/2, this reduces to the symmetry
+
+但当M=N/2时,变成表3.1中的对称性
+
+ h(n − r |N, M, n) = h(r |N, M, n) (3.31)
+
+observed in Table 3.1. By (3.29) the peak must be symmetric also when n = N/2.
+
+根据(3.20),当n=N/2时峰值也必然是对称的.
+
+Table 3.3. Hypergeometric distribution;N, M, n = 99, 50, 10.
+[header,cols=3*]
+|===
+|r |h(r ) |H(r )
+
+|0
+|0.000527
+|0.000527
+
+|1
+|0.006594
+|0.007121
+
+|2
+|0.035460
+|0.042581
+
+|3
+|0.108070
+|0.150651
+
+|4
+|0.206715
+|0.357367
+
+|5
+|0.259334
+|0.616700
+
+|6
+|0.216111
+|0.832812
+
+|7
+|0.118123
+|0.950934
+
+|8
+|0.040526
+|0.991461
+
+|9
+|0.007880
+|0.999341
+
+|10
+|0.000659
+|1.000000
+
+|===
+
+The hypergeometric distribution has two more symmetries not at all obvious intuitively or even visible in (3.22). Let us ask the robot for its probability $$P(R_2|B)$$ of red on the second draw. This is not the same calculation as (3.8), because the robot knows that, just prior to the second draw, there are only (N − 1) balls in the urn, not N. But it does not know what color of ball was removed on the first draw, so it does not know whether the number of red balls now in the urn is M or (M − 1). Then the basis for the Bernoulli urn result (3.5) is lost, and it might appear that the problem is indeterminate.
+
+在(3.22)中,超几何分布具有两个以上的对称性,但更不直观或难以看出。让机器人给出第二次抽出红球的概率$$ P(R_2|B)$$。这与(3.8)的计算不同,因为机器人知道,在第二次抽样之前,盒子中只有(N-1)个球,而不是N.但它不知道第一次取走的球是什么颜色,因此它不知道现在盒中的红球个数是M还是(M-1)。那么(3.5)的前提就不存在了,而且看起来这个问题是无法确定的。
+
+Yet it is quite determinate after all; the following is our first example of one of the useful techniques in probability calculations, which derives from the resolution of a proposition into disjunctions of simpler ones, as discussed in Chapters 1 and 2. The robot knows that either $$R_1$$ or $$W_1$$ is true; therefore using Boolean algebra we have
+
+然而这个问题是完全确定的,以下是我们在概率计算中一种有用技术的第一个例子,它源于将命题解析为互不相交的多个简单命题,如第1章和第2章所述。机器人现在知道$$ R_1 $$和$ $$W_1$$两者其一为真; 因此使用布尔代数有
+
+ $$R_2 = (R_1 + W_1)R_2 = R_1R_2 + W_1R_2$$. (3.32)
+
+We apply the sum rule and the product rule to get
+
+应用加法和乘法规则可得到
+
+ $$P(R_2|B) = P(R_1R_2|B) + P(W_1R_2|B)$$
+ $$ = P(R_2|R_1B)P(R_1|B) + P(R_2|W_1B)P(W_1|B).$$  (3.33)
+
+But
+
+但是
+
+ $$P(R2_|R1B) = \frac {M−1}{N−1}, P(R_2|W_1B) = \frac {M}{N−1},$$ (3.34)
+
+and so
+
+所以
+
+ $$P(R_2|B) = \frac {M−1}{N−1} \frac {M}{N} + \frac {M}{N−1} \frac {N−M}{N} = \frac {M}{N}.$$ (3.35)
+
+The complications cancel out, and we have the same probability for red on the first and second draws. Let us see whether this continues. For the third draw we have
+
+复杂的那部分被消掉了,对于第一次或第二次抽出了红球我们得到了相同的概率.让我看看是否接下来还是如此,对于第三次抽取有
+
+ $$R_3 = (R_1 + W_1)(R_2 + W_2)R_3 = R_1R_2R_3 + R_1W_2R_3 + W_1R_2R_3 + W_1W_2R_3,$$ (3.36)
+
+and so
+
+和
+
+ $$P(R_3|B) = \frac {M}{N} \frac {M−1}{N−1} \frac {M−2}{N−2} + \frac {M}{N} \frac {N−M}{N−1} \frac {M−1}{N−2} $$
+ $$+ \farc {N−M}{N} \frac {M}{N−1} \frac {M−1}{N−2} + \frac {N−M}{N} \frac {N−M−1}{N−1} \frac {M}{N−2}$$
+ $$ = \frac {M}{N} .$$  (3.37)
+
+Again all the complications cancel out. The robot’s probability for red at any draw, if it does not know the result of any other draw, is always the same as the Bernoulli urn result (3.5). This is the first nonobvious symmetry. We shall not prove this in generality here, because it is contained as a special case of a still more general result; see Eq. (3.118) below.
+
+再一次的所有的复杂部分都被消除了。在不知道任何其他抽取结果的情况下,对于任何一次抽取出红球的概率,机器人总是会得到伯努利骨采样相同的结果(3.5)。这是第一个不是显而易见的对称性的情况。我们不会在这里一般性地证明这一点,因为它是一个更一般的结果的特例; 见之后的等式(3.118)。
+
+The method of calculation illustrated by (3.32) and (3.36) is as follows: resolve the quantity whose probability is wanted into mutually exclusive subpropositions, then apply the sum rule and the product rule. If the subpropositions are well chosen (i.e. if they have some simple meaning in the context of the problem), their probabilities are often calculable. If they are not well chosen (as in the example of the penguins at the end of Chapter 2), then of course this procedure cannot help us.
+
+(3.32)和(3.36)所示的计算方法如下：将待求的概率分解为互斥的子命题,然后应用求和规则和乘积规则。如果子命题被恰当地选择(即,如果它们在问题的上下文中具有一些简单的含义),则它们的概率通常是可计算的。如果它们没有被很好地选择(如第2章末尾的企鹅的例子),那么这个分解方式必然没什么帮助。
