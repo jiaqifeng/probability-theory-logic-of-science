@@ -1,0 +1,187 @@
+== 4.2 Testing binary hypotheses with binary data
+
+The simplest nontrivial problem of hypothesis testing is the one where we have only two hypotheses to test and only two possible data values. Surprisingly, this turns out to be a realistic and valuable model of many important inference and decision problems. Firstly, let us adapt (4.3) to this binary case. It gives us the probability that H is true, but we could have written it equally well for the probability that H is false:
+
+ $$P(\bar{H}|DX) = P(\bar{H}|X) \frac {P(D|\bar{H}X)} {P(D|X)),$$ (4.4)
+
+and if we take the ratio of the two equations,
+
+ $$\frac {P(H|DX)} {P(\bar{H}|DX)} = \frac {P(H|X)} {P(\bar{H}|X)} \frac {P(D|HX)} {P(D|HX)},$$ (4.5)
+
+the term P(D|X) will drop out. This may not look like any particular advantage, but the quantity that we have here, the ratio of the probability that H is true to the probability that it is false, has a technical name. We call it the ‘odds’ on the proposition H. So if we write the ‘odds on H, given D and X’, as the symbol
+
+ $$O(H|DX) ≡ \frac {P(H|DX)} {P(\bar{H}|DX)},$$ (4.6)
+
+then we can combine (4.3) and (4.4) into the following form:
+
+ $$O(H|DX) = O(H|X) \frac {P(D|HX)} {P(D|\bar{H}X)}.$$ (4.7)
+
+The posterior odds on H is (are?) equal to the prior odds multiplied by a dimensionless factor, which is also called a likelihood ratio. The odds are (is?) a strict monotonic function of the probability, so we could equally well calculate this quantity.1
+
+1 Our uncertain phrasing here indicates that ‘odds’ is a grammatically slippery word. We are inclined to agree with purists who say that it is, like ‘mathematics’ and ‘physics’, a singular noun in spite of appearances. Yet the urge to follow the vernacular and treat it as plural is sometimes irresistible, and so we shall be knowingly inconsistent and use it both ways, judging what seems euphonious in each case.
+
+In many applications it is convenient to take the logarithm of the odds because of the fact that we can then add up terms. Now we could take logarithms to any base we please, and this cost the writer some trouble. Our analytical expressions always look neater in terms of natural (base e) logarithms. But back in the 1940s and 1950s when this theory was first developed, we used base 10 logarithms because they were easier to find numerically; the four-figure tables would fit on a single page. Finding a natural logarithm was a tedious process, requiring leafing through enormous old volumes of tables.
+
+Today, thanks to hand calculators, all such tables are obsolete and anyone can find a tendigit natural logarithm just as easily as a base 10 logarithm. Therefore, we started happily to rewrite this section in terms of the aesthetically prettier natural logarithms. But the result taught us that there is another, even stronger, reason for using base 10 logarithms. Our minds are thoroughly conditioned to the base 10 number system, and base 10 logarithms have an immediate, clear intuitive meaning to all of us. However, we just don’t know what to make of a conclusion that is stated in terms of natural logarithms, until it is translated back into base 10 terms. Therefore, we re-rewrote this discussion, reluctantly, back into the old, ugly base 10 convention.
+
+We define a new function, which we will call the evidence for H given D and X:
+
+ $$e(H|DX) ≡ 10 \log_{10} O(H|DX).$$ (4.8)
+
+This is still a monotonic function of the probability. By using the base 10 and putting the factor 10 in front, we are now measuring evidence in decibels (hereafter abbreviated to db). The evidence for H, given D, is equal to the prior evidence plus the number of db provided by working out the log likelihood in the last term below:
+
+ $$e(H|DX) = e(H|X) + 10 \log_{10} [ \frac {P(D|HX)} {P(D|\bar{H}X)} ].$$ (4.9)
+
+Now suppose that this new information D actually consisted of several different propositions:
+
+ $$D = D_1D_2D_3···$$ . (4.10)
+
+Then we could expand the likelihood ratio by successive applications of the product rule:
+
+ $$e(H|DX) = e(H|X) + 10 \log_{10} [ \frac {P(D_1|HX)}{P(D_1|\bar{H}X)} ] + 10 \log_{10} [ \frac {P(D_2|D_1HX)}{P(D_2|D_1\bar{H}X) ] + ··· .$$  (4.11)
+
+But, in many cases, the probability for getting $$D_2$$ is not influenced by knowledge of $$D_1$$:
+
+ $$P(D_2|D_1HX) = P(D_2|HX).$$ (4.12)
+
+One then says conventionally that $$D_1$$ and $$D_2$$ are independent. Of course, we should really say that the probabilities which the robot assigns to them are independent. It is a semantic confusion to attribute the property of ‘independence’ to propositions or events; for that implies, in common language, physical causal independence. We are concerned here with the very different quality of logical independence.
+
+To emphasize this, note that neither kind of independence implies the other. Two events may be in fact causally dependent (i.e. one influences the other); but for a scientist who has not yet discovered this, the probabilities representing his state of knowledge – which determine the only inferences he is able to make – might be independent. On the other hand, two events may be causally independent in the sense that neither exerts any causal influence on the other (for example, the apple crop and the peach crop); yet we perceive a logical connection between them, so that new information about one changes our state of knowledge about the other. Then for us their probabilities are not independent.
+
+Quite generally, as the robot’s state of knowledge represented by H and X changes, probabilities conditional on them may change from independent to dependent or vice versa; yet the real properties of the events remain the same. Then one who attributed the property of dependence or independence to the events would be, in effect, claiming for the robot the power of psychokinesis. We must be vigilant against this confusion between reality and a state of knowledge about reality, which we have called the ‘mind projection fallacy’.
+
+The point we are making is not just pedantic nitpicking; we shall see presently (Eq. (4.29)) that it has very real, substantive consequences. In Chapter 3 we have discussed some of the conditions under which these probabilities might be independent, in connection with sampling from a very large known population and sampling with replacement. In the closing Comments section, we noted that whether urn probabilities do or do not factor can depend on whether we do or do not knowthat the contents of several urns are the same. In our present problem, as in Chapter 3, to interpret causal independence as logical independence, or to interpret logical dependence as causal dependence, has led some to nonsensical conclusions in fields ranging from psychology to quantum theory.
+
+In case these several pieces of data are logically independent given (H X) and also given $$(\bar{H}X)$$, (4.11) becomes
+
+ $$e(H|DX) = e(H|X) + 10 \sum_i \log_{10} [ \frac {P(D_i|HX)} {P(D_i|\bar{H}X)} ],$$ (4.13)
+
+where the sum is over all the extra pieces of information that we obtain.
+
+To get some feeling for numerical values here, let us construct Table 4.1. We have three different scales on which we can measure degrees of plausibility: evidence, odds, or probability; they are all monotonic functions of each other. Zero db of evidence corresponds to odds of 1 or to a probability of 1/ 2. Now, every physicist or electrical engineer knows that 3 db means a factor of 2 (nearly) and 10 db is a factor of 10 (exactly); and so if we go in steps of 3 db, or 10, we can construct this table very easily.
+
+It is obvious from Table 4.1 why it is very cogent to give evidence in decibels. When probabilities approach one or zero, our intuition doesn’t work very well. Does the difference between the probability of 0.999 and 0.9999 mean a great deal to you? It certainly doesn’t to the writer. But after living with this for only a short while, the difference between evidence of plus 30 db and plus 40 db does have a clear meaning to us. It is now in a scale which our minds comprehend naturally. This is just another example of the Weber–Fechner law; intuitive human sensations tend to be logarithmic functions of the stimulus.
+
+Table 4.1. Evidence, odds, and probability.
+
+[header,cols=3]
+|===
+|e |O |p
+
+|0
+|1:1
+|1/2
+
+|3
+|2:1
+|2/3
+
+|6
+|4:1
+|4/5
+
+|10
+|10:1
+|10/11
+
+|20
+|100:1
+|100/101
+
+|30
+|1000:1
+|0.999
+
+|40
+|$$10^4$$:1
+|0.9999
+
+|−e
+|1/O
+|1 − p
+
+|===
+
+Even the factor of 10 in (4.8) is appropriate. In the original acoustical applications, it was introduced so that a 1 db change in sound intensity would be, psychologically, about the smallest change perceptible to our ears.With a little familiarity and a little introspection, we think that the reader will agree that a 1 db change in evidence is about the smallest increment of plausibility that is perceptible to our intuition. Nobody claims that the Weber–Fechner law is a precise rule for all human sensations, but its general usefulness and appropriateness is clear; almost always it is not the absolute change, but more nearly the relative change, in some stimulus that we perceive. For an interesting account of the life and work of Gustav Theodor Fechner (1801–87), see Stigler (1986c).
+
+Now let us apply (4.13) to a specific calculation, which we shall describe as a problem of industrial quality control (although it could be phrased equally well as a problem of cryptography, chemical analysis, interpretation of a physics experiment, judging two economic theories, etc.). Following the example of Good (1950), we assume numbers which are not very realistic in order to elucidate some points of principle. Let the prior information X consist of the following statements:
+
+ X ≡ We have 11 automatic machines turning out widgets, which pour out of the machines into 11 boxes. This example corresponds to a very early stage in the development of widgets, because ten of the machines produce one in six defective. The 11th machine is even worse; it makes one in three defective. The output of each machine has been collected in an unlabeled box and stored in the warehouse.
+
+We choose one of the boxes and test a few of the widgets, classifying them as ‘good’ or ‘bad’. Our job is to decide whether we chose a box from the bad machine or not; that is, whether we are going to accept this batch or reject it.
+
+Let us turn this job over to our robot and see how it performs. Firstly, it must find the prior evidence for the various propositions of interest. Let
+
+ A ≡ we chose a bad batch (1/3 defective),
+ B ≡ we chose a good batch (1/6 defective).
+
+The qualitative part of our prior information X told us that there are only two possibilities; so in the ‘logical environment’ generated by X, these propositions are related by negation: given X, we can say that
+
+ $$\bar{A} = B, \bar{B} = A.$$ (4.14)
+
+The only quantitative prior information is that there are 11 machines and we do not know which one made our batch, so, by the principle of indifference, P(A|X) = 1/11, and
+
+ $$e(A|X) = 10 \log_{10} \frac {P(A|X)}{P(\bar{A}|X)} = 10 \log_{10} \frac {(1/11)}{(10/11)} = −10 db,$$ (4.15)
+
+whereupon we have necessarily e(B|X) = +10 db.
+
+Evidently, in this problem the only properties of X that will be relevant for the calculation are just these numbers, ±10 db. Any other kind of prior information which led to the same numbers would give us just the same mathematical problem from this point on. So, it is not necessary to say that we are talking only about a problem where there are 11 machines, and so on. There might be only one machine, and the prior information consists of our previous experience with it.
+
+Our reason for stating the problem in terms of 11 machines was that we have, thus far, only one principle, indifference, by which we can convert raw information into numerical probability assignments. We interject this remark because of a famous statement by Feller (1950) about a single machine, which we consider in Chapter 17 after accumulating some more evidence pertaining to the issue he raised. To our robot, it makes no difference how many machines there are; the only thing that matters is the prior probability for a bad batch, however this information was arrived at.2
+
+Now, from this box we take out a widget and test it to see whether it is defective. If we pull out a bad one, what will that do to the evidence for a bad batch? That will add to it
+
+ $$10 \log_{10} \frac {P(bad|AX)}{P(bad|\bar{A}X)} db$$ (4.16)
+
+where P(bad|AX) represents the probability for getting a bad widget, given A, etc.; these are sampling probabilities, and we have already seen how to calculate them. Our procedure is very much ‘like’ drawing from an urn, and, as in Chapter 3, on one draw our datum D now consists only of a binary choice: (good/bad). The sampling distribution P(D|HX)
+
+2 Notice that in this observation we have the answer to a point raised in Chapter 1: How does one make the robot ‘cognizant’ of the semantic meanings of the various propositions that it is being called upon to deal with? The answer is that the robot does not need to be ‘cognizant’ of anything. If we give it, in addition to the model and the data, a list of the propositions to be considered, with their prior probabilities, this conveys all the ‘meaning’ needed to define the robot’s mathematical problem for the applications now being considered. Later, we shall wish to design a more sophisticated robot which can also help us to assign prior probabilities by analysis of complicated but incomplete information, by the maximum entropy principle. But, even then, we can always define the robot’s mathematical problem without going into semantics.
+
+reduces to
+
+ $$P(bad|AX) = \frac {1}{3}, P(good|AX) = \frac {2}{3}, $$  (4.17)
+ $$P(bad|BX) = \frac {1}{6}, P(good|BX) = \frac {5}{6}.$$ (4.18)
+
+Thus, if we find a bad widget on the first draw, this will increase the evidence for A by
+
+ $$10 \log_{10} \frac {(1/3)}{(1/6)} = 10 \log_{10} 2 = 3 db.$$ (4.19)
+
+What happens now if we draw a second bad one?We are sampling without replacement, so as we noted in (3.11), the factor (1/3) in (4.19) should be updated to
+
+ $$\frac {(N/3)−1}{N−1} = \frac {1}{3} − \frac {2}{3(N−1)},$$ (4.20)
+
+where N is the number of widgets in the batch. But, to avoid this complication, we suppose that N is very much larger than any number that we contemplate testing; i.e. we are going to test such a negligible fraction of the batch that the proportion of bad and good ones in it is not changed appreciably by the drawing. Then the limiting form of the hypergeometric distribution (3.22) will apply, namely the binomial distribution (3.86). Thus we shall consider that, given A or B, the probability for drawing a bad widget is the same at every draw regardless of what has been drawn previously; so every bad one we draw will provide +3 db of evidence in favor of hypothesis A.
+
+Now suppose we find a good widget. Using (4.14), we get evidence for A of
+
+ $$10 \log_{10} \frac {P(good|AX)}{P(good|BX)} = 10 \log_{10} \frac {(2/3)}{(5/6)} = −0.97 db,$$ (4.21)
+
+but let’s call it −1 db. Again, this will hold for any draw, if the number in the batch is sufficiently large. If we have inspected n widgets, of which we found $$n_b$$ bad ones and $$n_g$$ good ones, the evidence that we have the bad batch will be
+
+ $$e(A|DX) = e(A|X) + 3n_b − n_g.$$ (4.22)
+
+You see how easy this is to do once we have set up the logarithmic machinery. The robot’s mind is ‘driven in one direction or the other’ in a very simple, direct way.
+
+Perhaps this result gives us a deeper insight into why the Weber–Fechner law applies to intuitive plausible inference. Our ‘evidence’ function is related to the data that we have observed in about the most natural way imaginable; a given increment of evidence corresponds to a given increment of data. For example, if the first 12 widgets we test yield five bad ones, then
+
+ e(A|DX) = −10 + 3 × 5 − 7 = −2 db, (4.23)
+
+or, the probability for a bad batch is raised by the data from (1/11) = 0.09 to $$P(A|DX) \simeq 0.4$$.
+
+In order to get at least 20 db of evidence for proposition A, how many bad widgets would we have to find in a certain sequence of $$n = n_b + n_g$$ tests? This requires
+
+ $$3n_b − n_g = 4n_b − n = n(4 f_b − 1) ≥ 20,$$ (4.24)
+
+so, if the fraction $$f_b ≡ n_b/n$$ of bad ones remains greater than 1/4, we shall accumulate eventually 20 db, or any other positive amount, of evidence for A. It appears that $$f_b = 1/4$$ is the threshold value at which the test can provide no evidence for either A or B over the other; but note that the +3 and −1 in (4.22) are only approximate. The exact threshold fraction of bad ones is, from (4.19) and (4.21),
+
+ $$f_t = \frac {log (\frac {5}{4})} {log(2) + log(\frac{5}{4})} = 0.2435292,$$ (4.25)
+
+in which the base of the logarithms does not matter. Sampling fractions greater (less) than this give evidence for A over B (B over A); but if the observed fraction is close to the threshold, it will require many tests to accumulate enough evidence.
+
+Now all we have here is the probability or odds or evidence, whatever you wish to call it, of the proposition that we chose the bad batch. Eventually, we have to make a decision: we’re going to accept it, or we’re going to reject it. How are we going to do that? Well, we might decide beforehand: if the probability of proposition A reaches a certain level, then we’ll decide that A is true. If it gets down to a certain value, then we’ll decide that A is false. There is nothing in probability theory per se which can tell us where to put these critical levels at which we make our decision. This has to be based on value judgments: what are the consequences of making wrong decisions, and what are the costs of making further tests?
+
+This takes us into the realm of decision theory, considered in Chapters 13 and 14. But for now it is clear that making one kind of error (accepting a bad batch) might be more serious than making the other kind of error (rejecting a good batch). That would have an obvious effect on where we place our critical levels.
+
+So we could give the robot some instructions such as ‘If the evidence for A is greater than +0 db, then reject this batch (it is more likely to be bad than good). If it goes as low as −13 db, then accept it (there is at least a 95% probability that it is good). Otherwise, continue testing.’We start doing the tests, and every time we find a bad widget the evidence for the bad batch goes up 3 db; every time we find a good one, it goes down 1 db. The tests terminate as soon as we enter either the accept or reject region for the first time.
+
+The way described above is how our robot would do it if we told it to reject or accept on the basis that the posterior probability of proposition A reaches a certain level. This very useful and powerful procedure is called ‘sequential inference’ in the statistical literature, the term signifying that the number of tests is not determined in advance, but depends on the sequence of data values that we find; at each step in the sequence we make one of three choices: (a) stop with acceptance; (b) stop with rejection; (c) make another test. The term should not be confused with what has come to be called ‘sequential analysis with nonoptional stopping’, which is a serious misapplication of probability theory; see the discussions of optional stopping in Chapters 6 and 17.

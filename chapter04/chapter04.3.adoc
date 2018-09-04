@@ -1,0 +1,37 @@
+== 4.3 Nonextensibility beyond the binary case
+
+The binary hypothesis testing problem turned out to have such a beautifully simple solution that we might like to extend it to the case of more than two hypotheses. Unfortunately, the convenient independent additivity over data sets in (4.13) and the linearity in (4.22) do not generalize. By ‘independent additivity’ we mean that the increment of evidence from a given datum $$D_i$$ depends only on $$D_i$$ and H; not on what other data have been observed. As (4.11) shows, we always have additivity, but not independent additivity unless the probabilities are independent.
+
+We state the reason for this nonextensibility in the form of an exercise for the reader; to prepare for it, suppose that we have n hypotheses $$\{H_1,...,H_n\}$$ which on prior information X are mutually exclusive and exhaustive:
+
+ $$P(H_i H_j |X) = P(H_i |X)δ_{ij} , \sum_{i=1}^n P(H_i |X) = 1.$$ (4.26)
+
+Also, we have acquired m data sets $$\{D_1,...,D_m\}$$, and as a result the probabilities of the $$H_i$$ become updated in odds form by (4.7) , which now becomes
+
+ $$O(H_i |D_1,...,D_mX) = O(H_i |X) \frac {P(D_1,..., D_m|H_i X)}{P(D_1,...,D_m|\bar{H}_i X)}.$$ (4.27)
+
+It is common that the numerator will factor because of the logical independence of the $$D_j$$ , given $$H_i$$ :
+
+ $$P(D_1,...,D_m|H_iX) = \prod_j P(D_j|H_iX), 1 ≤ i ≤ n.$$ (4.28)
+
+If the denominator should also factor,
+
+ $$P(D_1,...,D_m|H_iX) = \prod_j P(D_j |H_i X), 1 ≤ i ≤ n,$$ (4.29)
+
+then (4.27) would split into a product of the updates produced by each $$D_j$$ separately, and the log-odds formula (4.9) would again take a form independently additive over the $$D_j$$ as in (4.13).
+
+Exercise 4.1. Show that there is no such nontrivial extension of the binary case. More specifically, prove that if (4.28) and (4.29) hold with n > 2, then at most one of the factors
+
+ $$\frac {P(D_1|H_iX)}{P(D_1|\bar{H}_iX)} ··· \frac {P(D_m|H_iX)}{P(D_m|\bar{H}_iX)} $$ (4.30)
+
+is different from unity, therefore at most one of the data sets $$D_j$$ can produce any updating of the probability for $$H_i$$ .
+
+This has been a controversial issue in the literature of artificial intelligence (Glymour, 1985; R. W. Johnson, 1985). Those who fail to distinguish between logical independence and causal independence would suppose that (4.29) is always valid, provided only that no Di exerts a physical influence on any other $$D_j$$ . But we have already noted the folly of such reasoning; this is an occasion when the semantic confusion can lead to serious numerical errors. When n = 2, (4.29) follows from (4.28). But when n > 2, (4.29) is such a strong condition that it would reduce the whole problem to a triviality not worth considering; we have left it (Exercise 4.1) for the reader to examine the equations to see why this is so. Because of Cox’s theorems expounded in Chapter 2, the verdict of probability theory is that our conclusion about nonextensibility can be evaded only at the price of committing demonstrable inconsistencies in our reasoning.
+
+To head off a possible misunderstanding of what is being said here, let us add the following. However many hypotheses we have in mind, it is of course always possible to pick out two of them and compare them only against each other. This reverts to the binary choice case already analyzed, and the independent additive property holds within that smaller problem (find the status of an hypothesis relative to a single alternative).
+
+We could organize this by choosing $$A_1$$ as the standard ‘null hypothesis’ and comparing each of the others with it by solving n − 1 binary problems; whereupon the relative status of any two propositions is determined. For example, if $$A_5$$ and $$A_7$$ are favored over $$A_1$$ by 22.3 db and 31.9 db, respectively, then $$A_7$$ is favored over $$A_5$$ by 31.9 − 22.3 = 9.6 db. If such binary comparisons provide all the information one wants, there is no need to consider multiple hypothesis testing at all.
+
+But that would not solve our present problem; given the solutions of all these binary problems, it would still require a calculation as big as the one we are about to do to convert that information into the absolute status of any given hypothesis relative to the entire class of n hypotheses. Here we are going after the solution of the larger problem directly.
+
+In any event, we need not base our stance merely on claims of authoritarian finality for an abstract theorem; more constructively, we now show that probability theory does lead us to a definite, useful procedure for multiple hypothesis testing, which gives us a much deeper insight and makes it clear why the independent additivity cannot, and should not, hold when n > 2. It would then ignore some very cogent information; that is the demonstrable inconsistency.

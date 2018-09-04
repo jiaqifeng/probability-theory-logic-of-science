@@ -1,0 +1,19 @@
+== 4.7 Simple and compound (or composite) hypotheses
+
+The hypotheses (A, B,C, $$H_f$$ ) that we have considered thus far refer to a single parameter f = M/N, the unknown fraction of bad widgets in our box, and specify a sharply defined value for f (in $$H_f$$ , it can be any prescribed number in 0 ≤ f ≤ 1). Such hypotheses are called simple, because if we formalize this a bit more by defining an abstract ‘parameter space’ $$\Omega$$ consisting of  values of the parameter or parameters that we consider to be possible, such an hypothesis is represented by a single point in $$\Omega$$.
+
+Testing all the simple hypotheses in $$\Omega$$, however, may be more than we need for our purposes. It may be that we care only whether our parameter lies in some subset 1 ∈  or in the complementary set $$\Omega_2 = \Omega − \Omega_1$$, and the particular value of f in that subset is uninteresting (i.e. it would make no difference for what we plan to do next). Can we proceed directly to the question of interest, instead of requiring our robot to test every simple hypothesis in $$\Omega_1$$?
+
+The question is, to us, trivial; our starting point, Eq. (4.3), applies for all hypotheses H, simple or otherwise, so we have only to evaluate the terms in it for this case. But in (4.64) we have done almost all of that, and need only one more integration. Suppose that if f > 0.1 then we need to take some action (stop the machine and readjust it), but if f ≤ 0.1 we should allow it to continue running. The space $$\Omega$$ then consists of all f in [0, 1], and we take $$\Omega_1$$ as comprising all f in [0.1, 1], H as the hypothesis that f is in $$\Omega_1$$. Since the actual value of f is not of interest, f is now called a nuisance parameter; and we want to get rid of it.
+
+In view of the fact that the problem has no other parameter than f and different intervals d f are mutually exclusive, the discrete sum rule $$P(A_1 + ···+ A_n|B) = \sum_i P(A_i |B)$$ will surely generalize to an integral as the Ai become more and more numerous. Then the nuisance parameter f is removed by integrating it out of (4.64):
+
+ $$P(\Omega_1|DX) = \frac { \int_{\Omega_1}df f^n(1 − f )^{N−n}g(f|X)} {\int_{\Omega} df f^n(1 − f)^{N−n}g( f |X)}.$$ (4.73)
+
+In the case of a uniform prior pdf for f , we may use (4.64) and the result is the incomplete beta-function: the posterior probability that f is in any specified interval (a < f < b) is
+
+ $$P(a < f < b|DX) = \frac {(N + 1)!}{n!(N − n)!} \int_a^b df f^n(1 − f )^{N−n},$$ (4.74)
+
+and in this form computer evaluation is easy.
+
+More generally, when we have any composite hypothesis to test, probability theory tells us that the proper procedure is simply to apply the principle (4.1) by summing or integrating out, with respect to appropriate priors, whatever nuisance parameters it contains. The conclusions thus found take fully into account all of the evidence contained in the data and in the prior information about the parameters. Probability theory used as logic enables us to test, with a single principle, any number of hypotheses, simple or compound, in the light of the data and prior information. In later chapters we shall demonstrate these properties in many quantitatively worked out examples.

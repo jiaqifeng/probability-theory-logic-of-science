@@ -1,0 +1,120 @@
+== 4.6 Testing an infinite number of hypotheses
+
+In spite of the pragmatic argument just given, thinking of continuously variable parameters is often a natural and convenient approximation to a real problem (only we should not take it so seriously that we get bogged down in the irrelevancies for the real world that infinite sets and measure theory generate). So, suppose that we are now testing simultaneously an uncountably infinite number of hypotheses about the machine. As often happens in mathematics, this actually makes things simpler because analytical methods become available. However, the logarithmic form of the previous equations is now awkward, and so we will go back to the original probability form (4.3):
+
+ $$P(A|DX) = P(A|X) \frac {P(D|AX)}{P(D|X)}.$$ (4.56)
+
+Letting A now stand for the proposition ‘The fraction of bad widgets is in the range
+( f, f + df)’, there is a prior pdf
+
+ P(A|X) = g( f |X)df, (4.57)
+
+which gives the probability that the fraction of bad widgets is in the range d f ; and let D stand for the results thus far of our experiment,
+
+ D ≡ N widgets were tested and we found the results GGBGBBG · · ·, containing in all n bad ones and (N − n) good ones.
+
+Then the posterior pdf for f is given by
+
+ $$P(A|DX) = P(A|X) \frac {P(D|AX)}{P(D|X)} = g(f|DX) df,$$ (4.58)
+
+so the prior and posterior pdfs are related by
+
+ $$g( f |DX) = g( f |X) \frac {P(D|AX)}{P(D|X)}.$$ (4.59)
+
+The denominator is just a normalizing constant, which we could calculate directly; but usually it is easier to determine (if it is needed at all) from requiring that the posterior pdf satisfy the normalization condition
+
+ $$P(0 ≤ f ≤ 1|DX) = \int_0^1 df g( f |DX) = 1,$$ (4.60)
+
+which we should think of as an extremely good approximation to the exact formula, which has a sum over an enormous number of discrete values of f , instead of an integral.
+
+The evidence of the data thus lies entirely in the f dependence of P(D|AX). At this point, let us be very careful, in view of some errors that have trapped the unwary. In this probability, the conditioning statement A specifies an interval d f , not a point value of f . Are we justified in taking an implied limit d f → 0 and replacing P(D|AX) with P(D|Hf X)? Most writers have not hesitated to do this.
+
+Mathematically, the correct procedurewould be to evaluate P(D|AX) exactly for positive d f , and pass to the limit d f → 0 only afterward. But a tricky point is that if the problem contains another parameter θ in addition to f , then this procedure is ambiguous until we take the warning of Gauss very seriously, and specify exactly how the limit is to be approached (does d f tend to zero at the same rate for all values of θ?). For example, if we set d f = $$epsilon$$h(θ) and pass to the limit $$\epsilon$$ → 0, our final conclusions may depend on which function h(θ) was used. Those who fail to notice this fall into the famous Borel–Kolmogorov paradox, in which a seemingly well-posed problem appears to have many different correct solutions. We shall discuss this in more detail later (Chapter 15), and show that the paradox is averted by strict adherence to our Chapter 2 rules.
+
+In the present relatively simple problem, f is the only parameter present and $$P(D|H_fX)$$ is a continuous function of f ; this is surely enough to guarantee that the limit is wellbehaved and uneventful. But, just to be sure, let us take the trouble to demonstrate this by direct application of our Chapter 2 rules, keeping in mind that this continuum treatment is really an approximation to an exact discrete one. Then with d f > 0, we can resolve A into a disjunction of a finite number of discrete propositions:
+
+ $$A = A_1 + A_2 + ···+ A_n,$$ (4.61)
+
+where $$A_1 = H_f$$ ( f being one of the possible discrete values) and the $$A_i$$ specify the discrete values of f in the interval ( f, f + df ). They are mutually exclusive, so, as we noted in Chapter 2, Eq. (2.67), application of the product rule and the sum rule gives the general result
+
+ $$P(D|AX) = P(D|A_1 + A_2 + ··· + A_n, X) = \frac {\sum_i P(A_i |X)P(D|A_i X)} { \sum_i P(A_i |X) },$$ (4.62)
+
+which is a weighted average of the separate probabilities $$P(D|A_i X)$$. This may be regarded also as a generalization of (4.39).
+
+Then if all the $$P(D|A_i X)$$ were equal, (4.62) would become independent of their prior probabilities $$P(A_i |X)$$ and equal to $$P(D|A_1X) = P(D|H_f X)$$; the fact that the conditioning statement on the left-hand side of (4.62) is a logical sum makes no difference, and P(D|AX) would be rigorously equal to $$P(D|H_f X)$$f. Even if the $$P(D|A_i X)$$ are not equal, as df → 0, we have n → 1 and eventually $$A = A_1$$, with the same result.
+
+It may appear that we have gone to extraordinary lengths to argue for an almost trivially simple conclusion. But the story of the schoolboy who made a mistake in his sums and concluded that the rules of arithmetic are all wrong, is not fanciful. There is a long history of workers who did seemingly obvious things in probability theory without bothering to derive them by strict application of the basic rules, obtained nonsensical results – and concluded that probability theory as logic was at fault. The greatest, most respected mathematicians and logicians have fallen into this trap momentarily, and some philosophers spend their entire lives mired in it; we shall see some examples in the next chapter.
+
+Such a simple operation as passing to the limit df → 0 may produce results that seem to us obvious and trivial; or it may generate a Borel–Kolmogorov paradox. We have learned from much experience that this care is needed whenever we venture into a new area of applications; we must go back to the beginning and derive everything directly from first principles applied to finite sets. If we obey the Chapter 2 rules prescribed by Cox’s theorems, we are rewarded by finding beautiful and useful results, free of contradictions.
+
+Now, if we were given that f is the correct fraction of bad widgets, then the probability for getting a bad one at each trial would be f , and the probability for getting a good one would be (1 − f ). The probabilities at different trials are, by hypothesis (i.e. one of the many statements hidden there in X), logically independent given f , and so, as in our derivation of the binomial distribution (3.86),
+
+ $$P(D|H_f X) = f^n(1 − f )^{N−n}$$ (4.63)
+
+(note that the experimental data D told us not only how many good and bad widgets were found, but also the order in which they appeared). Therefore, we have the posterior pdf
+
+ $$g( f |DX) = \frac {f^n(1 − f )^{N−n}g( f |X)} {\int_0^1 df f^n(1 − f )^{N−n}g( f |X)}.$$ (4.64)
+
+You may be startled to realize that all of our previous discussion in this chapter is contained in this simple looking equation, as special cases. For example, the multiple hypothesis test starting with (4.43) and including the final results (4.45)–(4.49) is all contained in (4.64) corresponding to the particular choice of prior pdf:
+
+ $$g( f |X) = \frac{10}{11} (1 − 10^{−6})δ(f − \frac{1}{6}) + \frac{1}{11} (1 − 10^{−6})δ(f − \frac{1}{3}) + 10^{−6}δ(f − \frac{99}{100}).$$  (4.65)
+
+This is a case where the cumulative pdf, G( f ), is discontinuous. The three delta-functions correspond to the three discrete hypotheses B, A,C, respectively, of that example. They appear in the prior pdf (4.65) with coefficients which are the prior probabilities (4.31); and in the posterior pdf (4.64) with altered coefficients, which are just the posterior probabilities (4.45), (4.48) and (4.49).
+
+Readers who have been taught to mistrust delta-functions as ‘nonrigorous’ are urged to read Appendix B at this point. The issue has nothing to do with mathematical rigor; it is simply one of notation appropriate to the problem. It would be difficult and awkward to express the information conveyed in (4.65) by a single equation in Lebesgue–Stieltjes type notation. Indeed, failure to use delta-functions where they are clearly called for has led mathematicians into elementary errors, as noted in Appendix B.
+
+Suppose that at the start of this test our robot was fresh from the factory; it had no prior knowledge about the machines at all, except for our assurance that it is possible for a machine to make a good widget, and also possible for it to make a bad one. In this state of ignorance, what prior pdf g( f |X) should it assign? If we have definite prior knowledge about f , this is the place to put it in; but we have not yet seen the principles needed to assign such priors. Even the problem of assigning priors to represent ‘ignorance’ will need much discussion later; but, for a simple result now, it may seem to the reader, as it did to Laplace 200 years ago, that in the present case the robot has no basis for assigning to any particular interval d f a higher probability than to any other interval of the same size. Thus, the only honest way it can describe what it knows is to assign a uniform prior probability density, g( f |X) = const. This will receive a better theoretical justification later; to normalize it correctly as in (4.60) we must take
+
+ g( f |X) = 1, 0 ≤ f ≤ 1. (4.66)
+
+The integral in (4.64) is then the well-known Eulerian integral of the first kind, today more commonly called the complete beta-function; and (4.64) reduces to
+
+ $$g( f |DX) = \frac {(N + 1)!}{n! (N − n)!} f^n(1 − f )^{N−n}.$$ (4.67)
+
+=== 4.6.1 Historical digression
+
+It appears that this result was first found by an amateur mathematician, the Rev. Thomas Bayes (1763). For this reason, the kind of calculations we are doing are called ‘Bayesian’. We shall follow this long-established custom, although it is misleading in several respects. The general result (4.3) is always called ‘Bayes’ theorem’, although Bayes never wrote it; and it is really nothing but the product rule of probability theory which had been recognized by others, such as James Bernoulli and A. de Moivre (1718), long before the work of Bayes. Furthermore, it was not Bayes but Laplace (1774) who first saw the result in generality and showed how to use it in real problems of inference. Finally, the calculations we are doing – the direct application of probability theory as logic – are more general than mere application of Bayes’ theorem; that is only one of several items in our toolbox.
+
+The right-hand side of (4.67) has a single peak in (0 ≤ f ≤ 1), located by differentiation at
+
+ $$f = \hat f ≡ \frac{n}{N},$$ (4.68)
+
+just the observed proportion, or relative frequency, of bad widgets. To find the sharpness of the peak, we write
+
+ $$L( f ) ≡ \log_g( f |DX) = n log( f ) + (N − n) log(1 − f ) + const.,$$ (4.69)
+
+and expand L( f ) in a power series about $$\hat f$$ . The first terms are
+
+ $$L( f ) = L( \hat f ) − \frac {( f − \hat f )^2} {2σ^2} + ··· ,$$ (4.70)
+
+where
+
+ $$σ^2 ≡ \frac {\hat f (1 − \hat f )} {N},$$ (4.71)
+
+and so, to this approximation, (4.67) is a Gaussian, or normal, distribution:
+
+ $$g( f |DX) \simeq K exp \{ − \frac {( f − \hat f )^2}{2σ^2} \} $$ (4.72)
+
+and K is a normalizing constant. Equations (4.71) and (4.72) constitute the de Moivre– Laplace theorem. It is actually an excellent approximation to (4.67) in the entire interval (0 < f < 1) in the sense that the difference of the two sides tends to zero (although their ratio does not tend to unity), provided that n >> 1 and (N − n) >> 1. Properties of the Gaussian distribution are discussed in depth in Chapter 7.
+
+Thus, after observing n bad widgets in N trials, the robot’s state of knowledge about f can be described reasonably well by saying that it considers the most likely value of f to be just the observed fraction of bad widgets, and it considers the accuracy of this estimate to be such that the interval $$\hat f ± σ$$ is reasonably likely to contain the true value. The parameter σ is called the standard deviation and $$σ^2$$ is the variance of the pdf (4.72). More precisely, from numerical analysis of (4.72), the robot assigns:
+
+ 50% probability that the true value of f is contained in the interval $$\hat f$$ ± 0.68 σ;
+ 90% probability that it is contained in $$\hat f$$ ± 1.65 σ;
+ 99% probability that it is contained in $$\hat f$$ ± 2.57 σ.
+
+As the number N of tests increases, these intervals shrink, according to (4.71), proportional to $$1/ \sqrt{N}$$, a common rule that arises repeatedly in probability theory.
+
+In this way, we see that the robot starts in a state of ‘complete ignorance’ about f ; but, as it accumulates information from the tests, it acquires more and more definite opinions about f , which correspond very nicely to common sense. Two cautions: (1) all this applies only to the case where, although the numerical value of f is initially unknown, it was one of the conditions defining the problem that f is known not to be changing with time, and (2) again we must warn against the error of calling σ the ‘variance of f ’, which would imply that f is varying, and that σ is a real (i.e. measurable) physical property of f . That is one of the most common forms of the mind projection fallacy.
+
+It is really necessary to belabor this point: σ is not a real property of f , but only a property of the probability distribution that the robot assigns to represent its state of knowledge about f . Two robots with different information would, naturally and properly, assign different pdfs for the same unknown quantity f , and the one which is better informed will probably – and deservedly – be able to estimate f more accurately; i.e., to use a smaller σ.
+
+But, as noted, we may consider a different problem in which f is variable if we wish to do so. Then the mean-square variation $$s^2$$ of f over some class of cases will become a ‘real’ property, in principle measurable, and the question of its relation, if any, to the $$σ^2$$ of the robot’s pdf for that problem can be investigated mathematically, as we shall do later in connection with time series. The relation will prove to be: if we know σ but have as yet no data and no other prior information about s, then the best prediction of s that we can make is essentially equal to σ; and if we do have the data but do not know σ and have no other prior information about σ, then the best estimate of σ that we can make is nearly equal to s. These relations are mathematically derivable consequences of probability theory as logic.
+
+Indeed, it would be interesting, and more realistic for some quality-control situations, to introduce the possibility that f might vary with time, and the robot’s job is to make the best possible inferences about whether a machine is drifting slowly out of adjustment, with the hope of correcting trouble before it became serious. Many other extensions of our problem occur to us: a simple classification of widgets as good and bad is not too realistic; there is likely a continuous gradation of quality, and by taking that into account we could refine these methods. There might be several important properties instead of just ‘badness’ and ‘goodness’ (for example, if our widgets are semiconductor diodes, forward resistance, noise temperature, rf impedance, low-level rectification efficiency, etc.), and we might also have to control the quality with respect to all of these. There might be a great many different machine characteristics, instead of just $$H_f$$ , about which we need plausible inference.
+
+It is clear that we could spend years and write volumes on all the further ramifications of this problem, and there is already a huge literature on it. Although there is no end to the complicated details that can be generated, there is in principle no difficulty in making whatever generalization we need. It requires no new principles beyond what we have given.
+
+In the problem of detecting a drift in machine characteristics, we would want to compare our robot’s procedure with the ones proposed long ago by Shewhart (1931).We would find that Shewhart’s methods are intuitive approximations to what our robot would do; in some of the cases involving a normal distribution they are the same (but for the fact that Shewhart was not thinking sequentially; he considered the number of tests determined in advance). These are, incidentally, the only cases where Shewhart felt that his proposed methods were fully satisfactory.
+
+This is really the same problem as that of detecting a signal in noise, which we shall study in more detail later on.

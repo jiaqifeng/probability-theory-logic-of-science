@@ -1,0 +1,16 @@
+= 4 Elementary hypothesis testing
+
+ I conceive the mind as amoving thing, and arguments as the motive forces driving it in one direction or the other.
+ John Craig (1699)
+
+John Craig was a Scottish mathematician, and one of the first scholars to recognize the merit in Isaac Newton’s new invention of ‘the calculus’. The above sentence, written some 300 years ago in one of the early attempts to create a mathematical model of reasoning, requires changing by only one word in order to describe our present attitude.We would like to think that our minds are swayed not by arguments, but by evidence. And if fallible humans do not always achieve this objectivity, our desiderata were chosen with the aim of achieving it in our robot. Therefore to see how our robot’s mind is ‘driven in one direction or the other’ by newevidence, we examine some applications that, although simple mathematically, have proved to have practical importance in several different fields.
+
+As is clear from the basic desiderata listed in Chapter 1, the fundamental principle underlying all probabilistic inference is:
+
+ To form a judgment about the likely truth or falsity of any proposition A, the correct procedure is to calculate the probability that A is true:
+ $$P(A|E_1E_2···)$$ (4.1)
+ conditional on all the evidence at hand.
+
+In a sampling context (i.e. when A stands for some data set), this principle has seemed obvious to everybody from the start. We used it implicitly throughout Chapter 3 without feeling any need to state it explicitly. But when we turn to a more general context, the principle needs to be stressed because it has not been obvious to all workers (as we shall see repeatedly in later chapters).
+
+The essence of ‘honesty’ or ‘objectivity’ demands that we take into account all the evidence we have, not just some arbitrarily chosen subset of it. Any such choice would amount either to ignoring evidence that we have, or presuming evidence that we do not have. This leads us to recognize at the outset that some information is always available to the robot.
