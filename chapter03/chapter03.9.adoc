@@ -1,0 +1,206 @@
+== 3.9 Correction for correlations
+
+Suppose that, from an intricate logical analysis, drawing and replacing a red ball increases the probability for a red one at the next draw by some small amount $$\epsilon$$ > 0, while drawing and replacing a white one decreases the probability for a red one at the next draw by a (possibly equal) small quantity δ > 0; and that the influence of earlier draws than the last one is negligible compared with $$\epsilon$$ or δ. You may call this effect a small ‘propensity’ if you like; at least it expresses a physical causation that operates only forward in time. Then, letting C stand for all the above background information, including the statements just made about correlations and the information that we draw n balls, we have
+
+ $$P(R_k|R_{k−1}C) = p + \epsilon, P(R_k|W_{k−1}C) = p − δ,$$
+ $$P(W_k|R_{k−1}C) = 1 − p − \epsilon, P(W_k|W_{k−1}C) = 1 − p + δ,$$ (3.93)
+
+where p ≡ M/N. From this, the probability for drawing r red and (n − r ) white balls in any specified order is easily seen to be
+
+ $$p(p + \epsilon)^c(p − δ)^{c'}(1 − p + δ)^w(1 − p − \epsilon)^{w'}$$ (3.94)
+
+if the first draw is red; whereas, if the first is white, the first factor in (3.94) should be (1 − p). Here, c is the number of red draws preceded by red ones, c' the number of red preceded by white, w the number of white draws preceded by white, and w' the number of white preceded by red. Evidently,
+
+ $$c + c' = \begin{bmatrix} r-1 \\ r \end{bmatrix} , w+ w' = \begin{bmatrix} n-r \\ n − r − 1 \end{bmatrix}$$, (3.95)
+
+the upper and lower cases holding when the first draw is red or white, respectively. When r and (n − r ) are small, the presence of ' and δ in (3.94) makes little difference, and the equation reduces for all practical purposes to
+
+ $$p^r (1 − p)^{n−r}$$ , (3.96)
+
+as in the binomial distribution (3.92). But, as these numbers increase, we can use relations of the form
+	
+ $$(1 + \frac {\epsilon}{p} )^c \simeq exp \{ \frac {\epsilon c}{p} \}$$, (3.97)
+
+and (3.94) goes into
+
+ $$p^r (1−p)^{n−r} exp \{ \frac {\epsilon c − δc'} {p} + \frac {δw − \epsilon w'} {1−p} \} $$. (3.98)
+
+The probability for drawing r red and (n − r ) white balls now depends on the order in which red and white appear, and, for a given $$\epsilon$$, when the numbers c, c', w, w' become sufficiently large, the probability can become arbitrarily large (or small) compared with (3.92).
+
+We see this effect most clearly if we suppose that N = 2M, p = 1/2, in which case we will surely have $$\epsilon = δ$$. The exponential factor in (3.98) then reduces to
+
+ $$exp \{ 2 \epsilon [(c − c') + (w − w')] \}.$$ (3.99)
+
+This shows that (i) as the number n of draws tends to infinity, the probability for results containing ‘long runs’ (i.e. long strings of red (or white) balls in succession), becomes arbitrarily large compared with the value given by the ‘randomized’ approximation; (ii) this effect becomes appreciable when the numbers $$(\epsilon c)$$, etc., become of order unity. Thus, if $$\epsilon = 10^{−2}$$, the randomized approximation can be trusted reasonably well as long as n < 100; beyond that, we might delude ourselves by using it. Indeed, it is notorious that in real repetitive experiments where conditions appear to be the same at each trial, such runs – although extremely improbable on the randomized approximation – are nevertheless observed to happen.
+
+Now let us note how the correlations expressed by (3.93) affect some of our previous calculations. The probabilities for the first draw are of course the same as (3.8); we now use the notation
+
+ $$p = P(R_1|C) = \frac M N, q = 1 − p = P(W_1|C) = \frac {N − M}{N}.$$ (3.100)
+
+But for the second trial we have instead of (3.35)
+
+ $$P(R_2|C) = P(R_2R_1|C) + P(R_2W_1|C)$$
+ $$= P(R_2|R_1C) P(R_1|C) + P(R_2|W_1C) P(W_1|C)$$
+ $$= (p + \epsilon )p + (p − δ)q$$
+ $$= p + (p \epsilon − qδ),$$       (3.101)
+
+and continuing for the third trial
+
+ $$P(R_3|C) = P(R_3|R_2C)P(R_2|C) + P(R_3|W_2C)P(W_2|C)$$
+ $$= (p + \epsilon)(p + p \epsilon − qδ) + (p − δ)(q − p \epsilon + qδ)$$
+ $$= p + (1 + \epsilon + δ)(p \epsilon − qδ).$$    (3.102)
+
+We see that $$P(R_k |C)$$ is no longer independent of k; the correlated probability distribution is no longer exchangeable. But does $$P(R_k |C)$$ approach some limit as k →∞?
+
+It would be almost impossible to guess the general $$P(R_k |C)$$ by induction, following the method in (3.101) and (3.102) a few steps further. For this calculation we need a more powerful method. If we write the probabilities for the kth trial as a vector,
+
+ $$Vk ≡ \begin{bmatrix} P(R_k|C) \\ P(W_k|C) \end{bmatrix}$$, (3.103)
+
+then (3.93) can be expressed in matrix form:
+
+ $$V_k = MV_{k−1}$$, (3.104)
+
+with
+
+ $$M = \binom {[p + \epsilon] \, [p − δ]} {[q − \epsilon] \, [q + δ]}$$. (3.105)
+
+This defines a Markov chain of probabilities, and M is called the transition matrix. Now the slow induction of (3.101) and (3.102) proceeds instantly to any distance we please:
+
+ $$V_k = M^{k−1}V_1$$. (3.106)
+
+So, to have the general solution, we need only to find the eigenvectors and eigenvalues of M. The characteristic polynomial is
+
+ $$C(λ) ≡ det(M_{ij} − λδ_{ij} ) = λ^2 − λ(1 + \epsilon + δ) + (\epsilon + δ)$$ (3.107)
+
+so the roots of C(λ) = 0 are the eigenvalues
+
+ $$λ_1 = 1$$
+ $$λ_2 = \epsilon + δ.$$   (3.108)
+
+Now, for any 2 × 2 matrix
+
+ $$M = \binom {a \, b} {c \, d}$$   (3.109)
+
+with an eigenvalue λ, the corresponding (non-normalized) right eigenvector is
+
+ x=(bλ−a) , (3.110)
+
+for which we have at once Mx = λx. Therefore, our eigenvectors are
+
+ $$x1 = \binom {p − δ} {q − \epsilon} , x2 = \binom {1}{−1}$$. (3.111)
+
+These are not orthogonal, since M is not a symmetric matrix. Nevertheless, if we use (3.111) to define the transformation matrix
+
+ $$S = \binom {[p − δ] \, 1} {[q − \epsilon] \, −1}$$, (3.112)
+
+we find its inverse to be
+
+ $$S^{−1} = \frac {1}{1 − \epsilon − δ} \binom {1 \qquad 1} {[q − \epsilon] \qquad −[p − δ]}$$, (3.113)
+
+and we can verify by direct matrix multiplication that
+
+ $$S^{−1}MS = \Lambda = \binom {λ_1 \quad 0} {0 \quad λ_2}$$, (3.114)
+
+where $$\Lambda$$ is the diagonalized matrix. Then we have for any r , positive, negative, or even complex:
+
+ $$M^r = S \Lambda ^r S^{−1}$$ (3.115)
+
+or
+
+ $$M^r = \frac {1}{1 − \epsilon − δ} \binom {p − δ + [\epsilon + δ]^r [q − \epsilon] \quad [p − δ][1 − (\epsilon + δ)^r ]} {[q − \epsilon][1 − (\epsilon + δ)^r ] \quad q − \epsilon + [\epsilon + δ]^r [p − δ]}$$ , (3.116)
+
+and since
+
+ $$V_1 = \binom {p}{q}$$ (3.117)
+
+the general solution (3.106) sought is
+
+ $$P(R_k|C) = \frac {(p − δ) − (\epsilon + δ)^{k−1}(p\epsilon − qδ)} {1 − \epsilon − δ}$$. (3.118)
+
+We can check that this agrees with (3.100), (3.101) and (3.102). From examining (3.118) it is clear why it would have been almost impossible to guess the general formula by induction. When $$\epsilon$$ = δ = 0, this reduces to $$P(R_k |C) = p$$, supplying the proof promised after Eq. (3.37).
+
+Although we started this discussion by supposing that $$\epsilon$$ and δ were small and positive, we have not actually used that assumption, and so, whatever their values, the solution (3.118) is exact for the abstract model that we have defined. This enables us to include two interesting extreme cases. If not small, $$\epsilon$$ and δ must be at least bounded, because all quantities in (3.93) must be probabilities (i.e. in [0, 1]). This requires that
+
+ $$−p ≤ \epsilon ≤ q, −q ≤ δ ≤ p$$, (3.119)
+
+or
+
+ $$−1 ≤ \epsilon + δ ≤ 1$$. (3.120)
+
+But from (3.119), $$\epsilon + δ = 1$$ if and only if $$\epsilon = q$$, δ = p, in which case the transition matrix reduces to the unit matrix
+
+ $$M = \binom {1 \, 0} {0 \, 1}$$ (3.121)
+
+and there are no ‘transitions’. This is a degenerate case in which the positive correlations are so strong that whatever color happens to be drawn on the first trial is certain to be drawn also on all succeeding ones:
+
+ $$P(R_k|C) = p$$, all k. (3.122)
+
+Likewise, if $$\epsilon + δ = −1$$, then the transition matrix must be
+
+ $$M = \binom {0 \, 1} {1 \, 0}$$  (3.123)
+
+and we have nothing but transitions; i.e. the negative correlations are so strong that the colors are certain to alternate after the first draw:
+
+ $$P(R_k|C) = \begin{Bmatrix} p, k \, odd \\ q, k \, even \end{Bmatrix}$$. (3.124)
+
+This case is unrealistic because intuition tells us rather strongly that $$\epsilon$$ and δ should be
+positive quantities; surely, whatever the logical analysis used to assign the numerical value
+of $$\epsilon$$, leaving a red ball in the top layer must increase, not decrease, the probability of red
+on the next draw. But if $$\epsilon$$ and δ must not be negative, then the lower bound in (3.120) is
+really zero, which is achieved only when $$\epsilon$$ = δ = 0. Then M in (3.105) becomes singular,
+and we revert to the binomial distribution case already discussed.
+
+In the intermediate and realistic cases where $$0 < |\epsilon + δ| < 1$$, the last term of (3.118)
+attenuates exponentially with k, and in the limit
+
+ $$P(R_k|C) → \frac {p − δ}{1 − \epsilon − δ}$$. (3.125)
+
+But although these single-trial probabilities settle down to steady values as in an exchangeable
+distribution, the underlying correlations are still at work and the limiting distribution
+is not exchangeable. To see this, let us consider the conditional probabilities $$P(R_k |R_jC)$$.
+These are found by noting that the Markov chain relation (3.104) holds whatever the vector
+$$V_{k−1}$$; i.e. whether or not it is the vector generated from $$V_1$$ as in (3.106). Therefore, if we
+are given that red occurred on the j th trial, then
+
+ $$V_j = \binom {1} {0} $$, (3.126)
+
+and we have from (3.104)
+
+ $$V_k = M^{k−j}V_j , j ≤ k$$, (3.127)
+
+from which, using (3.115),
+
+ $$P(R_k|R_jC) = \frac {(p − δ) + (\epsilon + δ)^{k−j} (q − \epsilon)} {1 − \epsilon − δ} $$, j < k, (3.128)
+
+which approaches the same limit (3.125). The forward inferences are about what we might
+expect; the steady value (3.125) plus a term that decays exponentially with distance. But
+the backward inferences are different; note that the general product rule holds, as always:
+
+ $$P(R_kR_j|C) = P(R_k|R_jC) P(R_j|C) = P(R_j |R_kC) P(R_k |C)$$. (3.129)
+
+Therefore, since we have seen that $$P(R_k |C) \neq P(R_j |C)$$, it follows that
+
+ $$P(R_j |R_kC) \neq P(R_k |R_jC)$$. (3.130)
+
+The backward inference is still possible, but it is no longer the same formula as the forward
+inference as it would be in an exchangeable sequence.
+
+As we shall see later, this example is the simplest possible ‘baby’ version of a very
+common and important physical problem: an irreversible process in the ‘Markovian approximation’.
+Another common technical language would call it an autoregressive model
+of first order. It can be generalized greatly to the case of matrices of arbitrary dimension and
+many-step or continuous, rather than single-step, memory influences. But for reasons noted
+earlier (confusion of inference and causality in the literature of statistical mechanics), the
+backward inference part of the solution is almost always missed. Some try to do backward
+inference by extrapolating the forward solution backward in time, with quite bizarre and
+unphysical results. Therefore the reader is, in effect, conducting new research in doing the
+following exercise.
+
+Exercise 3.6. Find the explicit formula $$P(R_j |R_kC)$$ for the backward inference corresponding
+to the result (3.128) by using (3.118) and (3.129). (a) Explain the reason
+for the difference between forward and backward inferences in simple intuitive terms.
+(b) In what way does the backward inference differ from the forward inference extrapolated
+backward? Which is more reasonable intuitively? (c) Do backward inferences
+also decay to steady values? If so, is a property somewhat like exchangeability restored
+for events sufficiently separated? For example, if we consider only every tenth draw or
+every hundredth draw, do we approach an exchangeable distribution on this subset?

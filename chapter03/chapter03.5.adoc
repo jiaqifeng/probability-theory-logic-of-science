@@ -1,0 +1,16 @@
+== 3.5 Other forms and extensions
+
+The hypergeometric distribution (3.22) can be written in various ways. The nine factorials can be organized into binomial coefficients also as follows:
+
+ $$h(r|N,M,n)= \frac { \binom {n} {r} \binom {N−n} {M−r} } { \binom {N} {M} }$$  . (3.73)
+
+But the symmetry under exchange of M and n is still not evident; to see it we must write out (3.22) or (3.73) in full, displaying all the individual factorials.
+
+We mayalso rewrite (3.22), as an aid to memory, in a more symmetric form: the probability for drawing exactly r red balls andw white ones in n = r + w draws, from an urn containing R red and W white, is
+
+ $$h(r) = \frac { \binom {R} {r} \binom {W} {w} } { \binom {R + W} {r + w} } $$  , (3.74)
+
+and in this form it is easily generalized. Suppose that, instead of only two colors, there are k different colors of balls in the urn, $$N_1$$ of color 1, $$N_2$$ of color 2, ... , $$N_k$$ of color k. The probability for drawing $$r_1$$ balls of color 1, $$r_2$$ of color 2, ... , $$r_k$$ of color k in $$n = \sum r_i$$ draws is, as the reader may verify, the generalized hypergeometric distribution:
+
+ $$h(r_1 ··· r_k |N_1 ··· N_k) = \frac { \binom {N_1} {r_1} ··· \binom {N_k} {r_k} } { \binom {\sum N_i} {\sum r_i}} $$  . (3.75)
+

@@ -1,0 +1,143 @@
+== 3.11 comments
+
+In most real physical experiments we are not, literally, drawing from any ‘urn’. Nevertheless,
+the idea has turned out to be a useful conceptual device, and in the 250 years since
+Bernoulli’s Ars Conjectandi it has appeared to scientists that many physical measurements
+are very much like ‘drawing from Nature’s urn’. But to some the word ‘urn’ has gruesome
+connotations, and in much of the literature one finds such expressions as ‘drawing from a
+population’.
+
+In a few cases, such as recording counts from a radioactive source, survey sampling, and
+industrial quality control testing, one is quite literally drawing from a real, finite population,
+and the urn analogy is particularly apt. Then the probability distributions just found, and
+their limiting forms and generalizations noted in Chapter 7, will be appropriate and useful.
+In some cases, such as agricultural experiments or testing the effectiveness of a new medical
+procedure, our credulity can be strained to the point where we see a vague resemblance to
+the urn problem.
+
+In other cases, such as flipping a coin, making repeated measurements of the temperature
+and wind velocity, the position of a planet, the weight of a baby, or the price of a commodity,
+the urn analogy seems so farfetched as to be dangerously misleading. Yet in much of
+the literature one still uses urn distributions to represent the data probabilities, and tries
+to justify that choice by visualizing the experiment as drawing from some ‘hypothetical
+infinite population’ which is entirely a figment of our imagination. Functionally, the main
+consequence of this is strict independence of successive draws, regardless of all other
+circumstances. Obviously, this is not sound reasoning, and a price must be paid eventually
+in erroneous conclusions.
+
+This kind of conceptualizing often leads one to suppose that these distributions represent
+not just our prior state of knowledge about the data, but the actual long-run variability of
+the data in such experiments. Clearly, such a belief cannot be justified; anyone who claims
+to know in advance the long-run results in an experiment that has not been performed is
+drawing on a vivid imagination, not on any fund of actual knowledge of the phenomenon.
+Indeed, if that infinite population is only imagined, then it seems that we are free to imagine
+any population we please.
+
+From a mere act of the imagination we cannot learn anything about the real world.
+To suppose that the resulting probability assignments have any real physical meaning is
+just another form of the mind projection fallacy. In practice, this diverts our attention to
+irrelevancies and away from the things that really matter (such as information about the
+real world that is not expressible in terms of any sampling distribution, or does not fit
+into the urn picture, but which is nevertheless highly cogent for the inferences we want to
+make). Usually, the price paid for this folly is missed opportunities; had we recognized that
+information, more accurate and/or more reliable inferences could have been made.
+
+Urn-type conceptualizing is capable of dealing with only the most primitive kind of
+information, and really sophisticated applications require us to develop principles that go
+far beyond the idea of urns. But the situation is quite subtle, because, as we stressed before
+in connection with G¨odel’s theorem, an erroneous argument does not necessarily lead to a
+wrong conclusion. In fact, as we shall find in Chapter 9, highly sophisticated calculations
+sometimes lead us back to urn-type distributions, for purely mathematical reasons that have
+nothing to do conceptually with urns or populations. The hypergeometric and binomial
+distributions found in this chapter will continue to reappear, because they have a fundamental
+mathematical status quite independent of arguments that we used to find them here.2
+
+On the other hand, we could imagine a different problem in which we would have full
+confidence in urn-type reasoning leading to the binomial distribution, although it probably
+never arises in the real world. If we had a large supply $$\{U_1,U_2, ... ,U_n\}$$ of urns known to
+have identical contents, and those contents are known with certainty in advance – and then
+we used a fresh new urn for each draw – then we would assign P(A) = M/N for every
+draw, strictly independently of what we know about any other draw. Such prior information
+would take precedence over any amount of data. If we did not know the contents (M, N)
+of the urns – but we knew they all had identical contents – this strict independence would
+be lost, because then every draw from one urn would tell us something about the contents
+of the other urns, although it does not physically influence them.
+
+From this we see once again that logical dependence is in general very different from
+causal physical dependence. We belabor this point so much because it is not recognized
+at all in most expositions of probability theory, and this has led to errors, as is suggested
+by Exercise 3.6. In Chapter 4 we shall see a more serious error of this kind (see the
+discussion following Eq. (4.29)). But even when one manages to avoid actual error, to
+restrict probability theory to problems of physical causation is to lose its most important
+applications. The extent of this restriction – and the magnitude of the missed opportunity –
+does not seem to be realized by those who are victims of this fallacy.
+
+Indeed, most of the problems we have solved in this chapter are not considered to be
+within the scope of probability theory, and do not appear at all in those expositions which
+regard probability as a physical phenomenon. Such a viewrestricts one to a small subclass of
+the problems which can be dealt with usefully by probability theory as logic. For example,
+in the ‘physical probability’ theory it is not even considered legitimate to speak of the
+probability for an outcome at a specified trial; yet that is exactly the kind of thing about
+which it is necessary to reason in conducting scientific inference. The calculations of this
+chapter have illustrated this many times.
+
+In summary: in each of the applications to follow, one must consider whether the experiment
+is really ‘like’ drawing from an urn; if it is not, then we must go back to first principles
+and apply the basic product and sum rules in the new context. This may or may not yield
+the urn distributions.
+
+=== 3.11.1 A look ahead
+
+The probability distributions found in this chapter are called sampling distributions, or direct
+probabilities, which indicate that they are of the following form: Given some hypothesis H
+about the phenomenon being observed (in the case just studied, the contents (M, N) of the
+urn), what is the probability that we shall obtain some specified data D (in this case, some
+sequence of red and white balls)? Historically, the term ‘direct probability’ has long had the
+additional connotation of reasoning from a supposed physical cause to an observable effect.
+But we have seen that not all sampling distributions can be so interpreted. In the present
+work we shall not use this term, but use ‘sampling distribution’ in the general sense of
+reasoning from some specified hypothesis to potentially observable data, whether the link
+between hypothesis and data is logical or causal.
+
+Sampling distributions make predictions, such as the hypergeometric distribution (3.22),
+about potential observations (for example, the possible values and relative probabilities
+of different values of r ). If the correct hypothesis is indeed known, then we expect the
+predictions to agree closely with the observations. If our hypothesis is not correct, they may
+be very different; then the nature of the discrepancy gives us a clue toward finding a better
+hypothesis. This is, very broadly stated, the basis for scientific inference. Just how wide the
+disagreement between prediction and observation must be in order to justify our rejecting
+the present hypothesis and seeking a new one, is the subject of significance tests. It was the
+need for such tests in astronomy that led Laplace and Gauss to study probability theory in
+the 18th and 19th centuries.
+
+Although sampling theory plays a dominant role in conventional pedagogy, in the real
+world such problems are an almost negligible minority. In virtually all real problems of
+scientific inference we are in just the opposite situation; the data D are known but the correct
+hypothesis H is not. Then the problem facing the scientist is of the inverse type: Given the
+data D, what is the probability that some specified hypothesis H is true? Exercise 3.3
+above was a simple introduction to this kind of problem. Indeed, the scientist’s motivation
+for collecting data is usually to enable him to learn something about the phenomenon in
+this way.
+
+Therefore, in the present work our attention will be directed almost exclusively to the
+methods for solving the inverse problem. This does not mean that we do not calculate
+sampling distributions; we need to do this constantly and it may be a major part of our
+computational job. But it does mean that for us the finding of a sampling distribution is
+almost never an end in itself.
+
+Although the basic rules of probability theory solve such inverse problems just as readily
+as sampling problems, they have appeared quite different conceptually to many writers.
+A new feature seems present, because it is obvious that the question: ‘What do you know
+about the hypothesis H after seeing the data D?’ cannot have any defensible answer unless
+we take into account: ‘What did you know about H before seeing D?’ But this matter of
+previous knowledge did not figure in any of our sampling theory calculations. When we
+asked: ‘What do you know about the data given the contents (M, N) of the urn?’ we did
+not seem to consider: ‘What did you know about the data before you knew (M, N)?’
+
+This apparent dissymmetry, it will turn out, is more apparent than real; it arises mostly
+from some habits of notation that we have slipped into, which obscure the basic unity of
+all inference. But we shall need to understand this very well before we can use probability
+theory effectively for hypothesis tests and their special cases, significance tests. In the next
+chapter we turn to this problem.
+
+2 In a similar way, exponential functions appear in all parts of analysis because of their fundamental mathematical properties, although their conceptual basis varies widely.

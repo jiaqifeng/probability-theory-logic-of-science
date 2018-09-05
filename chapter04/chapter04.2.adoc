@@ -64,7 +64,7 @@ It is obvious from Table 4.1 why it is very cogent to give evidence in decibels.
 
 Table 4.1. Evidence, odds, and probability.
 
-[header,cols=3]
+[%header,cols=3]
 |===
 |e |O |p
 

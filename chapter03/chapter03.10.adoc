@@ -1,0 +1,54 @@
+== 3.10 Simplification
+
+The above formulas (3.100)–(3.130) hold for any $$\epsilon$$, δ satisfying the inequalities (3.119).
+But, on surveying them, we note that a remarkable simplification occurs if they satisfy
+
+ $$p\epsilon = qδ$$. (3.131)
+
+For then we have
+
+ $$ \frac {p − δ} {1 − \epsilon − δ} = p, \frac {q − \epsilon}{1 − \epsilon − δ}= q, \epsilon+ δ = \frac {\epsilon} {q}$$ , (3.132)
+
+and our main results (3.118) and (3.128) collapse to
+
+ $$P(R_k |C) = p, all k$$, (3.133)
+ $$P(R_k |R_jC) = P(R_j |R_kC) = p + q ( \frac {\epsilon} {q} )^{|k−j|}$$, all k, j . (3.134)
+
+The distribution is still not exchangeable, since the conditional probabilities (3.134) still
+depend on the separation |k − j | of the trials; but the symmetry of forward and backward
+inferences is restored, even though the causal influences $$\epsilon$$, δ operate only forward. Indeed,
+we see from our derivation of (3.40) that this forward–backward symmetry is a necessary
+consequence of (3.133), whether or not the distribution is exchangeable.
+
+What is the meaning of this magic condition (3.131)? It does not make the matrix M
+assume any particularly simple form, and it does not turn off the effect of the correlations.
+What it does is to make the solution (3.133) invariant; that is, the initial vector (3.117)
+is then equal but for normalization to the eigenvector $$x_1$$ in (3.111), so the initial vector
+remains unchanged by the matrix (3.105).
+
+In general, of course, there is no reason why this simplifying condition should hold.
+Yet in the case of our urn, we can see a kind of rationale for it. Suppose that when the
+urn has initially N balls, they are in L layers. Then, after withdrawing one ball, there are
+about n = (N − 1)/L of them in the top layer, of which we expect about np to be red,
+nq = n(1 − p) white. Now we toss the drawn ball back in. If it was red, the probability of
+getting red at the next draw if we do not shake the urn is about
+
+ $$\frac {np + 1}{n + 1} = p + \frac {1 − p}{n} + O( \frac {1}{n^2} )$$, (3.135)
+
+and if it is white the probability for getting white at the next draw is about
+
+ $$\frac {n(1 − p) + 1} {n + 1} = 1 − p + \frac p n + O( \frac {1} {n^2} )$$. (3.136)
+
+Comparing with (3.93) we see that we could estimate $$\epsilon$$ and δ by
+
+ $$\epsilon \simeq q/n, δ \simeq p/n$$ (3.137)
+
+whereupon our magic condition (3.131) is satisfied. Of course, the argument just given is
+too crude to be called a derivation, but at least it indicates that there is nothing inherently
+unreasonable about (3.131). We leave it for the reader to speculate about what significance
+and use this curious fact might have, and whether it generalizes beyond the Markovian
+approximation.
+
+We have nowhad a first glimpse of some of the principles and pitfalls of standard sampling
+theory. All the results we have found will generalize greatly, and will be useful parts of our
+‘toolbox’ for the applications to follow.

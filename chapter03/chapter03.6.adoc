@@ -1,0 +1,24 @@
+== 3.6 Probability as a mathematical tool
+
+From the result (3.75) one may obtain a number of identities obeyed by the binomial coefficients. For example, we may decide not to distinguish between colors 1 and 2; i.e. a ball of either color is declared to have color ‘a’. Then from (3.75) we must have, on the one hand,
+
+ $$h(r_a, r_3, ... , r_k|N_a, N_3, ... , N_k ) = \frac { \binom {N_a} {r_a} \binom {N_3} {r_3} ··· \binom {N_k} {r_k}} { \binom  {\sum N_i} {\sum r_i} }  $$  (3.76)
+
+with
+
+ $$N_a = N_1 + N_2, r_a = r_1 + r_2$$. (3.77)
+
+But the event $$r_a$$ can occur for any values of $$r_1, r_2$$ satisfying (3.77), and so we must have also, on the other hand,
+
+ $$h(r_a,r_3,...,r_k|N_a,N_3,...,N_k) = \sum_{r_1 =0}^{r_a} h(r_1,r_a − r_1, r_3,...,r_k|N_1,...,N_k)$$. (3.78)
+
+Then, comparing (3.76) and (3.78), we have the identity
+	
+ $$\binom {N_a}{r_a} = \sum_{r_1=0}^{r_a} \binom {N_1} {r_1} \binom {N_2} {r_a − r_1} $$  . (3.79) 
+
+Continuing in this way, we can derive a multitude of more complicated identities obeyed by the binomial coefficients. For example,
+	
+ $$\binom {N_1+N_2+N_3} {r_a} = \sum_{r_1=0}^{r_a} \sum_{r_2=0}^{r_1} \binom {N_1} {r_1} \binom {N_2} {r_2} \binom {N_3} {r_a − r_1 − r_2} $$  . (3.80)
+
+In many cases, probabilistic reasoning is a powerful tool for deriving purely mathematical results; more examples of this are given by Feller (1950, Chap. 2 & 3) and in later chapters of the present work.
+

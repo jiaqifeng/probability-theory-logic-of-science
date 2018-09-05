@@ -1,0 +1,34 @@
+== 3.4 Expectations
+
+Another way of looking at this result appeals more strongly to our intuition and generalizes far beyond the present problem.We can hardly suppose that the reader is not already familiar with the idea of expectation, but this is the first time it has appeared in the present work, so we pause to define it. If a variable quantity X can take on the particular values $$(x_1,...,x_n)$$ in n mutually exclusive and exhaustive situations, and the robot assigns corresponding probabilities $$(p_1, p_2,...,p_n)$$ to them, then the quantity
+
+ $$ \langle X \rangle= E(X) = \sum_{i=1}^n p_i x_i $$ (3.66)
+
+is called the expectation (in the older literature, mathematical expectation or expectation value) of X. It is a weighted average of the possible values, weighted according to their probabilities. Statisticians and mathematicians generally use the notation E(X); but physicists, having already pre-empted E to stand for energy and electric field, use the bracket notation $$\langle X \rangle$$.We shall use both notations here; they have the same meaning, but sometimes one is easier to read than the other.
+
+Like most of the standard terms that arose out of the distant past, the term ‘expectation’ seems singularly inappropriate to us; for it is almost never a value that anyone ‘expects’ to find. Indeed, it is often known to be an impossible value. But we adhere to it because of centuries of precedent.
+
+Given $$R_{later}$$, what is the expectation of the number of red balls in the urn for draw number one? There are three mutually exclusive possibilities compatible with $$R_{later}$$:
+
+ $$R_2W_3,W_2R_3, R_2R_3$$ (3.67)
+
+for which M is (1, 1, 0), respectively, and for which the probabilities are as in (3.64) and (3.65):
+
+ $$P(R_2W_3|R_{later}B) = P(R_2W_3|B) P(R_{later}|B) = \frac {(1/2) × (2/3)}{(5/6)} = \frac 2 5 $$, (3.68)
+ $$P(W_2R_3|R_{later}B) = \frac 2 5 $$, (3.69) 
+ $$P(R_2R_3|R_{later}B) = \frac 1 5 $$. (3.70)
+
+So
+
+ $$\langle M \rangle = 1 × \frac 2 5 + 1 × \frac 2 5 + 0 × \frac 1 5 = \frac 4 5 $$. (3.71)
+
+Thus, what we called intuitively the ‘effective’ value of M in (3.63) is really the expectation of M.
+
+We can now state (3.63) in a more cogent way: when the fraction F = M/N of red balls is known, then the Bernoulli urn rule applies and $$P(R_1|B) = F$$. When F is unknown, the probability for red is the expectation of F: 
+
+ $$P(R_1|B) = \langle F \rangle ≡ E(F)$$. (3.72)
+
+If M and N are both unknown, the expectation is over the joint probability distribution for M and N.
+
+That a probability is numerically equal to the expectation of a fraction will prove to be a general rule that holds as well in thousands of far more complicated situations, providing one of the most useful and common rules for physical prediction.We leave it as an exercise for the reader to show that the more general result (3.56) can also be calculated in the way suggested by (3.72).
+

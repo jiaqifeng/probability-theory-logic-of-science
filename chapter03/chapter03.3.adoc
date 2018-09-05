@@ -1,0 +1,83 @@
+== 3.3 Reasoning from less precise information
+
+Now let us try to apply this understanding to a more complicated problem. Suppose the robot learns that red will be found at least once in later draws, but not at which draw or draws this will occur. That is, the new information is, as a proposition of Boolean algebra,
+
+ $$R_{later} ≡ R_{k+1} + R_{k+2} + ···+ R_n$$. (3.49)
+
+This information reduces the number of red available for the kth draw by at least one, but it is not obvious whether $$R_{later}$$ has exactly the same implications as does $$R_n$$. To investigate this we appeal again to the symmetry of the product rule:
+
+ $$P(R_k R_{later}|B) = P(R_k |R_{later}B)P(R_{later}|B) = P(R_{later}|R_k B)P(R_k |B)$$, (3.50)
+
+which gives us
+
+ $$P(R_k |R_{later}B) = P(R_k |B) \frac {P(R_{later}|R_k B)} {P(R_{later}|B)},$$ (3.51)
+
+and all quantities on the right-hand side are easily calculated.
+
+Seeing (3.49), one might be tempted to reason as follows:
+
+ $$P(R_{later}|B) = \sum _{j=k+1} ^n P(R_j |B),$$ (3.52)
+
+but this is not correct because, unless M = 1, the events $$R_j$$ are not mutually exclusive, and, as we see from (2.82), many more terms would be needed. This method of calculation would be very tedious.
+
+To organize the calculation better, note that the denial of $$R_{later}$$ is the statement that white occurs at all the later draws:
+
+ $$\bar{R}_{later} = W_{k+1} W_{k+2} ···W_n.$$ (3.53)
+
+So $$P(\bar{R}_{later}|B)$$ is the probability for white at all the later draws, regardless of what happens at the earlier ones (i.e. when the robot does not know what happens at the earlier ones). By exchangeability this is the same as the probability for white at the first (n − k) draws, regardless of what happens at the later ones; from (3.13),
+
+ $$P(\bar{R}_{later}|B) = \frac {(N−M)!(N−n+k)!} {N!(N−M−n+k)!} = \binom {N−M} {n−k} \binom {N} {n−k}^{−1} .$$ (3.54)
+
+Likewise, $$P(\bar{R}_{later}|R_kB)$$ is the same result for the case of (N−1) balls, (M−1) of which are red:
+
+ $$P(\bar{R}_{later}|R_kB)=\frac{(N−M)!}{(N−1)!} \frac{(N−n+k−1)!}{(N−M−n+k)!}= \binom {N−M} {n−k} \binom {N−1}{n−k}^{−1}.$$ (3.55)
+
+Now (3.51) becomes
+
+ $$P(R_k|R_{later}B) = \frac {M}{N−n+k} × \frac { \binom {N−1}{n−k} − \binom {N−M}{n−k} } { \binom {N}{n−k} − \binom {N−M}{n−k} }$$ . (3.56)
+
+As a check, note that if n = k + 1, this reduces to (M − 1)/(N − 1), as it should.
+
+At the moment, however, our interest in (3.56) is not so much in the numerical values, but in understanding the logic of the result. So let us specialize it to the simplest case that is not entirely trivial. Suppose we draw n = 3 times from an urn containing N = 4 balls, M = 2 of which are white, and ask how knowledge that red occurs at least once on the second and third draws affects the probability for red at the first draw. This is given by (3.56) with N = 4, M = 2, n = 3, k = 1:
+
+ $$P(R_1|R_2 + R_3, B) = \frac {6 − 2} {12 − 2} = \frac 2 5 = ( \frac 1 2 ) \frac {1 − 1/3}{1 − 1/6},$$ (3.57)
+
+the last form corresponding to (3.51). Compare this to the previously calculated probabilities:
+
+ $$P(R_1|B) = \frac 1 2, P(R_1|R_2B) = P(R_2|R_1B) = \frac 1 3 $$. (3.58)
+
+What seems surprising is that
+
+ $$P(R_1|R_{later}B) > P(R_1|R_2B)$$. (3.59)
+
+Most people guess at first that the inequality should go the other way; i.e. knowing that red occurs at least once on the later draws ought to decrease the chances of red at the first draw more than does the information $$R_2$$. But in this case the numbers are so small that we can check the calculation (3.51) directly. To find $$P(R_{later}|B)$$ by the extended sum rule (2.82) now requires only one extra term:
+
+ $$P(R_{later}|B) = P(R_2|B) + P(R_3|B) − P(R_2R_3|B) $$
+ $$= \frac 1 2 + \frac 1 2 − \frac 1 2 × \frac 1 3 = \frac 5 6 $$. (3.60)
+
+We could equally well resolve $$R_{later}$$ into mutually exclusive propositions and calculate
+
+ $$P(R_{later}|B) = P(R_2W_3|B) + P(W_2R_3|B) + P(R_2R_3|B) $$
+ $$ = \frac 1 2 × \frac 2 3 + \frac 1 2 × \frac 2 3 + \frac 1 2 × \frac 1 3 = \frac 5 6 . $$   (3.61)
+
+The denominator (1 − 1/6) in (3.57) has now been calculated in three different ways, with the same result. If the three results were not the same, wewould have found an inconsistency in our rules, of the kind we sought to prevent by Cox’s functional equation arguments in Chapter 2. This is a good example of what ‘consistency’ means in practice, and it shows the trouble we would be in if our rules did not have it.
+
+Likewise, we can check the numerator of (3.51) by an independent calculation:
+
+ $$P(R_{later}|R_1B) = P(R_2|R_1B) + P(R_3|R_1B) − P(R_2R_3|R_1B) $$
+ $$ = \frac 1 3 + \frac 1 3 − \frac 1 3 × 0 = \frac 2 3$$ , (3.62)
+
+and the result (3.57) is confirmed. So we have no choice but to accept the inequality (3.59) and try to understand it intuitively. Let us reason as follows. The information R2 reduces the number of red balls available for the first draw by one, and it reduces the number of balls in the urn available for the first draw by one, giving $$P(R_1|R_2B) = (M − 1)/(N − 1) = 1/3$$. The information $$R_{later}$$ reduces the ‘effective number of red balls’ available for the first draw by more than one, but it reduces the number of balls in the urn available for the first draw by two (because it assures the robot that there are two later draws in which two balls are removed). So let us try tentatively to interpret the result (3.57) as
+
+ $$P(R_1|R_{later}B) = \frac {(M)_{eff}} {N − 2} $$, (3.63)
+
+although we are not quite sure what this means. Given $$R_{later}$$, it is certain that at least one red ball is removed, and the probability that two are removed is, by the product rule:
+
+ $$P(R_2R_3|R_{later}B) = \frac {P(R_2R_3R_{later}|B)} {P(R_{later}|B)} = \frac {P(R_2R_3|B)}{P(R_{later}|B)} $$
+ $$ = \frac {(1/2) × (1/3)} {5/6} = \frac 1 5 $$ (3.64)
+
+because $$R_2R_3$$ implies $$R_{later}$$; i.e. a relation of Boolean algebra is $$(R_2R_3R_{later} = R_2R_3)$$. Intuitively, given $$R_{later}$$ there is probability 1/5 that two red balls are removed, so the effective number removed is 1 + (1/5) = 6/5. The ‘effective’ number remaining for drawone is 4/5. Indeed, (3.63) then becomes
+
+ $$P(R_1|R_{later}B) = \frac {4/5}{2} = \frac 2 5 $$, (3.65)
+
+in agreement with our better motivated, but less intuitive, calculation (3.57).

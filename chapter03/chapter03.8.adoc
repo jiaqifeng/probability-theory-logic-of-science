@@ -1,0 +1,56 @@
+== 3.8 Sampling with replacement
+
+Up to now, we have considered only the case where we sample without replacement; and that is evidently appropriate for many real situations. For example, in a quality control application, what we have called simply ‘drawing a ball’ might consist of taking a manufactured item, such as an electric light bulb, from a carton of similar light bulbs and testing it to destruction. In a chemistry experiment, it might consist of weighing out a sample of an unknown protein, then dissolving it in hot sulfuric acid to measure its nitrogen content. In either case, there can be no thought of ‘drawing that same ball’ again.
+
+But suppose now that, being less destructive, we sample balls from the urn and, after recording the ‘color’ (i.e. the relevant property) of each, we replace it in the urn before drawing the next ball. This case, of sampling with replacement, is enormously more complicated conceptually, but, with some assumptions usually made, ends up being simpler mathematically than sampling without replacement. Let us go back to the probability for drawing two red balls in succession. Denoting by B the same background information as before, except for the added stipulation that the balls are to be replaced, we still have an equation like (3.9):
+
+ $$P(R_1R_2|B') = P(R_1|B')P(R_2|R_1B')$$ (3.91)
+
+and the first factor is still, evidently, (M/N); but what is the second one? Answering this would be, in general, a very difficult problem, requiring much additional analysis if the background information B' includes some simple but highly relevant common sense information that we all have. What happens to that red ball that we put back in the urn? If we merely dropped it into the urn, and immediately drew another ball, then it was left lying on the top of the other balls (or in the top layer of balls), and so it is more likely to be drawn again than any other specified ball whose location in the urn is unknown. But this upsets the whole basis of our calculation, because the probability for drawing any particular (i th) ball is no longer given by the Bernoulli urn rule which led to (3.11).
+
+=== 3.8.1 Digression: a sermon on reality vs. models
+
+The difficulty we face here is that many things which were irrelevant from symmetry, as long as the robot’s state of knowledge was invariant under any permutation of the balls, suddenly become relevant, and, by one of our desiderata of rationality, the robot must take into account all the relevant information it has. But the probability for drawing any particular ball now depends on such details as the exact size and shape of the urn, the size of the balls, the exactway in which the first onewas tossed back in, the elastic properties of balls and urn, the coefficients of friction between balls and between ball and urn, the exact way you reach in to draw the second ball, etc. In a symmetric situation, all of these details are irrelevant.
+
+Even if all these relevant data were at hand, we do not think that a team of the world’s best scientists and mathematicians, backed up by all the world’s computing facilities, would be able to solve the problem; or would even know how to get started on it. Still, it would not be quite right to say that the problem is unsolvable in principle; only so complicated that it is not worth anybody’s time to think about it. So what do we do?
+
+In probability theory there is a very clever trick for handling a problem that becomes too difficult. We just solve it anyway by:
+
+ (1) making it still harder;
+
+ (2) redefining what we mean by ‘solving’ it, so that it becomes something we can do;
+
+ (3) inventing a dignified and technical-sounding word to describe this procedure, which has the psychological effect of concealing the real nature of what we have done, and making it appear respectable.
+
+In the case of sampling with replacement, we apply this strategy as follows.
+
+ (1) Suppose that, after tossing the ball in, we shake up the urn. However complicated the problem was initially, it now becomes many orders of magnitude more complicated, because the solution now depends on every detail of the precise way we shake it, in addition to all the factors mentioned above.
+
+ (2) We now assert that the shaking has somehow made all these details irrelevant, so that the problem
+reverts back to the simple one where the Bernoulli urn rule applies.
+
+ (3) We invent the dignified-soundingword randomization to describe what we have done. This term is, evidently, a euphemism, whose real meaning is: deliberately throwing away relevant information when it becomes too complicated for us to handle.
+
+We have described this procedure in laconic terms, because an antidote is needed for the impression created by some writers on probability theory, who attach a kind of mystical significance to it. For some, declaring a problem to be ‘randomized’ is an incantation with the same purpose and effect as those uttered by an exorcist to drive out evil spirits; i.e. it cleanses their subsequent calculations and renders them immune to criticism.We agnostics often envy the True Believer, who thus acquires so easily that sense of security which is forever denied to us.
+
+However, in defense of this procedure, we have to admit that it often leads to a useful approximation to the correct solution; i.e. the complicated details, while undeniably relevant in principle, might nevertheless have little numerical effect on the answers to certain particularly simple questions, such as the probability for drawing r red balls in n trials when n is sufficiently small. But from the standpoint of principle, an element of vagueness necessarily enters at this point; for, while we may feel intuitively that this leads to a good approximation, we have no proof of this, much less a reliable estimate of the accuracy of the approximation, which presumably improves with more shaking.
+
+The vagueness is evident particularly in the fact that different people have widely divergent views about how much shaking is required to justify step (2). Witness the minor furor surrounding a US Government-sponsored and nationally televized game of chance some years ago, when someone objected that the procedure for drawing numbers from a fish bowl to determine the order of call-up of young men for Military Service was ‘unfair’ because the bowl hadn’t been shaken enough to make the drawing ‘truly random’, whatever that means. Yet if anyone had asked the objector: ‘To whom is it unfair?’ he could not have given any answer except, ‘To those whose numbers are on top; I don’t know who they are.’ But after any amount of further shaking, this will still be true! So what does the shaking accomplish?
+
+Shaking does not make the result ‘random’, because that term is basically meaningless as an attribute of the real world; it has no clear definition applicable in the real world. The belief that ‘randomness’ is some kind of real property existing in Nature is a form of the mind projection fallacy which says, in effect, ‘I don’t know the detailed causes – therefore – Nature does not know them.’ What shaking accomplishes is very different. It does not affect Nature’s workings in any way; it only ensures that no human is able to exert any wilful influence on the result. Therefore, nobody can be charged with ‘fixing’ the outcome.
+
+At this point, you may accuse us of nitpicking, because you know that after all this sermonizing, we are just going to go ahead and use the randomized solution like everybody else does. Note, however, that our objection is not to the procedure itself, provided that we acknowledge honestly what we are doing; i.e. instead of solving the real problem, we are making a practical compromise and being, of necessity, content with an approximate solution. That is something we have to do in all areas of applied mathematics, and there is no reason to expect probability theory to be any different.
+
+Our objection is to the belief that by randomization we somehow make our subsequent equations exact; so exact that we can then subject our solution to all kinds of extreme conditions and believe the results, when applied to the real world. The most serious and most common error resulting from this belief is in the derivation of limit theorems (i.e. when sampling with replacement, nothing prevents us from passing to the limit n→∞ and obtaining the usual ‘laws of large numbers’). If we do not recognize the approximate nature of our starting equations, we delude ourselves into believing that we have proved things (such as the identity of probability and limiting frequency) that are just not true in real repetitive experiments.
+
+The danger here is particularly great because mathematicians generally regard these limit theorems as the most important and sophisticated fruits of probability theory, and have a tendency to use language which implies that they are proving properties of the real world. Our point is that these theorems are valid properties of the abstract mathematical model that was defined and analyzed. The issue is: to what extent does that model resemble the real world? It is probably safe to say that no limit theorem is directly applicable in the real world, simply because no mathematical model captures every circumstance that is relevant in the real world. Anyone who believes that he is proving things about the real world, is a victim of the mind projection fallacy.
+
+Let us return to the equations. What answer can we now give to the question posed after Eq. (3.91)? The probability $$P(R_2|R_1B')$$ of drawing a red ball on the second draw clearly depends not only on N and M, but also on the fact that a red one has already been drawn and replaced. But this latter dependence is so complicated that we can’t, in real life, take it into account; soweshake the urn to ‘randomize’ the problem, and then declare R1 to be irrelevant: $$P(R_2|R_1B') = P(R_2|B') = M/N$$. After drawing and replacing the second ball, we again shake the urn, declare it ‘randomized,’ and set $$P(R_3|R_2R_1B') = P(R_3|B') = M/N$$, etc. In this approximation, the probability for drawing a red ball at any trial is M/N.
+
+This is not just a repetition of what we learned in (3.37); what is new here is that the result now holds whatever information the robot may have about what happened in the other trials. This leads us to write the probability for drawing exactly r red balls in n trials, regardless of order, as
+	
+ $$\binom {n}{r} \binom {M}{N}^r \binom {N-M}{N}^{n-r}$$, (3.92)
+
+which is just the binomial distribution (3.86). Randomized sampling with replacement from an urn with finite N has approximately the same effect as passage to the limit N →∞ without replacement.
+
+Evidently, for small n, this approximation will be quite good; but for large n these small errors can accumulate (depending on exactly how we shake the urn, etc.) to the point where (3.92) is misleading. Let us demonstrate this by a simple, but realistic, extension of the problem.
