@@ -6,7 +6,7 @@ The binary hypothesis testing problem turned out to have such a beautifully simp
 
 We state the reason for this nonextensibility in the form of an exercise for the reader; to prepare for it, suppose that we have n hypotheses $$\{H_1,...,H_n\}$$ which on prior information X are mutually exclusive and exhaustive:
 
-我们以读者的形式说明这种不可扩展性的原因; 为了做好准备，假设我们有n个假设$$ \ {H_1，...，H_n \} $$，它们在先验信息X上是相互排斥和详尽的：
+我们以读者的形式说明这种不可扩展性的原因; 为了做好准备，假设我们有n个假设$$\{H_1，...，H_n\}$$，它们在先验信息X上是相互排斥和详尽的：
 
  $$P(H_i H_j |X) = P(H_i |X)δ_{ij} , \sum_{i=1}^n P(H_i |X) = 1.$$ (4.26)
 

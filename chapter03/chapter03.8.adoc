@@ -1,4 +1,4 @@
-== 3.8 Sampling with replacement
+== 3.8 Sampling with replacement 可放回的采样
 
 Up to now, we have considered only the case where we sample without replacement; and that is evidently appropriate for many real situations. For example, in a quality control application, what we have called simply ‘drawing a ball’ might consist of taking a manufactured item, such as an electric light bulb, from a carton of similar light bulbs and testing it to destruction. In a chemistry experiment, it might consist of weighing out a sample of an unknown protein, then dissolving it in hot sulfuric acid to measure its nitrogen content. In either case, there can be no thought of ‘drawing that same ball’ again.
 

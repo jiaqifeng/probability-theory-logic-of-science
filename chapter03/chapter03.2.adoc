@@ -20,7 +20,7 @@ But we have just seen that $$P(R_j|B) = P(R_k|B) = M/N$$ for all j, k, so
 
 Probability theory tells us that the results of later draws have precisely the same relevance as do the results of earlier ones! Even though performing the later draw does not physically affect the number $$M_k$$ of red balls in the urn at the kth draw, information about the result of a later draw has the same effect on our state of knowledge about what could have been taken on the kth draw, as does information about an earlier one. This is our second nonobvious symmetry.
 
-概率论告诉我们，后期绘制的结果与早期绘制的结果完全相同！尽管在第k次抽签中执行后期抽牌并没有在物理上影响瓮中红球的数量$ M_k $$，但是关于后期抽签结果的信息对我们对本来可能存在的知识状态具有相同的影响。采取第k次抽签，以及有关早期抽奖的信息。这是我们的第二个非显而易见的对称性。
+概率论告诉我们，后期绘制的结果与早期绘制的结果完全相同！尽管在第k次抽签中执行后期抽牌并没有在物理上影响瓮中红球的数量$$ M_k $$，但是关于后期抽签结果的信息对我们对本来可能存在的知识状态具有相同的影响。采取第k次抽签，以及有关早期抽奖的信息。这是我们的第二个非显而易见的对称性。
 
 This result will be quite disconcerting to some schools of thought about the ‘meaning of probability’. Although it is generally recognized that logical implication is not the same as physical causation, nevertheless there is a strong inclination to cling to the idea anyway, by trying to interpret a probability P(A|B) as expressing some kind of partial causal influence of B on A. This is evident not only in the aforementioned work of Penrose, but more strikingly in the ‘propensity’ theory of probability expounded by the philosopher Karl Popper.1
 

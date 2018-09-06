@@ -1,4 +1,4 @@
-== 3.5 Other forms and extensions
+== 3.5 Other forms and extensions 其他形式和扩展
 
 The hypergeometric distribution (3.22) can be written in various ways. The nine factorials can be organized into binomial coefficients also as follows:
 

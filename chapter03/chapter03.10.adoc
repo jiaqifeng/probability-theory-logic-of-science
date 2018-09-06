@@ -1,4 +1,4 @@
-== 3.10 Simplification
+== 3.10 Simplification 简单化
 
 The above formulas (3.100)–(3.130) hold for any $$\epsilon$$, δ satisfying the inequalities (3.119).
 But, on surveying them, we note that a remarkable simplification occurs if they satisfy

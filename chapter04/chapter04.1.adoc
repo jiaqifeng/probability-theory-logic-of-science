@@ -30,7 +30,7 @@ In conventional sampling theory, the only scenario considered is essentially tha
 
 However, as noted in the preceding chapter, almost all real problems of scientific inference involve us in the opposite situation; we already know the data D, and want probability theory to help us decide on the likely contents of the ‘urn’. Stated more generally, we want probability theory to indicate which of a given set of hypotheses $$\{H_1,H_2,...\}$$ is most likely to be true in the light of the data and any other evidence at hand. For example, the hypotheses may be various suppositions about the physical mechanism that is generating the data. But fundamentally, as in Chapter 3, physical causation is not an essential ingredient of the problem; what is essential is only that there be some kind of logical connection between the hypotheses and the data.
 
-然而，正如前一章所述，几乎所有科学推理的真正问题都涉及我们相反的情况;我们已经知道数据D，并希望概率论帮助我们决定'urn'的可能内容。更一般地说，我们希望概率理论根据数据和手头的任何其他证据来指出一组给定的假设中的哪一个$$ \ {H_1，H_2，... \} $$最可能是真的。 。例如，假设可以是关于生成数据的物理机制的各种假设。但从根本上说，如第3章所述，物理因果关系并不是问题的重要组成部分;重要的只是假设和数据之间存在某种逻辑联系。
+然而，正如前一章所述，几乎所有科学推理的真正问题都涉及我们相反的情况;我们已经知道数据D，并希望概率论帮助我们决定'urn'的可能内容。更一般地说，我们希望概率理论根据数据和手头的任何其他证据来指出一组给定的假设中的哪一个$$\{H_1，H_2，... \}$$最可能是真的。 。例如，假设可以是关于生成数据的物理机制的各种假设。但从根本上说，如第3章所述，物理因果关系并不是问题的重要组成部分;重要的只是假设和数据之间存在某种逻辑联系。
 
 To solve this problem does not require any new principles beyond the product rule (3.1) that we used to find conditional sampling distributions; we need only to make a different choice of the propositions. Let us now use the notation
 

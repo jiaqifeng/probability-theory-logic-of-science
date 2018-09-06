@@ -1,4 +1,4 @@
-== 3.6 Probability as a mathematical tool
+== 3.6 Probability as a mathematical tool 概率作为数学工具
 
 From the result (3.75) one may obtain a number of identities obeyed by the binomial coefficients. For example, we may decide not to distinguish between colors 1 and 2; i.e. a ball of either color is declared to have color ‘a’. Then from (3.75) we must have, on the one hand,
 

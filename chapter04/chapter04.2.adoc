@@ -4,7 +4,7 @@ The simplest nontrivial problem of hypothesis testing is the one where we have o
 
 假设检验中最简单的非平凡问题是我们只有两个假设来测试而且只有两个可能的数据值。 令人惊讶的是，这被证明是许多重要推理和决策问题的现实和有价值的模型。 首先，让我们适应（4.3）这个二元情形。 它给出了H为真的概率，但我们可以将它写得与H为假的概率一样好：
 
- $$P(\bar{H}|DX) = P(\bar{H}|X) \frac {P(D|\bar{H}X)} {P(D|X)),$$ (4.4)
+ $$P(\bar{H}|DX) = P(\bar{H}|X) \frac {P(D|\bar{H}X)} {P(D|X)},$$ (4.4)
 
 and if we take the ratio of the two equations,
 
@@ -52,7 +52,7 @@ Now suppose that this new information D actually consisted of several different 
 
 Then we could expand the likelihood ratio by successive applications of the product rule:
 
- $$e(H|DX) = e(H|X) + 10 \log_{10} [ \frac {P(D_1|HX)}{P(D_1|\bar{H}X)} ] + 10 \log_{10} [ \frac {P(D_2|D_1HX)}{P(D_2|D_1\bar{H}X) ] + ··· .$$  (4.11)
+ $$e(H|DX) = e(H|X) + 10 \log_{10} [ \frac {P(D_1|HX)}{P(D_1|\bar{H}X)} ] + 10 \log_{10} [ \frac {P(D_2|D_1HX)}{P(D_2|D_1\bar{H}X)} ] + ··· .$$  (4.11)
 
 But, in many cases, the probability for getting $$D_2$$ is not influenced by knowledge of $$D_1$$:
 
@@ -213,7 +213,7 @@ Now suppose we find a good widget. Using (4.14), we get evidence for A of
 
 but let’s call it −1 db. Again, this will hold for any draw, if the number in the batch is sufficiently large. If we have inspected n widgets, of which we found $$n_b$$ bad ones and $$n_g$$ good ones, the evidence that we have the bad batch will be
 
-但我们称之为-1 db。 同样，如果批次中的数字足够大，这将适用于任何抽奖。 如果我们检查了n个小部件，其中我们发现$$ n_b $$坏的和$ n_g $$好的，我们有坏批次的证据将是
+但我们称之为-1 db。 同样，如果批次中的数字足够大，这将适用于任何抽奖。 如果我们检查了n个小部件，其中我们发现$$ n_b $$坏的和$$ n_g $$好的，我们有坏批次的证据将是
 
  $$e(A|DX) = e(A|X) + 3n_b − n_g.$$ (4.22)
 

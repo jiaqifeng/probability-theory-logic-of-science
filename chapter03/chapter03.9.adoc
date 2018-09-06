@@ -1,4 +1,4 @@
-== 3.9 Correction for correlations
+== 3.9 Correction for correlations 校正相关性
 
 Suppose that, from an intricate logical analysis, drawing and replacing a red ball increases the probability for a red one at the next draw by some small amount $$\epsilon$$ > 0, while drawing and replacing a white one decreases the probability for a red one at the next draw by a (possibly equal) small quantity δ > 0; and that the influence of earlier draws than the last one is negligible compared with $$\epsilon$$ or δ. You may call this effect a small ‘propensity’ if you like; at least it expresses a physical causation that operates only forward in time. Then, letting C stand for all the above background information, including the statements just made about correlations and the information that we draw n balls, we have
 
