@@ -7,6 +7,13 @@ are very much like ‘drawing from Nature’s urn’. But to some the word ‘ur
 connotations, and in much of the literature one finds such expressions as ‘drawing from a
 population’.
 
+在大多数真实的物理实验中，从字面上看，我们并不是从任何“瓮”中汲取灵感。尽管如此，
+这个想法已经证明是一个有用的概念设备，并在250年后
+伯努利的Ars Conjectandi它向科学家们展示了许多物理测量
+非常像'画自然的瓮'。但对某些人来说，“瓮”这个词很可怕
+内涵，在大多数文献中，人们发现这样的表达方式，即“从...中汲取灵感”
+人口'。
+
 In a few cases, such as recording counts from a radioactive source, survey sampling, and
 industrial quality control testing, one is quite literally drawing from a real, finite population,
 and the urn analogy is particularly apt. Then the probability distributions just found, and
@@ -14,6 +21,14 @@ their limiting forms and generalizations noted in Chapter 7, will be appropriate
 In some cases, such as agricultural experiments or testing the effectiveness of a new medical
 procedure, our credulity can be strained to the point where we see a vague resemblance to
 the urn problem.
+
+在少数情况下，例如来自放射源的记录计数，调查抽样和
+工业质量控制测试，实际上是从真实的有限人口中抽取出来的，
+和urn类比特别贴切。然后才发现概率分布，并且
+它们在第7章中提到的限制形式和概括将是适当和有用的。
+在某些情况下，如农业实验或测试新医疗的有效性
+程序，我们的轻信可能会紧张到我们看到模糊相似的程度
+骨灰盒问题。
 
 In other cases, such as flipping a coin, making repeated measurements of the temperature
 and wind velocity, the position of a planet, the weight of a baby, or the price of a commodity,
@@ -25,6 +40,16 @@ consequence of this is strict independence of successive draws, regardless of al
 circumstances. Obviously, this is not sound reasoning, and a price must be paid eventually
 in erroneous conclusions.
 
+在其他情况下，例如翻转硬币，重复测量温度
+和风速，行星的位置，婴儿的重量，或商品的价格，
+这个瓮类比似乎是如此牵强，以至于具有危险的误导性。然而在很多方面
+文献仍然使用urn分布来表示数据概率，并尝试
+通过将实验可视化为从某些“假设”中得出来证明这种选择是正确的
+无限人口'，这完全是我们想象中的一个虚构。功能上，主要
+这样做的结果是连续抽签的严格独立性，而不管其他所有
+情况。显然，这不是合理的推理，最终必须付出代价
+错误的结论。
+
 This kind of conceptualizing often leads one to suppose that these distributions represent
 not just our prior state of knowledge about the data, but the actual long-run variability of
 the data in such experiments. Clearly, such a belief cannot be justified; anyone who claims
@@ -32,6 +57,14 @@ to know in advance the long-run results in an experiment that has not been perfo
 drawing on a vivid imagination, not on any fund of actual knowledge of the phenomenon.
 Indeed, if that infinite population is only imagined, then it seems that we are free to imagine
 any population we please.
+
+这种概念化经常导致人们假设这些分布代表
+不仅仅是我们之前对数据的了解，而是实际的长期变化
+这些实验中的数据。显然，这种信念是不合理的;任何声称的人
+事先知道尚未进行的实验的长期结果是
+借鉴生动的想象力，而不是任何有关该现象的实际知识基金。
+实际上，如果只想象那无限的人口，那么我们似乎可以自由地想象
+我们请的任何人口。
 
 From a mere act of the imagination we cannot learn anything about the real world.
 To suppose that the resulting probability assignments have any real physical meaning is
@@ -42,6 +75,15 @@ into the urn picture, but which is nevertheless highly cogent for the inferences
 make). Usually, the price paid for this folly is missed opportunities; had we recognized that
 information, more accurate and/or more reliable inferences could have been made.
 
+仅仅是想象力的行为，我们无法了解现实世界。
+假设得到的概率分配具有任何真实的物理意义
+只是思维投射谬误的另一种形式。在实践中，这转移了我们的注意力
+无关紧要，远离真正重要的事情（如有关的信息）
+现实世界在任何抽样分布方面都无法表达，或者不适合
+进入urn图片，但对于我们想要的推论仍然非常有说服力
+使）。通常，为这种愚蠢而付出的代价是错失的机会;我们认识到了吗？
+可以进行信息，更准确和/或更可靠的推论。
+
 Urn-type conceptualizing is capable of dealing with only the most primitive kind of
 information, and really sophisticated applications require us to develop principles that go
 far beyond the idea of urns. But the situation is quite subtle, because, as we stressed before
@@ -51,6 +93,16 @@ sometimes lead us back to urn-type distributions, for purely mathematical reason
 nothing to do conceptually with urns or populations. The hypergeometric and binomial
 distributions found in this chapter will continue to reappear, because they have a fundamental
 mathematical status quite independent of arguments that we used to find them here.2
+
+Urn类型的概念化只能处理最原始的类型
+信息和真正复杂的应用程序要求我们制定原则
+远远超出了骨灰盒的想法。但情况非常微妙，因为正如我们之前所强调的那样
+与Godel定理有关，错误的论证并不一定导致a
+错误的结论。事实上，正如我们将在第9章中发现的那样，高度复杂的计算
+因为纯粹的数学原因，我们有时会把我们带回到urn类型的分布
+在概念上与骨灰盒或人群无关。超几何和二项式
+本章中的分布将继续重现，因为它们具有根本性
+数学状态完全独立于我们在这里找到它们的参数
 
 On the other hand, we could imagine a different problem in which we would have full
 confidence in urn-type reasoning leading to the binomial distribution, although it probably
@@ -63,6 +115,17 @@ of the urns – but we knew they all had identical contents – this strict inde
 be lost, because then every draw from one urn would tell us something about the contents
 of the other urns, although it does not physically influence them.
 
+另一方面，我们可以想象一个我们将充满的不同问题
+尽管它可能，但是对于推导出二项分布的瓮式推理的信心
+永远不会出现在现实世界中。如果我们有一个大的供应$$ \ {U_1，U_2，...，U_n \} $$已知的骨灰盒
+具有相同的内容，并且这些内容事先已经确定 - 然后
+我们为每次抽奖都使用了一个新的新骨灰盒 - 然后我们会为每个人分配P（A）= M / N.
+绘制，严格独立于我们对任何其他绘制的了解。这样的先验信息
+将优先于任何数量的数据。如果我们不知道内容（M，N）
+的骨灰盒 - 但我们知道他们都有相同的内容 - 这种严格的独立性会
+迷路了，因为那时每个瓮的抽奖都会告诉我们一些内容
+其他骨灰盒，虽然它不会影响他们。
+
 From this we see once again that logical dependence is in general very different from
 causal physical dependence. We belabor this point so much because it is not recognized
 at all in most expositions of probability theory, and this has led to errors, as is suggested
@@ -71,6 +134,15 @@ discussion following Eq. (4.29)). But even when one manages to avoid actual erro
 restrict probability theory to problems of physical causation is to lose its most important
 applications. The extent of this restriction – and the magnitude of the missed opportunity –
 does not seem to be realized by those who are victims of this fallacy.
+
+由此我们再次看到，逻辑依赖性通常与之非常不同
+因果关系。我们非常重视这一点，因为它没有得到承认
+在概率论的大多数论述中都是如此，这就产生了错误，正如所暗示的那样
+按练习3.6。在第4章中，我们将看到更严重的错误（见
+方程式后面的讨论（4.29））。但即使有人设法避免实际错误，也要
+限制概率论对物理因果关系的问题是失去其最重要的
+应用。这种限制的程度 - 以及错失机会的程度 -
+这些谬论的受害者似乎并没有意识到这一点。
 
 Indeed, most of the problems we have solved in this chapter are not considered to be
 within the scope of probability theory, and do not appear at all in those expositions which
@@ -81,10 +153,24 @@ probability for an outcome at a specified trial; yet that is exactly the kind of
 which it is necessary to reason in conducting scientific inference. The calculations of this
 chapter have illustrated this many times.
 
+实际上，我们在本章中解决的大多数问题都不被认为是
+在概率论的范围内，并没有出现在那些论述中
+将概率视为一种物理现象。这样的视图是一个小的子类
+可以通过概率论作为逻辑来有效处理的问题。例如，
+在“物理概率”理论中，甚至没有人认为这是合法的
+在特定审判中获得结果的可能性;然而，这正是那种事情
+有必要推理进行科学推理。这个的计算
+章节已经多次说明了这一点。
+
 In summary: in each of the applications to follow, one must consider whether the experiment
 is really ‘like’ drawing from an urn; if it is not, then we must go back to first principles
 and apply the basic product and sum rules in the new context. This may or may not yield
 the urn distributions.
+
+总结：在每个应用程序中，必须考虑是否进行实验
+真是'喜欢'从骨灰盒里取出来的;如果不是，那么我们必须回到第一原则
+并在新的背景下应用基本产品和总和规则。这可能会或可能不会产生
+骨灰盒分布。
 
 === 3.11.1 A look ahead
 
@@ -99,6 +185,17 @@ work we shall not use this term, but use ‘sampling distribution’ in the gene
 reasoning from some specified hypothesis to potentially observable data, whether the link
 between hypothesis and data is logical or causal.
 
+本章中发现的概率分布称为抽样分布或直接分布
+概率，表明它们具有以下形式：给出一些假设H.
+关于被观察的现象（在刚研究的情况下，内容（M，N）
+urn），我们获得一些指定数据D的概率是多少（在这种情况下，有些数据）
+红色和白色球的序列）？从历史上看，“直接概率”一词长期存在
+从假定的物理原因到可观察的效果的推理的其他内涵。
+但我们已经看到并非所有的采样分布都可以如此解释。在现在
+工作我们不会使用这个术语，而是使用一般意义上的“抽样分布”
+从一些特定的假设推断到潜在的可观察数据，无论是链接
+假设与数据之间存在逻辑或因果关系。
+
 Sampling distributions make predictions, such as the hypergeometric distribution (3.22),
 about potential observations (for example, the possible values and relative probabilities
 of different values of r ). If the correct hypothesis is indeed known, then we expect the
@@ -110,6 +207,17 @@ the present hypothesis and seeking a new one, is the subject of significance tes
 need for such tests in astronomy that led Laplace and Gauss to study probability theory in
 the 18th and 19th centuries.
 
+采样分布进行预测，例如超几何分布（3.22），
+关于潜在的观察（例如，可能的值和相对概率
+不同的r）值。如果确实知道了正确的假设，那么我们期望得到
+预测与观察结果密切一致。如果我们的假设不正确，他们可能会
+非常不同;然后，这种差异的性质为我们提供了寻找更好的线索
+假设。这是非常广泛的说明，是科学推理的基础。究竟有多宽
+预测和观察之间的分歧必须是为了证明我们的拒绝
+目前的假设和寻求新的假设，是重要性检验的主题。是的
+需要在天文学中进行这样的测试，这导致拉普拉斯和高斯研究概率论
+18世纪和19世纪。
+
 Although sampling theory plays a dominant role in conventional pedagogy, in the real
 world such problems are an almost negligible minority. In virtually all real problems of
 scientific inference we are in just the opposite situation; the data D are known but the correct
@@ -119,11 +227,26 @@ above was a simple introduction to this kind of problem. Indeed, the scientist�
 for collecting data is usually to enable him to learn something about the phenomenon in
 this way.
 
+虽然抽样理论在传统教育学中占主导地位，但在实际教学中却是如此
+世界上这样的问题几乎可以忽略不计。几乎所有真正的问题
+科学推断我们处于相反的情况;数据D是已知但正确的
+假设H不是。然后科学家面临的问题是反向类型：给定
+数据D，某些指定假设H的真实概率是多少？练习3.3
+以上是对这类问题的简单介绍。的确，科学家的动机
+收集数据通常是为了让他能够了解有关这种现象的一些信息
+这条路。
+
 Therefore, in the present work our attention will be directed almost exclusively to the
 methods for solving the inverse problem. This does not mean that we do not calculate
 sampling distributions; we need to do this constantly and it may be a major part of our
 computational job. But it does mean that for us the finding of a sampling distribution is
 almost never an end in itself.
+
+因此，在目前的工作中，我们的注意力将几乎完全针对
+解决逆问题的方法。这并不意味着我们不计算
+抽样分布;我们需要不断地做到这一点，它可能是我们的主要部分
+计算工作。但它确实意味着对我们来说，采样分布的发现是
+本身几乎从未结束。
 
 Although the basic rules of probability theory solve such inverse problems just as readily
 as sampling problems, they have appeared quite different conceptually to many writers.
@@ -134,10 +257,27 @@ previous knowledge did not figure in any of our sampling theory calculations. Wh
 asked: ‘What do you know about the data given the contents (M, N) of the urn?’ we did
 not seem to consider: ‘What did you know about the data before you knew (M, N)?’
 
+虽然概率论的基本规则同样容易解决这些逆问题
+作为抽样问题，它们在概念上与许多作家看起来截然不同。
+似乎有一个新功能，因为很明显这个问题：'你知道什么
+关于假设H看到数据D？'之后不能有任何可辩护的答案，除非
+我们考虑到：'在看到D之前你对H有什么了解？'但是这个问题
+以前的知识没有在我们的任何抽样理论计算中得出。什么时候我们
+问道：'你知道关于骨灰盒内容（M，N）的数据吗？'我们做了
+似乎没有考虑：'在你知道（M，N）之前你对数据了解多少？
+
 This apparent dissymmetry, it will turn out, is more apparent than real; it arises mostly
 from some habits of notation that we have slipped into, which obscure the basic unity of
 all inference. But we shall need to understand this very well before we can use probability
 theory effectively for hypothesis tests and their special cases, significance tests. In the next
 chapter we turn to this problem.
 
+事实证明，这种明显的不对称性比实际更明显;它主要出现
+从我们已经陷入的一些符号习惯中，这些习惯模糊了基本的统一性
+所有的推论。但在我们使用概率之前，我们需要很好地理解这一点
+理论有效地用于假设检验及其特殊情况，意义检验。下一个
+我们转向这个问题。
+
 2 In a similar way, exponential functions appear in all parts of analysis because of their fundamental mathematical properties, although their conceptual basis varies widely.
+
+2 以类似的方式，指数函数出现在分析的所有部分，因为它们具有基本的数学特性，尽管它们的概念基础差异很大。

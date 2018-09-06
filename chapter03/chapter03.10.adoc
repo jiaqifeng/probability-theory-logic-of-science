@@ -20,11 +20,23 @@ inferences is restored, even though the causal influences $$\epsilon$$, δ opera
 we see from our derivation of (3.40) that this forward–backward symmetry is a necessary
 consequence of (3.133), whether or not the distribution is exchangeable.
 
+分布仍然是不可交换的，因为条件概率（3.134）仍然存在
+取决于分离| k - j |审判;但是前后对称
+推理被恢复，即使因果影响$$ \ epsilon $$，δ仅向前运行。确实，
+我们从（3.40）的推导中看出，这种前后对称是必要的
+（3.133）的后果，无论分配是否可交换。
+
 What is the meaning of this magic condition (3.131)? It does not make the matrix M
 assume any particularly simple form, and it does not turn off the effect of the correlations.
 What it does is to make the solution (3.133) invariant; that is, the initial vector (3.117)
 is then equal but for normalization to the eigenvector $$x_1$$ in (3.111), so the initial vector
 remains unchanged by the matrix (3.105).
+
+这个神奇的条件是什么意思（3.131）？它没有制作矩阵M.
+假设任何特别简单的形式，它不会关闭相关性的影响。
+它的作用是使解决方案（3.133）不变;也就是说，初始向量（3.117）
+然后等于但是对于（3.111）中的特征向量$$ x_1 $$的归一化，所以初始向量
+矩阵保持不变（3.105）。
 
 In general, of course, there is no reason why this simplifying condition should hold.
 Yet in the case of our urn, we can see a kind of rationale for it. Suppose that when the
@@ -32,6 +44,13 @@ urn has initially N balls, they are in L layers. Then, after withdrawing one bal
 about n = (N − 1)/L of them in the top layer, of which we expect about np to be red,
 nq = n(1 − p) white. Now we toss the drawn ball back in. If it was red, the probability of
 getting red at the next draw if we do not shake the urn is about
+
+当然，一般来说，没有理由认为这种简化条件应该成立。
+然而就我们的骨灰盒而言，我们可以看到它的一种理由。假设当
+urn最初有N个球，它们是L层。然后，在撤回一个球后，有
+关于顶层的n =（N-1）/ L，我们期望np为红色，
+nq = n（1 - p）白色。现在我们将拉回的球扔回去。如果它是红色的，那么概率就是
+如果我们不摇动骨灰盒，那么在下次抽奖时会变红
 
  $$\frac {np + 1}{n + 1} = p + \frac {1 − p}{n} + O( \frac {1}{n^2} )$$, (3.135)
 
@@ -49,6 +68,16 @@ unreasonable about (3.131). We leave it for the reader to speculate about what s
 and use this curious fact might have, and whether it generalizes beyond the Markovian
 approximation.
 
+于是我们的魔法条件（3.131）得到了满足。 当然，刚才给出的论点是
+太粗糙，不能被称为派生，但至少它表明没有任何内在的东西
+不合理（3.131）。 我们留给读者推测其意义
+并使用这个奇怪的事实，以及它是否超出了马尔可夫
+近似。
+
 We have nowhad a first glimpse of some of the principles and pitfalls of standard sampling
 theory. All the results we have found will generalize greatly, and will be useful parts of our
 ‘toolbox’ for the applications to follow.
+
+我们现在已经第一次看到了标准抽样的一些原则和缺陷
+理论。 我们发现的所有结果都会大大概括，并且将成为我们的有用部分
+“工具箱”供应用程序使用。

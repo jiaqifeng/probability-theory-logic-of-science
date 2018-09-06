@@ -1,19 +1,33 @@
-== 4.7 Simple and compound (or composite) hypotheses
+== 4.7 Simple and compound (or composite) hypotheses 简单和复合假设
 
 The hypotheses (A, B,C, $$H_f$$ ) that we have considered thus far refer to a single parameter f = M/N, the unknown fraction of bad widgets in our box, and specify a sharply defined value for f (in $$H_f$$ , it can be any prescribed number in 0 ≤ f ≤ 1). Such hypotheses are called simple, because if we formalize this a bit more by defining an abstract ‘parameter space’ $$\Omega$$ consisting of  values of the parameter or parameters that we consider to be possible, such an hypothesis is represented by a single point in $$\Omega$$.
 
-Testing all the simple hypotheses in $$\Omega$$, however, may be more than we need for our purposes. It may be that we care only whether our parameter lies in some subset 1 ∈  or in the complementary set $$\Omega_2 = \Omega − \Omega_1$$, and the particular value of f in that subset is uninteresting (i.e. it would make no difference for what we plan to do next). Can we proceed directly to the question of interest, instead of requiring our robot to test every simple hypothesis in $$\Omega_1$$?
+我们到目前为止考虑的假设（A，B，C，$$ H_f $$）是指单个参数f = M / N，我们框中的坏小部件的未知部分，并为f指定一个明确定义的值（在$$ H_f $$中，它可以是0≤f≤1中的任何规定数字）。这种假设被称为简单假设，因为如果我们通过定义一个抽象的“参数空间”$$ \ Omega $$来形式化这一点，我们认为这些参数或参数的值可能是我们认为可能的，这种假设用a表示$$ \ Omega $$中的单点。
+
+Testing all the simple hypotheses in $$\Omega$$, however, may be more than we need for our purposes. It may be that we care only whether our parameter lies in some subset $$\Omega_1 ∈ \Omega_2$$ or in the complementary set $$\Omega_2 = \Omega − \Omega_1$$, and the particular value of f in that subset is uninteresting (i.e. it would make no difference for what we plan to do next). Can we proceed directly to the question of interest, instead of requiring our robot to test every simple hypothesis in $$\Omega_1$$?
+
+然而，测试$$ \ Omega $$中的所有简单假设可能比我们的目的更多。可能我们只关心我们的参数是在某个子集$$\Omega_1 ∈ \Omega_2$$还是在互补集$$ \ Omega_2 = \ Omega - \ Omega_1 $$中，并且该子集中f的特定值是无趣的（即它会使我们计划下一步做什么没有区别）。我们可以直接进入感兴趣的问题，而不是要求我们的机器人测试$$ \ Omega_1 $$中的每个简单假设吗？
 
 The question is, to us, trivial; our starting point, Eq. (4.3), applies for all hypotheses H, simple or otherwise, so we have only to evaluate the terms in it for this case. But in (4.64) we have done almost all of that, and need only one more integration. Suppose that if f > 0.1 then we need to take some action (stop the machine and readjust it), but if f ≤ 0.1 we should allow it to continue running. The space $$\Omega$$ then consists of all f in [0, 1], and we take $$\Omega_1$$ as comprising all f in [0.1, 1], H as the hypothesis that f is in $$\Omega_1$$. Since the actual value of f is not of interest, f is now called a nuisance parameter; and we want to get rid of it.
 
+对我们来说，问题是微不足道的;我们的出发点，Eq。 （4.3），适用于所有假设H，简单或其他，因此我们只需要评估其中的条款。但是在（4.64）中我们几乎完成了所有这些，并且只需要一次集成。假设如果f> 0.1，那么我们需要采取一些措施（停止机器并重新调整它），但如果f≤0.1，我们应该允许它继续运行。那么空间$$ \ Omega $$由[0,1]中的所有f组成，我们将$$ \ Omega_1 $$作为包含[0.1,1]中的所有f，H作为f在$$中的假设\ Omega_1 $$。由于f的实际值不重要，因此f现在称为讨厌参数;我们想要摆脱它。
+
 In view of the fact that the problem has no other parameter than f and different intervals d f are mutually exclusive, the discrete sum rule $$P(A_1 + ···+ A_n|B) = \sum_i P(A_i |B)$$ will surely generalize to an integral as the Ai become more and more numerous. Then the nuisance parameter f is removed by integrating it out of (4.64):
+
+鉴于问题没有除f之外的其他参数且不同的间隔df是互斥的，因此离散和规则$$ P（A_1 + ... + A_n | B）= \ sum_i P（A_i | B）$随着艾滋病变得越来越多，美元肯定会归结为一个整体。然后通过将其整合到（4.64）中来消除烦扰参数f：
 
  $$P(\Omega_1|DX) = \frac { \int_{\Omega_1}df f^n(1 − f )^{N−n}g(f|X)} {\int_{\Omega} df f^n(1 − f)^{N−n}g( f |X)}.$$ (4.73)
 
 In the case of a uniform prior pdf for f , we may use (4.64) and the result is the incomplete beta-function: the posterior probability that f is in any specified interval (a < f < b) is
 
+在f的统一先验pdf的情况下，我们可以使用（4.64）并且结果是不完整的β函数：f在任何指定区间（a <f <b）中的后验概率是
+
  $$P(a < f < b|DX) = \frac {(N + 1)!}{n!(N − n)!} \int_a^b df f^n(1 − f )^{N−n},$$ (4.74)
 
 and in this form computer evaluation is easy.
 
+在这种形式下，计算机评估很容易。
+
 More generally, when we have any composite hypothesis to test, probability theory tells us that the proper procedure is simply to apply the principle (4.1) by summing or integrating out, with respect to appropriate priors, whatever nuisance parameters it contains. The conclusions thus found take fully into account all of the evidence contained in the data and in the prior information about the parameters. Probability theory used as logic enables us to test, with a single principle, any number of hypotheses, simple or compound, in the light of the data and prior information. In later chapters we shall demonstrate these properties in many quantitatively worked out examples.
+
+更一般地说，当我们有任何复合假设进行检验时，概率论告诉我们，正确的程序只是通过对适当的先验进行求和或积分来应用原则（4.1），包括它所包含的任何滋扰参数。 由此得出的结论充分考虑了数据中包含的所有证据以及有关参数的先前信息。 用作逻辑的概率论使我们能够根据单一原则，根据数据和先验信息，测试任意数量的简单或复合假设。 在后面的章节中，我们将在许多定量计算的例子中证明这些属性。

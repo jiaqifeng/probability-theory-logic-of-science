@@ -1,6 +1,8 @@
-== 4.2 Testing binary hypotheses with binary data
+== 4.2 Testing binary hypotheses with binary data 基于二值数据的二元假设检验
 
 The simplest nontrivial problem of hypothesis testing is the one where we have only two hypotheses to test and only two possible data values. Surprisingly, this turns out to be a realistic and valuable model of many important inference and decision problems. Firstly, let us adapt (4.3) to this binary case. It gives us the probability that H is true, but we could have written it equally well for the probability that H is false:
+
+假设检验中最简单的非平凡问题是我们只有两个假设来测试而且只有两个可能的数据值。 令人惊讶的是，这被证明是许多重要推理和决策问题的现实和有价值的模型。 首先，让我们适应（4.3）这个二元情形。 它给出了H为真的概率，但我们可以将它写得与H为假的概率一样好：
 
  $$P(\bar{H}|DX) = P(\bar{H}|X) \frac {P(D|\bar{H}X)} {P(D|X)),$$ (4.4)
 
@@ -18,17 +20,29 @@ then we can combine (4.3) and (4.4) into the following form:
 
 The posterior odds on H is (are?) equal to the prior odds multiplied by a dimensionless factor, which is also called a likelihood ratio. The odds are (is?) a strict monotonic function of the probability, so we could equally well calculate this quantity.1
 
+H的后验概率（是？）等于先验概率乘以无量纲因子，也称为似然比。赔率是（是？）概率的严格单调函数，所以我们同样可以很好地计算这个数量
+
 1 Our uncertain phrasing here indicates that ‘odds’ is a grammatically slippery word. We are inclined to agree with purists who say that it is, like ‘mathematics’ and ‘physics’, a singular noun in spite of appearances. Yet the urge to follow the vernacular and treat it as plural is sometimes irresistible, and so we shall be knowingly inconsistent and use it both ways, judging what seems euphonious in each case.
+
+1这里我们不确定的措辞表明'赔率'是一个语法上滑的词。我们倾向于同意纯粹主义者的观点，他们认为，就像“数学”和“物理学”一样，尽管出现了单数名词。然而，追随白话并将其视为复数的冲动有时是不可抗拒的，因此我们将明知不一致并以两种方式使用它，判断每种情况下似乎是悦耳的。
 
 In many applications it is convenient to take the logarithm of the odds because of the fact that we can then add up terms. Now we could take logarithms to any base we please, and this cost the writer some trouble. Our analytical expressions always look neater in terms of natural (base e) logarithms. But back in the 1940s and 1950s when this theory was first developed, we used base 10 logarithms because they were easier to find numerically; the four-figure tables would fit on a single page. Finding a natural logarithm was a tedious process, requiring leafing through enormous old volumes of tables.
 
+在许多应用程序中，获取赔率的对数很方便，因为我们可以添加术语。现在我们可以将对数带到我们喜欢的任何基础上，这给作者带来了一些麻烦。我们的解析表达式在自然（基数e）对数方面总是看起来更整洁。但是在20世纪40年代和50年代，当这个理论最初开发时，我们使用了10个对数，因为它们更容易在数字上找到;四位数表可以放在一个页面上。找到一个自然对数是一个繁琐的过程，需要翻阅大量的旧表。
+
 Today, thanks to hand calculators, all such tables are obsolete and anyone can find a tendigit natural logarithm just as easily as a base 10 logarithm. Therefore, we started happily to rewrite this section in terms of the aesthetically prettier natural logarithms. But the result taught us that there is another, even stronger, reason for using base 10 logarithms. Our minds are thoroughly conditioned to the base 10 number system, and base 10 logarithms have an immediate, clear intuitive meaning to all of us. However, we just don’t know what to make of a conclusion that is stated in terms of natural logarithms, until it is translated back into base 10 terms. Therefore, we re-rewrote this discussion, reluctantly, back into the old, ugly base 10 convention.
 
+今天，由于手动计算器，所有这些表都已过时，任何人都可以找到一个自然对数，就像基数10对数一样容易。 因此，我们开始愉快地用美学上更漂亮的自然对数来重写这一部分。 但结果告诉我们，使用基数10对数还有另一个甚至更强的理由。 我们的思想完全适应基数为10的数字系统，基数10对数对我们所有人都具有直接，清晰的直观意义。 但是，我们只是不知道如何用自然对数表示结论，直到它被翻译成基数10个术语。 因此，我们不情愿地重新改写了这个讨论，重新回到了旧的，丑陋的基础10惯例。
+
 We define a new function, which we will call the evidence for H given D and X:
+
+我们定义了一个新函数，我们将其称为给定D和X的H的证据：
 
  $$e(H|DX) ≡ 10 \log_{10} O(H|DX).$$ (4.8)
 
 This is still a monotonic function of the probability. By using the base 10 and putting the factor 10 in front, we are now measuring evidence in decibels (hereafter abbreviated to db). The evidence for H, given D, is equal to the prior evidence plus the number of db provided by working out the log likelihood in the last term below:
+
+这仍然是概率的单调函数。 通过使用基座10并将因子10放在前面，我们现在以分贝（以下缩写为db）测量证据。 给定D的H的证据等于先前的证据加上通过在下一个项中计算对数似然而提供的db的数量：
 
  $$e(H|DX) = e(H|X) + 10 \log_{10} [ \frac {P(D|HX)} {P(D|\bar{H}X)} ].$$ (4.9)
 
@@ -46,23 +60,37 @@ But, in many cases, the probability for getting $$D_2$$ is not influenced by kno
 
 One then says conventionally that $$D_1$$ and $$D_2$$ are independent. Of course, we should really say that the probabilities which the robot assigns to them are independent. It is a semantic confusion to attribute the property of ‘independence’ to propositions or events; for that implies, in common language, physical causal independence. We are concerned here with the very different quality of logical independence.
 
+然后，传统上说，$$ D_1 $$和$$ D_2 $$是独立的。当然，我们应该说机器人分配给他们的概率是独立的。将“独立”的属性归因于命题或事件是一种语义混淆;因为这意味着，在共同语言中，物理因果独立。我们关注的是逻辑独立性的质量差异很大。
+
 To emphasize this, note that neither kind of independence implies the other. Two events may be in fact causally dependent (i.e. one influences the other); but for a scientist who has not yet discovered this, the probabilities representing his state of knowledge – which determine the only inferences he is able to make – might be independent. On the other hand, two events may be causally independent in the sense that neither exerts any causal influence on the other (for example, the apple crop and the peach crop); yet we perceive a logical connection between them, so that new information about one changes our state of knowledge about the other. Then for us their probabilities are not independent.
+
+要强调这一点，请注意，两种独立都不会暗示另一种。事实上，两个事件可能是因果关系的（即一个事件影响另一个事件）;但是对于一个尚未发现这一点的科学家来说，代表他的知识状态的概率 - 这决定了他能够做出的唯一推论 - 可能是独立的。另一方面，两个事件可能因果关系独立，因为它们既不会对另一个产生任何因果影响（例如，苹果作物和桃子作物）;然而，我们认为它们之间存在逻辑联系，因此关于一个的新信息会改变我们对另一个的知识状态。那么对我们来说，他们的概率并不是独立的。
 
 Quite generally, as the robot’s state of knowledge represented by H and X changes, probabilities conditional on them may change from independent to dependent or vice versa; yet the real properties of the events remain the same. Then one who attributed the property of dependence or independence to the events would be, in effect, claiming for the robot the power of psychokinesis. We must be vigilant against this confusion between reality and a state of knowledge about reality, which we have called the ‘mind projection fallacy’.
 
+通常，随着机器人由H和X表示的知识状态发生变化，以它们为条件的概率可能会从独立变为依赖，反之亦然;然而事件的真实属性保持不变。然后，将依赖性或独立性归因于事件的人实际上将为机器人声称心理运动的力量。我们必须警惕现实与现实知识之间的这种混淆，我们称之为“思维投射谬误”。
+
 The point we are making is not just pedantic nitpicking; we shall see presently (Eq. (4.29)) that it has very real, substantive consequences. In Chapter 3 we have discussed some of the conditions under which these probabilities might be independent, in connection with sampling from a very large known population and sampling with replacement. In the closing Comments section, we noted that whether urn probabilities do or do not factor can depend on whether we do or do not knowthat the contents of several urns are the same. In our present problem, as in Chapter 3, to interpret causal independence as logical independence, or to interpret logical dependence as causal dependence, has led some to nonsensical conclusions in fields ranging from psychology to quantum theory.
 
+我们提出的观点不仅仅是迂腐的挑剔; 我们现在将看到（方程（4.29））它具有非常真实的实质性后果。 在第3章中，我们讨论了这些概率可能独立的一些条件，与来自非常大的已知人口的抽样和替换抽样有关。 在结束评论部分，我们注意到，瓮概率是否有因素可能取决于我们是否知道几个骨灰盒的内容是否相同。 在我们目前的问题中，如第3章所述，将因果独立解释为逻辑独立，或将逻辑依赖解释为因果依赖，导致一些人在心理学和量子理论等领域得到无意义的结论。
+
 In case these several pieces of data are logically independent given (H X) and also given $$(\bar{H}X)$$, (4.11) becomes
+
+如果这几个数据在逻辑上是独立的（H X）并且给出$$（\ bar {H} X）$$，则（4.11）变为
 
  $$e(H|DX) = e(H|X) + 10 \sum_i \log_{10} [ \frac {P(D_i|HX)} {P(D_i|\bar{H}X)} ],$$ (4.13)
 
 where the sum is over all the extra pieces of information that we obtain.
 
+总和超过了我们获得的所有额外信息。
+
 To get some feeling for numerical values here, let us construct Table 4.1. We have three different scales on which we can measure degrees of plausibility: evidence, odds, or probability; they are all monotonic functions of each other. Zero db of evidence corresponds to odds of 1 or to a probability of 1/ 2. Now, every physicist or electrical engineer knows that 3 db means a factor of 2 (nearly) and 10 db is a factor of 10 (exactly); and so if we go in steps of 3 db, or 10, we can construct this table very easily.
+
+为了在这里获得数值的感觉，让我们构建表4.1。我们有三种不同的尺度可以衡量合理程度：证据，几率或概率;它们都是彼此的单调功能。零db的证据对应于1的概率或1/2的概率。现在，每个物理学家或电气工程师都知道3 db表示因子2（几乎），10 db表示10（精确）因子;因此，如果我们采用3 db或10的步长，我们可以非常轻松地构建此表。
 
 It is obvious from Table 4.1 why it is very cogent to give evidence in decibels. When probabilities approach one or zero, our intuition doesn’t work very well. Does the difference between the probability of 0.999 and 0.9999 mean a great deal to you? It certainly doesn’t to the writer. But after living with this for only a short while, the difference between evidence of plus 30 db and plus 40 db does have a clear meaning to us. It is now in a scale which our minds comprehend naturally. This is just another example of the Weber–Fechner law; intuitive human sensations tend to be logarithmic functions of the stimulus.
 
-Table 4.1. Evidence, odds, and probability.
+从表4.1中可以明显看出为什么用分贝来证明是非常有说服力的。当概率接近1或0时，我们的直觉不能很好地发挥作用。 0.999和0.9999的概率之间的差异对你来说意味着什么？这当然不适合作家。但是在与此生活一段时间之后，加上30分贝和加上40分贝的证据之间的区别确实对我们有明确的意义。它现在处于我们的思想自然理解的范围内。这只是Weber-Fechner法则的另一个例子;直觉的人类感觉往往是刺激的对数函数。Table 4.1. Evidence, odds, and probability.
 
 [%header,cols=3]
 |===
@@ -104,13 +132,24 @@ Table 4.1. Evidence, odds, and probability.
 
 Even the factor of 10 in (4.8) is appropriate. In the original acoustical applications, it was introduced so that a 1 db change in sound intensity would be, psychologically, about the smallest change perceptible to our ears.With a little familiarity and a little introspection, we think that the reader will agree that a 1 db change in evidence is about the smallest increment of plausibility that is perceptible to our intuition. Nobody claims that the Weber–Fechner law is a precise rule for all human sensations, but its general usefulness and appropriateness is clear; almost always it is not the absolute change, but more nearly the relative change, in some stimulus that we perceive. For an interesting account of the life and work of Gustav Theodor Fechner (1801–87), see Stigler (1986c).
 
+即使是（4.8）中的10因子也是合适的。在最初的声学应用中，它被引入使得声音强度的1分贝变化在心理上是关于我们耳朵可感知的最小变化。有一点熟悉和一点内省，我们认为读者会同意1 db的证据变化是关于我们直觉可感知的最小合理性增量。没有人声称韦伯 - 费希纳法是所有人类感觉的准确规则，但它的一般用处和适当性是明确的;几乎总是不是绝对的变化，而是在我们认为的一些刺激中更接近相对变化。有关Gustav Theodor Fechner（1801-87）的生活和工作的有趣描述，请参阅Stigler（1986c）。
+
 Now let us apply (4.13) to a specific calculation, which we shall describe as a problem of industrial quality control (although it could be phrased equally well as a problem of cryptography, chemical analysis, interpretation of a physics experiment, judging two economic theories, etc.). Following the example of Good (1950), we assume numbers which are not very realistic in order to elucidate some points of principle. Let the prior information X consist of the following statements:
+
+现在让我们将（4.13）应用于一个特定的计算，我们将其描述为工业质量控制的问题（尽管它可以同样适用于密码学，化学分析，物理实验的解释，判断两个经济理论的问题。等）。以Good（1950）为例，我们假设数字不是很现实，以阐明一些原则点。让先验信息X包含以下陈述：
 
  X ≡ We have 11 automatic machines turning out widgets, which pour out of the machines into 11 boxes. This example corresponds to a very early stage in the development of widgets, because ten of the machines produce one in six defective. The 11th machine is even worse; it makes one in three defective. The output of each machine has been collected in an unlabeled box and stored in the warehouse.
 
+
+ X≡我们有11台自动机器生产小部件，从机器中倒出11个盒子。这个例子对应于小部件开发的一个非常早期的阶段，因为十个机器产生六分之一的缺陷。第11台机器更糟糕;它使三分之一有缺陷。每台机器的输出都收集在一个未标记的盒子中并存储在仓库中。
+
 We choose one of the boxes and test a few of the widgets, classifying them as ‘good’ or ‘bad’. Our job is to decide whether we chose a box from the bad machine or not; that is, whether we are going to accept this batch or reject it.
 
+我们选择其中一个框并测试一些小部件，将它们分类为“好”或“坏”。 我们的工作是决定是否从坏机器中选择一个盒子; 也就是说，我们是否要接受这批或拒绝它。
+
 Let us turn this job over to our robot and see how it performs. Firstly, it must find the prior evidence for the various propositions of interest. Let
+
+让我们把这个工作交给我们的机器人，看看它是如何运作的。 首先，它必须找到各种感兴趣的命题的先验证据。 让
 
  A ≡ we chose a bad batch (1/3 defective),
  B ≡ we chose a good batch (1/6 defective).
@@ -127,17 +166,29 @@ whereupon we have necessarily e(B|X) = +10 db.
 
 Evidently, in this problem the only properties of X that will be relevant for the calculation are just these numbers, ±10 db. Any other kind of prior information which led to the same numbers would give us just the same mathematical problem from this point on. So, it is not necessary to say that we are talking only about a problem where there are 11 machines, and so on. There might be only one machine, and the prior information consists of our previous experience with it.
 
+显然，在这个问题中，与计算相关的X的唯一属性就是这些数字，±10 db。导致相同数字的任何其他类型的先验信息将从这一点给出我们相同的数学问题。因此，没有必要说我们只讨论有11台机器的问题，依此类推。可能只有一台机器，先前的信息包括我们以前的经验。
+
 Our reason for stating the problem in terms of 11 machines was that we have, thus far, only one principle, indifference, by which we can convert raw information into numerical probability assignments. We interject this remark because of a famous statement by Feller (1950) about a single machine, which we consider in Chapter 17 after accumulating some more evidence pertaining to the issue he raised. To our robot, it makes no difference how many machines there are; the only thing that matters is the prior probability for a bad batch, however this information was arrived at.2
 
+我们根据11台机器陈述问题的原因是，到目前为止，我们只有一种原则，即无差别，我们可以将原始信息转换为数值概率分配。我们插入这句话是因为Feller（1950）关于单个机器的一个着名声明，我们在第17章中考虑了他们在积累了一些与他提出的问题相关的更多证据之后。对于我们的机器人来说，它有多少机器没有区别;唯一重要的是坏批次的先验概率，但这个信息是在2处得出的
+
 Now, from this box we take out a widget and test it to see whether it is defective. If we pull out a bad one, what will that do to the evidence for a bad batch? That will add to it
+
+现在，从这个框中我们取出一个小部件并测试它以查看它是否有缺陷。如果我们拿出一个糟糕的批次，对于坏批次的证据会怎么做？这将增加它
 
  $$10 \log_{10} \frac {P(bad|AX)}{P(bad|\bar{A}X)} db$$ (4.16)
 
 where P(bad|AX) represents the probability for getting a bad widget, given A, etc.; these are sampling probabilities, and we have already seen how to calculate them. Our procedure is very much ‘like’ drawing from an urn, and, as in Chapter 3, on one draw our datum D now consists only of a binary choice: (good/bad). The sampling distribution P(D|HX)
 
+其中P（坏| AX）表示获得坏小部件的概率，给定A等;这些是抽样概率，我们已经看到了如何计算它们。我们的程序非常“喜欢”从一个瓮中抽取，并且，正如在第3章中，在一次绘制中，我们的数据D现在仅包含二元选择:(好/坏）。采样分布P（D | HX）
+
 2 Notice that in this observation we have the answer to a point raised in Chapter 1: How does one make the robot ‘cognizant’ of the semantic meanings of the various propositions that it is being called upon to deal with? The answer is that the robot does not need to be ‘cognizant’ of anything. If we give it, in addition to the model and the data, a list of the propositions to be considered, with their prior probabilities, this conveys all the ‘meaning’ needed to define the robot’s mathematical problem for the applications now being considered. Later, we shall wish to design a more sophisticated robot which can also help us to assign prior probabilities by analysis of complicated but incomplete information, by the maximum entropy principle. But, even then, we can always define the robot’s mathematical problem without going into semantics.
 
+2请注意，在这个观察中，我们得到了第1章中提出的观点的答案：如何使机器人“认识”它被要求处理的各种命题的语义意义？答案是机器人不需要“认识”任何东西。如果我们给出它，除了模型和数据之外，还有一个要考虑的命题列表及其先验概率，它传达了为现在正在考虑的应用定义机器人数学问题所需的所有“意义”。之后，我们希望设计一个更复杂的机器人，它还可以通过最大熵原理分析复杂但不完整的信息来帮助我们分配先验概率。但是，即使这样，我们也可以在不进入语义的情况下定义机器人的数学问题。
+
 reduces to
+
+减少到
 
  $$P(bad|AX) = \frac {1}{3}, P(good|AX) = \frac {2}{3}, $$  (4.17)
  $$P(bad|BX) = \frac {1}{6}, P(good|BX) = \frac {5}{6}.$$ (4.18)
@@ -152,17 +203,27 @@ What happens now if we draw a second bad one?We are sampling without replacement
 
 where N is the number of widgets in the batch. But, to avoid this complication, we suppose that N is very much larger than any number that we contemplate testing; i.e. we are going to test such a negligible fraction of the batch that the proportion of bad and good ones in it is not changed appreciably by the drawing. Then the limiting form of the hypergeometric distribution (3.22) will apply, namely the binomial distribution (3.86). Thus we shall consider that, given A or B, the probability for drawing a bad widget is the same at every draw regardless of what has been drawn previously; so every bad one we draw will provide +3 db of evidence in favor of hypothesis A.
 
+其中N是批次中小部件的数量。 但是，为了避免这种复杂情况，我们假设N比我们考虑测试的任何数字都要大得多; 也就是说，我们将测试批次中可忽略不计的一小部分，其中不良和好的部分的比例不会因图纸而明显改变。 然后将应用超几何分布的限制形式（3.22），即二项分布（3.86）。 因此，我们将考虑，给定A或B，绘制坏小部件的概率在每次绘制时都是相同的，无论先前绘制的是什么; 所以我们绘制的每一个坏的都将提供+3 db的证据支持假设A.
+
 Now suppose we find a good widget. Using (4.14), we get evidence for A of
+
+现在假设我们找到了一个好的小部件。 使用（4.14），我们得到A的证据
 
  $$10 \log_{10} \frac {P(good|AX)}{P(good|BX)} = 10 \log_{10} \frac {(2/3)}{(5/6)} = −0.97 db,$$ (4.21)
 
 but let’s call it −1 db. Again, this will hold for any draw, if the number in the batch is sufficiently large. If we have inspected n widgets, of which we found $$n_b$$ bad ones and $$n_g$$ good ones, the evidence that we have the bad batch will be
 
+但我们称之为-1 db。 同样，如果批次中的数字足够大，这将适用于任何抽奖。 如果我们检查了n个小部件，其中我们发现$$ n_b $$坏的和$ n_g $$好的，我们有坏批次的证据将是
+
  $$e(A|DX) = e(A|X) + 3n_b − n_g.$$ (4.22)
 
 You see how easy this is to do once we have set up the logarithmic machinery. The robot’s mind is ‘driven in one direction or the other’ in a very simple, direct way.
 
+你知道一旦我们建立了对数机制，这是多么容易。 机器人的思维是以一种非常简单，直接的方式“向一个方向驱动”。
+
 Perhaps this result gives us a deeper insight into why the Weber–Fechner law applies to intuitive plausible inference. Our ‘evidence’ function is related to the data that we have observed in about the most natural way imaginable; a given increment of evidence corresponds to a given increment of data. For example, if the first 12 widgets we test yield five bad ones, then
+
+也许这一结果让我们更深入地了解为什么Weber-Fechner定律适用于直观的合理推理。 我们的“证据”功能与我们在可以想象的最自然的方式中观察到的数据有关; 给定的证据增量对应于给定的数据增量。 例如，如果我们测试的前12个小部件产生五个坏小部件，那么
 
  e(A|DX) = −10 + 3 × 5 − 7 = −2 db, (4.23)
 
@@ -174,14 +235,26 @@ In order to get at least 20 db of evidence for proposition A, how many bad widge
 
 so, if the fraction $$f_b ≡ n_b/n$$ of bad ones remains greater than 1/4, we shall accumulate eventually 20 db, or any other positive amount, of evidence for A. It appears that $$f_b = 1/4$$ is the threshold value at which the test can provide no evidence for either A or B over the other; but note that the +3 and −1 in (4.22) are only approximate. The exact threshold fraction of bad ones is, from (4.19) and (4.21),
 
+所以，如果坏的那些分数$$f_b≡n_b/ n $$仍然大于1/4，我们最终将为A积累20分贝或任何其他正数的证据。看来$$ f_b = 1 / 4 $$是测试不能提供A或B相对于另一个的证据的阈值; 但请注意，（4.22）中的+3和-1只是近似值。 坏的确切阈值分数来自（4.19）和（4.21），
+
  $$f_t = \frac {log (\frac {5}{4})} {log(2) + log(\frac{5}{4})} = 0.2435292,$$ (4.25)
 
 in which the base of the logarithms does not matter. Sampling fractions greater (less) than this give evidence for A over B (B over A); but if the observed fraction is close to the threshold, it will require many tests to accumulate enough evidence.
 
+其中对数的基数无关紧要。比这更大（更少）的抽样分数证明A超过B（B超过A）;但如果观察到的分数接近阈值，则需要进行多次测试以积累足够的证据。
+
 Now all we have here is the probability or odds or evidence, whatever you wish to call it, of the proposition that we chose the bad batch. Eventually, we have to make a decision: we’re going to accept it, or we’re going to reject it. How are we going to do that? Well, we might decide beforehand: if the probability of proposition A reaches a certain level, then we’ll decide that A is true. If it gets down to a certain value, then we’ll decide that A is false. There is nothing in probability theory per se which can tell us where to put these critical levels at which we make our decision. This has to be based on value judgments: what are the consequences of making wrong decisions, and what are the costs of making further tests?
+
+现在我们所拥有的是我们选择坏批次的命题的概率或几率或证据，无论你想称之为什么。最终，我们必须做出决定：我们将接受它，否则我们将拒绝它。我们该怎么做？好吧，我们可能事先决定：如果命题A的概率达到一定水平，那么我们将确定A是真的。如果它下降到某个值，那么我们将确定A是假的。概率论本身没有任何东西可以告诉我们在哪里放置我们做出决定的关键水平。这必须基于价值判断：做出错误决定的后果是什么，进一步测试的成本是多少？
 
 This takes us into the realm of decision theory, considered in Chapters 13 and 14. But for now it is clear that making one kind of error (accepting a bad batch) might be more serious than making the other kind of error (rejecting a good batch). That would have an obvious effect on where we place our critical levels.
 
+这将我们带入决策理论领域，在第13章和第14章中进行了讨论。但是现在很明显，制造一种错误（接受一个糟糕的批次）可能比制造另一种错误（拒绝一种好处）更严重批量）。这将对我们放置关键水平的位置产生明显影响。
+
 So we could give the robot some instructions such as ‘If the evidence for A is greater than +0 db, then reject this batch (it is more likely to be bad than good). If it goes as low as −13 db, then accept it (there is at least a 95% probability that it is good). Otherwise, continue testing.’We start doing the tests, and every time we find a bad widget the evidence for the bad batch goes up 3 db; every time we find a good one, it goes down 1 db. The tests terminate as soon as we enter either the accept or reject region for the first time.
 
+所以我们可以给机器人一些指令，例如'如果A的证据大于+0 db，那么拒绝这批（它更可能是好的）。如果它低至-13 db，则接受它（至少有95％的可能性是好的）。否则，继续测试。“我们开始进行测试，每次我们发现坏的小部件时，坏批次的证据上升3分贝;每次我们找到一个好的，它下降1分贝。一旦我们第一次进入接受或拒绝区域，测试就会终止。
+
 The way described above is how our robot would do it if we told it to reject or accept on the basis that the posterior probability of proposition A reaches a certain level. This very useful and powerful procedure is called ‘sequential inference’ in the statistical literature, the term signifying that the number of tests is not determined in advance, but depends on the sequence of data values that we find; at each step in the sequence we make one of three choices: (a) stop with acceptance; (b) stop with rejection; (c) make another test. The term should not be confused with what has come to be called ‘sequential analysis with nonoptional stopping’, which is a serious misapplication of probability theory; see the discussions of optional stopping in Chapters 6 and 17.
+
+上面描述的方式是我们的机器人如果在命令A的后验概率达到一定水平的基础上告诉它拒绝或接受它的方式。这个非常有用和强大的程序在统计文献中被称为“顺序推理”，这个术语表示测试的数量不是事先确定的，而是取决于我们找到的数据值的顺序;在序列的每一步，我们做出三个选择之一：（a）停止接受; （b）拒绝停止; （c）再做一次测试。这个术语不应该与所谓的“非随机停止的顺序分析”相混淆，这是对概率论的严重误用;请参阅第6章和第17章中关于可选停止的讨论。

@@ -1,22 +1,40 @@
-== 4.1 Prior probabilities
+== 4.1 Prior probabilities 先验概率
 
 Generally, when we give the robot its current problem, we will give it also some new information or ‘data’ D pertaining to the specific matter at hand. But almost always the robot will have other information which we denote, for the time being, by X. This includes, at the very least, all its past experience, from the time it left the factory to the time it received its current problem. That is always part of the information available, and our desiderata do not allow the robot to ignore it. If we humans threw away what we knew yesterday in reasoning about our problems today, we would be below the level of wild animals; we could never know more than we can learn in one day, and education and civilization would be impossible.
 
+通常，当我们给机器人当前的问题时，我们还会给它一些与手头的具体事项有关的新信息或“数据”D.但几乎总是机器人会有其他信息，我们暂时用X表示。这至少包括过去的所有经验，从它离开工厂到收到当前问题的时间。这始终是可用信息的一部分，我们的需求不允许机器人忽略它。如果我们人类在今天解决我们的问题时抛弃了我们昨天所知道的东西，那么我们就会低于野生动物的水平;我们永远不会知道我们可以在一天内学到什么，教育和文明是不可能的。
+
 So to our robot there is no such thing as an ‘absolute’ probability; all probabilities are necessarily conditional on X at least. In solving a problem, its inferences should, according to the principle (4.1), take the form of calculating probabilities of the form P(A|DX). Usually, part of X is irrelevant to the current problem, in which case its presence is unnecessary but harmless; if it is irrelevant, it will cancel out mathematically. Indeed, that is what we really mean by ‘irrelevant’.
+
+所以对于我们的机器人来说，没有“绝对”概率这样的东西;所有概率都必须至少以X为条件。在解决问题时，根据原理（4.1），其推论应采用计算形式P（A | DX）的概率的形式。通常，X的一部分与当前问题无关，在这种情况下，它的存在是不必要的，但无害;如果它不相关，它将在数学上取消。实际上，这就是我们所谓的“无关紧要”。
 
 Any probability P(A|X) that is conditional on X alone is called a prior probability. But we caution that the term ‘prior’ is another of those terms from the distant past that can be inappropriate and misleading today. In the first place, it does not necessarily mean ‘earlier in time’. Indeed, the very concept of time is not in our general theory (although we may of course introduce it in a particular problem). The distinction is a purely logical one; any additional information beyond the immediate data D of the current problem is by definition ‘prior information’.
 
+任何以X为条件的概率P（A | X）称为先验概率。但我们提醒说，“先行”一词是遥远过去的另一个术语，今天可能是不恰当和误导的。首先，它并不一定意味着“更早的时间”。实际上，时间概念不在我们的一般理论中（尽管我们当然可以在特定问题中引入它）。区别是纯粹的逻辑;除当前问题的直接数据D之外的任何附加信息根据定义是“先验信息”。
+
 For example, it has happened more than once that a scientist has gathered a mass of data, but before getting around to the data analysis he receives some surprising new information that completely changes his ideas of how the data should be analyzed. That surprising new information is, logically, ‘prior information’ because it is not part of the data. Indeed, the separation of the totality of the evidence into two components called ‘data’ and ‘prior information’ is an arbitrary choice made by us, only for our convenience in organizing a chain of inferences. Although all such organizations must lead to the same final results if they succeed at all, some may lead to much easier calculations than others. Therefore, we do need to consider the order in which different pieces of information shall be taken into account in our calculations.
+
+例如，科学家已经不止一次地收集了大量数据，但在进行数据分析之前，他收到了一些令人惊讶的新信息，完全改变了他对如何分析数据的看法。从逻辑上讲，令人惊讶的新信息是“先验信息”，因为它不是数据的一部分。实际上，将整体证据分成两个组成部分，称为“数据”和“先验信息”，是我们做出的任意选择，只是为了方便我们组织推理链。虽然所有这些组织如果取得成功必须达到相同的最终结果，但有些组织可能会比其他组织更容易计算。因此，我们需要考虑在计算中应考虑不同信息的顺序。
 
 Because of some strange things that have been thought about prior probabilities in the past, we point out also that it would be a big mistake to think of X as standing for some hidden major premise, or some universally valid proposition about Nature. Old misconceptions about the origin, nature, and proper functional use of prior probabilities are still common among those who continue to use the archaic term ‘a-priori probabilities’. The term ‘a-priori’ was introduced by Immanuel Kant to denote a proposition whose truth can be known independently of experience; which is most emphatically what we do not mean here. X denotes simply whatever additional information the robot has beyond what we have chosen to call ‘the data’. Those who are actively familiar with the use of prior probabilities in current real problems usually abbreviate further, and instead of saying ‘the prior probability’ or ‘the prior probability distribution’, they say simply, ‘the prior’.
 
+由于过去曾考虑过先验概率的一些奇怪的事情，我们也指出，将X视为一些隐藏的重要前提或一些关于自然的普遍有效命题将是一个大错误。关于先验概率的起源，性质和适当功能使用的旧误解在那些继续使用古老术语“先验概率”的人中仍然很常见。伊曼纽尔康德引用了“先验”一词来表示一个可以独立于经验而知道其真理的命题;最重要的是我们在这里并不意味着什么。 X表示机器人除了我们选择称之为“数据”之外的任何其他信息。那些积极熟悉在当前实际问题中使用先验概率的人通常会进一步缩写，而不是说“先验概率”或“先验概率分布”，他们简单地说，“先验”。
+
 There is no single universal rule for assigning priors – the conversion of verbal prior information into numerical prior probabilities is an open-ended problem of logical analysis, to which we shall return many times. At present, four fairly general principles are known – group invariance, maximum entropy, marginalization, and coding theory – which have led to successful solutions of many different kinds of problems. Undoubtedly, more principles are waiting to be discovered, which will open up new areas of application.
+
+分配先验没有单一的通用规则 - 将口头先验信息转换为数字先验概率是逻辑分析的开放式问题，我们将多次返回。目前，已知有四个相当一般的原则 - 群不变性，最大熵，边际化和编码理论 - 它们导致了许多不同类型问题的成功解决方案。毫无疑问，还有更多原则待发现，这将开辟新的应用领域。
 
 In conventional sampling theory, the only scenario considered is essentially that of ‘drawing from an urn’, and the only probabilities that arise are those that presuppose the contents of the ‘urn’ or the ‘population’ already known, and seek to predict what ‘data’ we are likely to get as a result. Problems of this type can become arbitrarily complicated in the details, and there is a highly developed mathematical literature dealing with them. For example, the massive two-volume work of Feller (1950, 1966) and the weighty compendium of Kendall and Stuart (1977) are restricted entirely to the calculation of sampling distributions. These works contain hundreds of nontrivial solutions that are useful in all parts of probability theory, and every worker in the field should be familiar with what is available in them.
 
+在传统的抽样理论中，所考虑的唯一情况基本上是“从一个瓮中抽取”，并且出现的唯一概率是预先假定已知的“瓮”或“人口”的内容，并试图预测什么我们可能会得到“数据”。这种类型的问题在细节上可能变得任意复杂，并且存在高度发展的处理它们的数学文献。例如，Feller（1950,1966）的大量两卷作品以及Kendall和Stuart（1977）的重要纲要完全局限于抽样分布的计算。这些工作包含数百个非常重要的解决方案，这些解决方案在概率论的所有部分都很有用，并且该领域的每个工作人员都应该熟悉它们中可用的内容。
+
 However, as noted in the preceding chapter, almost all real problems of scientific inference involve us in the opposite situation; we already know the data D, and want probability theory to help us decide on the likely contents of the ‘urn’. Stated more generally, we want probability theory to indicate which of a given set of hypotheses $$\{H_1,H_2,...\}$$ is most likely to be true in the light of the data and any other evidence at hand. For example, the hypotheses may be various suppositions about the physical mechanism that is generating the data. But fundamentally, as in Chapter 3, physical causation is not an essential ingredient of the problem; what is essential is only that there be some kind of logical connection between the hypotheses and the data.
 
+然而，正如前一章所述，几乎所有科学推理的真正问题都涉及我们相反的情况;我们已经知道数据D，并希望概率论帮助我们决定'urn'的可能内容。更一般地说，我们希望概率理论根据数据和手头的任何其他证据来指出一组给定的假设中的哪一个$$ \ {H_1，H_2，... \} $$最可能是真的。 。例如，假设可以是关于生成数据的物理机制的各种假设。但从根本上说，如第3章所述，物理因果关系并不是问题的重要组成部分;重要的只是假设和数据之间存在某种逻辑联系。
+
 To solve this problem does not require any new principles beyond the product rule (3.1) that we used to find conditional sampling distributions; we need only to make a different choice of the propositions. Let us now use the notation
+
+要解决这个问题，不需要我们用于查找条件抽样分布的产品规则（3.1）之外的任何新原则;我们只需要对命题做出不同的选择。现在让我们使用符号
 
  X = prior information,
  H = some hypothesis to be tested,
@@ -28,18 +46,34 @@ and write the product rule in the form
 
 We recognize P(D|HX) as the sampling distribution which we studied in Chapter 3, but now written in a more flexible notation. In Chapter 3 we did not need to take any particular note of the prior information X, because all probabilities were conditional on H, and so we could suppose implicitly that the general verbal prior information defining the problem was included in H. This is the habit of notation that we have slipped into, which has obscured the unified nature of all inference. Throughout all of sampling theory one can get away with this, and as a result the very term ‘prior information’ is absent from the literature of sampling theory.
 
+我们认为P（D | HX）是我们在第3章中研究的采样分布，但现在用更灵活的表示法编写。 在第3章中，我们不需要特别注意先验信息X，因为所有概率都是以H为条件的，因此我们可以隐含地假设定义问题的一般语言先验信息包含在H中。这就是习惯 我们已经陷入的符号，这掩盖了所有推论的统一性质。 在整个抽样理论中，人们可以逃避这一点，因此，抽样理论的文献中不存在术语“先验信息”。
+
 Now, however, we are advancing to probabilities that are not conditional on H, but are still conditional on X, so we need separate notations for them. We see from (4.2) that to judge the likely truth of H in the light of the data, we need not only the sampling probability P(D|HX) but also the prior probabilities for D and H:
+
+然而，现在，我们正在推进不以H为条件的概率，但仍以X为条件，因此我们需要单独的符号。 从（4.2）可以看出，根据数据来判断H的可能真值，我们不仅需要采样概率P（D | HX），还需要D和H的先验概率：
 
  $$P(H|DX) = P(H|X) \frac {P(D|HX)} {P(D|X)}.$$ (4.3)
 
 Although the derivation (4.2)–(4.3) is only the same mathematical result as (3.50)–(3.51), it has appeared to many workers to have a different logical status. From the start it has seemed clear how one determines numerical values of sampling probabilities, but not what determines the prior probabilities. In the present work we shall see that this was only an artifact of an unsymmetrical way of formulating problems, which left them ill-posed. One could see clearly how to assign sampling probabilities because the hypothesis H was stated very specifically; had the prior information X been specified equally well, it would have been equally clear how to assign prior probabilities.
 
+尽管推导（4.2） - （4.3）只是与（3.50） - （3.51）相同的数学结果，但许多工人似乎都有不同的逻辑状态。从一开始，似乎很清楚如何确定采样概率的数值，而不是确定先验概率的数值。在目前的工作中，我们将看到，这只是一种制造问题的不对称方式的工件，这使他们不适应。人们可以清楚地看到如何分配抽样概率，因为非常具体地说明了假设H.如果先前的信息X被同样指定，那么如何分配先验概率也同样清楚。
+
 When we look at these problems on a sufficiently fundamental level and realize how careful one must be to specify the prior information before we have a well-posed problem, it becomes evident that there is in fact no logical difference between (3.51) and (4.3); exactly the same principles are needed to assign either sampling probabilities or prior probabilities, and one man’s sampling probability is another man’s prior probability.
+
+当我们在一个足够基础的层面上看待这些问题并意识到在我们有一个适当的问题之前必须谨慎地指定先验信息时，很明显事实上（3.51）和（4.3之间没有逻辑上的区别）;分配采样概率或先验概率需要完全相同的原则，而一个人的采样概率是另一个人的先验概率。
 
 The left-hand side of (4.3), P(H|DX), is generally called a ‘posterior probability’, with the same caveat that this means only ‘logically later in the particular chain of inference being made’, and not necessarily ‘later in time’. And again the distinction is conventional, not fundamental; one man’s prior probability is another man’s posterior probability. There is really only one kind of probability; our different names for them refer only to a particular way of organizing a calculation.
 
+（4.3）的左侧，P（H | DX），通常被称为“后验概率”，具有相同的警告，这意味着“在特定的推理链中逻辑上稍后”，并且不一定'晚些时候'。再次区分是传统的，而不是根本的;一个人的先验概率是另一个人的后验概率。实际上只有一种概率;我们的不同名称仅指组织计算的特定方式。
+
 The last factor in (4.3) also needs a name, and it is called the likelihood L(H). To explain current usage, we may consider a fixed hypothesis and its implications for different data sets; as we have noted before, the term P(D|HX), in its dependence on D for fixed H, is called the ‘sampling distribution’. But we may consider a fixed data set in the light of various different hypotheses {H,H',...}; in its dependence on H for fixed D, P(D|HX) is called the ‘likelihood’.
+
+（4.3）中的最后一个因子也需要一个名称，它被称为似然L（H）。为了解释当前的用法，我们可以考虑一个固定的假设及其对不同数据集的影响;正如我们之前所提到的，术语P（D | HX），其依赖于固定H的D，被称为“采样分布”。但我们可以根据各种不同的假设{H，H'，...}来考虑一个固定的数据集;在固定D的H依赖性中，P（D | HX）被称为“可能性”。
 
 Alikelihood L(H) is not itself a probability for H; it is a dimensionless numerical function which, when multiplied by a prior probability and a normalization factor, may become a probability. Because of this, constant factors are irrelevant, and may be struck out. Thus, the quantity $$L(H_i)=y(D)P(D|H_iX)$$ is equally deserving to be called the likelihood, where y is any positive number which may depend on D but is independent of the hypotheses $$\{H_i\}$$.
 
+似然L（H）本身不是H的概率;它是无量纲数值函数，当乘以先验概率和归一化因子时，可以成为概率。因此，不变因素是无关紧要的，可能会被打破。因此，数量$$ L（H_i）= y（D）P（D | H_iX）$$同样值得称为似然，其中y是任何正数，可能取决于D但是独立于假设$ $ \ {H_i \} $$。
+
 Equation (4.3) is then the fundamental principle underlying a wide class of scientific inferences in which we try to draw conclusions from data. Whether we are trying to learn the character of a chemical bond from nuclear magnetic resonance data, the effectiveness of a medicine from clinical data, the structure of the earth’s interior from seismic data, the elasticity of a demand from economic data, or the structure of a distant galaxy from telescopic data, (4.3) indicates what probabilities we need to find in order to see what conclusions are justified by the totality of our evidence. If P(H|DX) is very close to one (zero), then we may conclude that H is very likely to be true (false) and act accordingly. But if P(H|DX) is not far from 1/2, then the robot is warning us that the available evidence is not sufficient to justify any very confident conclusion, and we need to obtain more and better evidence.
+
+因此，公式（4.3）是我们试图从数据中得出结论的一大类科学推论的基本原理。我们是否正在尝试从核磁共振数据中学习化学键的特征，从临床数据中获取药物的有效性，从地震数据中获取地球内部结构，从经济数据中获取需求的弹性，或者一个遥远的星系来自望远镜数据，（4.3）表明我们需要找到什么概率才能看到我们的全部证据证明哪些结论合理。如果P（H | DX）非常接近一（零），那么我们可以得出结论H很可能是真的（假）并且相应地采取行动。但如果P（H | DX）离1/2不远，那么机器人会警告我们现有的证据不足以证明任何非常有信心的结论，我们需要获得更多更好的证据。

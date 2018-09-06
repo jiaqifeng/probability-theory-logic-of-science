@@ -1,8 +1,12 @@
-== 4.3 Nonextensibility beyond the binary case
+== 4.3 Nonextensibility beyond the binary case 二元情况的非扩展性
 
 The binary hypothesis testing problem turned out to have such a beautifully simple solution that we might like to extend it to the case of more than two hypotheses. Unfortunately, the convenient independent additivity over data sets in (4.13) and the linearity in (4.22) do not generalize. By ‘independent additivity’ we mean that the increment of evidence from a given datum $$D_i$$ depends only on $$D_i$$ and H; not on what other data have been observed. As (4.11) shows, we always have additivity, but not independent additivity unless the probabilities are independent.
 
+二元假设检验问题最终得到了一个非常简单的解决方案，我们可能希望将其扩展到两个以上假设的情况。 不幸的是，（4.13）中数据集的方便独立可加性和（4.22）中的线性不一致。 “独立可加性”是指来自给定数据$$ D_i $$的证据增量仅取决于$$ D_i $$和H; 而不是观察到的其他数据。 如（4.11）所示，除非概率是独立的，否则我们总是具有可加性，但不具有独立的可加性。
+
 We state the reason for this nonextensibility in the form of an exercise for the reader; to prepare for it, suppose that we have n hypotheses $$\{H_1,...,H_n\}$$ which on prior information X are mutually exclusive and exhaustive:
+
+我们以读者的形式说明这种不可扩展性的原因; 为了做好准备，假设我们有n个假设$$ \ {H_1，...，H_n \} $$，它们在先验信息X上是相互排斥和详尽的：
 
  $$P(H_i H_j |X) = P(H_i |X)δ_{ij} , \sum_{i=1}^n P(H_i |X) = 1.$$ (4.26)
 
@@ -28,10 +32,20 @@ is different from unity, therefore at most one of the data sets $$D_j$$ can prod
 
 This has been a controversial issue in the literature of artificial intelligence (Glymour, 1985; R. W. Johnson, 1985). Those who fail to distinguish between logical independence and causal independence would suppose that (4.29) is always valid, provided only that no Di exerts a physical influence on any other $$D_j$$ . But we have already noted the folly of such reasoning; this is an occasion when the semantic confusion can lead to serious numerical errors. When n = 2, (4.29) follows from (4.28). But when n > 2, (4.29) is such a strong condition that it would reduce the whole problem to a triviality not worth considering; we have left it (Exercise 4.1) for the reader to examine the equations to see why this is so. Because of Cox’s theorems expounded in Chapter 2, the verdict of probability theory is that our conclusion about nonextensibility can be evaded only at the price of committing demonstrable inconsistencies in our reasoning.
 
+这在人工智能文献中是一个有争议的问题（Glymour，1985; R.W.Johnson，1985）。那些未能区分逻辑独立性和因果独立性的人会认为（4.29）总是有效的，前提是没有Di对任何其他$$ D_j $$施加物理影响。但我们已经注意到这种推理的愚蠢;在这种情况下，语义混淆会导致严重的数字错误。当n = 2时，（4.29）从（4.28）开始。但是当n> 2时，（4.29）是如此强烈的条件，它会将整个问题简化为不值得考虑的微不足道的事情;我们已经离开它（练习4.1）让读者检查方程式，看看为什么会这样。由于Cox定理在第2章中阐述，概率论的结论是我们关于不可扩展性的结论只能以在我们的推理中犯下可证明的不一致为代价来规避。
+
 To head off a possible misunderstanding of what is being said here, let us add the following. However many hypotheses we have in mind, it is of course always possible to pick out two of them and compare them only against each other. This reverts to the binary choice case already analyzed, and the independent additive property holds within that smaller problem (find the status of an hypothesis relative to a single alternative).
+
+为了避免可能误解这里所说的内容，让我们添加以下内容。无论我们想到多少假设，当然总是可以选出其中两个，并将它们相互比较。这将回归到已经分析的二元选择案例，并且独立的附加属性在较小的问题中保持（找到相对于单个备选的假设的状态）。
 
 We could organize this by choosing $$A_1$$ as the standard ‘null hypothesis’ and comparing each of the others with it by solving n − 1 binary problems; whereupon the relative status of any two propositions is determined. For example, if $$A_5$$ and $$A_7$$ are favored over $$A_1$$ by 22.3 db and 31.9 db, respectively, then $$A_7$$ is favored over $$A_5$$ by 31.9 − 22.3 = 9.6 db. If such binary comparisons provide all the information one wants, there is no need to consider multiple hypothesis testing at all.
 
+我们可以通过选择$$ A_1 $$作为标准的“零假设”来组织这一点，并通过解决n - 1个二元问题来比较每个其他的。于是确定了任何两个命题的相对状态。例如，如果$$ A_5 $$和$$ A_7 $$分别优于A_1 $$，分别为22.3分贝和31.9分贝，则A_7 $$优于$$ A_5 $$优惠31.9 - 22.3 = 9.6分贝。如果这样的二进制比较提供了所需的所有信息，则根本不需要考虑多个假设检验。
+
 But that would not solve our present problem; given the solutions of all these binary problems, it would still require a calculation as big as the one we are about to do to convert that information into the absolute status of any given hypothesis relative to the entire class of n hypotheses. Here we are going after the solution of the larger problem directly.
 
+但那不能解决我们目前的问题; 给定所有这些二元问题的解，它仍然需要一个与我们将要做的一样大的计算，将该信息转换成相对于整个n个假设的任何给定假设的绝对状态。 在这里，我们将直接解决更大的问题。
+
 In any event, we need not base our stance merely on claims of authoritarian finality for an abstract theorem; more constructively, we now show that probability theory does lead us to a definite, useful procedure for multiple hypothesis testing, which gives us a much deeper insight and makes it clear why the independent additivity cannot, and should not, hold when n > 2. It would then ignore some very cogent information; that is the demonstrable inconsistency.
+
+无论如何，我们的立场不仅仅是基于对抽象定理的专制终结性的主张; 更具建设性地，我们现在表明概率论确实引导我们进行多个假设检验的一个明确，有用的程序，这给了我们更深刻的洞察力，并清楚地说明为什么当n> 2时独立可加性不能也不应该成立。 然后它会忽略一些非常有说服力的信息; 这是可证明的不一致。

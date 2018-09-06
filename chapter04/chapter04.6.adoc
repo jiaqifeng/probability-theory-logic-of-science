@@ -1,6 +1,8 @@
-== 4.6 Testing an infinite number of hypotheses
+== 4.6 Testing an infinite number of hypotheses 无穷假设集的检验
 
 In spite of the pragmatic argument just given, thinking of continuously variable parameters is often a natural and convenient approximation to a real problem (only we should not take it so seriously that we get bogged down in the irrelevancies for the real world that infinite sets and measure theory generate). So, suppose that we are now testing simultaneously an uncountably infinite number of hypotheses about the machine. As often happens in mathematics, this actually makes things simpler because analytical methods become available. However, the logarithmic form of the previous equations is now awkward, and so we will go back to the original probability form (4.3):
+
+尽管给出了实用的论证，但对连续变量参数的思考通常是对真实问题的一种自然而方便的近似（只有我们不应该认真对待它，因为我们陷入了对无限集和现实世界的无关紧要 测量理论生成）。 因此，假设我们现在正在同时测试关于机器的无数个假设。 正如数学中经常发生的那样，这实际上使事情更简单，因为分析方法变得可用。 然而，先前方程的对数形式现在很尴尬，因此我们将回到原始概率形式（4.3）：
 
  $$P(A|DX) = P(A|X) \frac {P(D|AX)}{P(D|X)}.$$ (4.56)
 
@@ -27,27 +29,47 @@ The denominator is just a normalizing constant, which we could calculate directl
 
 which we should think of as an extremely good approximation to the exact formula, which has a sum over an enormous number of discrete values of f , instead of an integral.
 
+我们应该把它看作是对精确公式的一个非常好的近似，它具有f的大量离散值的总和，而不是积分。
+
 The evidence of the data thus lies entirely in the f dependence of P(D|AX). At this point, let us be very careful, in view of some errors that have trapped the unwary. In this probability, the conditioning statement A specifies an interval d f , not a point value of f . Are we justified in taking an implied limit d f → 0 and replacing P(D|AX) with P(D|Hf X)? Most writers have not hesitated to do this.
+
+因此，数据的证据完全在于P（D | AX）的依赖性。在这一点上，我们要非常小心，因为一些错误已经困扰了那些不警惕的人。在该概率中，条件语句A指定间隔d f，而不是f的点值。我们是否有理由采用隐含限制d f→0并用P（D | Hf X）代替P（D | AX）？大多数作家都毫不犹豫地这样做。
 
 Mathematically, the correct procedurewould be to evaluate P(D|AX) exactly for positive d f , and pass to the limit d f → 0 only afterward. But a tricky point is that if the problem contains another parameter θ in addition to f , then this procedure is ambiguous until we take the warning of Gauss very seriously, and specify exactly how the limit is to be approached (does d f tend to zero at the same rate for all values of θ?). For example, if we set d f = $$epsilon$$h(θ) and pass to the limit $$\epsilon$$ → 0, our final conclusions may depend on which function h(θ) was used. Those who fail to notice this fall into the famous Borel–Kolmogorov paradox, in which a seemingly well-posed problem appears to have many different correct solutions. We shall discuss this in more detail later (Chapter 15), and show that the paradox is averted by strict adherence to our Chapter 2 rules.
 
+在数学上，正确的程序应该是准确地评估P（D | AX）为正d f，然后仅传递到极限d f→0。但是一个棘手的问题是，如果问题除了f之外还包含另一个参数θ，那么这个程序是不明确的，直到我们非常认真地对待高斯的警告，并且确切地指定如何接近限制（df倾向于为零）所有θ值的相同速率？）。例如，如果我们设置d f = $$ epsilon $$ h（θ）并传递到极限$$ \ epsilon $$→0，我们的最终结论可能取决于使用了哪个函数h（θ）。那些没有注意到这一点的人陷入了着名的Borel-Kolmogorov悖论，其中一个看起来很好的问题似乎有许多不同的正确解决方案。我们将在后面（第15章）更详细地讨论这个问题，并表明通过严格遵守我们的第2章规则来避免悖论。
+
 In the present relatively simple problem, f is the only parameter present and $$P(D|H_fX)$$ is a continuous function of f ; this is surely enough to guarantee that the limit is wellbehaved and uneventful. But, just to be sure, let us take the trouble to demonstrate this by direct application of our Chapter 2 rules, keeping in mind that this continuum treatment is really an approximation to an exact discrete one. Then with d f > 0, we can resolve A into a disjunction of a finite number of discrete propositions:
+
+在目前相对简单的问题中，f是唯一存在的参数，而$$ P（D | H_fX）$$是f的连续函数; 这肯定足以保证限额是好的和平安无事的。 但是，只是为了确定，让我们通过直接应用我们的第2章规则来解决这个问题，记住这个连续统一处理实际上是对精确离散处理的近似。 然后在d f> 0的情况下，我们可以将A解析成有限数量的离散命题的析取：
 
  $$A = A_1 + A_2 + ···+ A_n,$$ (4.61)
 
 where $$A_1 = H_f$$ ( f being one of the possible discrete values) and the $$A_i$$ specify the discrete values of f in the interval ( f, f + df ). They are mutually exclusive, so, as we noted in Chapter 2, Eq. (2.67), application of the product rule and the sum rule gives the general result
 
+其中$$ A_1 = H_f $$（f是可能的离散值之一），$$ A_i $$指定区间（f，f + df）中f的离散值。 它们是相互排斥的，因此，正如我们在第2章中所提到的那样，Eq。 （2.67），产品规则和总和规则的应用给出了一般结果
+
  $$P(D|AX) = P(D|A_1 + A_2 + ··· + A_n, X) = \frac {\sum_i P(A_i |X)P(D|A_i X)} { \sum_i P(A_i |X) },$$ (4.62)
 
 which is a weighted average of the separate probabilities $$P(D|A_i X)$$. This may be regarded also as a generalization of (4.39).
 
+这是单独概率$$ P（D | A_i X）$$的加权平均值。这也可以视为（4.39）的概括。
+
 Then if all the $$P(D|A_i X)$$ were equal, (4.62) would become independent of their prior probabilities $$P(A_i |X)$$ and equal to $$P(D|A_1X) = P(D|H_f X)$$; the fact that the conditioning statement on the left-hand side of (4.62) is a logical sum makes no difference, and P(D|AX) would be rigorously equal to $$P(D|H_f X)$$f. Even if the $$P(D|A_i X)$$ are not equal, as df → 0, we have n → 1 and eventually $$A = A_1$$, with the same result.
+
+然后如果所有$$ P（D | A_i X）$$相等，（4.62）将独立于它们先前的概率$$ P（A_i | X）$$并等于$$ P（D | A_1X）= P（D | H_f X）$$; （4.62）左侧的条件语句是逻辑和的事实没有区别，P（D | AX）将严格等于$$ P（D | H_f X）$$ f。即使$$ P（D | A_i X）$$不相等，如df→0，我们有n→1，最终$$ A = A_1 $$，结果相同。
 
 It may appear that we have gone to extraordinary lengths to argue for an almost trivially simple conclusion. But the story of the schoolboy who made a mistake in his sums and concluded that the rules of arithmetic are all wrong, is not fanciful. There is a long history of workers who did seemingly obvious things in probability theory without bothering to derive them by strict application of the basic rules, obtained nonsensical results – and concluded that probability theory as logic was at fault. The greatest, most respected mathematicians and logicians have fallen into this trap momentarily, and some philosophers spend their entire lives mired in it; we shall see some examples in the next chapter.
 
+似乎我们已经花了很大的力气来争论一个几乎简单的简单结论。但是这个男生在他的总和上犯了一个错误，并得出结论说算术规则都是错误的故事，并不是幻想。历史悠久的工人在概率论中做了看似显而易见的事情而没有通过严格应用基本规则来得出它们，获得了荒谬的结果 - 并得出结论认为概率理论是错误的。最伟大，最受尊敬的数学家和逻辑学家暂时陷入了这个陷阱，一些哲学家将他们的整个生命都埋在其中;我们将在下一章中看到一些例子。
+
 Such a simple operation as passing to the limit df → 0 may produce results that seem to us obvious and trivial; or it may generate a Borel–Kolmogorov paradox. We have learned from much experience that this care is needed whenever we venture into a new area of applications; we must go back to the beginning and derive everything directly from first principles applied to finite sets. If we obey the Chapter 2 rules prescribed by Cox’s theorems, we are rewarded by finding beautiful and useful results, free of contradictions.
 
+这样一个简单的操作，如传递到极限df→0，可能会产生看似明显和微不足道的结果; 或者它可能会产生Borel-Kolmogorov悖论。 我们从许多经验中学到，每当我们进入一个新的应用领域时，都需要这种关怀; 我们必须回到起点并直接从应用于有限集的第一原理推导出一切。 如果我们遵守考克斯定理规定的第2章规则，我们就会得到美好而有用的结果，没有矛盾。
+
 Now, if we were given that f is the correct fraction of bad widgets, then the probability for getting a bad one at each trial would be f , and the probability for getting a good one would be (1 − f ). The probabilities at different trials are, by hypothesis (i.e. one of the many statements hidden there in X), logically independent given f , and so, as in our derivation of the binomial distribution (3.86),
+
+现在，如果我们得到f是坏小部件的正确部分，那么在每次试验中获得一个坏部件的概率将是f，并且获得一个好部件的概率将是（1-f）。 不同试验中的概率是假设（即X中隐藏的许多陈述之一），逻辑上独立给定f，因此，如我们推导的二项分布（3.86），
 
  $$P(D|H_f X) = f^n(1 − f )^{N−n}$$ (4.63)
 
@@ -57,17 +79,27 @@ Now, if we were given that f is the correct fraction of bad widgets, then the pr
 
 You may be startled to realize that all of our previous discussion in this chapter is contained in this simple looking equation, as special cases. For example, the multiple hypothesis test starting with (4.43) and including the final results (4.45)–(4.49) is all contained in (4.64) corresponding to the particular choice of prior pdf:
 
+您可能会惊讶地发现，本章前面的所有讨论都包含在这个简单的等式中，作为特殊情况。 例如，以（4.43）开头并包括最终结果（4.45） - （4.49）的多重假设检验全部包含在（4.64）中，对应于先前pdf的特定选择：
+
  $$g( f |X) = \frac{10}{11} (1 − 10^{−6})δ(f − \frac{1}{6}) + \frac{1}{11} (1 − 10^{−6})δ(f − \frac{1}{3}) + 10^{−6}δ(f − \frac{99}{100}).$$  (4.65)
 
 This is a case where the cumulative pdf, G( f ), is discontinuous. The three delta-functions correspond to the three discrete hypotheses B, A,C, respectively, of that example. They appear in the prior pdf (4.65) with coefficients which are the prior probabilities (4.31); and in the posterior pdf (4.64) with altered coefficients, which are just the posterior probabilities (4.45), (4.48) and (4.49).
 
+这是累积pdf，G（f）不连续的情况。三个delta函数分别对应于该示例的三个离散假设B，A，C。它们出现在先前的pdf（4.65）中，其系数是先验概率（4.31）;并且在后验pdf（4.64）中具有改变的系数，这只是后验概率（4.45），（4.48）和（4.49）。
+
 Readers who have been taught to mistrust delta-functions as ‘nonrigorous’ are urged to read Appendix B at this point. The issue has nothing to do with mathematical rigor; it is simply one of notation appropriate to the problem. It would be difficult and awkward to express the information conveyed in (4.65) by a single equation in Lebesgue–Stieltjes type notation. Indeed, failure to use delta-functions where they are clearly called for has led mathematicians into elementary errors, as noted in Appendix B.
 
+被教导不信任三角函数为“非粗糙”的读者请在此时阅读附录B.这个问题与数学严谨无关;它只是适合该问题的符号之一。用Lebesgue-Stieltjes型符号中的单个方程表达（4.65）中传达的信息将是困难和尴尬的。事实上，如果没有明确要求使用delta函数，就会导致数学家陷入基本错误，如附录B所述。
+
 Suppose that at the start of this test our robot was fresh from the factory; it had no prior knowledge about the machines at all, except for our assurance that it is possible for a machine to make a good widget, and also possible for it to make a bad one. In this state of ignorance, what prior pdf g( f |X) should it assign? If we have definite prior knowledge about f , this is the place to put it in; but we have not yet seen the principles needed to assign such priors. Even the problem of assigning priors to represent ‘ignorance’ will need much discussion later; but, for a simple result now, it may seem to the reader, as it did to Laplace 200 years ago, that in the present case the robot has no basis for assigning to any particular interval d f a higher probability than to any other interval of the same size. Thus, the only honest way it can describe what it knows is to assign a uniform prior probability density, g( f |X) = const. This will receive a better theoretical justification later; to normalize it correctly as in (4.60) we must take
+
+假设在测试开始时我们的机器人刚从工厂出来;它根本没有关于机器的先验知识，除了我们保证机器可以制作一个好的小部件，并且也可能使它成为一个糟糕的小部件。在这种无知的状态下，它应该分配先前的pdf g（f | X）？如果我们对f有明确的先验知识，那就是把它放进去的地方;但是我们还没有看到分配这些先验所需的原则。即使是指出先辈来代表“无知”的问题也需要稍后讨论;但是，对于一个简单的结果，对于读者而言，正如它在200年前对拉普拉斯所做的那样，在目前的情况下，机器人没有任何基础来分配给任何特定区间dfa的概率高于任何其他区间。相同的大小。因此，它能够描述它所知道的唯一诚实的方式是分配统一的先验概率密度，g（f | X）= const。这将在以后获得更好的理论依据;正确地将其标准化，如（4.60）中我们必须采取的
 
  g( f |X) = 1, 0 ≤ f ≤ 1. (4.66)
 
 The integral in (4.64) is then the well-known Eulerian integral of the first kind, today more commonly called the complete beta-function; and (4.64) reduces to
+
+（4.64）中的积分是第一类的众所周知的欧拉积分，今天更常被称为完整的β函数; 和（4.64）减少到
 
  $$g( f |DX) = \frac {(N + 1)!}{n! (N − n)!} f^n(1 − f )^{N−n}.$$ (4.67)
 
@@ -75,7 +107,11 @@ The integral in (4.64) is then the well-known Eulerian integral of the first kin
 
 It appears that this result was first found by an amateur mathematician, the Rev. Thomas Bayes (1763). For this reason, the kind of calculations we are doing are called ‘Bayesian’. We shall follow this long-established custom, although it is misleading in several respects. The general result (4.3) is always called ‘Bayes’ theorem’, although Bayes never wrote it; and it is really nothing but the product rule of probability theory which had been recognized by others, such as James Bernoulli and A. de Moivre (1718), long before the work of Bayes. Furthermore, it was not Bayes but Laplace (1774) who first saw the result in generality and showed how to use it in real problems of inference. Finally, the calculations we are doing – the direct application of probability theory as logic – are more general than mere application of Bayes’ theorem; that is only one of several items in our toolbox.
 
+看起来这个结果最初是由业余数学家托马斯贝叶斯牧师（1763年）发现的。出于这个原因，我们正在进行的计算称为“贝叶斯”。我们将遵循这一长期存在的习俗，尽管它在若干方面具有误导性。一般结果（4.3）总是被称为'贝叶斯定理'，尽管贝叶斯从未写过它;它实际上只是概率论的产品规则，早在贝叶斯的工作之前，詹姆斯伯努利和A.德莫维尔（1718）就已经得到了其他人的认可。此外，不是贝叶斯，而是拉普拉斯（1774），他首先看到了一般性的结果，并展示了如何在真正的推理问题中使用它。最后，我们正在进行的计算 - 概率论作为逻辑的直接应用 - 比仅仅应用贝叶斯定理更为通用;这只是我们工具箱中的几个项目之一。
+
 The right-hand side of (4.67) has a single peak in (0 ≤ f ≤ 1), located by differentiation at
+
+（4.67）的右侧在（0≤f≤1）中有一个峰，通过微分来定位
 
  $$f = \hat f ≡ \frac{n}{N},$$ (4.68)
 
@@ -97,24 +133,48 @@ and so, to this approximation, (4.67) is a Gaussian, or normal, distribution:
 
 and K is a normalizing constant. Equations (4.71) and (4.72) constitute the de Moivre– Laplace theorem. It is actually an excellent approximation to (4.67) in the entire interval (0 < f < 1) in the sense that the difference of the two sides tends to zero (although their ratio does not tend to unity), provided that n >> 1 and (N − n) >> 1. Properties of the Gaussian distribution are discussed in depth in Chapter 7.
 
+和K是归一化常数。 方程（4.71）和（4.72）构成de Moivre-Laplace定理。 它实际上是整个区间（0 <f <1）中（4.67）的极好近似值，即双方的差异趋于零（尽管它们的比率不趋于统一），前提是n >> 1和（N - n）>> 1.高斯分布的性质将在第7章中详细讨论。
+
 Thus, after observing n bad widgets in N trials, the robot’s state of knowledge about f can be described reasonably well by saying that it considers the most likely value of f to be just the observed fraction of bad widgets, and it considers the accuracy of this estimate to be such that the interval $$\hat f ± σ$$ is reasonably likely to contain the true value. The parameter σ is called the standard deviation and $$σ^2$$ is the variance of the pdf (4.72). More precisely, from numerical analysis of (4.72), the robot assigns:
+
+因此，在N次试验中观察到n个坏小部件后，机器人关于f的知识状态可以通过说它认为f的最可能值仅仅是被观察到的坏小部件的分数来合理地描述，并且它考虑了准确性。 这个估计值使得区间$$ \ hat f±σ$$合理地可能包含真值。 参数σ称为标准偏差，$$σ^ 2 $$是pdf（4.72）的方差。 更确切地说，从（4.72）的数值分析，机器人分配：
 
  50% probability that the true value of f is contained in the interval $$\hat f$$ ± 0.68 σ;
  90% probability that it is contained in $$\hat f$$ ± 1.65 σ;
  99% probability that it is contained in $$\hat f$$ ± 2.57 σ.
 
+ f的真实值包含在间隔$$ \ hat f $$±0.68σ中的概率为50％;
+ 它包含在$$ \ hat f $$±1.65σ中的概率为90％;
+ 它包含在$$ \ hat f $$±2.57σ中的概率为99％。
+
 As the number N of tests increases, these intervals shrink, according to (4.71), proportional to $$1/ \sqrt{N}$$, a common rule that arises repeatedly in probability theory.
+
+随着测试数N的增加，这些区间缩小，根据（4.71），与$$ 1 / \ sqrt {N} $$成比例，这是在概率论中反复出现的一个常见规则。
 
 In this way, we see that the robot starts in a state of ‘complete ignorance’ about f ; but, as it accumulates information from the tests, it acquires more and more definite opinions about f , which correspond very nicely to common sense. Two cautions: (1) all this applies only to the case where, although the numerical value of f is initially unknown, it was one of the conditions defining the problem that f is known not to be changing with time, and (2) again we must warn against the error of calling σ the ‘variance of f ’, which would imply that f is varying, and that σ is a real (i.e. measurable) physical property of f . That is one of the most common forms of the mind projection fallacy.
 
+通过这种方式，我们看到机器人开始处于关于f的“完全无知”的状态;但是，当它从测试中积累信息时，它获得了越来越多关于f的明确观点，这与常识非常吻合。两个注意事项：（1）所有这些仅适用于这样的情况，尽管f的数值最初是未知的，但它是定义f的条件之一，f已知不随时间变化，并且（2）再次我们必须警告不要将σ称为'f'的方差，这意味着f是变化的，并且σ是f的实际（即可测量的）物理属性。这是心灵投射谬误最常见的形式之一。
+
 It is really necessary to belabor this point: σ is not a real property of f , but only a property of the probability distribution that the robot assigns to represent its state of knowledge about f . Two robots with different information would, naturally and properly, assign different pdfs for the same unknown quantity f , and the one which is better informed will probably – and deservedly – be able to estimate f more accurately; i.e., to use a smaller σ.
+
+这一点确实是必要的：σ不是f的真实属性，而只是机器人分配的概率分布的属性，表示其关于f的知识状态。具有不同信息的两个机器人将自然而恰当地为相同的未知数量f分配不同的pdf，而更好地通知的机器人可能 - 并且当之无愧 - 能够更准确地估计f;即，使用较小的σ。
 
 But, as noted, we may consider a different problem in which f is variable if we wish to do so. Then the mean-square variation $$s^2$$ of f over some class of cases will become a ‘real’ property, in principle measurable, and the question of its relation, if any, to the $$σ^2$$ of the robot’s pdf for that problem can be investigated mathematically, as we shall do later in connection with time series. The relation will prove to be: if we know σ but have as yet no data and no other prior information about s, then the best prediction of s that we can make is essentially equal to σ; and if we do have the data but do not know σ and have no other prior information about σ, then the best estimate of σ that we can make is nearly equal to s. These relations are mathematically derivable consequences of probability theory as logic.
 
+但是，如上所述，如果我们愿意，我们可能会考虑一个不同的问题，即f是可变的。那么f在某类案件中的均方变量$$ s ^ 2 $$将成为一个“真实”的属性，原则上是可测量的，以及它与$$σ^ 2 $的关系问题（如果有的话）用于该问题的机器人pdf的$可以用数学方法进行调查，我们稍后将结合时间序列进行研究。这种关系将证明：如果我们知道σ但是还没有关于s的数据和其他先验信息，那么我们可以做出的s的最佳预测基本上等于σ;如果我们确实有数据，但不知道σ并且没有关于σ的其他先验信息，那么我们可以做出的σ的最佳估计几乎等于s。这些关系是概率论作为逻辑的数学推导后果。
+
 Indeed, it would be interesting, and more realistic for some quality-control situations, to introduce the possibility that f might vary with time, and the robot’s job is to make the best possible inferences about whether a machine is drifting slowly out of adjustment, with the hope of correcting trouble before it became serious. Many other extensions of our problem occur to us: a simple classification of widgets as good and bad is not too realistic; there is likely a continuous gradation of quality, and by taking that into account we could refine these methods. There might be several important properties instead of just ‘badness’ and ‘goodness’ (for example, if our widgets are semiconductor diodes, forward resistance, noise temperature, rf impedance, low-level rectification efficiency, etc.), and we might also have to control the quality with respect to all of these. There might be a great many different machine characteristics, instead of just $$H_f$$ , about which we need plausible inference.
+
+事实上，对于某些质量控制情况来说，有趣的是，f可能会随着时间的推移而变化，并且机器人的工作就是尽可能地推断机器是否慢慢退出调整，希望在问题变得严重之前纠正它。我们的问题的许多其他扩展都发生在我们身上：对小部件进行简单的分类，好坏都不太现实;质量可能会持续变化，考虑到这一点，我们可以改进这些方法。可能有几个重要的属性，而不仅仅是'坏'和'良好'（例如，如果我们的小部件是半导体二极管，正向电阻，噪声温度，射频阻抗，低水平整流效率等），我们也可能必须控制所有这些的质量。可能存在许多不同的机器特征，而不仅仅是$$ H_f $$，我们需要合理的推理。
 
 It is clear that we could spend years and write volumes on all the further ramifications of this problem, and there is already a huge literature on it. Although there is no end to the complicated details that can be generated, there is in principle no difficulty in making whatever generalization we need. It requires no new principles beyond what we have given.
 
+很明显，我们可以花费数年时间来编写这个问题的所有进一步后果，并且已经有大量的文献。尽管可以生成的复杂细节没有尽头，但原则上我们无需进行任何概括就没有困难。它不需要超出我们给出的新原则。
+
 In the problem of detecting a drift in machine characteristics, we would want to compare our robot’s procedure with the ones proposed long ago by Shewhart (1931).We would find that Shewhart’s methods are intuitive approximations to what our robot would do; in some of the cases involving a normal distribution they are the same (but for the fact that Shewhart was not thinking sequentially; he considered the number of tests determined in advance). These are, incidentally, the only cases where Shewhart felt that his proposed methods were fully satisfactory.
 
+在检测机器特性漂移的问题中，我们想要将我们的机器人程序与Shewhart（1931）很久以前提出的程序进行比较。我们会发现Shewhart的方法是我们机器人所做的直观近似;在某些涉及正态分布的情况下，它们是相同的（但是因为休哈特没有按顺序思考;他考虑了提前确定的测试数量）。顺便提一下，这些是Shewhart认为他提出的方法完全令人满意的唯一案例。
+
 This is really the same problem as that of detecting a signal in noise, which we shall study in more detail later on.
+
+这与检测噪声信号的问题确实是同一个问题，我们将在后面详细研究。

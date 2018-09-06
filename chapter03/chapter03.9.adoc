@@ -2,6 +2,8 @@
 
 Suppose that, from an intricate logical analysis, drawing and replacing a red ball increases the probability for a red one at the next draw by some small amount $$\epsilon$$ > 0, while drawing and replacing a white one decreases the probability for a red one at the next draw by a (possibly equal) small quantity δ > 0; and that the influence of earlier draws than the last one is negligible compared with $$\epsilon$$ or δ. You may call this effect a small ‘propensity’ if you like; at least it expresses a physical causation that operates only forward in time. Then, letting C stand for all the above background information, including the statements just made about correlations and the information that we draw n balls, we have
 
+假设，从错综复杂的逻辑分析中，绘制和替换红球会增加下一次抽奖时红色的概率增加一些少量的$$ \ epsilon $$> 0，而绘制和替换白色的概率会降低 下一次抽取的红色一个（可能相等）小量δ> 0; 并且与$$ \ epsilon $$或δ相比，早期绘制的影响比上一个的影响可以忽略不计。 如果你愿意，你可以称这种效果为小“倾向”; 至少它表达了一种只能在时间上前进的物理因果关系。 然后，让C代表所有上述背景信息，包括刚刚关于相关性的陈述和我们绘制n个球的信息，我们有
+
  $$P(R_k|R_{k−1}C) = p + \epsilon, P(R_k|W_{k−1}C) = p − δ,$$
  $$P(W_k|R_{k−1}C) = 1 − p − \epsilon, P(W_k|W_{k−1}C) = 1 − p + δ,$$ (3.93)
 
@@ -27,13 +29,21 @@ and (3.94) goes into
 
 The probability for drawing r red and (n − r ) white balls now depends on the order in which red and white appear, and, for a given $$\epsilon$$, when the numbers c, c', w, w' become sufficiently large, the probability can become arbitrarily large (or small) compared with (3.92).
 
+绘制红色和（n - r）白球的概率现在取决于红色和白色出现的顺序，对于给定的$$ \ epsilon $$，当数字c，c'，w，w'时 变得足够大，与（3.92）相比，概率可以变得任意大（或小）。
+
 We see this effect most clearly if we suppose that N = 2M, p = 1/2, in which case we will surely have $$\epsilon = δ$$. The exponential factor in (3.98) then reduces to
+
+如果我们假设N = 2M，p = 1/2，我们肯定会看到这种效应，在这种情况下，我们肯定会有$$ \ epsilon =δ$$。 然后（3.98）中的指数因子减少到
 
  $$exp \{ 2 \epsilon [(c − c') + (w − w')] \}.$$ (3.99)
 
 This shows that (i) as the number n of draws tends to infinity, the probability for results containing ‘long runs’ (i.e. long strings of red (or white) balls in succession), becomes arbitrarily large compared with the value given by the ‘randomized’ approximation; (ii) this effect becomes appreciable when the numbers $$(\epsilon c)$$, etc., become of order unity. Thus, if $$\epsilon = 10^{−2}$$, the randomized approximation can be trusted reasonably well as long as n < 100; beyond that, we might delude ourselves by using it. Indeed, it is notorious that in real repetitive experiments where conditions appear to be the same at each trial, such runs – although extremely improbable on the randomized approximation – are nevertheless observed to happen.
 
+这表明（i）当绘制的数量n倾向于无穷大时，包含“长跑”的结果（即连续的长串红色（或白色）球）的概率变得任意大，与由此给出的值相比。 '随机'近似; （ii）当数字$$（\ epsilon c）$$等变为有序统一时，这种效应变得明显。 因此，如果$$ \ epsilon = 10 ^ { - 2} $$，只要n <100，随机近似就可以得到相当好的信任; 除此之外，我们可能会通过使用它来欺骗自己。 实际上，众所周知，在每次试验中条件似乎相同的真实重复实验中，这种运行 - 尽管在随机近似中极不可能 - 但仍然可以观察到。
+
 Now let us note how the correlations expressed by (3.93) affect some of our previous calculations. The probabilities for the first draw are of course the same as (3.8); we now use the notation
+
+现在让我们注意（3.93）表达的相关性如何影响我们之前的一些计算。 第一次抽签的概率当然与（3.8）相同; 我们现在使用符号
 
  $$p = P(R_1|C) = \frac M N, q = 1 − p = P(W_1|C) = \frac {N − M}{N}.$$ (3.100)
 
@@ -52,7 +62,11 @@ and continuing for the third trial
 
 We see that $$P(R_k |C)$$ is no longer independent of k; the correlated probability distribution is no longer exchangeable. But does $$P(R_k |C)$$ approach some limit as k →∞?
 
+我们看到$$ P（R_k | C）$$不再独立于k; 相关概率分布不再可交换。 但是，当P→∞时，$$ P（R_k | C）$$接近某个极限吗？
+
 It would be almost impossible to guess the general $$P(R_k |C)$$ by induction, following the method in (3.101) and (3.102) a few steps further. For this calculation we need a more powerful method. If we write the probabilities for the kth trial as a vector,
+
+按照（3.101）和（3.102）中的方法进一步推测，通过归纳几乎不可能猜测一般的$$ P（R_k | C）$$。 对于这个计算，我们需要一个更强大的方法。 如果我们将第k次试验的概率写为向量，
 
  $$Vk ≡ \begin{bmatrix} P(R_k|C) \\ P(W_k|C) \end{bmatrix}$$, (3.103)
 
@@ -119,7 +133,11 @@ the general solution (3.106) sought is
 
 We can check that this agrees with (3.100), (3.101) and (3.102). From examining (3.118) it is clear why it would have been almost impossible to guess the general formula by induction. When $$\epsilon$$ = δ = 0, this reduces to $$P(R_k |C) = p$$, supplying the proof promised after Eq. (3.37).
 
+我们可以检查这是否与（3.100），（3.101）和（3.102）一致。 从检查（3.118）可以清楚地看出为什么几乎不可能通过归纳来猜测通式。 当$$ \ epsilon $$ =δ= 0时，这将减少到$$ P（R_k | C）= p $$，提供在Eq之后承诺的证据。（3.37）。
+
 Although we started this discussion by supposing that $$\epsilon$$ and δ were small and positive, we have not actually used that assumption, and so, whatever their values, the solution (3.118) is exact for the abstract model that we have defined. This enables us to include two interesting extreme cases. If not small, $$\epsilon$$ and δ must be at least bounded, because all quantities in (3.93) must be probabilities (i.e. in [0, 1]). This requires that
+
+虽然我们通过假设$$ \ epsilon $$和δ是小而正的开始这个讨论，我们实际上没有使用那个假设，因此，无论它们的值如何，解决方案（3.118）对于我们的抽象模型都是精确的定义。 这使我们能够包括两个有趣的极端情况。 如果不小，则$$ \ epsilon $$和δ必须至少有界，因为（3.93）中的所有数量必须是概率（即在[0,1]中）。 这要求
 
  $$−p ≤ \epsilon ≤ q, −q ≤ δ ≤ p$$, (3.119)
 
@@ -150,8 +168,12 @@ on the next draw. But if $$\epsilon$$ and δ must not be negative, then the lowe
 really zero, which is achieved only when $$\epsilon$$ = δ = 0. Then M in (3.105) becomes singular,
 and we revert to the binomial distribution case already discussed.
 
+这种情况是不现实的，因为直觉强烈地告诉我们$$ \ epsilon $$和δ应该是正数; 无论如何，无论用什么逻辑分析来分配数值$$ \ epsilon $$，在顶层留下一个红球必须增加，而不是减少，红色的概率在接下来的平局。 但如果$$ \ epsilon $$和δ不能为负，则（3.120）的下限为真的为零，只有在$$ \ epsilon $$ =δ= 0时才能实现。然后M in（3.105）变为奇异，我们回到已经讨论过的二项分布案例。
+
 In the intermediate and realistic cases where $$0 < |\epsilon + δ| < 1$$, the last term of (3.118)
 attenuates exponentially with k, and in the limit
+
+在$$ 0 <| \ epsilon +δ|的中间和现实情况下 <1 $$，（3.118）的最后一个任期 用k指数衰减，并且在极限内
 
  $$P(R_k|C) → \frac {p − δ}{1 − \epsilon − δ}$$. (3.125)
 
@@ -161,6 +183,8 @@ is not exchangeable. To see this, let us consider the conditional probabilities 
 These are found by noting that the Markov chain relation (3.104) holds whatever the vector
 $$V_{k−1}$$; i.e. whether or not it is the vector generated from $$V_1$$ as in (3.106). Therefore, if we
 are given that red occurred on the j th trial, then
+
+但是，尽管这些单一试验概率稳定在稳定值，如可交换的分配，潜在的相关性仍在发挥作用和限制分布是不可交换的。 为了看到这一点，让我们考虑条件概率$$ P（R_k | R_jC）$$。通过注意马尔可夫链关系（3.104）保持任何向量来发现这些$$ V_{K-1}$$; 即，它是否是从（3.106）中的$$ V_1 $$生成的向量。 因此，如果我们然后，在第j次试验中发现红色
 
  $$V_j = \binom {1} {0} $$, (3.126)
 
@@ -176,6 +200,10 @@ which approaches the same limit (3.125). The forward inferences are about what w
 expect; the steady value (3.125) plus a term that decays exponentially with distance. But
 the backward inferences are different; note that the general product rule holds, as always:
 
+接近相同的限制（3.125）。 前瞻性的推论是关于我们可能的
+期望; 稳定值（3.125）加上一个随距离呈指数衰减的项。 但
+落后的推论是不同的; 请注意，一般产品规则一如既往：
+
  $$P(R_kR_j|C) = P(R_k|R_jC) P(R_j|C) = P(R_j |R_kC) P(R_k |C)$$. (3.129)
 
 Therefore, since we have seen that $$P(R_k |C) \neq P(R_j |C)$$, it follows that
@@ -184,6 +212,9 @@ Therefore, since we have seen that $$P(R_k |C) \neq P(R_j |C)$$, it follows that
 
 The backward inference is still possible, but it is no longer the same formula as the forward
 inference as it would be in an exchangeable sequence.
+
+向后推断仍然是可能的，但它不再是与前锋相同的公式
+推断，因为它将是一个可交换的序列。
 
 As we shall see later, this example is the simplest possible ‘baby’ version of a very
 common and important physical problem: an irreversible process in the ‘Markovian approximation’.
@@ -196,6 +227,17 @@ inference by extrapolating the forward solution backward in time, with quite biz
 unphysical results. Therefore the reader is, in effect, conducting new research in doing the
 following exercise.
 
+正如我们稍后将看到的，这个例子是最简单的“婴儿”版本
+共同的和重要的物理问题：“马尔可夫近似”中不可逆转的过程。
+另一种常见的技术语言称其为自回归模型
+第一顺序它可以大大推广到任意维矩阵的情形
+多步或连续，而非单步，记忆影响。但出于上述原因
+早期（统计力学文献中推论和因果关系的混淆），
+后向推理部分解决方案几乎总是错过。有些人试图向后做
+通过向后推断前向解决方案进行推断，非常奇怪和
+非物质的结果。因此，读者实际上正在进行新的研究
+以下运动。
+
 Exercise 3.6. Find the explicit formula $$P(R_j |R_kC)$$ for the backward inference corresponding
 to the result (3.128) by using (3.118) and (3.129). (a) Explain the reason
 for the difference between forward and backward inferences in simple intuitive terms.
@@ -204,3 +246,12 @@ backward? Which is more reasonable intuitively? (c) Do backward inferences
 also decay to steady values? If so, is a property somewhat like exchangeability restored
 for events sufficiently separated? For example, if we consider only every tenth draw or
 every hundredth draw, do we approach an exchangeable distribution on this subset?
+
+练习3.6。找到对应的后向推理的显式公式$$ P（R_j | R_kC）$$
+通过使用（3.118）和（3.129）得到结果（3.128）。 （a）解释原因
+用简单直观的术语表示前向和后向推断之间的差异。
+（b）后向推断以何种方式与推断的前向推断不同
+落后？哪个更直观合理？ （c）做出反向推论
+也衰败到稳定的价值？如果是这样，是否有点像可交换性恢复的属性
+事件是否足够分开？例如，如果我们只考虑每十次抽奖或
+每百次抽签，我们是否接近这个子集的可交换分布？

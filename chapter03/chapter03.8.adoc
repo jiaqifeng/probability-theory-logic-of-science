@@ -2,55 +2,102 @@
 
 Up to now, we have considered only the case where we sample without replacement; and that is evidently appropriate for many real situations. For example, in a quality control application, what we have called simply ‘drawing a ball’ might consist of taking a manufactured item, such as an electric light bulb, from a carton of similar light bulbs and testing it to destruction. In a chemistry experiment, it might consist of weighing out a sample of an unknown protein, then dissolving it in hot sulfuric acid to measure its nitrogen content. In either case, there can be no thought of ‘drawing that same ball’ again.
 
+到目前为止，我们只考虑了无需更换的情况;这显然适用于许多实际情况。例如，在质量控制应用中，我们所谓的“绘制球”可能包括从类似灯泡的纸箱中取出制成品，例如电灯泡，并对其进行破坏测试。在化学实验中，它可能包括称量未知蛋白质的样品，然后将其溶解在热硫酸中以测量其氮含量。在任何一种情况下，都不会想到再次“画同一个球”。
+
 But suppose now that, being less destructive, we sample balls from the urn and, after recording the ‘color’ (i.e. the relevant property) of each, we replace it in the urn before drawing the next ball. This case, of sampling with replacement, is enormously more complicated conceptually, but, with some assumptions usually made, ends up being simpler mathematically than sampling without replacement. Let us go back to the probability for drawing two red balls in succession. Denoting by B the same background information as before, except for the added stipulation that the balls are to be replaced, we still have an equation like (3.9):
+
+但是现在假设，破坏性较小，我们从瓮中取样球，并在记录每个球的“颜色”（即相关属性）后，在绘制下一个球之前将其替换为瓮。这种采用替换抽样的情况在概念上非常复杂，但是，通常做出一些假设，最终在数学上比没有替换的抽样更简单。让我们回到连续绘制两个红球的可能性。用B表示？与之前相同的背景信息，除了要更换球的附加规定外，我们仍然有一个像（3.9）这样的等式：
 
  $$P(R_1R_2|B') = P(R_1|B')P(R_2|R_1B')$$ (3.91)
 
 and the first factor is still, evidently, (M/N); but what is the second one? Answering this would be, in general, a very difficult problem, requiring much additional analysis if the background information B' includes some simple but highly relevant common sense information that we all have. What happens to that red ball that we put back in the urn? If we merely dropped it into the urn, and immediately drew another ball, then it was left lying on the top of the other balls (or in the top layer of balls), and so it is more likely to be drawn again than any other specified ball whose location in the urn is unknown. But this upsets the whole basis of our calculation, because the probability for drawing any particular (i th) ball is no longer given by the Bernoulli urn rule which led to (3.11).
 
+第一个因素显然仍然是（M / N）; 但第二个是什么？ 一般来说，回答这个问题将是一个非常困难的问题，如果背景信息B'包括我们都有的一些简单但高度相关的常识信息，则需要进行更多的额外分析。 我们放回缸里的那个红球怎么了？ 如果我们只是将它放入骨灰盒中，并立即抽出另一个球，那么它就会留在其他球的顶部（或顶层球），因此它比任何其他球都更容易被拉出来 指定球在瓮中的位置未知。 但这会扰乱我们计算的整个基础，因为绘制任何特定（第i个）球的概率不再由伯努利瓮规则给出（3.11）。
+
 === 3.8.1 Digression: a sermon on reality vs. models
 
 The difficulty we face here is that many things which were irrelevant from symmetry, as long as the robot’s state of knowledge was invariant under any permutation of the balls, suddenly become relevant, and, by one of our desiderata of rationality, the robot must take into account all the relevant information it has. But the probability for drawing any particular ball now depends on such details as the exact size and shape of the urn, the size of the balls, the exactway in which the first onewas tossed back in, the elastic properties of balls and urn, the coefficients of friction between balls and between ball and urn, the exact way you reach in to draw the second ball, etc. In a symmetric situation, all of these details are irrelevant.
 
+我们在这里面临的困难是许多与对称性无关的事情，只要机器人的知识状态在球的任何排列下都是不变的，突然变得相关，并且，通过我们的理性需求之一，机器人必须采取考虑到它拥有的所有相关信息。但是现在绘制任何特定球的概率取决于诸如球的确切尺寸和形状，球的大小，第一个被抛回的精确路径，球和瓮的弹性特性，系数等细节。球与球之间的摩擦力，球与球之间的摩擦力，以及绘制第二球的确切方式等。在对称的情况下，所有这些细节都是无关紧要的。
+
 Even if all these relevant data were at hand, we do not think that a team of the world’s best scientists and mathematicians, backed up by all the world’s computing facilities, would be able to solve the problem; or would even know how to get started on it. Still, it would not be quite right to say that the problem is unsolvable in principle; only so complicated that it is not worth anybody’s time to think about it. So what do we do?
+
+即使所有这些相关数据都在眼前，我们也不认为由世界上所有计算机设备支持的世界上最好的科学家和数学家团队能够解决问题;或者甚至会知道如何开始它。但是，原则上说这个问题无法解决是不对的。只有这么复杂，以至于任何时候都不值得考虑它。那么我们该怎么办？
 
 In probability theory there is a very clever trick for handling a problem that becomes too difficult. We just solve it anyway by:
 
+在概率论中，有一个非常聪明的技巧来处理变得太困难的问题。我们无论如何都要解决它：
+
  (1) making it still harder;
+
+ （1）使其更难;
 
  (2) redefining what we mean by ‘solving’ it, so that it becomes something we can do;
 
+ （2）通过“解决”它来重新定义我们的意思，使它成为我们能做的事情;
+
  (3) inventing a dignified and technical-sounding word to describe this procedure, which has the psychological effect of concealing the real nature of what we have done, and making it appear respectable.
+
+ （3）发明一个有尊严和技术含义的词语来描述这个程序，它具有隐藏我们所做工作的真实本质的心理效应，并使其显得可敬。
 
 In the case of sampling with replacement, we apply this strategy as follows.
 
+在替换抽样的情况下，我们应用此策略如下。
+
  (1) Suppose that, after tossing the ball in, we shake up the urn. However complicated the problem was initially, it now becomes many orders of magnitude more complicated, because the solution now depends on every detail of the precise way we shake it, in addition to all the factors mentioned above.
 
- (2) We now assert that the shaking has somehow made all these details irrelevant, so that the problem
-reverts back to the simple one where the Bernoulli urn rule applies.
+ （1）假设在将球扔进去之后，我们摇动了骨灰盒。虽然问题最初很复杂，但它现在变得更复杂了许多数量级，因为除了上面提到的所有因素之外，解决方案现在依赖于我们摇动它的精确方式的每个细节。
+
+ (2) We now assert that the shaking has somehow made all these details irrelevant, so that the problemreverts back to the simple one where the Bernoulli urn rule applies.
+
+ （2）我们现在断言，震动已经以某种方式使所有这些细节无关紧要，从而解决了问题恢复到伯努利瓮规则适用的简单方法。
 
  (3) We invent the dignified-soundingword randomization to describe what we have done. This term is, evidently, a euphemism, whose real meaning is: deliberately throwing away relevant information when it becomes too complicated for us to handle.
 
+ （3）我们发明了有尊严的声音词随机化来描述我们所做的事情。这个术语显然是一种委婉语，其真正含义是：当它变得太复杂而我们无法处理时，故意丢弃相关信息。
+
 We have described this procedure in laconic terms, because an antidote is needed for the impression created by some writers on probability theory, who attach a kind of mystical significance to it. For some, declaring a problem to be ‘randomized’ is an incantation with the same purpose and effect as those uttered by an exorcist to drive out evil spirits; i.e. it cleanses their subsequent calculations and renders them immune to criticism.We agnostics often envy the True Believer, who thus acquires so easily that sense of security which is forever denied to us.
+
+我们用简洁的术语描述了这个过程，因为一些作家在概率论上创造的印象需要解毒剂，他们会给它带来一种神秘的意义。对于一些人来说，宣称一个问题是“随机的”是一个咒语，其目的和效果与驱魔人用来驱逐邪灵的目的和效果相同;即它清理了他们随后的计算并使他们免受批评。我们不可知论者经常羡慕真正的信徒，因此他们很容易获得永远被我们拒绝的安全感。
 
 However, in defense of this procedure, we have to admit that it often leads to a useful approximation to the correct solution; i.e. the complicated details, while undeniably relevant in principle, might nevertheless have little numerical effect on the answers to certain particularly simple questions, such as the probability for drawing r red balls in n trials when n is sufficiently small. But from the standpoint of principle, an element of vagueness necessarily enters at this point; for, while we may feel intuitively that this leads to a good approximation, we have no proof of this, much less a reliable estimate of the accuracy of the approximation, which presumably improves with more shaking.
 
+然而，为了捍卫这一程序，我们不得不承认它通常会导致对正确解决方案的有用近似;即，复杂的细节虽然原则上无可否认，但对于某些特别简单的问题的答案可能几乎没有数字影响，例如当n足够小时在n次试验中绘制红球的概率。但从原则的角度来看，模糊的因素必然会在这一点上进入;因为虽然我们可能直觉地认为这导致了一个很好的近似，但我们没有证据证明这一点，更不用说对近似精度的可靠估计，这可能会随着更多的抖动而改善。
+
 The vagueness is evident particularly in the fact that different people have widely divergent views about how much shaking is required to justify step (2). Witness the minor furor surrounding a US Government-sponsored and nationally televized game of chance some years ago, when someone objected that the procedure for drawing numbers from a fish bowl to determine the order of call-up of young men for Military Service was ‘unfair’ because the bowl hadn’t been shaken enough to make the drawing ‘truly random’, whatever that means. Yet if anyone had asked the objector: ‘To whom is it unfair?’ he could not have given any answer except, ‘To those whose numbers are on top; I don’t know who they are.’ But after any amount of further shaking, this will still be true! So what does the shaking accomplish?
+
+模糊性尤其明显，因为不同的人对于需要多少晃动以证明步骤（2）的合理性存在广泛的不同观点。几年前，当有人反对从鱼缸中抽取数字以确定青年男子为军队服役的程序时，有人反对围绕美国政府赞助和全国电视机会游戏的轻微骚动是“不公平的” “因为碗没有被震动到足以使绘画”真正随机“，无论那意味着什么。然而，如果有人问反对者：“对谁不公平？”除了“对那些人数最多的人”之外，他无法给出任何答案。我不知道他们是谁。'但经过任何进一步的震动后，这仍然是真的！那么震动是什么呢？
 
 Shaking does not make the result ‘random’, because that term is basically meaningless as an attribute of the real world; it has no clear definition applicable in the real world. The belief that ‘randomness’ is some kind of real property existing in Nature is a form of the mind projection fallacy which says, in effect, ‘I don’t know the detailed causes – therefore – Nature does not know them.’ What shaking accomplishes is very different. It does not affect Nature’s workings in any way; it only ensures that no human is able to exert any wilful influence on the result. Therefore, nobody can be charged with ‘fixing’ the outcome.
 
+摇晃不会使结果“随机”，因为这个术语作为现实世界的属性基本上没有意义;它没有明确的定义适用于现实世界。 “随机性”是自然中存在的某种不动产的信念是心灵投射谬误的一种形式，实际上，“我不知道详细的原因 - 因此 - 自然不知道它们。”什么震动完成是非常不同的。它不会以任何方式影响大自然的运作;它只能确保没有人能够对结果施加任何故意的影响。因此，没有人可以被指控“修复”结果。
+
 At this point, you may accuse us of nitpicking, because you know that after all this sermonizing, we are just going to go ahead and use the randomized solution like everybody else does. Note, however, that our objection is not to the procedure itself, provided that we acknowledge honestly what we are doing; i.e. instead of solving the real problem, we are making a practical compromise and being, of necessity, content with an approximate solution. That is something we have to do in all areas of applied mathematics, and there is no reason to expect probability theory to be any different.
+
+在这一点上，你可能会指责我们挑剔，因为你知道，在所有这些讲道之后，我们将继续像其他人一样使用随机解决方案。但请注意，我们的反对意见不是程序本身，只要我们诚实地承认我们正在做的事情;即，我们不是解决实际问题，而是做出实际的妥协，并且必然会满足于近似的解决方案。这是我们在应用数学的所有领域都必须做的事情，并且没有理由期望概率理论有任何不同。
 
 Our objection is to the belief that by randomization we somehow make our subsequent equations exact; so exact that we can then subject our solution to all kinds of extreme conditions and believe the results, when applied to the real world. The most serious and most common error resulting from this belief is in the derivation of limit theorems (i.e. when sampling with replacement, nothing prevents us from passing to the limit n→∞ and obtaining the usual ‘laws of large numbers’). If we do not recognize the approximate nature of our starting equations, we delude ourselves into believing that we have proved things (such as the identity of probability and limiting frequency) that are just not true in real repetitive experiments.
 
+我们的反对意见是通过随机化我们以某种方式使我们后续的方程式精确;确切地说，我们可以将我们的解决方案置于各种极端条件下，并在应用于现实世界时相信结果。由此信念产生的最严重和最常见的错误是极限定理的推导（即，当用替换进行采样时，没有什么能阻止我们传递到极限n→∞并获得通常的“大数定律”）。如果我们不认识我们的起始方程的近似性质，我们就会自欺欺人地相信我们已经证明了事物（例如概率的同一性和限制频率）在真实的重复实验中是不正确的。
+
 The danger here is particularly great because mathematicians generally regard these limit theorems as the most important and sophisticated fruits of probability theory, and have a tendency to use language which implies that they are proving properties of the real world. Our point is that these theorems are valid properties of the abstract mathematical model that was defined and analyzed. The issue is: to what extent does that model resemble the real world? It is probably safe to say that no limit theorem is directly applicable in the real world, simply because no mathematical model captures every circumstance that is relevant in the real world. Anyone who believes that he is proving things about the real world, is a victim of the mind projection fallacy.
+
+这里的危险特别大，因为数学家普遍认为这些极限定理是概率论最重要和最复杂的结果，并倾向于使用暗示它们证明了现实世界属性的语言。我们的观点是这些定理是定义和分析的抽象数学模型的有效属性。问题是：该模型在多大程度上与现实世界相似？可以肯定地说，没有极限定理可以直接应用于现实世界，仅仅因为没有数学模型能够捕捉到现实世界中相关的每一种情况。任何相信他正在证明现实世界的人，都是心灵投射谬误的受害者。
 
 Let us return to the equations. What answer can we now give to the question posed after Eq. (3.91)? The probability $$P(R_2|R_1B')$$ of drawing a red ball on the second draw clearly depends not only on N and M, but also on the fact that a red one has already been drawn and replaced. But this latter dependence is so complicated that we can’t, in real life, take it into account; soweshake the urn to ‘randomize’ the problem, and then declare R1 to be irrelevant: $$P(R_2|R_1B') = P(R_2|B') = M/N$$. After drawing and replacing the second ball, we again shake the urn, declare it ‘randomized,’ and set $$P(R_3|R_2R_1B') = P(R_3|B') = M/N$$, etc. In this approximation, the probability for drawing a red ball at any trial is M/N.
 
+让我们回到方程式。我们现在可以回答在Eq之后提出的问题。 （3.91）？在第二次抽签中绘制红球的概率$$ P（R_2 | R_1B'）$$显然不仅取决于N和M，而且还取决于已经绘制和替换红色的事实。但后一种依赖是如此复杂，以至于在现实生活中我们无法将其考虑在内; soweshake the urn'随机化'问题，然后声明R1无关：$$ P（R_2 | R_1B'）= P（R_2 | B'）= M / N $$。在绘制并替换第二个球之后，我们再次摇动骨灰盒，声明它“随机化”，并设置$$ P（R_3 | R_2R_1B'）= P（R_3 | B'）= M / N $$等。近似，在任何试验中绘制红球的概率是M / N.
+
 This is not just a repetition of what we learned in (3.37); what is new here is that the result now holds whatever information the robot may have about what happened in the other trials. This leads us to write the probability for drawing exactly r red balls in n trials, regardless of order, as
-	
+
+这不仅仅是我们在（3.37）中学到的东西的重复;这里的新内容是，结果现在掌握了机器人可能拥有的关于其他试验中发生的事情的任何信息。这导致我们写出在n次试验中精确绘制红色球的概率，无论顺序如何
+
  $$\binom {n}{r} \binom {M}{N}^r \binom {N-M}{N}^{n-r}$$, (3.92)
 
 which is just the binomial distribution (3.86). Randomized sampling with replacement from an urn with finite N has approximately the same effect as passage to the limit N →∞ without replacement.
 
+这只是二项分布（3.86）。 从具有有限N的瓮替换的随机取样具有与通过极限N→∞而没有替换的效果大致相同的效果。
+
 Evidently, for small n, this approximation will be quite good; but for large n these small errors can accumulate (depending on exactly how we shake the urn, etc.) to the point where (3.92) is misleading. Let us demonstrate this by a simple, but realistic, extension of the problem.
+
+显然，对于小n，这种近似将是非常好的; 但是对于大n，这些小错误可以累积（取决于我们如何摇动骨灰盒等）到（3.92）误导的程度。 让我们通过一个简单但现实的问题扩展来证明这一点。

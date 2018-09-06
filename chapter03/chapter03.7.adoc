@@ -2,7 +2,11 @@
 
 Although somewhat complicated mathematically, the hypergeometric distribution arises from a problem that is very clear and simple conceptually; there are only a finite number of possibilities and all the above results are exact for the problems as stated. As an introduction to a mathematically simpler, but conceptually far more difficult, problem, we examine a limiting form of the hypergeometric distribution.
 
+虽然在数学上有些复杂，但是超几何分布源于一个在概念上非常清晰和简单的问题; 只有有限数量的可能性，所有上述结果对于所述问题都是准确的。 作为对数学上更简单但在概念上更加困难的问题的介绍，我们研究了超几何分布的限制形式。
+
 The complication of the hypergeometric distribution arises because it is taking into account the changing contents of the urn; knowing the result of any draw changes the probability for red for any other draw. But if the number N of balls in the urn is very large compared with the number drawn (N >> n), then this probability changes very little, and in the limit N →∞ we should have a simpler result, free of such dependencies. To verify this, we write the hypergeometric distribution (3.22) as
+
+超几何分布的复杂性产生是因为它考虑到了瓮的内容的变化; 知道任何平局的结果会改变任何其他平局的红色概率。 但是如果与绘制的数字（N >> n）相比，urn中球的数量N非常大，那么这个概率变化很小，并且在极限N→∞中我们应该有一个更简单的结果，没有这种依赖性。 为了验证这一点，我们将超几何分布（3.22）写为
 
  $$h(r|N,M,n) = \frac {[ \frac{1}{N^r} \binom {M}{r}] [ \frac {1}{N^{n-r}} ( \binom {N-M}{n-r} ) ] } { \frac {1}{N^n} \binom {N}{n} ] } $$. (3.81)
 
@@ -31,9 +35,15 @@ an example of Newton’s binomial theorem.
 
 Figure 3.1 compares three hypergeometric distributions with N = 15, 30, 100 and M/N = 0.4, n = 10 to the binomial distribution with n = 10, f = 0.4. All have their peak at r = 4, and all distributions have the same first moment $$\langle r \rangle$$ = E(r ) = 4, but the binomial distribution is broader.
 
+图3.1比较了三个超几何分布，N = 15,30,100和M / N = 0.4，n = 10，二项式分布，n = 10，f = 0.4。所有的分布在r = 4处都有峰值，并且所有分布都具有相同的第一时刻$$ \ langle r \ rangle $$ = E（r）= 4，但二项分布更宽。
+
 The N = 15 hypergeometric distribution is zero for r = 0 and r > 6, since on drawing ten balls from an urn containing only six red and nine white, it is not possible to get fewer than one or more than six red balls. When N > 100 the hypergeometric distribution agrees so closely with the binomial that for most purposes it would not matter which one we used. Analytical properties of the binomial distribution are collected in Chapter 7. In Chapter 9 we find, in connection with significance tests, situations where the binomial distribution is exact for purely combinatorial reasons in a finite sample space, Eq. (9.46).
 
+对于r = 0且r> 6，N = 15超几何分布为零，因为在从仅包含六个红色和九个白色的瓮中绘制十个球时，不可能得到少于一个或多于六个红球。当N> 100时，超几何分布与二项式非常接近，在大多数情况下，我们使用哪一个并不重要。二元分布的分析性质在第7章中收集。在第9章中，我们发现，与显着性检验有关的二项分布在有限样本空间中纯粹由于组合原因而精确的情况，Eq。 （9.46）。
+
 We can carry out a similar limiting process on the generalized hypergeometric distribution (3.75). It is left as an exercise to show that in the limit where all $$N_i →∞$$in such a way that the fractions
+
+我们可以对广义超几何分布进行类似的限制过程（3.75）。它留下来作为一个练习，以显示所有$$ N_i→∞$$的限制，以这种方式分数
 
  $$f_i ≡ \frac {N_i}{\sum N_j} $$(3.88)
 
@@ -43,16 +53,30 @@ tend to constants, (3.75) goes into the multinomial distribution
 
 where $$r ≡ \sum ri$$ . And, as in (3.87), we can define a generating function of (k − 1) variables, from which we can prove that (3.89) is correctly normalized and derive many other useful results.
 
+其中$$r≡\ ​​sum ri $$。并且，如在（3.87）中，我们可以定义（k-1）变量的生成函数，从中我们可以证明（3.89）被正确归一化并导出许多其他有用的结果。
+
 Exercise 3.2. Suppose an urn contains $$N = \sum N_i$$ balls, $$N_1$$ of color 1, $$N_2$$ of color 2, . . . , $$N_k$$ of color k. We draw m balls without replacement; what is the probability that we have at least one of each color? Supposing k = 5, all Ni = 10, how many do we need to draw in order to have at least a 90% probability for getting a full set?
+
+练习3.2。假设一个urn包含$$ N = \ sum N_i $$球，颜色1的$$ N_1 $$，颜色2的$ N_2 $$。 。 。 ，$$ N_k $$颜色k。我们画m球没有替换;我们至少有一种颜色的概率是多少？假设k = 5，所有Ni = 10，我们需要绘制多少才能获得全套的概率至少为90％？
 
 Exercise 3.3. Suppose that in the previous exercise k is initially unknown, but we know that the urn contains exactly 50 balls. Drawing out 20 of them, we find three different colors; now what do we know about k? We know from deductive reasoning (i.e. with certainty) that 3 ≤ k ≤ 33; but can you set narrower limits $$k_1 ≤ k ≤ k_2$$ within which it is highly likely to be?
 
+练习3.3。假设在之前的练习中k最初是未知的，但我们知道该urn恰好包含50个球。抽出20个，我们发现了三种不同的颜色;现在我们对k有什么了解？我们从演绎推理（即确定）知道3≤k≤33;但是你能设置更窄的限制$$k_1≤k≤k_2$$吗？
+
 Hint: This question goes beyond the sampling theory of this chapter because, like most real scientific problems, the answer depends to some degree on our common sense judgments; nevertheless, our rules of probability theory are quite capable of dealing with it, and persons with reasonable common sense cannot differ appreciably in their conclusions.
 
+提示：这个问题超出了本章的抽样理论，因为像大多数真正的科学问题一样，答案在某种程度上取决于我们的常识判断;尽管如此，我们的概率论规则完全有能力处理它，而具有合理常识的人在结论上不能有明显的差别。
+
 Exercise 3.4. The M urns are now numbered 1 to M, and M balls, also numbered  1 to M, are thrown into them, one in each urn. If the numbers of a ball and its urn are the same, we have a match. Show that the probability for at least one match is
+
+练习3.4。 M骨灰盒现在编号为1到M，并且M球（也编号为1到M）被扔入其中，每个骨灰盒中有一个。如果一个球和它的瓮的数量是相同的，我们有一个匹配。显示至少一个匹配的概率
 
  $$h = \sum_{k=1}{M} (−1)^{k+1}/k!$$ (3.90)
 
 As M →∞, this converges to 1 − 1/e = 0.632. The result is surprising to many, because, however large M is, there remains an appreciable probability for no match at all.
 
+当M→∞时，收敛到1 - 1 / e = 0.632。 结果对许多人来说是令人惊讶的，因为无论M是多么大，仍然存在完全没有匹配的可能性。
+
 Exercise 3.5. N balls are tossed into M urns; there are evidently $$M_N$$ ways this can be done. If the robot considers them all equally likely, what is the probability that each urn receives at least one ball?
+
+练习3.5。 N球被扔进M骨灰盒; 有明显的$$ M_N $$方法可以做到这一点。 如果机器人同样可能认为它们，那么每个骨灰盒至少接收一个球的概率是多少？

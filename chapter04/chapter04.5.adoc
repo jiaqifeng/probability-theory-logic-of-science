@@ -1,15 +1,21 @@
-== 4.5 Continuous probability distribution functions
+== 4.5 Continuous probability distribution functions 连续概率分布函数
 
 Our rules for inference were derived in Chapter 2 only for the case of finite sets of discrete propositions (A, B, . . .). But this is all we ever need in practice. Suppose that f is any continuously variable real parameter of interest, then the propositions
+
+我们的推理规则仅在第2章中针对有限的离散命题集（A，B，...）的情况得出。 但这是我们在实践中所需要的。 假设f是任何感兴趣的连续可变实参数，那么命题
 
  F' ≡ ( f ≤ q)
  F'' ≡ ( f > q)   (4.50)
 
 are discrete, mutually exclusive, and exhaustive; so our rules will surely apply to them. Given some information Y , the probability for F' will in general depend on q, defining a function
 
+是离散的，相互排斥的，详尽的; 所以我们的规则肯定适用于他们。 给定一些信息Y，F'的概率通常取决于q，定义一个函数
+
  G(q) ≡ P(F'|Y ), (4.51)
 
 which is evidently monotonic increasing. Then what is the probability that f lies in any specified interval (a < f ≤ b)? The answer is probably obvious intuitively, but it is worth noting that it is determined uniquely by the sum rule of probability theory, as follows. Define the propositions
+
+这显然是单调增加的。 那么f在任何指定区间（a <f≤b）的概率是多少？ 答案可能是直观的，但值得注意的是，它是由概率论的和规则唯一确定的，如下所示。 定义命题
 
  A ≡ ( f ≤ a), B ≡ ( f ≤ b), W ≡ (a < f ≤ b). (4.52)
 
@@ -27,14 +33,28 @@ In the present case, G(q) is continuous and differentiable, so we may write also
 
 where g( f ) = G'( f ) ≥ 0 is the derivative of G, generally called the probability distribution function, or the probability density function for f , given Y ; either reading is consistent with the abbreviation pdf which we use henceforth, following the example of Zellner (1971). Its integral G( f ) may be called the cumulative distribution function for f .
 
+其中g（f）= G'（f）≥0是G的导数，通常称为概率分布函数，或f的概率密度函数，给定Y;阅读与我们今后使用的缩写pdf一致，遵循Zellner（1971）的例子。其积分G（f）可以称为f的累积分布函数。
+
 Thus, limiting our basic theory to finite sets of propositions has not in any way hindered our ability to deal with continuous probability distributions; we have applied the basic product and sum rules only to discrete propositions in finite sets. As long as continuous distributions are defined as above (Eqs. (4.54), (4.55)) from a basis of finite sets of propositions, we are protected from inconsistencies by Cox’s theorems. But if we become overconfident and try to operate directly on infinite sets without considering how they are to be generated from finite sets, this protection is lost and we stand at the mercy of all the paradoxes of infinite-set theory, as discussed in Chapter 15; we can then derive sense and nonsense with equal ease.
+
+因此，将我们的基本理论局限于有限的命题集并没有以任何方式阻碍我们处理连续概率分布的能力;我们只将基本乘积和求和规则应用于有限集中的离散命题。只要连续分布如上定义（方程（4.54），（4.55）），从有限的命题集的基础上，我们就可以通过Cox定理得到保护，避免不一致。但是如果我们变得过于自信并试图直接在无限集上运算而不考虑如何从有限集生成它们，那么这种保护就会丧失，我们将受到无限集理论的所有悖论的支配，如第15章所述。 ;然后我们可以同样轻松地得出感觉和废话。
 
 We must warn the reader about another semantic confusion which has caused error and controversy in probability theory for many decades. It would be quite wrong and misleading to call g( f ) the ‘posterior distribution of f ’, because that verbiage would imply to the unwary that f itself is varying and is ‘distributed’ in some way. This would be another form of the mind projection fallacy, confusing reality with a state of knowledge about reality. In the problem we are discussing, f is simply an unknown constant parameter; what is ‘distributed’ is not the parameter, but the probability. Use of the terminology ‘probability distribution for f ’ will be followed, in order to emphasize this constantly.
 
+我们必须警告读者另一种语义混淆，这种混淆几十年来在概率论中引起了错误和争议。将g（f）称为“f的后验分布”是完全错误和误导的，因为这种措辞会暗示f本身变化并且以某种方式“分布”。这将是心灵投射谬误的另一种形式，将现实与现实的知识状态混为一谈。在我们讨论的问题中，f只是一个未知的常数参数;什么是“分布式”不是参数，而是概率。将遵循术语'f'的概率分布的使用，以便不断强调这一点。
+
 Of course, nothing in probability theory forbids us to consider the possibility that f might vary with time or with circumstance; indeed, probability theory enables us to analyze that case fully, as we shall see later. But then we should recognize that we are considering a different problem than the one just discussed; it involves different quantities with different states of knowledge about them, and requires a different calculation. Confusion of these two problems is perhaps the major occupational disease of those who fool themselves by using the above misleading terminology. The pragmatic consequence is that one is led to quite wrong conclusions about the accuracy and range of validity of the results.
+
+当然，概率论中没有任何内容禁止我们考虑f可能随时间或环境而变化的可能性;事实上，概率论使我们能够完全分析这个案例，我们将在后面看到。但是，我们应该认识到，我们正在考虑一个与刚才讨论的问题不同的问题;它涉及不同的数量，具有不同的知识状态，需要不同的计算。这两个问题的混乱可能是那些使用上述误导性术语欺骗自己的人的主要职业病。实际结果是，人们对结果的准确性和有效性范围得出了非常错误的结论。
 
 Questions about what happens when G(q) is discontinuous at a point q0 are discussed further in Appendix B; for the present it suffices to note that, of course, approaching a discontinuous G(q) as the limit of a sequence of continuous functions leads us to the correct results. As Gauss stressed long ago, any kind of singular mathematics acquires a meaning only as a limiting form of some kind of well-behaved mathematics, and it is ambiguous until we specify exactly what limiting process we propose to use. In this sense, singular mathematics has necessarily a kind of anthropomorphic character; the question is not what is it, but rather how shall we define it so that it is in some way useful to us?
 
+关于当G（q）在点q0处不连续时会发生什么的问题将在附录B中进一步讨论;就目前而言，足以注意到，当然，接近不连续的G（q）作为连续函数序列的极限会使我们得到正确的结果。正如高斯很久以前所强调的那样，任何一种奇异数学都只是作为某种表现良好的数学的限制形式而获得意义，而且在我们明确指出我们建议使用的限制过程之前，它是模棱两可的。从这个意义上说，奇异数学必然具有一种拟人性格;问题不在于它是什么，而是我们应该如何定义它以使它对我们有用？
+
 In the present case, we approach the limit in such a way that the density function develops a sharper and sharper peak, going in the limit into a delta function $$p_0 δ(q − q_0)$$ signifying a discrete hypothesis $$H_0$$, and enclosing a limiting area equal to the probability $$p_0$$ of that hypothesis; Eq. (4.65) below is an example.
 
+在目前的情况下，我们以这样的方式接近极限：密度函数产生更尖锐和更尖锐的峰值，在极限内进入delta函数$$p_0δ（q-q_0）$$表示离散假设$$ H_0 $$，并且包含一个等于该假设的概率$$ p_0 $$的限制区域;式。下面的（4.65）是一个例子。
+
 But, in fact, if we become pragmatic we note that f is not really a continuously variable parameter. In its working lifetime, a machine will produce only a finite number of widgets; if it is so well built that it makes $$10^8$$ of them, then the possible values of f are a finite set of integer multiples of $$10^{−8}$$. Then our finite-set theory will apply, and consideration of a continuously variable f is only an approximation to the exact discrete theory. There is never any need to consider infinite sets or measure theory in the real, exact problem. Likewise, any data set that can actually be recorded and analyzed is digitized into multiples of some smallest element. Most cases of allegedly continuously variable quantities are like this when one takes note of the actual, real-world situation.
+
+但是，事实上，如果我们变得务实，我们注意到f实际上并不是一个连续可变的参数。 在其工作生命周期中，机器将只生成有限数量的小部件; 如果它构造得如此精确以至于它们产生了$ 10 ^ 8 $$，那么f的可能值是$ 10 ^ { - 8} $$的整数倍的有限集合。 然后我们的有限集理论将适用，并且对连续变量f的考虑仅仅是精确离散理论的近似。 在真实的确切问题中，永远不需要考虑无限集或测量理论。 同样，任何可以实际记录和分析的数据集都被数字化为某个最小元素的倍数。 当人们注意到实际的现实情况时，大多数涉嫌连续变量的情况都是这样的。

@@ -4,27 +4,49 @@
 
 Our opening quotation from John Craig (1699) is from a curious work on the probabilities of historical events, and how they change as the evidence changes. Craig’s work was ridiculed mercilessly in the 19th century; and, indeed, his applications to religious issues do seem weird to us today. But Stigler (1986a) notes that Craig was writing at a time when the term ‘probability’ had not yet settled down to its present technical meaning, as referring to a (0–1) scale; and if we merely interpret Craig’s ‘probability for an hypothesis’ as our log-odds measure (which we have seen to have in some respects a more primitive and intuitive meaning than probability), Craig’s reasoning was actually quite good, and may be regarded as an anticipation of what we have done in this chapter.
 
+我们John Craig（1699）的开篇引文来自对历史事件概率的好奇研究，以及随着证据的变化它们如何变化。克雷格的作品在19世纪被无情地嘲笑;事实上，他对宗教问题的应用对我们来说似乎很奇怪。但斯蒂格勒（1986a）指出，克雷格写作的时候，“概率”这个术语还没有达到目前的技术含义，指的是（0-1）等级;如果我们只是将克雷格的“假设概率”解释为我们的对数几率（我们已经看到在某些方面具有比概率更原始和直观的意义），克雷格的推理实际上相当不错，可能被视为期待我们在本章所做的工作。
+
 Today, the logarithm-of-odds {u = log[p/(1 − p)]} has proved to be such an important quantity that it deserves a shorter name; but we have had trouble finding one. Good (1950) was perhaps the first author to stress its importance in a published work, and he proposed the name lods, but the term has a leaden ring to our ears, as well as a nondescriptive quality, and it has never caught on.
+
+今天，赔率的对数{u = log [p /（1-p）]}已被证明是一个非常重要的数量，它应该得到一个更短的名字;但我们找不到一个。 Good（1950）也许是第一个强调其在已出版作品中的重要性的作者，他提出了lods这个名字，但这个术语对我们来说有一个沉重的环，以及一个非描述性的质量，它从未流行起来。
 
 Our same quantity (4.8) was used by Alan Turing and I. J. Good from 1941, in classified cryptographic work in England during World War II. Good (1980) later reminisced about this briefly, and noted that Turing coined the name ‘deciban’ for it. This has not caught on, presumably because nobody today can see any rationale for it.
 
+我们相同的数量（4.8）被Alan Turing和I. J. Good从1941年用于第二次世界大战期间英国的机密加密工作。 Good（1980）稍后对此进行了简要的回忆，并指出Turing为此创造了“deciban”的名称。这没有流行，大概是因为今天没有人能够看到它的任何理由。
+
 The present writer, in his lectures of 1955–64 (for example, Jaynes, 1956), proposed the name evidence, which is intuitive and descriptive in the sense that, for given proportions, twice as many data provide twice as much evidence for an hypothesis. This was adopted by Tribus (1969), but it has not caught on either.
+
+本文作者在他1955-64的讲座中（例如，Jaynes，1956）提出了名称证据，这种证据具有直观性和描述性，因为对于给定的比例，两倍的数据提供了两倍的证据。假设。这是由Tribus（1969）采用的，但它没有流行。
 
 More recently, the term logit for U ≡ log[y/(a − y)], where {yi } are some items of data and a is chosen by some convention such as a = 100, has come into use. Likewise, graphs using U for one axis are called logistic. For example, in one commercial software graphics program, an axis on which values of U are plotted is called a ‘logit axis’ and regression on that graph is called ‘logistic regression’. There is at least a mathematical similarity to what we do here, but not any very obvious conceptual relation because U is not a measure of probability. In any event, the term ‘logistic’ had already an established usage dating back to Poincar´e and Peano, as referring to the Russell–Whitehead attempt to reduce all mathematics to logic.3
 
+最近，U≡log[y /（a-y）]的术语logit已经开始使用，其中{yi}是一些数据项，a是通过某些约定选择的，例如a = 100。同样，将U用于一个轴的图形称为逻辑。例如，在一个商业软件图形程序中，绘制U值的轴称为“logit轴”，该图上的回归称为“逻辑回归”。至少与我们在这里做的数学相似，但没有任何非常明显的概念关系，因为U不是概率的度量。无论如何，“后勤”一词已经确定了可以追溯到庞加莱和皮亚诺的用法，指的是罗素 - 怀特黑德试图将所有数学都降低到逻辑3。
+
 3 This terminology has a much longer historical basis. Alexander the Great sought to make all countries Greek in character, but he died before completing this goal, with the result that the countries he conquered had some Greek characteristics, but not all of them. So instead of calling them Hellenic, they were called Hellenistic. Thus, logistic implies something that has some properties of logic, but not all of them.
 
+3这个术语有更长的历史基础。亚历山大大帝试图让所有国家都成为希腊人，但他在完成这一目标之前就已经去世了，结果他征服的国家有一些希腊特色，但并非所有国家都有。因此，他们被称为希腊化，而不是称他们为希腊人。因此，逻辑意味着具有某些逻辑属性的东西，但不是所有属性。
+
 In the face of this confusion, we propose and use the following terminology. Note that we need two terms: the name of the quantity, and the name of the units in which it is measured. For the former we have retained the name evidence, which has at least the merit that it has been defined, and used consistently with the definition, in previously published works. One can then use various different units, with different names. In this chapter we have measured evidence in decibels because of its familiarity to scientists, the ease of finding numerical values, and the connection with the base ten number system which makes the results intuitively clear.
+
+面对这种困惑，我们提出并使用以下术语。请注意，我们需要两个术语：数量的名称，以及测量它的单位的名称。对于前者，我们保留了名称证据，其至少具有已定义的优点，并且在先前发表的作品中与定义一致使用。然后可以使用具有不同名称的各种不同单元。在本章中，我们以分贝为单位测量证据，因为它对科学家很熟悉，易于找到数值，并且与基数十位数系统的连接使得结果直观清晰。
 
 === 4.8.2 What have we accomplished?
 
 The things which we have done in such a simple way in this chapter have been, in one sense, deceptive. We have had an introduction, in an atmosphere of apparent triviality, into almost every kind of problem that arises in the hypothesis testing business. But do not be deceived by the simplicity of our calculations into thinking that we have not reached the real nontrivial problems of the field. Those problems are only straightforward mathematical generalizations of what we have done here, and mathematically mature readers who have understood this chapter can now solve them for themselves, probably with less effort than it would require to find and understand the solutions available in the literature.
 
+从某种意义上说，我们在本章中以如此简单的方式所做的事情具有欺骗性。我们已经在明显无关紧要的氛围中介绍了假设检验业务中出现的几乎所有问题。但是，不要被我们计算的简单性所欺骗，认为我们还没有达到该领域真正的重要问题。这些问题只是我们在这里所做的直接的数学概括，并且理解本章的数学上成熟的读者现在可以自己解决它们，可能比找到和理解文献中可用的解决方案所需的努力更少。
+
 In fact, the methods of solution that we have indicated have far surpassed, in power to yield useful results, the methods available in the conventional non-Bayesian literature of hypothesis testing. To the best of our knowledge, no comprehension of the facts of multiple hypothesis testing, as illustrated in Figure 4.1, can be found in the orthodox literature (which explains why the principles of multiple hypothesis testing have been controversial in that literature). Likewise, our form of solution of the compound hypothesis problem (4.73) will not be found in the ‘orthodox’ literature of the subject.
+
+实际上，我们已经指出的解决方法在产生有用结果的能力方面远远超过了传统的非贝叶斯假设检验文献中可用的方法。据我们所知，如图4.1所示，不能理解多重假设检验的事实，可以在正统文献中找到（这解释了为什么多重假设检验的原理在该文献中一直存在争议）。同样，我们对复合假设问题（4.73）的解决方案也不会出现在该主题的“正统”文献中。
 
 It was our use of probability theory as logic that has enabled us to do so easily what was impossible for those who thought of probability as a physical phenomenon associated with ‘randomness’. Quite the opposite; we have thought of probability distributions as carriers of information. At the same time, under the protection of Cox’s theorems, we have avoided the inconsistencies and absurdities which are generated inevitably by those who try to deal with the problems of scientific inference by inventing ad hoc devices instead of applying the rules of probability theory. For a devastating criticism of these devices, see the book review by Pratt (1961).
 
+我们使用概率论作为逻辑使我们能够轻易地做到这一点，对于那些认为概率是与“随机性”相关的物理现象的人来说，这是不可能的。恰恰相反;我们已经将概率分布视为信息的载体。同时，在Cox定理的保护下，我们避免了那些试图通过发明ad hoc设备而不是应用概率论规则来处理科学推理问题的人不可避免地产生的不一致和荒谬。对于这些设备的毁灭性批评，请参阅Pratt（1961）的书评。
+
 It is not only in hypothesis testing, however, that the foundations of the theory matter for applications. As indicated in Chapter 1 and Appendix A, our formulation was chosen with the aim of giving the theory the widest possible range of useful applications. To drive home how much the scope of solvable problems depends on the chosen foundations, the reader may try Exercise 4.6.
+
+然而，不仅在假设检验中，理论的基础对应用也很重要。如第1章和附录A所示，我们选择的配方旨在为理论提供最广泛的有用应用。为了推动家庭可解决问题的范围取决于所选择的基础，读者可以尝试练习4.6。
 
 Exercise 4.6. In place of our product and sum rules, Ruelle (1991, p. 17) defines the ‘mathematical presentation’ of probability theory by three basic rules:
  $$p(\bar{A}) = 1 − p(A);$$
@@ -33,10 +55,20 @@ Exercise 4.6. In place of our product and sum rules, Ruelle (1991, p. 17) define
 
 Survey the preceding two chapters, and determine how many of the applications that we solved in Chapters 3 and 4 could have been solved by application of these rules.
 
+调查前两章，并确定我们在第3章和第4章中解决的应用程序中有多少可以通过应用这些规则来解决。
+
 Hint: If A and B are not independent, is p(AB) determined by them? Is the notion of conditional probability defined? Ruelle makes no distinction between logical and causal independence; he defines ‘independence’ of A and B as meaning: ‘the fact that one is realized has in the average no influence on the realization of the other’. It appears, then, that he would always accept (4.29) for all n.
+
+提示：如果A和B不是独立的，那么p（AB）是由它们决定的吗？是否定义了条件概率的概念？ Ruelle没有区分逻辑和因果独立性;他将A和B的“独立性”定义为：“一个人被实现的事实平均没有影响另一个人的实现”。那么，他似乎总是接受（4.29）所有n。
 
 This exercise makes it clear why conventional expositions do not consider scientific inference to be a part of probability theory. Indeed, orthodox statistical theory is helpless to deal with such problems because, thinking of probability as a physical phenomenon, it recognizes the existence only of sampling probabilities; thus it denies itself the technical tools needed to incorporate prior information, to eliminate nuisance parameters, or to recognize the information contained in a posterior probability. However, even most of the sampling theory results that we derived in Chapter 3 are beyond the scope of the mathematical and conceptual foundation given by Ruelle, as are virtually all of the parameter estimation results to be derived in Chapter 6.
 
+这个练习清楚地表明了为什么传统论述不认为科学推理是概率论的一部分。实际上，正统的统计理论无法解决这些问题，因为将概率视为一种物理现象，它只承认抽样概率的存在;因此，它否认了整合先前信息，消除滋扰参数或识别后验概率所包含的信息所需的技术工具。然而，即使我们在第3章中得出的大部分抽样理论结果都超出了Ruelle给出的数学和概念基础的范围，因为几乎所有的参数估计结果都在第6章中得出。
+
 We shall find later that our way of treating compound hypotheses illustrated here also generates automatically the conventional orthodox significance tests or superior ones; and at the same time gives a clear statement of what they are testing and their range of validity, previously lacking in the orthodox literature.
 
+我们后来会发现，这里所说的处理复合假设的方法也会自动产生传统的正统显着性检验或优良检验;同时明确说明他们正在测试什么以及他们的有效范围，以前缺乏正统文献。
+
 Now that we have seen the beginnings of this situation, before turning to more serious and mathematically more sophisticated problems, we shall relax and amuse ourselves in the next chapter by examining how probability theory as logic can clear up all kinds of weird errors, in the older literature, that arose from very simple misuse of probability theory, but whose consequences were relatively trivial. In Chapters 15 and 17 we consider some more complicated and serious errors that are causing major confusion in the current literature.
+
+现在我们已经看到了这种情况的开始，在转向更严肃和数学上更复杂的问题之前，我们将在下一章中通过研究概率理论如何清除各种奇怪错误来放松和娱乐自己。旧文学，源于非常简单的滥用概率论，但其后果相对微不足道。在第15章和第17章中，我们考虑了一些更复杂和严重的错误，这些错误导致了当前文献中的重大混淆。

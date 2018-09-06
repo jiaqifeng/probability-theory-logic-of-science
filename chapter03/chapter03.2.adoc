@@ -2,7 +2,11 @@
 
 The results of Section 3.1 present us with a new question. In finding the probability for red at the kth draw, knowledge of what color was found at some earlier draw is clearly relevant because an earlier draw affects the number Mk of red balls in the urn for the kth draw. Would knowledge of the color for a later draw be relevant? At first glance, it seems that it could not be, because the result of a later draw cannot influence the value of Mk . For example, a well-known exposition of statistical mechanics (Penrose, 1979) takes it as a fundamental axiom that probabilities referring to the present time can depend only on what happened earlier, not on what happens later. The author considers this to be a necessary physical condition of ‘causality’.
 
+第3.1节的结果向我们提出了一个新问题。在第k次抽取中找到红色的概率时，在一些早期抽取中发现的颜色的知识显然是相关的，因为较早的抽取影响第k次抽签的瓮中红球的数量Mk。稍后抽奖的颜色知识是否相关？乍一看，它似乎不可能，因为后期平局的结果不能影响Mk的价值。例如，众所周知的统计力学论述（Penrose，1979）将其作为一个基本公理，即指出当前时间的概率只能取决于先前发生的事情，而不是后来发生的事情。作者认为这是“因果关系”的必要物理条件。
+
 Therefore we stress again, as we did in Chapter 1, that inference is concerned with logical connections, which may or may not correspond to causal physical influences. To show why knowledge of later events is relevant to the probabilities of earlier ones, consider an urn which is known (background information B) to contain only one red and one white ball: N = 2, M = 1. Given only this information, the probability for red on the first draw is $$P(R_1|B) = 1/2$$. But then if the robot learns that red occurs on the second draw, it becomes certain that it did not occur on the first:
+
+因此，正如我们在第1章中所做的那样，我们再次强调，推论与逻辑联系有关，逻辑联系可能或可能不对应于因果物理影响。为了说明为什么后期事件的知识与早期事件的概率相关，考虑一个已知的瓮（背景信息B）只包含一个红色球和一个白球：N = 2，M = 1.仅给出此信息，第一次抽奖的红色概率为$$ P（R_1 | B）= 1/2 $$。但是如果机器人在第二次抽签时得知红色发生，那么可以确定它在第一次抽奖时没有发生：
 
  $$P(R_1|R_2B) = 0$$. (3.38)
 
@@ -16,25 +20,49 @@ But we have just seen that $$P(R_j|B) = P(R_k|B) = M/N$$ for all j, k, so
 
 Probability theory tells us that the results of later draws have precisely the same relevance as do the results of earlier ones! Even though performing the later draw does not physically affect the number $$M_k$$ of red balls in the urn at the kth draw, information about the result of a later draw has the same effect on our state of knowledge about what could have been taken on the kth draw, as does information about an earlier one. This is our second nonobvious symmetry.
 
+概率论告诉我们，后期绘制的结果与早期绘制的结果完全相同！尽管在第k次抽签中执行后期抽牌并没有在物理上影响瓮中红球的数量$ M_k $$，但是关于后期抽签结果的信息对我们对本来可能存在的知识状态具有相同的影响。采取第k次抽签，以及有关早期抽奖的信息。这是我们的第二个非显而易见的对称性。
+
 This result will be quite disconcerting to some schools of thought about the ‘meaning of probability’. Although it is generally recognized that logical implication is not the same as physical causation, nevertheless there is a strong inclination to cling to the idea anyway, by trying to interpret a probability P(A|B) as expressing some kind of partial causal influence of B on A. This is evident not only in the aforementioned work of Penrose, but more strikingly in the ‘propensity’ theory of probability expounded by the philosopher Karl Popper.1
+
+这个结果对于某些关于“概率意义”的思想流派来说会非常令人不安。虽然人们普遍认为逻辑蕴涵与物理因果关系并不相同，但无论如何，通过试图将概率P（A | B）解释为表达某种部分因果影响，人们仍然倾向于坚持这一想法。 B对A.这不仅在彭罗斯的上述工作中很明显，而且在哲学家卡尔波普尔阐述的“倾向”概率理论中更为明显。
 
 It appears to us that such a relation as (3.40)would be quite inexplicable from a propensity viewpoint, although the simple example (3.38) makes its logical necessity obvious. In any event, the theory of logical inference that we are developing here differs fundamentally, in outlook and in results, from the theory of physical causation envisaged by Penrose and Popper. It is evident that logical inference can be applied in many problems where assumptions of physical causation would not make sense.
 
+在我们看来，从倾向性观点来看，（3.40）这样的关系是非常难以理解的，尽管简单的例子（3.38）使其逻辑必然性显而易见。无论如何，我们在这里发展的逻辑推理理论在观点和结果上都与彭罗斯和波普尔所设想的物理因果理论有着根本的不同。很明显，逻辑推理可以应用于许多问题，其中物理因果关系的假设是没有意义的。
+
 This does not mean that we are forbidden to introduce the notion of ‘propensity’ or physical causation; the point is rather that logical inference is applicable and useful whether or not a propensity exists. If such a notion (i.e. that some such propensity exists) is formulated as a well-defined hypothesis, then our form of probability theory can analyze its implications. We shall do this in Section 3.10 below. Also, we can test that hypothesis against alternatives in the light of the evidence, just as we can test any well-defined hypothesis. Indeed, one of the most common and important applications of probability theory is to decide whether there is evidence for a causal influence: is a new medicine more effective, or a new engineering design more reliable? Does a new anticrime law reduce the incidence of crime? Our study of hypothesis testing starts in Chapter 4.
+
+这并不意味着我们被禁止引入“倾向”或物理因果关系的概念;重点是逻辑推理是适用的，无论是否存在倾向都是有用的。如果这样的概念（即存在一些这样的倾向）被表述为明确定义的假设，那么我们的概率论形式可以分析其含义。我们将在下面的3.10节中做到这一点。此外，我们可以根据证据检验对替代方案的假设，就像我们可以检验任何明确定义的假设一样。实际上，概率论最常见和最重要的应用之一是确定是否存在因果影响的证据：新药更有效，或新工程设计更可靠？新的反犯罪法是否会降低犯罪率？我们对假设检验的研究从第4章开始。
 
 1 In his presentation at the Ninth Colston Symposium, Popper (1957) describes his propensity interpretation as ‘purely objective’ but avoids the expression ‘physical influence’. Instead, he would say that the probability for a particular face in tossing a die is not a physical property of the die (as Cram´er (1946) insisted), but rather is an objective property of the whole experimental arrangement, the die plus the method of tossing. Of course, that the result of the experiment depends on the entire arrangement and procedure is only a truism. It was stressed repeatedly by Niels Bohr in connection with quantum theory, but presumably no scientist from Galileo on has ever doubted it. However, unless Popper really meant ‘physical influence’, his interpretation would seem to be supernatural rather than objective. In a later article (Popper, 1959) he defines the propensity interpretation more completely; now a propensity is held to be ‘objective’ and ‘physically real’ even when applied to the individual trial. In the following we see by mathematical demonstration some of the logical difficulties that result from a propensity interpretation. Popper complains that in quantum theory one oscillates between ‘. . . an objective purely statistical interpretation and a subjective interpretation in terms of our incomplete knowledge’, and thinks that the latter is reprehensible and the propensity interpretation avoids any need for it. He could not possibly be more mistaken. In Chapter 9 we answer this in detail at the conceptual level; obviously, incomplete knowledge is the only working material a scientist has! In Chapter 10 we consider the detailed physics of coin tossing, and see just how the method of tossing affects the results by direct physical influence.
 
+1在第九届科尔斯顿研讨会上，波普尔（1957）将他的倾向解释描述为“纯粹客观”，但避免表达“物理影响”。相反，他会说，抛掷骰子时特定面的概率不是骰子的物理特性（正如Cram'er（1946）所坚持的那样），而是整个实验安排的客观属性，骰子加上折腾的方法。当然，实验的结果取决于整个安排和程序只是一个老生常谈。 Niels Bohr在量子理论方面反复强调，但据推测，伽利略的科学家从未怀疑过它。然而，除非波普尔真的意味着“身体上的影响”，否则他的解释似乎是超自然的而不是客观的。在后来的文章（Popper，1959）中，他更完整地定义了倾向解释;现在，即使应用于个人试验，倾向仍然是“客观的”和“物理上的”。在下文中，我们通过数学演示看到倾向解释产生的一些逻辑上的困难。波普尔抱怨说，在量子理论中，人们会在'之间振荡。 。 。客观纯粹的统计解释和对我们不完整知识的主观解释，并认为后者是应受谴责的，倾向性解释避免了对它的任何需要。他不可能更加错误。在第9章中，我们在概念层面详细回答了这个问题;显然，不完整的知识是科学家唯一的工作材料！在第10章中，我们考虑了掷硬币的详细物理特性，并通过直接的物理影响来了解抛掷方法如何影响结果。
+
 In all the sciences, logical inference is more generally applicable.We agree that physical influences can propagate only forward in time; but logical inferences propagate equally well in either direction. An archaeologist uncovers an artifact that changes his knowledge of events thousands of years ago; were it otherwise, archaeology, geology, and paleontology would be impossible. The reasoning of Sherlock Holmes is also directed to inferring, from presently existing evidence, what events must have transpired in the past. The sounds reaching your ears from a marching band 600 meters distant change your state of knowledge about what the band was playing two seconds earlier. Listening to a Toscanini recording of a Beethoven symphony changes your state of knowledge about the sounds Toscanini elicited from his orchestra many years ago.
+
+在所有科学中，逻辑推理更普遍适用。我们同意物理影响只能在时间上传播;但逻辑推理在两个方向上都同样传播。一位考古学家发现了一件几千年前改变他对事件知识的文物;如果不是这样，考古学，地质学和古生物学将是不可能的。夏洛克·福尔摩斯的推理也是为了从现有的证据中推断出过去必须发生的事件。从600米远的行进乐队到达你耳朵的声音会改变你对乐队两秒前播放的内容的了解。听托斯卡尼尼录制的贝多芬交响曲改变了你对Toscanini引发的声音的了解
+
+More generally, consider a probability distribution $$p(x_1···x_n|B)$$, where xi denotes the result of the ith trial, and could take on not just two values (red or white) but, say, the values $$x_i=(1, 2, ... , k)$$ labeling k different colors. If the probability is invariant under any permutation of the $$x_i$$ , then it depends only on the sample numbers $$(n_1···n_k)$$ denoting how many times the result $$x_i = 1$$ occurs, how many times $$x_i = 2$$ occurs, etc. Such a distribution is called exchangeable; as we shall find later, exchangeable distributions have many interesting mathematical properties and important applications.
+
+更一般地，考虑概率分布$$ p（x_1 ... x_n | B）$$，其中xi表示第i次试验的结果，并且不仅可以采用两个值（红色或白色），而且可以值$$ x_i =（1,2，...，k）$$标记k种不同的颜色。如果概率在$$ x_i $$的任何排列下是不变的，那么它仅取决于样本数$$（n_1 ... n_k）$$表示结果$$ x_i = 1 $$出现的次数，发生了多少次$$ x_i = 2 $$等。这种分布称为可交换的;正如我们后面将要发现的那样，可交换分布具有许多有趣的数学特性和重要的应用。
 
 As this suggests, and as we shall verify later, a fully adequate theory of nonequilibrium phenomena, such as sound propagation, also requires that backward logical inferences be recognized and used, although they do not express physical causes. The point is that the best inferences we can make about any phenomenon – whether in physics, biology, economics, or any other field – must take into account all the relevant information we have, regardless of whether that information refers to times earlier or later than the phenomenon itself; this ought to be considered a platitude, not a paradox. At the end of this chapter (Exercise 3.6), the reader will have an opportunity to demonstrate this directly, by calculating a backward inference that takes into account a forward causal influence.
 
+正如这表明的那样，并且正如我们稍后将要验证的那样，完全足够的非平衡现象理论，例如声音传播，也需要识别和使用后向逻辑推理，尽管它们不表达物理原因。关键是我们可以对任何现象做出最好的推论 - 无论是在物理学，生物学，经济学还是其他任何领域 - 必须考虑到我们拥有的所有相关信息，无论这些信息是指时间的早期还是晚期。现象本身;这应该被认为是陈词滥调，而不是悖论。在本章的最后（练习3.6），读者将有机会通过计算考虑到正向因果影响的后向推理来直接证明这一点。
+
 More generally, consider a probability distribution $$p(x_1···x_n|B)$$, where xi denotes the result of the ith trial, and could take on not just two values (red or white) but, say, the values $$x_i=(1, 2, ... , k)$$ labeling k different colors. If the probability is invariant under any permutation of the $$x_i$$ , then it depends only on the sample numbers $$(n_1···n_k)$$ denoting how many times the result $$x_i = 1$$ occurs, how many times $$x_i = 2$$ occurs, etc. Such a distribution is called exchangeable; as we shall find later, exchangeable distributions have many interesting mathematical properties and important applications. 
+
+更一般地，考虑概率分布$$ p（x_1 ... x_n | B）$$，其中xi表示第i次试验的结果，并且不仅可以采用两个值（红色或白色），而且可以值$$ x_i =（1,2，...，k）$$标记k种不同的颜色。如果概率在$$ x_i $$的任何排列下是不变的，那么它仅取决于样本数$$（n_1 ... n_k）$$表示结果$$ x_i = 1 $$出现的次数，发生了多少次$$ x_i = 2 $$等。这种分布称为可交换的;正如我们后面将要发现的那样，可交换分布具有许多有趣的数学特性和重要的应用。
 
 Returning to our urn problem, it is clear already from the fact that the hypergeometric distribution is exchangeable that every draw must have just the same relevance to every other draw, regardless of their time order and regardless of whether they are near or far apart in the sequence. But this is not limited to the hypergeometric distribution; it is true of any exchangeable distribution (i.e. whenever the probability for a sequence of events is independent of their order). So, with a little more thought, these symmetries, so inexplicable from the standpoint of physical causation, become obvious after all as propositions of logic.
 
+回到我们的问题，很明显，超几何分布是可交换的，每次抽奖必须与其他抽奖具有相同的相关性，无论它们的时间顺序如何，无论它们是近距离还是远离距离。序列。但这不仅限于超几何分布;任何可交换的分布都是如此（即，只要事件序列的概率与其顺序无关）。因此，经过一点思考，这些对称性，从物理因果关系的角度来看是如此莫名其妙，毕竟作为逻辑命题显而易见。
+
 Let us calculate this effect quantitatively. Supposing j < k, the proposition $$R_jR_k$$ (red at both draws j and k) is in Boolean algebra the same as
 
- $$R_j R_k = (R_1 + W_1)···(R_{j−1} + W_{j−1}) R_j (R_{j+1} + W_{j+1})···(R_{k−1} + W_{k−1})R_k$$ , (3.41)
+让我们定量地计算这个效果。假设j <k，命题$$ R_jR_k $$（绘制j和k时的红色）在布尔代数中与
+
+$$R_j R_k = (R_1 + W_1)···(R_{j−1} + W_{j−1}) R_j (R_{j+1} + W_{j+1})···(R_{k−1} + W_{k−1})R_k$$ , (3.41)
 
 which we could expand in the manner of (3.36) into a logical sum of
 
@@ -45,6 +73,8 @@ propositions, each specifying a full sequence, such as
  $$W_1R_2W_3···R_j···R_k$$ (3.43)
 
 of k results. The probability $$P(R_j R_k |B)$$ is the sum of all their probabilities. But we know that, given B, the probability for any one sequence is independent of the order in which red and white appear. Therefore we can permute each sequence, moving $$R_j$$ to the first position, and $$R_k$$ to the second. That is, we can replace the sequence $$(W_1···R_j···)$$ by $$(R_1 ···W_j ···)$$, etc. Recombining them, we have $$(R_1R_2)$$ followed by every possible result for draws (3, 4, . . . , k). In other words, the probability for $$R_j R_k$$ is the same as that of
+
+k结果。 概率$$ P（R_j R_k | B）$$是它们所有概率的总和。 但我们知道，给定B，任何一个序列的概率与红色和白色出现的顺序无关。 因此，我们可以置换每个序列，将$$ R_j $$移动到第一个位置，将$$ R_k $$移动到第二个位置。 也就是说，我们可以用$$（R_1···W_j···）$$等替换序列$$（W_1···R_j ...）$$等。重新组合它们，我们有$$（R_1R_2） $$后跟绘制的每个可能结果（3,4，...，k）。 换句话说，$$ R_j R_k $$的概率与
 
  $$R_1R_2(R_3 + W_3) ··· (R_k + W_k ) = R_1R_2$$, (3.44)
 
@@ -65,4 +95,8 @@ for all j < k. By (3.40), the results (3.47) and (3.48) are true for all j= k.
 
 Since as noted this conclusion appears astonishing to many people, we shall belabor the point by explaining it still another time in different words. The robot knows that the urn originally contained M red balls and (N − M) white ones. Then, learning that an earlier draw gave red, it knows that one less red ball is available for the later draws. The problem becomes the same as if we had started with an urn of (N − 1) balls, of which (M − 1) are red; (3.47) corresponds just to the solution (3.37) adapted to this different problem.
 
+既然如上所述，这个结论对许多人来说似乎令人惊讶，我们将通过用不同的词语再次解释它来说明这一点。机器人知道骨灰盒最初包含M个红球和（N - M）个白色球。然后，了解到之前的平局给出了红色，它知道一个较少的红球可用于后期平局。问题就像我们开始使用（N - 1）个球的球一样，其中（M - 1）是红色的; （3.47）仅对应于适应这个不同问题的解决方案（3.37）。
+
 But why is knowing the result of a later draw equally cogent? Because if the robot knows that red will be drawn at any later time, then in effect one of the red balls in the urn must be ‘set aside’ to make this possible. The number of red balls which could have been taken in earlier draws is reduced by one, as a result of having this information. The above example (3.38) is an extreme special case of this, where the conclusion is particularly obvious.
+
+但是为什么知道后期抽签的结果同样有说服力呢？因为如果机器人知道以后会抽出红色，那么实际上必须“留出”其中一个红色球以使其成为可能。由于获得了这些信息，可以在早期绘制中拍摄的红球数量减少了一个。上面的例子（3.38）是一个极端特殊的例子，其结论特别明显。
