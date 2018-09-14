@@ -2,21 +2,23 @@
 
 The hypergeometric distribution (3.22) can be written in various ways. The nine factorials can be organized into binomial coefficients also as follows:
 
+超几何分布(3.22)可以写为多种方式.九个阶乘可以组织成二项式系数，如下：
+
  $$h(r|N,M,n)= \frac { \binom {n} {r} \binom {N−n} {M−r} } { \binom {N} {M} }$$  . (3.73)
 
 But the symmetry under exchange of M and n is still not evident; to see it we must write out (3.22) or (3.73) in full, displaying all the individual factorials.
 
-但是M和n交换时的对称性仍然不明显; 要看到它，我们必须完整地写出（3.22）或（3.73），显示所有个别因子。
+但是M和n交换时的对称性仍然不明显; 要看到它，我们必须完整地写出（3.22）或（3.73），显示所有每个阶乘项。
 
-We mayalso rewrite (3.22), as an aid to memory, in a more symmetric form: the probability for drawing exactly r red balls andw white ones in n = r + w draws, from an urn containing R red and W white, is
+We may also rewrite (3.22), as an aid to memory, in a more symmetric form: the probability for drawing exactly r red balls and w white ones in n = r + w draws, from an urn containing R red and W white, is
 
-我们也可以用更加对称的形式重写（3.22）作为记忆的辅助：从包含R红色和W白色的骨灰盒中，在n = r + w绘制中精确绘制红色球和白色球的概率是
+我们也可以用更加对称的形式重写（3.22）,以便帮助记忆：从有R个红球和W个白球的盒中，在n=r+w次抽取中,正好取出r个红球和w个白球的概率是
 
  $$h(r) = \frac { \binom {R} {r} \binom {W} {w} } { \binom {R + W} {r + w} } $$  , (3.74)
 
 and in this form it is easily generalized. Suppose that, instead of only two colors, there are k different colors of balls in the urn, $$N_1$$ of color 1, $$N_2$$ of color 2, ... , $$N_k$$ of color k. The probability for drawing $$r_1$$ balls of color 1, $$r_2$$ of color 2, ... , $$r_k$$ of color k in $$n = \sum r_i$$ draws is, as the reader may verify, the generalized hypergeometric distribution:
 
-在这种形式下，它很容易推广。 假设，而不是只有两种颜色，在urn中有k种不同颜色的球，颜色1的$$ N_1 $$，颜色2的$$ N_2 $$，...，颜色k的$$ N_k $$。 在$$ n = \ sum r_i $$中绘制颜色1，$$ r_2 $$颜色2，...，$$ r_k $$颜色k的$$ r_1 $$球的概率为， 读者可以验证，广义超几何分布：
+在这种形式下，它很容易推广。假设，盒子中的球不只有两种颜色，而有k种不同颜色，$$N_1$$个颜色1的，$$N_2$$个颜色2的，...，$$N_k$$个颜色k的。在$$n=\sum r_i$$次抽取中,取出了$$r_1$$个颜色1的球，$$r_2$$个颜色2的球，...，$$r_k$$个颜色k的球的概率是，读者也很容易来验证，广义超几何分布：
 
  $$h(r_1 ··· r_k |N_1 ··· N_k) = \frac { \binom {N_1} {r_1} ··· \binom {N_k} {r_k} } { \binom {\sum N_i} {\sum r_i}} $$  . (3.75)
 

@@ -2,23 +2,34 @@
 
 From the result (3.75) one may obtain a number of identities obeyed by the binomial coefficients. For example, we may decide not to distinguish between colors 1 and 2; i.e. a ball of either color is declared to have color ‘a’. Then from (3.75) we must have, on the one hand,
 
+从结果（3.75）的二项式系数我们可以得到多个等式。例如，我们可能决定不区分颜色1和2;例如,任选一个球,称其颜色为'a'。然后从（3.75）我们必然有，从一个方面看，
+
  $$h(r_a, r_3, ... , r_k|N_a, N_3, ... , N_k ) = \frac { \binom {N_a} {r_a} \binom {N_3} {r_3} ··· \binom {N_k} {r_k}} { \binom  {\sum N_i} {\sum r_i} }  $$  (3.76)
 
 with
+
+且
 
  $$N_a = N_1 + N_2, r_a = r_1 + r_2$$. (3.77)
 
 But the event $$r_a$$ can occur for any values of $$r_1, r_2$$ satisfying (3.77), and so we must have also, on the other hand,
 
+对任何$$r_1，r_2$$满足（3.77）的值,事件$$r_a$$都可能发生，所以我们从另外一方面看必有，
+
  $$h(r_a,r_3,...,r_k|N_a,N_3,...,N_k) = \sum_{r_1 =0}^{r_a} h(r_1,r_a − r_1, r_3,...,r_k|N_1,...,N_k)$$. (3.78)
 
 Then, comparing (3.76) and (3.78), we have the identity
-	
+
+那么,比较(3.76)和(3.78),得到等式
+
  $$\binom {N_a}{r_a} = \sum_{r_1=0}^{r_a} \binom {N_1} {r_1} \binom {N_2} {r_a − r_1} $$  . (3.79) 
 
 Continuing in this way, we can derive a multitude of more complicated identities obeyed by the binomial coefficients. For example,
-	
+
+如此继续,我们可以根据二项式系数推出多个更复杂的等式。 例如，
+
  $$\binom {N_1+N_2+N_3} {r_a} = \sum_{r_1=0}^{r_a} \sum_{r_2=0}^{r_1} \binom {N_1} {r_1} \binom {N_2} {r_2} \binom {N_3} {r_a − r_1 − r_2} $$  . (3.80)
 
 In many cases, probabilistic reasoning is a powerful tool for deriving purely mathematical results; more examples of this are given by Feller (1950, Chap. 2 & 3) and in later chapters of the present work.
 
+在许多情况下，概率推理是获得纯粹数学结果的有力工具; Feller（1950，第2章和第3章）以及本书后面的章节给出了更多这方面的例子。

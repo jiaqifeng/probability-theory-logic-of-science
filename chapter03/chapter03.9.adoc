@@ -2,52 +2,64 @@
 
 Suppose that, from an intricate logical analysis, drawing and replacing a red ball increases the probability for a red one at the next draw by some small amount $$\epsilon$$ > 0, while drawing and replacing a white one decreases the probability for a red one at the next draw by a (possibly equal) small quantity δ > 0; and that the influence of earlier draws than the last one is negligible compared with $$\epsilon$$ or δ. You may call this effect a small ‘propensity’ if you like; at least it expresses a physical causation that operates only forward in time. Then, letting C stand for all the above background information, including the statements just made about correlations and the information that we draw n balls, we have
 
-假设，从错综复杂的逻辑分析中，绘制和替换红球会增加下一次抽奖时红色的概率增加一些少量的$$ \ epsilon $$> 0，而绘制和替换白色的概率会降低 下一次抽取的红色一个（可能相等）小量δ> 0; 并且与$$ \ epsilon $$或δ相比，早期绘制的影响比上一个的影响可以忽略不计。 如果你愿意，你可以称这种效果为小“倾向”; 至少它表达了一种只能在时间上前进的物理因果关系。 然后，让C代表所有上述背景信息，包括刚刚关于相关性的陈述和我们绘制n个球的信息，我们有
+假设，从复杂的逻辑分析中，抽到一个红球然后放回去,会让下一次抽中红球的概率稍微增加$$\epsilon >0$$，而抽到白球再放回,会让下一次抽到红球的概率稍微减少（这两者可能相等）δ> 0;并且与$$\epsilon$$或δ相比，较早的抽取对当前的抽取的影响,与最近一次的抽取相比,其影响可以忽略不计。如果你愿意，你可以称这种效果为小小的“偏好”; 至少它表达了一种只能在时间上单向传递的物理因果关系。然后，让C代表所有上述背景信息，包括关于抽取之间的相关性的陈述,还有我们已经抽取了n个球的信息，我们有
 
  $$P(R_k|R_{k−1}C) = p + \epsilon, P(R_k|W_{k−1}C) = p − δ,$$
  $$P(W_k|R_{k−1}C) = 1 − p − \epsilon, P(W_k|W_{k−1}C) = 1 − p + δ,$$ (3.93)
 
 where p ≡ M/N. From this, the probability for drawing r red and (n − r ) white balls in any specified order is easily seen to be
 
+其中p≡M/N.由此,容易知道,当第一次抽出的是红球,以任意顺序抽到r个红球和(n-r)个白球的概率是
+
  $$p(p + \epsilon)^c(p − δ)^{c'}(1 − p + δ)^w(1 − p − \epsilon)^{w'}$$ (3.94)
 
 if the first draw is red; whereas, if the first is white, the first factor in (3.94) should be (1 − p). Here, c is the number of red draws preceded by red ones, c' the number of red preceded by white, w the number of white draws preceded by white, and w' the number of white preceded by red. Evidently,
 
+然而，如果第一次抽出的是白球，则（3.94）中的第一个因子应该是（1-p）。这里，c是抽中一个红球之前的连续个红球的个数，c'是抽中一个红球之前连续的白球的数量，w是抽到一个白球之前的白球的数量，w'是抽到一个红球之前的白球的数量。显然，
+
  $$c + c' = \begin{bmatrix} r-1 \\ r \end{bmatrix} , w+ w' = \begin{bmatrix} n-r \\ n − r − 1 \end{bmatrix}$$, (3.95)
 
-the upper and lower cases holding when the first draw is red or white, respectively. When r and (n − r ) are small, the presence of ' and δ in (3.94) makes little difference, and the equation reduces for all practical purposes to
+the upper and lower cases holding when the first draw is red or white, respectively. When r and (n − r ) are small, the presence of $$\epsilon$$ and δ in (3.94) makes little difference, and the equation reduces for all practical purposes to
+
+最高和最低的情况分别对应了第一次抽中红球或白球的清考。当r和（n-r）很小时，（3.94）中$$\epsilon$$和δ的差别几乎为0，且对所有实际目的而言,可以规约为
 
  $$p^r (1 − p)^{n−r}$$ , (3.96)
 
 as in the binomial distribution (3.92). But, as these numbers increase, we can use relations of the form
-	
+
+正如(3.92)的二项式分布.但是,随着数量的增加,用
+
  $$(1 + \frac {\epsilon}{p} )^c \simeq exp \{ \frac {\epsilon c}{p} \}$$, (3.97)
 
 and (3.94) goes into
+
+的形式关系还有(3.94),有
 
  $$p^r (1−p)^{n−r} exp \{ \frac {\epsilon c − δc'} {p} + \frac {δw − \epsilon w'} {1−p} \} $$. (3.98)
 
 The probability for drawing r red and (n − r ) white balls now depends on the order in which red and white appear, and, for a given $$\epsilon$$, when the numbers c, c', w, w' become sufficiently large, the probability can become arbitrarily large (or small) compared with (3.92).
 
-绘制红色和（n - r）白球的概率现在取决于红色和白色出现的顺序，对于给定的$$ \ epsilon $$，当数字c，c'，w，w'时 变得足够大，与（3.92）相比，概率可以变得任意大（或小）。
+抽到r个红球和（n-r）个白球的概率现在取决于红色和白色出现的顺序，对于给定的$$\epsilon$$，当c，c'，w，w'足够大时，和（3.92）相比，其概率可能变得任意大（或小）。
 
 We see this effect most clearly if we suppose that N = 2M, p = 1/2, in which case we will surely have $$\epsilon = δ$$. The exponential factor in (3.98) then reduces to
 
-如果我们假设N = 2M，p = 1/2，我们肯定会看到这种效应，在这种情况下，我们肯定会有$$ \ epsilon =δ$$。 然后（3.98）中的指数因子减少到
+如果假设N=2M，p=1/2，我们就会清楚地看到这种效果，在此情况下，必有$$\epsilon =δ$$。 然后（3.98）中的指数因子可规约成
 
  $$exp \{ 2 \epsilon [(c − c') + (w − w')] \}.$$ (3.99)
 
 This shows that (i) as the number n of draws tends to infinity, the probability for results containing ‘long runs’ (i.e. long strings of red (or white) balls in succession), becomes arbitrarily large compared with the value given by the ‘randomized’ approximation; (ii) this effect becomes appreciable when the numbers $$(\epsilon c)$$, etc., become of order unity. Thus, if $$\epsilon = 10^{−2}$$, the randomized approximation can be trusted reasonably well as long as n < 100; beyond that, we might delude ourselves by using it. Indeed, it is notorious that in real repetitive experiments where conditions appear to be the same at each trial, such runs – although extremely improbable on the randomized approximation – are nevertheless observed to happen.
 
-这表明（i）当绘制的数量n倾向于无穷大时，包含“长跑”的结果（即连续的长串红色（或白色）球）的概率变得任意大，与由此给出的值相比。 '随机'近似; （ii）当数字$$（\ epsilon c）$$等变为有序统一时，这种效应变得明显。 因此，如果$$ \ epsilon = 10 ^ { - 2} $$，只要n <100，随机近似就可以得到相当好的信任; 除此之外，我们可能会通过使用它来欺骗自己。 实际上，众所周知，在每次试验中条件似乎相同的真实重复实验中，这种运行 - 尽管在随机近似中极不可能 - 但仍然可以观察到。
+这表明（i）当采样的次数n趋近于无穷大时，一个包含“长组”（即连续的一长串红球（或白球））的采样的概率,和"随机化"的近似方法得到的结果相比,变得任意大;（ii）当数字$$(\epsilon c)$$等变为有序统一时，这种效应变得显而易见。 因此，如果$$\epsilon=10^{-2}$$，只要n<100，随机化的近似就可以得到可信的结果; 除此之外，可能只会误导自己。实际上，众所周知的是，在的真实重复实验中,保证了每次采样的条件几乎一样时，出现长同色球序列的情况--尽管在随机化的近似方法中极不可能出现--但仍然可以被观察到。
 
 Now let us note how the correlations expressed by (3.93) affect some of our previous calculations. The probabilities for the first draw are of course the same as (3.8); we now use the notation
 
-现在让我们注意（3.93）表达的相关性如何影响我们之前的一些计算。 第一次抽签的概率当然与（3.8）相同; 我们现在使用符号
+现在让我们注意（3.93）表达的一些关系如何影响我们之前的计算。 第一次抽签的概率与（3.8）相同; 我们现在使用符号
 
  $$p = P(R_1|C) = \frac M N, q = 1 − p = P(W_1|C) = \frac {N − M}{N}.$$ (3.100)
 
 But for the second trial we have instead of (3.35)
+
+但是对第二次采样,(3.35)可替换为
 
  $$P(R_2|C) = P(R_2R_1|C) + P(R_2W_1|C)$$
  $$= P(R_2|R_1C) P(R_1|C) + P(R_2|W_1C) P(W_1|C)$$
@@ -56,82 +68,116 @@ But for the second trial we have instead of (3.35)
 
 and continuing for the third trial
 
+然后对第三次采样
+
  $$P(R_3|C) = P(R_3|R_2C)P(R_2|C) + P(R_3|W_2C)P(W_2|C)$$
  $$= (p + \epsilon)(p + p \epsilon − qδ) + (p − δ)(q − p \epsilon + qδ)$$
  $$= p + (1 + \epsilon + δ)(p \epsilon − qδ).$$    (3.102)
 
 We see that $$P(R_k |C)$$ is no longer independent of k; the correlated probability distribution is no longer exchangeable. But does $$P(R_k |C)$$ approach some limit as k →∞?
 
-我们看到$$ P（R_k | C）$$不再独立于k; 相关概率分布不再可交换。 但是，当P→∞时，$$ P（R_k | C）$$接近某个极限吗？
+我们看到$$P（R_k|C）$$不再独立于k; 与此相关的概率分布不再有可交换性。 但是，当P→∞时，$$P（R_k|C）$$接近某个极限吗？
 
 It would be almost impossible to guess the general $$P(R_k |C)$$ by induction, following the method in (3.101) and (3.102) a few steps further. For this calculation we need a more powerful method. If we write the probabilities for the kth trial as a vector,
 
-按照（3.101）和（3.102）中的方法进一步推测，通过归纳几乎不可能猜测一般的$$ P（R_k | C）$$。 对于这个计算，我们需要一个更强大的方法。 如果我们将第k次试验的概率写为向量，
+按照（3.101）和（3.102）中的方法进一步推测，几乎不可能归纳出通用的$$P（R_k|C）$$。对于这个计算，我们需要一个更强大的方法。如果我们将第k次试验的概率写为向量，
 
  $$Vk ≡ \begin{bmatrix} P(R_k|C) \\ P(W_k|C) \end{bmatrix}$$, (3.103)
 
 then (3.93) can be expressed in matrix form:
 
+那么(3.93)可以表示为矩阵形式
+
  $$V_k = MV_{k−1}$$, (3.104)
 
 with
+
+和
 
  $$M = \binom {[p + \epsilon] \, [p − δ]} {[q − \epsilon] \, [q + δ]}$$. (3.105)
 
 This defines a Markov chain of probabilities, and M is called the transition matrix. Now the slow induction of (3.101) and (3.102) proceeds instantly to any distance we please:
 
+这定义了一个马尔可夫概率链，M称为转移矩阵。现在，（3.101）和（3.102）的缓慢的归纳过程,能快速的递进到我们期望的任意远处：
+
  $$V_k = M^{k−1}V_1$$. (3.106)
 
 So, to have the general solution, we need only to find the eigenvectors and eigenvalues of M. The characteristic polynomial is
+
+因此，为了得到一般解，我们只需要找到M的特征向量和特征值。特征多项式是
 
  $$C(λ) ≡ det(M_{ij} − λδ_{ij} ) = λ^2 − λ(1 + \epsilon + δ) + (\epsilon + δ)$$ (3.107)
 
 so the roots of C(λ) = 0 are the eigenvalues
 
+所以C（λ）= 0的根是特征值
+
  $$λ_1 = 1$$
- $$λ_2 = \epsilon + δ.$$   (3.108)
+ $$λ_2=\epsilon + δ.$$   (3.108)
 
 Now, for any 2 × 2 matrix
+
+现在,对任意2×2矩阵
 
  $$M = \binom {a \, b} {c \, d}$$   (3.109)
 
 with an eigenvalue λ, the corresponding (non-normalized) right eigenvector is
 
+具有特征值λ，相应的（非归一化的）右特征向量是
+
  x=(bλ−a) , (3.110)
 
 for which we have at once Mx = λx. Therefore, our eigenvectors are
+
+对此我们有Mx=λx。因此，我们的特征向量是
 
  $$x1 = \binom {p − δ} {q − \epsilon} , x2 = \binom {1}{−1}$$. (3.111)
 
 These are not orthogonal, since M is not a symmetric matrix. Nevertheless, if we use (3.111) to define the transformation matrix
 
+这些不是正交的，因为M不是对称矩阵。 然而，如果我们使用（3.111）来定义变换矩阵
+
  $$S = \binom {[p − δ] \, 1} {[q − \epsilon] \, −1}$$, (3.112)
 
 we find its inverse to be
+
+可以找到其逆矩阵是
 
  $$S^{−1} = \frac {1}{1 − \epsilon − δ} \binom {1 \qquad 1} {[q − \epsilon] \qquad −[p − δ]}$$, (3.113)
 
 and we can verify by direct matrix multiplication that
 
+我们可以用矩阵乘法来验证
+
  $$S^{−1}MS = \Lambda = \binom {λ_1 \quad 0} {0 \quad λ_2}$$, (3.114)
 
 where $$\Lambda$$ is the diagonalized matrix. Then we have for any r , positive, negative, or even complex:
+
+其中$$\Lambda$$是对角化矩阵。然后我们有对任何r，正数，负数甚至复数有：
 
  $$M^r = S \Lambda ^r S^{−1}$$ (3.115)
 
 or
 
+或者
+
  $$M^r = \frac {1}{1 − \epsilon − δ} \binom {p − δ + [\epsilon + δ]^r [q − \epsilon] \quad [p − δ][1 − (\epsilon + δ)^r ]} {[q − \epsilon][1 − (\epsilon + δ)^r ] \quad q − \epsilon + [\epsilon + δ]^r [p − δ]}$$ , (3.116)
 
 and since
+
+并且,由于
 
  $$V_1 = \binom {p}{q}$$ (3.117)
 
 the general solution (3.106) sought is
 
+找到的通用解(3.106) 是
+
  $$P(R_k|C) = \frac {(p − δ) − (\epsilon + δ)^{k−1}(p\epsilon − qδ)} {1 − \epsilon − δ}$$. (3.118)
 
 We can check that this agrees with (3.100), (3.101) and (3.102). From examining (3.118) it is clear why it would have been almost impossible to guess the general formula by induction. When $$\epsilon$$ = δ = 0, this reduces to $$P(R_k |C) = p$$, supplying the proof promised after Eq. (3.37).
+
+done here
 
 我们可以检查这是否与（3.100），（3.101）和（3.102）一致。 从检查（3.118）可以清楚地看出为什么几乎不可能通过归纳来猜测通式。 当$$ \ epsilon $$ =δ= 0时，这将减少到$$ P（R_k | C）= p $$，提供在Eq之后承诺的证据。（3.37）。
 

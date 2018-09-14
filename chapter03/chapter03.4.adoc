@@ -1,26 +1,28 @@
-== 3.4 Expectations
+== 3.4 Expectations 期望值
 
-Another way of looking at this result appeals more strongly to our intuition and generalizes far beyond the present problem.We can hardly suppose that the reader is not already familiar with the idea of expectation, but this is the first time it has appeared in the present work, so we pause to define it. If a variable quantity X can take on the particular values $$(x_1,...,x_n)$$ in n mutually exclusive and exhaustive situations, and the robot assigns corresponding probabilities $$(p_1, p_2,...,p_n)$$ to them, then the quantity
+Another way of looking at this result appeals more strongly to our intuition and generalizes far beyond the present problem. We can hardly suppose that the reader is not already familiar with the idea of expectation, but this is the first time it has appeared in the present work, so we pause to define it. If a variable quantity X can take on the particular values $$(x_1,...,x_n)$$ in n mutually exclusive and exhaustive situations, and the robot assigns corresponding probabilities $$(p_1, p_2,...,p_n)$$ to them, then the quantity
 
-看待这个结果的另一种方式更强烈地吸引我们的直觉，并且远远超出了当前的问题。我们很难想象读者还不熟悉期望的概念，但这是它第一次出现在现在 工作，所以我们暂停来定义它。 如果变量X可以在n个相互排斥和穷举的情况下采用特定值$$（x_1，...，x_n）$$，并且机器人分配相应的概率$$（p_1，p_2，...，p_n） ）$$给他们，然后数量
+看待这个结果有另一种方式,更符合我们的直觉，并且通用性也大大超越了当前的问题。我们相信大部分读者都熟悉期望值这个概念，但这是本书中第一次出现这个概念，所以我们先给出定义。如果变量X可以在n个相互排斥和穷尽的情况下取值为$$（x_1，...，x_n）$$之一，而且机器人分配了相应的概率$$（p_1，p_2，...，p_n）$$，然后数量
 
  $$ \langle X \rangle= E(X) = \sum_{i=1}^n p_i x_i $$ (3.66)
 
 is called the expectation (in the older literature, mathematical expectation or expectation value) of X. It is a weighted average of the possible values, weighted according to their probabilities. Statisticians and mathematicians generally use the notation E(X); but physicists, having already pre-empted E to stand for energy and electric field, use the bracket notation $$\langle X \rangle$$.We shall use both notations here; they have the same meaning, but sometimes one is easier to read than the other.
 
-被称为X的期望（在旧文献中，数学期望值或期望值）。它是可能值的加权平均值，根据其概率加权。 统计学家和数学家通常使用符号E（X）; 但是物理学家已经抢占了E代表能源和电场，使用括号符号$$ \ langle X \ rangle $$。我们将在这里使用这两个符号; 它们具有相同的含义，但有时一个比另一个更容易阅读。
+被称为X的期望（在旧文献中，称为数学期望值或期望值）。它是所有值的加权平均，即根据其概率进行加权。统计学家和数学家通常使用符号E(X); 但是对于物理学家而言,由于已经使用了E来代表能量和电场，所以使用括号符号$$\langle X \rangle$$。两种符号我们都会用到;它们的含义相同，但有时一个比另一个更容易阅读。
 
 Like most of the standard terms that arose out of the distant past, the term ‘expectation’ seems singularly inappropriate to us; for it is almost never a value that anyone ‘expects’ to find. Indeed, it is often known to be an impossible value. But we adhere to it because of centuries of precedent.
 
-像大多数从遥远的过去产生的标准术语一样，“期望”一词似乎对我们来说非常不合适; 因为它几乎从来都不是任何人'期望'找到的价值。 实际上，人们常常知道这是一个不可能的价值。 但是，由于几个世纪的先例，我们坚持这一点。
+像大多数从遥远的过去产生的标准术语一样，“期望”一词似乎对我们来说显然不大合适;因为它几乎从来都不是任何人'期望'找到的一个数值。实际上，人们常常知道这个值是实际中不可取的值。但是，由于已经使用了几个世纪之久，我们还是遵循这种命名。
 
 Given $$R_{later}$$, what is the expectation of the number of red balls in the urn for draw number one? There are three mutually exclusive possibilities compatible with $$R_{later}$$:
 
-鉴于$$ R_ {更晚} $$，对于第一个抽奖，在球馆中的红球数量的期望是多少？ 与$$ R_ {later} $$兼容的三种互斥的可能性：
+给定$$R_{later}$$，第一次抽取时,盒中红球个数的期望值是多少？对比于$$ R_ {later} $$,有三种互斥的兼容的概率：
 
  $$R_2W_3,W_2R_3, R_2R_3$$ (3.67)
 
 for which M is (1, 1, 0), respectively, and for which the probabilities are as in (3.64) and (3.65):
+
+其中M分别是(1,1,0),其概率分别如(3.64)和(3.65):
 
  $$P(R_2W_3|R_{later}B) = P(R_2W_3|B) P(R_{later}|B) = \frac {(1/2) × (2/3)}{(5/6)} = \frac 2 5 $$, (3.68)
  $$P(W_2R_3|R_{later}B) = \frac 2 5 $$, (3.69) 
@@ -28,22 +30,24 @@ for which M is (1, 1, 0), respectively, and for which the probabilities are as i
 
 So
 
+所以
+
  $$\langle M \rangle = 1 × \frac 2 5 + 1 × \frac 2 5 + 0 × \frac 1 5 = \frac 4 5 $$. (3.71)
 
 Thus, what we called intuitively the ‘effective’ value of M in (3.63) is really the expectation of M.
 
-因此，我们直观地称之为（3.63）中M的“有效”值实际上是M的期望。
+因此，我们直观地称之为（3.63）中M的“有效”值实际上是M的期望值。
 
 We can now state (3.63) in a more cogent way: when the fraction F = M/N of red balls is known, then the Bernoulli urn rule applies and $$P(R_1|B) = F$$. When F is unknown, the probability for red is the expectation of F: 
 
-我们现在可以更有说服力地说明（3.63）：当已知红球的分数F = M / N时，则应用伯努利瓮规则并且$$ P（R_1 | B）= F $$。 当F未知时，红色的概率是F的期望值：
+我们现在用更有说服力地方式来表述（3.63）：当已知红球的占比F=M/N时，则应用伯努利规则并且$$P（R_1|B）=F$$。当F未知时，是红球的概率即F的期望值：
 
  $$P(R_1|B) = \langle F \rangle ≡ E(F)$$. (3.72)
 
 If M and N are both unknown, the expectation is over the joint probability distribution for M and N.
 
-如果M和N都是未知的，则期望超过M和N的联合概率分布。
+如果M和N都是未知的，则期望值和M和N的联合概率分布决定。
 
-That a probability is numerically equal to the expectation of a fraction will prove to be a general rule that holds as well in thousands of far more complicated situations, providing one of the most useful and common rules for physical prediction.We leave it as an exercise for the reader to show that the more general result (3.56) can also be calculated in the way suggested by (3.72).
+That a probability is numerically equal to the expectation of a fraction will prove to be a general rule that holds as well in thousands of far more complicated situations, providing one of the most useful and common rules for physical prediction. We leave it as an exercise for the reader to show that the more general result (3.56) can also be calculated in the way suggested by (3.72).
 
-概率在数值上等于分数的期望将证明是在数千个更复杂的情况下也具有的一般规则，为物理预测提供了最有用和最常见的规则之一。我们将其作为一个练习 为了使读者能够证明更一般的结果（3.56）也可以用（3.72）建议的方式计算。
+在数千种及其复杂的情况下,概率在数值上等于期望值(所占的比例),被证明是在个普遍规则，为物理预测提供了最有效和常见的规则之一。我们将其作为一个练习留给读者,证明（3.56）的通用结果也可以用（3.72）建议的方式来计算。

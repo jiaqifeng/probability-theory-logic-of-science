@@ -447,7 +447,7 @@ and so
 
 Again all the complications cancel out. The robot’s probability for red at any draw, if it does not know the result of any other draw, is always the same as the Bernoulli urn result (3.5). This is the first nonobvious symmetry. We shall not prove this in generality here, because it is contained as a special case of a still more general result; see Eq. (3.118) below.
 
-再一次的所有的复杂部分都被消除了。在不知道任何其他抽取结果的情况下,对于任何一次抽取出红球的概率,机器人总是会得到伯努利骨采样相同的结果(3.5)。这是第一个不是显而易见的对称性的情况。我们不会在这里一般性地证明这一点,因为它是一个更一般的结果的特例; 见之后的等式(3.118)。
+再一次的所有的复杂部分都被消除了。在不知道任何其他抽取结果的情况下,对于任何一次抽取出红球的概率,机器人总是会得到伯努利采样相同的结果(3.5)。这是第一个不是显而易见的对称性的情况。我们不会在这里一般性地证明这一点,因为它是一个更一般的结果的特例; 见之后的等式(3.118)。
 
 The method of calculation illustrated by (3.32) and (3.36) is as follows: resolve the quantity whose probability is wanted into mutually exclusive subpropositions, then apply the sum rule and the product rule. If the subpropositions are well chosen (i.e. if they have some simple meaning in the context of the problem), their probabilities are often calculable. If they are not well chosen (as in the example of the penguins at the end of Chapter 2), then of course this procedure cannot help us.
 

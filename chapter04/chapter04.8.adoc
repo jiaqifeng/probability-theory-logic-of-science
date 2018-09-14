@@ -1,6 +1,6 @@
-== 4.8 Comments
+== 4.8 Comments 评论
 
-=== 4.8.1 Etymology
+=== 4.8.1 Etymology 词源
 
 Our opening quotation from John Craig (1699) is from a curious work on the probabilities of historical events, and how they change as the evidence changes. Craig’s work was ridiculed mercilessly in the 19th century; and, indeed, his applications to religious issues do seem weird to us today. But Stigler (1986a) notes that Craig was writing at a time when the term ‘probability’ had not yet settled down to its present technical meaning, as referring to a (0–1) scale; and if we merely interpret Craig’s ‘probability for an hypothesis’ as our log-odds measure (which we have seen to have in some respects a more primitive and intuitive meaning than probability), Craig’s reasoning was actually quite good, and may be regarded as an anticipation of what we have done in this chapter.
 
