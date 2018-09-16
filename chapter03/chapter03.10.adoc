@@ -3,13 +3,19 @@
 The above formulas (3.100)–(3.130) hold for any $$\epsilon$$, δ satisfying the inequalities (3.119).
 But, on surveying them, we note that a remarkable simplification occurs if they satisfy
 
+对满足不等式(3.119)的任意$$\epsilon$$和 δ, 上面的公式(3.100)-(3.130)都成立.但是,仔细检查之后,我们注意到有一个明显的简化,如果它们满足
+
  $$p\epsilon = qδ$$. (3.131)
 
 For then we have
 
+然后我们有
+
  $$ \frac {p − δ} {1 − \epsilon − δ} = p, \frac {q − \epsilon}{1 − \epsilon − δ}= q, \epsilon+ δ = \frac {\epsilon} {q}$$ , (3.132)
 
 and our main results (3.118) and (3.128) collapse to
+
+我们的结果(3.118)和(3.128)简化为
 
  $$P(R_k |C) = p, all k$$, (3.133)
  $$P(R_k |R_jC) = P(R_j |R_kC) = p + q ( \frac {\epsilon} {q} )^{|k−j|}$$, all k, j . (3.134)
@@ -20,11 +26,8 @@ inferences is restored, even though the causal influences $$\epsilon$$, δ opera
 we see from our derivation of (3.40) that this forward–backward symmetry is a necessary
 consequence of (3.133), whether or not the distribution is exchangeable.
 
-分布仍然是不可交换的，因为条件概率（3.134）仍然存在
-取决于分离| k - j |审判;但是前后对称
-推理被恢复，即使因果影响$$ \ epsilon $$，δ仅向前运行。确实，
-我们从（3.40）的推导中看出，这种前后对称是必要的
-（3.133）的后果，无论分配是否可交换。
+这个分布仍然是不可交换的，因为条件概率（3.134）仍然取决于采样中|k - j |的差别;但是正向和反向推断的对称性被恢复了，虽然因果影响$$ \epsilon $$，δ仍然仅仅是单向的。确实，
+我们从（3.40）的推导中看出，这种正向反向的对称性是（3.133）的必然结果，无论分配是否可交换。
 
 What is the meaning of this magic condition (3.131)? It does not make the matrix M
 assume any particularly simple form, and it does not turn off the effect of the correlations.
@@ -32,11 +35,7 @@ What it does is to make the solution (3.133) invariant; that is, the initial vec
 is then equal but for normalization to the eigenvector $$x_1$$ in (3.111), so the initial vector
 remains unchanged by the matrix (3.105).
 
-这个神奇的条件是什么意思（3.131）？它没有制作矩阵M.
-假设任何特别简单的形式，它不会关闭相关性的影响。
-它的作用是使解决方案（3.133）不变;也就是说，初始向量（3.117）
-然后等于但是对于（3.111）中的特征向量$$ x_1 $$的归一化，所以初始向量
-矩阵保持不变（3.105）。
+这个神奇的条件（3.131）意味了什么？它没有假设矩阵M应为任何特别简单的形式，它也没有取消相关性的影响。它的作用是使解决方案（3.133）不变;也就是说，在归一化之前,初始向量（3.117）等于（3.111）中的特征向量$$ x_1 $$，所以矩阵(3.105)是的初始向量保持不变。
 
 In general, of course, there is no reason why this simplifying condition should hold.
 Yet in the case of our urn, we can see a kind of rationale for it. Suppose that when the
@@ -45,20 +44,19 @@ about n = (N − 1)/L of them in the top layer, of which we expect about np to b
 nq = n(1 − p) white. Now we toss the drawn ball back in. If it was red, the probability of
 getting red at the next draw if we do not shake the urn is about
 
-当然，一般来说，没有理由认为这种简化条件应该成立。
-然而就我们的骨灰盒而言，我们可以看到它的一种理由。假设当
-urn最初有N个球，它们是L层。然后，在撤回一个球后，有
-关于顶层的n =（N-1）/ L，我们期望np为红色，
-nq = n（1 - p）白色。现在我们将拉回的球扔回去。如果它是红色的，那么概率就是
-如果我们不摇动骨灰盒，那么在下次抽奖时会变红
+当然，一般来说，没有理由认为这种简化条件应该成立。然而就我们的盒子而言，我们可以看到它某种合理性。假设当盒子中最初有N个球，分为L层。然后，在抽走一个球后，顶层还有的n=（N-1）/ L个球，其中我们期望有np个红色，nq = n（1 - p）个白色。现在我们将抽走的球放回去。如果它是红色的，那么不晃动盒子的情况下,下次取出红球的概率是
 
  $$\frac {np + 1}{n + 1} = p + \frac {1 − p}{n} + O( \frac {1}{n^2} )$$, (3.135)
 
 and if it is white the probability for getting white at the next draw is about
 
+如果第一次是白球,那么下一次取出的是白球的概率是
+
  $$\frac {n(1 − p) + 1} {n + 1} = 1 − p + \frac p n + O( \frac {1} {n^2} )$$. (3.136)
 
 Comparing with (3.93) we see that we could estimate $$\epsilon$$ and δ by
+
+和(3.93)相比较,我们可以估计$$\epsilon$$ 和 δ 有
 
  $$\epsilon \simeq q/n, δ \simeq p/n$$ (3.137)
 
@@ -68,16 +66,10 @@ unreasonable about (3.131). We leave it for the reader to speculate about what s
 and use this curious fact might have, and whether it generalizes beyond the Markovian
 approximation.
 
-于是我们的魔法条件（3.131）得到了满足。 当然，刚才给出的论点是
-太粗糙，不能被称为派生，但至少它表明没有任何内在的东西
-不合理（3.131）。 我们留给读者推测其意义
-并使用这个奇怪的事实，以及它是否超出了马尔可夫
-近似。
+于是我们的神奇条件（3.131）得到了满足。 当然，刚才给出的论断太粗糙以至于不能被称为推理，但至少它表明对于(3.131)没有什么东西是内在的不可推理的。 我们留给读者推测其意义,并应用这个可能存在的奇怪的事实，以及它是否超出了马尔可夫近似。
 
-We have nowhad a first glimpse of some of the principles and pitfalls of standard sampling
+We have now had a first glimpse of some of the principles and pitfalls of standard sampling
 theory. All the results we have found will generalize greatly, and will be useful parts of our
 ‘toolbox’ for the applications to follow.
 
-我们现在已经第一次看到了标准抽样的一些原则和缺陷
-理论。 我们发现的所有结果都会大大概括，并且将成为我们的有用部分
-“工具箱”供应用程序使用。
+我们现在已经第一次看到了标准抽样理论的一些原理和缺陷。 我们发现的所有结果都大大概括了，并且将成为我们接下来的应用的“工具箱”中的一些工具。

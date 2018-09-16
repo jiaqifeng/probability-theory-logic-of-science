@@ -179,31 +179,41 @@ We can check that this agrees with (3.100), (3.101) and (3.102). From examining 
 
 done here
 
-我们可以检查这是否与（3.100），（3.101）和（3.102）一致。 从检查（3.118）可以清楚地看出为什么几乎不可能通过归纳来猜测通式。 当$$ \ epsilon $$ =δ= 0时，这将减少到$$ P（R_k | C）= p $$，提供在Eq之后承诺的证据。（3.37）。
+我们可以检查这应与（3.100），（3.101）和（3.102）一致。 从检查（3.118）可以清楚地看出为什么几乎不可能通过归纳来猜测出通用公式。 当$$\epsilon$$=δ=0时，这将约化为$$PR_k|C）=p$$，给出了在公式(3.37)之后承诺的证明。
 
 Although we started this discussion by supposing that $$\epsilon$$ and δ were small and positive, we have not actually used that assumption, and so, whatever their values, the solution (3.118) is exact for the abstract model that we have defined. This enables us to include two interesting extreme cases. If not small, $$\epsilon$$ and δ must be at least bounded, because all quantities in (3.93) must be probabilities (i.e. in [0, 1]). This requires that
 
-虽然我们通过假设$$ \ epsilon $$和δ是小而正的开始这个讨论，我们实际上没有使用那个假设，因此，无论它们的值如何，解决方案（3.118）对于我们的抽象模型都是精确的定义。 这使我们能够包括两个有趣的极端情况。 如果不小，则$$ \ epsilon $$和δ必须至少有界，因为（3.93）中的所有数量必须是概率（即在[0,1]中）。 这要求
+虽然在开始讨论时,我们假设$$\epsilon$$和δ是很小的正数，但我们实际上没有用到，因此无论它们的取值为何，（3.118）的解都是我们的抽象模型的精确定义。 这使我们能够将两个有趣的极端情况包括进来。$$\epsilon $$和δ不是足够小那么至少必须是有界的，因为（3.93）中的所有数值必须都是个概率（即在区间[0,1]中）。 这要求
 
  $$−p ≤ \epsilon ≤ q, −q ≤ δ ≤ p$$, (3.119)
 
 or
 
+或者
+
  $$−1 ≤ \epsilon + δ ≤ 1$$. (3.120)
 
 But from (3.119), $$\epsilon + δ = 1$$ if and only if $$\epsilon = q$$, δ = p, in which case the transition matrix reduces to the unit matrix
+
+但是从(3.119),$$\epsilon + δ = 1$$当且仅当$$\epsilon = q$$, δ = p, 其中转换矩阵可约化为单位矩阵
 
  $$M = \binom {1 \, 0} {0 \, 1}$$ (3.121)
 
 and there are no ‘transitions’. This is a degenerate case in which the positive correlations are so strong that whatever color happens to be drawn on the first trial is certain to be drawn also on all succeeding ones:
 
+就不再需要'转换'了.这是一种简化情况,其中的正相关性足够强,导致无论第一次抽到的是什么颜色,则接下来抽到的几乎肯定都是这个颜色的球.
+
  $$P(R_k|C) = p$$, all k. (3.122)
 
 Likewise, if $$\epsilon + δ = −1$$, then the transition matrix must be
 
+类似的, 如果有$$\epsilon + δ = −1$$, 则转换矩阵必须为
+
  $$M = \binom {0 \, 1} {1 \, 0}$$  (3.123)
 
 and we have nothing but transitions; i.e. the negative correlations are so strong that the colors are certain to alternate after the first draw:
+
+则我们只有转换矩阵了；负相关性足够强,使得第一次之后抽到的颜色肯定都是和第一次的颜色不同的.
 
  $$P(R_k|C) = \begin{Bmatrix} p, k \, odd \\ q, k \, even \end{Bmatrix}$$. (3.124)
 
@@ -214,12 +224,12 @@ on the next draw. But if $$\epsilon$$ and δ must not be negative, then the lowe
 really zero, which is achieved only when $$\epsilon$$ = δ = 0. Then M in (3.105) becomes singular,
 and we revert to the binomial distribution case already discussed.
 
-这种情况是不现实的，因为直觉强烈地告诉我们$$ \ epsilon $$和δ应该是正数; 无论如何，无论用什么逻辑分析来分配数值$$ \ epsilon $$，在顶层留下一个红球必须增加，而不是减少，红色的概率在接下来的平局。 但如果$$ \ epsilon $$和δ不能为负，则（3.120）的下限为真的为零，只有在$$ \ epsilon $$ =δ= 0时才能实现。然后M in（3.105）变为奇异，我们回到已经讨论过的二项分布案例。
+这种情况是不现实的，因为直觉强烈地告诉我们$$\epsilon$$和δ应该是正数; 可以肯定，无论用什么逻辑分析来对$$ \ epsilon $$赋值，在顶层留下一个红球,使得接下来抽到红球的概率必定是增加，而不是减少。 但如果$$ \ epsilon $$和δ不能为负，则（3.120）的下限应为零，且只有在$$ \ epsilon $$ =δ= 0时为0。然后（3.105）中的M变为1(?单调?归一?)，让我们又回到已经讨论过的二项分布的情况。
 
 In the intermediate and realistic cases where $$0 < |\epsilon + δ| < 1$$, the last term of (3.118)
 attenuates exponentially with k, and in the limit
 
-在$$ 0 <| \ epsilon +δ|的中间和现实情况下 <1 $$，（3.118）的最后一个任期 用k指数衰减，并且在极限内
+在区间内且现实的情况下,即$$ 0 <| \epsilon +δ| <1 $$，（3.118）的最后一项以指数k的速度衰减，当极限
 
  $$P(R_k|C) → \frac {p − δ}{1 − \epsilon − δ}$$. (3.125)
 
@@ -230,15 +240,19 @@ These are found by noting that the Markov chain relation (3.104) holds whatever 
 $$V_{k−1}$$; i.e. whether or not it is the vector generated from $$V_1$$ as in (3.106). Therefore, if we
 are given that red occurred on the j th trial, then
 
-但是，尽管这些单一试验概率稳定在稳定值，如可交换的分配，潜在的相关性仍在发挥作用和限制分布是不可交换的。 为了看到这一点，让我们考虑条件概率$$ P（R_k | R_jC）$$。通过注意马尔可夫链关系（3.104）保持任何向量来发现这些$$ V_{K-1}$$; 即，它是否是从（3.106）中的$$ V_1 $$生成的向量。 因此，如果我们然后，在第j次试验中发现红色
+但是，尽管在可交换的概率分布中单次采样的概率都是确定值，潜在的相关性仍在发挥作用而且极限分布是不可交换的。 为了看到这一点，让我们考虑条件概率$$ P（R_k | R_jC）$$。可以注意到无论向量$$ V_{K-1}$$为何,马尔可夫链关系（3.104）都有效; 即，无论它是否是像（3.106）那样从$$ V_1 $$生成的向量。 因此，如果给定第j次采样是红色,那么
 
  $$V_j = \binom {1} {0} $$, (3.126)
 
 and we have from (3.104)
 
+从(3.104)有
+
  $$V_k = M^{k−j}V_j , j ≤ k$$, (3.127)
 
 from which, using (3.115),
+
+然后应用(3.115)
 
  $$P(R_k|R_jC) = \frac {(p − δ) + (\epsilon + δ)^{k−j} (q − \epsilon)} {1 − \epsilon − δ} $$, j < k, (3.128)
 
@@ -246,21 +260,20 @@ which approaches the same limit (3.125). The forward inferences are about what w
 expect; the steady value (3.125) plus a term that decays exponentially with distance. But
 the backward inferences are different; note that the general product rule holds, as always:
 
-接近相同的限制（3.125）。 前瞻性的推论是关于我们可能的
-期望; 稳定值（3.125）加上一个随距离呈指数衰减的项。 但
-落后的推论是不同的; 请注意，一般产品规则一如既往：
+这和（3.125）趋向相同的极限。 前向推理正如我们期望的; 稳定值（3.125）加上一个随距离呈指数衰减的项。 但后向推理是不同的; 请注意，通用乘法规则依然有效：
 
  $$P(R_kR_j|C) = P(R_k|R_jC) P(R_j|C) = P(R_j |R_kC) P(R_k |C)$$. (3.129)
 
 Therefore, since we have seen that $$P(R_k |C) \neq P(R_j |C)$$, it follows that
+
+所以,既然我们看到$$P(R_k |C) \neq P(R_j |C)$$, 接下来
 
  $$P(R_j |R_kC) \neq P(R_k |R_jC)$$. (3.130)
 
 The backward inference is still possible, but it is no longer the same formula as the forward
 inference as it would be in an exchangeable sequence.
 
-向后推断仍然是可能的，但它不再是与前锋相同的公式
-推断，因为它将是一个可交换的序列。
+反向推断仍然是可能的，但它不再与正向推断为相同的公式，因为它将是一个可交换的序列。
 
 As we shall see later, this example is the simplest possible ‘baby’ version of a very
 common and important physical problem: an irreversible process in the ‘Markovian approximation’.
@@ -273,16 +286,7 @@ inference by extrapolating the forward solution backward in time, with quite biz
 unphysical results. Therefore the reader is, in effect, conducting new research in doing the
 following exercise.
 
-正如我们稍后将看到的，这个例子是最简单的“婴儿”版本
-共同的和重要的物理问题：“马尔可夫近似”中不可逆转的过程。
-另一种常见的技术语言称其为自回归模型
-第一顺序它可以大大推广到任意维矩阵的情形
-多步或连续，而非单步，记忆影响。但出于上述原因
-早期（统计力学文献中推论和因果关系的混淆），
-后向推理部分解决方案几乎总是错过。有些人试图向后做
-通过向后推断前向解决方案进行推断，非常奇怪和
-非物质的结果。因此，读者实际上正在进行新的研究
-以下运动。
+正如我们稍后将看到的，这个例子可能是普遍且重要的物理问题的一个最简单的“婴儿”版本：“马尔可夫近似”中的一个不可逆转的过程。另一种常见的术言称其为一阶自动回归模型.它可以大大推广到任意维矩阵,多步或者连续的,而非单步的记忆影响.但是之前看到的原因（统计力学文献中,混淆了逻辑推理关系和因果关系），解决方案的反向推理部分几乎总是被丢弃了。有些人试图在推断正向解时采用逆向时间,来做反向推断,而得出了非常奇怪和非物质的结果。因此，在完成下述练习是,读者实际上是在进行新的研究。
 
 Exercise 3.6. Find the explicit formula $$P(R_j |R_kC)$$ for the backward inference corresponding
 to the result (3.128) by using (3.118) and (3.129). (a) Explain the reason
@@ -293,11 +297,4 @@ also decay to steady values? If so, is a property somewhat like exchangeability 
 for events sufficiently separated? For example, if we consider only every tenth draw or
 every hundredth draw, do we approach an exchangeable distribution on this subset?
 
-练习3.6。找到对应的后向推理的显式公式$$ P（R_j | R_kC）$$
-通过使用（3.118）和（3.129）得到结果（3.128）。 （a）解释原因
-用简单直观的术语表示前向和后向推断之间的差异。
-（b）后向推断以何种方式与推断的前向推断不同
-落后？哪个更直观合理？ （c）做出反向推论
-也衰败到稳定的价值？如果是这样，是否有点像可交换性恢复的属性
-事件是否足够分开？例如，如果我们只考虑每十次抽奖或
-每百次抽签，我们是否接近这个子集的可交换分布？
+练习3.6 参照使用（3.118）和（3.129）得到结果（3.128）,请找到对应的反向推理的显式公式$$ P（R_j | R_kC）$$。 （a）用简单直观的术语解释正向和反向推断之间的差异。（b）反向推断与倒过来的前向推断,其方式有什么不同?哪个更直观合理？ （c）反向推论也会衰退到稳定值吗？如果会，一个类似可交换性的属性是否被恢复了,使得事件被充分隔离？例如，如果我们只考虑所有的第十次采样或第一百次采样，在这个子集上是否能得到可交换分布？
